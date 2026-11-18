@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milestones — 里程碑</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="tb-mark">Album Review · 译稿</span>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Milestones</h1>
+    <p class="title-cn">里程碑</p>
+    <p class="byline">– Marc Zisman</p>
+    <p class="source">原文：Qobuz 专辑页编辑文字（© Marc Zisman / Qobuz）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Miles Davis 六重奏</li><li>1958-02-04 / 03-04 录音</li><li>Columbia CL 1193 / CS 9428</li><li>Cannonball Adderley 加入</li><li>调式写作起点</li><li>Qobuz 编辑文字</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">The first quintet, but with a plus-one!…</span><span class="toc-cn">老五重奏 + 一人</span></li><li><span class="toc-en">In fact, it would prove to be a key element…</span><span class="toc-cn">Miles 的自述：布鲁斯嗓音</span></li><li><span class="toc-en">This contrast between the two saxophonists'…</span><span class="toc-cn">两种风格的反差</span></li><li><span class="toc-en">With Coltrane, Red Garland, Paul Chambers…</span><span class="toc-cn">又一次催生杰作</span></li><li><span class="toc-en">No more evident is this than on the title track…</span><span class="toc-cn">同名曲《Milestones》</span></li><li><span class="toc-en">For this composition, Miles freed himself…</span><span class="toc-cn">从钢琴的和声束缚里解放</span></li><li><span class="toc-en">On the cover of Thelonious Monk's Straight, No Chaser…</span><span class="toc-cn">Monk 同名曲上的 Miles</span></li><li><span class="toc-en">Coltrane is impressive too…</span><span class="toc-cn">调式写作的起点</span></li><li><span class="toc-en">Another feature of this masterpiece is the track…</span><span class="toc-cn">《Sid's Ahead》与退场的 Garland</span></li><li><span class="toc-en">© Marc Zisman/Qobuz</span><span class="toc-cn">署名</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd>里程碑<br><span class="en">Milestones</span></dd><dt>年份 / Year</dt><dd>1958 年 9 月 2 日发行（录音于同年 2 月 4 日与 3 月 4 日）</dd><dt>厂牌 / Label</dt><dd>Columbia CL 1193（单声道）/ CS 9428（伪立体声，1967）｜制作 George Avakian</dd><dt>录音地点</dt><dd>纽约 · Columbia 30th Street Studio（207 East 30th St）</dd><dt>录音工程</dt><dd>Harold Chapman</dd><dt>编制</dt><dd>Miles Davis（小号，兼钢琴于《Sid's Ahead》）· John Coltrane（次中音）· Cannonball Adderley（中音）· Red Garland（钢琴）· Paul Chambers（贝斯）· Philly Joe Jones（鼓）</dd><dt>曲目</dt><dd>6 首：Dr. Jackle / Sid's Ahead / Two Bass Hit / Milestones / Billy Boy / Straight, No Chaser</dd><dt>文案 / 封面</dt><dd>Charles Edward Smith 文案 · David Stone Martin 封面</dd><dt>流派</dt><dd>硬波普 → 调式爵士的门槛</dd><dt>本篇来源</dt><dd>Qobuz 专辑页编辑文字，© Marc Zisman / Qobuz</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Dr. Jackle</td><td><span class="cn">杰克医生（Jackie McLean 作曲）</span></td><td class='ses'>1958-03-04</td><td class='dur'>5:47</td></tr><tr><td class='pos'>A2</td><td class='tt'>Sid's Ahead</td><td><span class="cn">西德在前（Miles 作曲，Miles 弹钢琴）</span></td><td class='ses'>1958-03-04</td><td class='dur'>12:59</td></tr><tr><td class='pos'>A3</td><td class='tt'>Two Bass Hit</td><td><span class="cn">双贝斯命中（Lewis / Gillespie 作曲）</span></td><td class='ses'>1958-02-04</td><td class='dur'>5:13</td></tr><tr><td class='pos'>B1</td><td class='tt'>Milestones</td><td><span class="cn">里程碑（同名曲，调式）</span></td><td class='ses'>1958-02-04</td><td class='dur'>5:45</td></tr><tr><td class='pos'>B2</td><td class='tt'>Billy Boy</td><td><span class="cn">比利小子（传统曲，Ahmad Jamal 编曲）</span></td><td class='ses'>1958-02-04</td><td class='dur'>7:14</td></tr><tr><td class='pos'>B3</td><td class='tt'>Straight, No Chaser</td><td><span class="cn">直走，别拐弯（Monk 作曲）</span></td><td class='ses'>1958-02-04</td><td class='dur'>10:41</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>The first quintet, but with a plus-one! Recorded at Columbia Studios in New York on 4 February and 4 March 1958 and released on 2 September of the same year, Milestones brough a sixth element on board.</p></div><div class="zh-col"><p>还是那支第一五重奏，只是多加了一个人！这张《Milestones》录于 1958 年 2 月 4 日与 3 月 4 日的纽约 Columbia 录音室，同年 9 月 2 日发行——船上多了一位第六人。</p></div></div><div class="pair"><div class="en-col"><p>In fact, it would prove to be a key element, as Miles would explain later, in his autobiography. "The idea I had was to add the blues voice of Cannonball Adderley into this mixture and then to stretch everything out. I felt that Cannonball's blues-rooted alto sax up against Trane's harmonic, chordal way of playing, his more free-form approach, would create a new kind of feeling, a new kind of sound, because Coltrane's voice was already going in a new direction."</p></div><div class="zh-col"><p>事实证明，这一位后来成了关键人物——Miles 自己在回忆录里解释过：「我的想法是把 Cannonball Adderley 的布鲁斯嗓音加进这锅汤里，然后把所有东西都拉开。我感觉 Cannonball 那支从布鲁斯里长出来的中音萨克斯，对上 Trane 那种和声的、和弦式的演奏方式、他更自由的形式化走向，会创造出一种新的感受、一种新的声音，因为 Coltrane 的声音本来就在往新的方向走。」</p></div></div><div class="pair"><div class="en-col"><p>This contrast between the two saxophonists' different styles was the spark which brought about Milestones.</p></div><div class="zh-col"><p>两位萨克斯手风格上的这种反差，就是催生《Milestones》的那点火花。</p></div></div><div class="pair"><div class="en-col"><p>With Coltrane, Red Garland, Paul Chambers, Philly Joe Jones and this additional guest, the trumpeter birthed yet another new masterpiece.</p></div><div class="zh-col"><p>加上 Coltrane、Red Garland、Paul Chambers、Philly Joe Jones，再加这位额外来客，小号手又一次催生了一部全新的杰作。</p></div></div><div class="pair"><div class="en-col"><p>No more evident is this than on the title track - an airy theme that has gone down in history and on which each artist strikes precisely the right tone.</p></div><div class="zh-col"><p>最能说明这一点的就是同名曲——一段空灵的、已经写进历史的主题曲，而每个人在这上面都恰好敲准了自己该有的音色。</p></div></div><div class="pair"><div class="en-col"><p>For this composition, Miles freed himself from certain harmonic constraints imposed by the piano. The alternation between two harmonic colours replaced the meandering progressions of bebop...</p></div><div class="zh-col"><p>在这首作品里，Miles 把自己从钢琴施加的某些和声束缚里解放了出来。两种和声色彩的交替，取代了 bebop 那些蜿蜒不定的和声进行……</p></div></div><div class="pair"><div class="en-col"><p>On the cover of Thelonious Monk's Straight, No Chaser, Miles launches into a long solo that is as relaxed as it is inspired; a sort of endless wandering whose contours prove as unexpected as the twisting lines of rising smoke.</p></div><div class="zh-col"><p>在 Thelonious Monk《Straight, No Chaser》的同名曲里，Miles 展开了一段既从容、又受灵感驱动的长独奏；一种漫无边际的游走，其轮廓之出人意料，就像升起烟雾时那些扭卷的线条。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane is impressive too. In his autobiography, Miles would insist that this was a special record. "I loved the way the band sounded on this record and I knew that we had something special. Trane and Cannon were really playing their asses off and by then were really used to each other. This was the first record where I really started to write in the modal form".</p></div><div class="zh-col"><p>Coltrane 同样令人印象深刻。在回忆录里，Miles 坚持说这是一张特殊的唱片：「我很喜欢乐队在这张唱片上的声音，我知道我们有了某种特别的东西。Trane 和 Cannon 真是拼了命地在演奏，而到那时他们也已经真正磨合到一块儿去了。这是我第一次真正开始用调式来写作的唱片。」</p></div></div><div class="pair"><div class="en-col"><p>Another feature of this masterpiece is the track Sid's Ahead, where Miles Davis finds himself at the piano as Red Garland had quit the session, furious at a remark made to him by the trumpeter.</p></div><div class="zh-col"><p>这张杰作的另一个特别之处是《Sid's Ahead》：Red Garland 因为小号手说的一句话而气恼地退出了那场录音，于是 Miles Davis 只好自己坐到钢琴前面。</p></div></div><div class="pair"><div class="en-col"><p>© Marc Zisman/Qobuz</p></div><div class="zh-col"><p>© Marc Zisman / Qobuz</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">原版的曲名跟大多数人以为的完全不是一回事</p><p class="nb">Columbia <strong>CL 1193</strong> 的六首是：A1「Dr. Jackle」（Jackie McLean 作曲，唱片上也有写作「Dr. Jekyll」）、A2「Sid's Ahead」（Miles）、A3「Two Bass Hit」（John Lewis 与 Dizzy Gillespie 合作曲）、B1「Milestones」（Miles，原版唱片标签上印作 <strong>「Miles」</strong>）、B2「Billy Boy」（传统曲，Ahmad Jamal 编曲）、B3「Straight, No Chaser」（Monk 作曲）。也就是说这张片跟《Kind of Blue》毫无曲目关系，也没有任何一首来自 1955–56 的「第一五重奏」专辑——它是 Columbia 在 1958 年为 Miles 铺的新曲目单。</p></div></li><li><span class="n">2</span><div><p class="nt">两天两场：Garland 只在 3 月 4 日那场的后半段退场</p><p class="nb"><strong>2 月 4 日</strong>录的是 Two Bass Hit、Billy Boy、Straight, No Chaser、Milestones，Garland 全程在琴上；<strong>3 月 4 日</strong>录 Dr. Jackle（Garland 仍在弹琴）与 Sid's Ahead。Garland 正是在录 Sid's Ahead 时发火走人，Miles 只好顶上钢琴。原始矩阵号可佐证：CO60203-2 =「Dr. Jackle」（Garland 弹琴）、CO60204-1 =「Sid's Ahead」（Miles 弹琴）。所以「Garland 退场」不是整场缺席，只影响最后这一首。</p></div></li><li><span class="n">3</span><div><p class="nt">「On the cover of Thelonious Monk's Straight, No Chaser」这句串了</p><p class="nb">Miles 那段又长又松弛的小号独奏，在<strong>《Milestones》自己的 B3</strong>——Monk 作曲的《Straight, No Chaser》，1958-02-04 录，10:42。而 Monk 名叫《Straight, No Chaser》的 Columbia 专辑是 <strong>1967 年</strong>那一张（CL 2651 / CS 9451，Teo Macero 制作，Charlie Rouse、Larry Gales、Ben Riley），Miles 根本不在场；1958 年 Columbia 也从没发过 Monk 的同名专辑。想听 Miles 演奏 Monk 这首曲子的名版，就是 Milestones 的 B3，或者 1958-07-03 纽波特音乐节现场。</p></div></li><li><span class="n">4</span><div><p class="nt">「The first quintet, but with a plus-one」——「plus-one」精确，「first」是回顾语</p><p class="nb">这不是 Miles 的第一支五重奏，而是 <strong>1955–56 那支</strong>（Coltrane、Red Garland、Paul Chambers、Philly Joe Jones）加上 Cannonball Adderley 组成的六重奏。乐评的「plus-one」说法精确，但有两点值得补：<strong>这是节奏组最后一次和 Miles 一起录音</strong>（1958 年 5 月 26 日起换 Bill Evans、Jimmy Cobb，1959 年就是《Kind of Blue》）；也是 <strong>Adderley + Coltrane 这个六重奏唯一一张录音室专辑</strong>——同年的 7 月纽波特现场之后，两人再未以这个组合留下录音室作品。</p></div></li><li><span class="n">5</span><div><p class="nt">Cannonball 的「布鲁斯嗓音」不是修辞，是出身</p><p class="nb">Julian Adderley 来自佛罗里达州杰克逊维尔，青少年时在当地的 juke-juke 场地长大，听的是 blues 与 R&amp;B，不是学院派的 bebop——这正是 Miles 要的「blues voice」。乐评引用的两段话出自 Miles 的回忆录《Miles: The Autobiography》（与 Quincy Troupe 合著，1989），第二段常被单独引用的完整版是：「In this group, everybody had played together for over two years, except for Cannonball. But one voice can change the entire way a band hears itself.」</p></div></li><li><span class="n">6</span><div><p class="nt">同名曲：调式的第一次实战，比《Kind of Blue》早一年</p><p class="nb">「Milestones」（原名「Miles」）是 D 多利亚色彩、<strong>5/4 拍</strong>的主题，句法上只在两种和声色彩之间来回交替——正如乐评所说，「从钢琴施加的和声束缚里解放出来」。Miles 回忆录里那句「This was the first record where I really started to write in the modal form」指的就是它；一年后《Kind of Blue》（1959-03-02 录）把这套彻底展开成完整的调式语言。</p></div></li><li><span class="n">7</span><div><p class="nt">版本谱系：伪立体声才是这一张的陷阱</p><p class="nb">1958 年首版 <strong>CL 1193 是单声道</strong>；1967 年的 CS 9428 与 Columbia Jazz Masterworks 的 CJ 40837 / CK 40837 都是<strong>电子伪立体声</strong>（左右摆动大、乐器挤在一起），这是这张碟长期被嫌「录得不好」的根因。<strong>2001 年 Legacy CK 85203 由 Mark Wilder 用 24-bit 重混重刻为真立体声</strong>，并加收录 3 首 alternate take（Two Bass Hit、Milestones、Straight, No Chaser 各一）；另有 2009 Legacy 重发、2013 年 <strong>Mobile Fidelity MFSL 1-374</strong>（1/4″ 15 IPS 单声道母带经 DSD-64 转模拟台车床，限量）、2014 年 Music On Vinyl MOVLP983。要看「原味」就听单声道版或 MFSL，要听「空间」就听 2001 年 Legacy 之后的真立体声重刻。</p></div></li><li><span class="n">8</span><div><p class="nt">更多补录在 6CD 盒装里</p><p class="nb">《Miles Davis &amp; John Coltrane: The Complete Columbia Recordings 1955–1961》（Legacy 6CD，含 1958-05-26 Bill Evans + Jimmy Cobb 场次的《On Green Dolphin Street》《Fran-Dance》，以及 1958-07-03 纽波特现场）才是完整语境；单看《Milestones》会错过 Miles 1958 年最关键的那条线索线。</p></div></li><li><span class="n">9</span><div><p class="nt">制作与文案</p><p class="nb">制作 <strong>George Avakian</strong>，录音工程 <strong>Harold Chapman</strong>，原始唱片文案 <strong>Charles Edward Smith</strong>，封面 <strong>David Stone Martin</strong>，录音地点为 Columbia 30th Street Studio（207 East 30th Street，纽约），即后来成为 CBS 的那间「30th Street」老棚。乐评说的「released on 2 September of the same year」与原始发行日期一致。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2562403-Miles-Davis-Milestones">Milestones, Columbia CL 1193 (1958) — 矩阵号、两天录音场次、逐曲署名</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/10772385">Milestones, Columbia CL 1193 另一压片 (1958) — 曲目与作曲署名差异</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3804866">Milestones, Legacy CK 85203 (2001) — Mark Wilder 24-bit 重混、3 首 alternate take</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/4716235">Milestones, Mobile Fidelity MFSL 1-374 (2013) — 15 IPS 单声道母带链路</a></span></li><li><span class="k">MusicBrainz</span><span><a href="https://musicbrainz.org/release/cd1ee56a-24d7-4009-ad62-703c5372ccba">The Complete Columbia Recordings of Miles Davis with John Coltrane 1955–1961 — 完整曲目与逐曲人员/日期</a></span></li><li><span class="k">MusicBrainz</span><span><a href="https://www.musicbrainz.org/work/f989d10e-d5fb-307f-9275-8019a5081afe">Work: Straight, No Chaser — 全部录音版本列表（1958-02-04 等）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Milestones_(Miles_Davis_album)">Milestones (Miles Davis album) — 曲目、作曲、发行日期、伪立体声重制说明</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Straight,_No_Chaser_(album)">Thelonious Monk 作品年表 — 1967 年 Columbia《Straight, No Chaser》制作与阵容</a></span></li><li><span class="k">内页</span><span><a href="https://www.jazzmessengers.com/fr/69320/miles-davis/milestones-180-gram">Jazz Images / WaxTime 复刻内页 — Miles 自述引文、编曲分工、每曲人员说明</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
