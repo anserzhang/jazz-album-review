@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giant Steps — 巨人步 · 约翰·科特兰</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="tb-mark">Album Review · 译稿</span>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Giant Steps</h1>
+    <p class="title-cn">巨人步 · 约翰·科特兰</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：Qobuz 专辑页编辑文字（© Lindsay Planer / TiVo）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Atlantic 1311 / SD 1311</li><li>三场录音：1959-03-26、05-04/05、12-02</li><li>1960 年初发行</li><li>Atlantic Studios × Ertegun</li><li>七首全部为 Coltrane 原创</li><li>Qobuz 编辑文字</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">History will undoubtedly enshrine this disc…</span><span class="toc-cn">一座分量永远难被体认的分水岭</span></li><li><span class="toc-en">Giant Steps bore the double-edged sword…</span><span class="toc-cn">双刃剑：推进音乐，也推向主流</span></li><li><span class="toc-en">Although this was John Coltrane's debut for Atlantic…</span><span class="toc-cn">Atlantic 出道作，与 Miles 并行</span></li><li><span class="toc-en">Within the space of less than three weeks…</span><span class="toc-cn">《Kind of Blue》之后</span></li><li><span class="toc-en">Coltrane (tenor sax) is flanked by…</span><span class="toc-cn">两支三重奏夹着他</span></li><li><span class="toc-en">Recording commenced in early May of 1959…</span><span class="toc-cn">五月开场，Chambers 全勤</span></li><li><span class="toc-en">When recording resumed in December…</span><span class="toc-cn">十二月换成 Kelly/Cobb</span></li><li><span class="toc-en">At the heart of these recordings…</span><span class="toc-cn">激光般的独奏聚焦</span></li><li><span class="toc-en">All seven pieces issued on the original…</span><span class="toc-cn">七首原创与「声之幔」</span></li><li><span class="toc-en">Coltrane's polytonal torrents…</span><span class="toc-cn">多调性洪流冲掉轻音乐</span></li><li><span class="toc-en">He wastes no time as the disc's title track…</span><span class="toc-cn">同名曲一开始就不回头</span></li><li><span class="toc-en">Line upon line of highly cerebral improvisation…</span><span class="toc-cn">旋律与独奏熔成一体</span></li><li><span class="toc-en">The resolute intensity of "Countdown"…</span><span class="toc-cn">141 秒</span></li><li><span class="toc-en">Tellingly, the contrasting… "Naima"…</span><span class="toc-cn">《Naima》：最后录的一首</span></li><li><span class="toc-en">What is lost in tempo…</span><span class="toc-cn">速度换来的旋律之美</span></li><li><span class="toc-en">Both Giant Steps [Deluxe Edition]…</span><span class="toc-cn">两个更完整的版本</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd>巨人步（约翰·科特兰）<br><span class="en">Giant Steps</span></dd><dt>年份 / Year</dt><dd>1960 年初发行（素材录于 1959 年 3 月、5 月与 12 月）</dd><dt>厂牌 / Label</dt><dd>Atlantic 1311（单声道）/ SD 1311（立体声），制作 Nesuhi Ertegun</dd><dt>录音地点</dt><dd>纽约 · Atlantic Studios（1841 Broadway）</dd><dt>录音工程</dt><dd>Phil Iehle · Tom Dowd</dd><dt>录音场次</dt><dd>1959-03-26（Cedar Walton、Lex Humphries：全部弃用）· 1959-05-04 与 05-05（Tommy Flanagan、Art Taylor）· 1959-12-02（Wynton Kelly、Jimmy Cobb，只录《Naima》）</dd><dt>编制</dt><dd>John Coltrane（次中音）· Paul Chambers（贝斯，三场全勤）· Tommy Flanagan / Wynton Kelly / Cedar Walton（钢琴）· Art Taylor / Jimmy Cobb / Lex Humphries（鼓）</dd><dt>曲目</dt><dd>7 首，全部为 Coltrane 原创（原版总长 37:03）</dd><dt>文案 / 封面</dt><dd>Nat Hentoff 文案 · Marvin Israel 封面设计 · Lee Friedlander 封面摄影</dd><dt>再版谱系</dt><dd>1960 原版 → 1987 首张 CD → 1994 Mobile Fidelity 金 CD → 1998 Rhino Deluxe（R2 75203，12 首 + 180g）→ 1995 七 CD《Heavyweight Champion》→ 2020 六十周年豪华版（2×LP 180g + 7″ 45 转）→ 2025 Rhino Reserve 180g（The Mastering Lab 重刻）</dd><dt>本篇来源</dt><dd>Qobuz 专辑页编辑文字（AllMusic 乐评），© Lindsay Planer / TiVo</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Giant Steps</td><td><span class="cn">巨人步（同名曲）</span></td><td class='ses'>1959-05-05</td><td class='dur'>4:43</td></tr><tr><td class='pos'>A2</td><td class='tt'>Cousin Mary</td><td><span class="cn">表姐玛丽（献 Mary Lyerly Alexander）</span></td><td class='ses'>1959-05-05</td><td class='dur'>5:45</td></tr><tr><td class='pos'>A3</td><td class='tt'>Countdown</td><td><span class="cn">倒数（源自 Miles 的 Tune Up）</span></td><td class='ses'>1959-05-04</td><td class='dur'>2:21</td></tr><tr><td class='pos'>A4</td><td class='tt'>Spiral</td><td><span class="cn">螺旋</span></td><td class='ses'>1959-05-04</td><td class='dur'>5:56</td></tr><tr><td class='pos'>B1</td><td class='tt'>Syeeda's Song Flute</td><td><span class="cn">希达的长笛（献养女 Syeeda）</span></td><td class='ses'>1959-05-05</td><td class='dur'>7:00</td></tr><tr><td class='pos'>B2</td><td class='tt'>Naima</td><td><span class="cn">奈玛（献妻子 Naima Grubbs）</span></td><td class='ses'>1959-12-02</td><td class='dur'>4:21</td></tr><tr><td class='pos'>B3</td><td class='tt'>Mr. P.C.</td><td><span class="cn">P.C. 先生（献 Paul Chambers）</span></td><td class='ses'>1959-05-05</td><td class='dur'>6:57</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>History will undoubtedly enshrine this disc as a watershed the likes of which may never truly be appreciated.</p></div><div class="zh-col"><p>历史必将把这张碟奉为一座分水岭——而它的分量，恐怕永远也难被真正体会。</p></div></div><div class="pair"><div class="en-col"><p>Giant Steps bore the double-edged sword of furthering the cause of the music as well as delivering it to an increasingly mainstream audience.</p></div><div class="zh-col"><p>《Giant Steps》是一把双刃剑：它既推进了音乐本身，也把这音乐送到了一个越来越主流的听众面前。</p></div></div><div class="pair"><div class="en-col"><p>Although this was John Coltrane's debut for Atlantic, he was concurrently performing and recording with Miles Davis.</p></div><div class="zh-col"><p>虽然这是约翰·科特兰在 Atlantic 的出道之作，但当时他正同时与 Miles Davis 一起演出和录音。</p></div></div><div class="pair"><div class="en-col"><p>Within the space of less than three weeks, Coltrane would complete his work with Davis and company on another genre-defining disc, Kind of Blue, before commencing his efforts on this one.</p></div><div class="zh-col"><p>在不到三周的时间里，Coltrane 会先与 Davis 一伙完成另一张划定类型疆界的唱片《Kind of Blue》，然后才动手做这一张。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane (tenor sax) is flanked by essentially two different trios.</p></div><div class="zh-col"><p>Coltrane（次中音）的左右，是基本上两支不同的三重奏。</p></div></div><div class="pair"><div class="en-col"><p>Recording commenced in early May of 1959 with a pair of sessions that featured Tommy Flanagan (piano) and Art Taylor (drums), as well as Paul Chambers -- who was the only bandmember other than Coltrane to have performed on every date.</p></div><div class="zh-col"><p>录音始于 1959 年 5 月初的成对场次，由 Tommy Flanagan（钢琴）、Art Taylor（鼓）以及 Paul Chambers 担纲——Chambers 是除 Coltrane 之外唯一在每一个录音日都出现过的人。</p></div></div><div class="pair"><div class="en-col"><p>When recording resumed in December of that year, Wynton Kelly (piano) and Jimmy Cobb (drums) were instated -- replicating the alternate non-Bill Evans lineup featured on "Freddie the Freeloader" on Kind of Blue, sans Miles Davis of course.</p></div><div class="zh-col"><p>同年 12 月录音重启，Wynton Kelly（钢琴）与 Jimmy Cobb（鼓）上场——复刻的正是《Kind of Blue》里那套不用 Bill Evans 的替代阵容，也就是录《Freddie the Freeloader》的那一组，只不过当然没有 Miles Davis。</p></div></div><div class="pair"><div class="en-col"><p>At the heart of these recordings, however, is the laser-beam focus of Coltrane's tenor solos.</p></div><div class="zh-col"><p>然而这些录音的核心，是 Coltrane 次中音独奏那种激光般的聚焦。</p></div></div><div class="pair"><div class="en-col"><p>All seven pieces issued on the original Giant Steps are likewise Coltrane compositions. He was, in essence, beginning to rewrite the jazz canon with material that would be centered on solos -- the 180-degree antithesis of the art form up to that point. These arrangements would create a place for the solo to become infinitely more compelling. This would culminate in a frenetic performance style that noted jazz journalist Ira Gitler accurately dubbed "sheets of sound."</p></div><div class="zh-col"><p>原版《Giant Steps》所收的七首也全是 Coltrane 的作曲。从本质上说，他正开始用以独奏为中心的素材改写爵士正典——这与此前这门艺术的一切正好相差一百八十度。这些编排为独奏创造了一个可以无限迷人的位置，并最终催生出那种狂飙式的演奏风格——爵士评论家 Ira Gitler 精准地称之为「声之幔」（sheets of sound）。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane's polytonal torrents extricate the amicable and otherwise cordial solos that had begun decaying the very exigency of the genre -- turning it into the equivalent of easy listening.</p></div><div class="zh-col"><p>Coltrane 那些多调性的洪流，把原本友善、平和的独奏冲刷了出来——而正是这类独奏已在腐蚀这门艺术最核心的张力，把爵士变成了某种「轻音乐」。</p></div></div><div class="pair"><div class="en-col"><p>He wastes no time as the disc's title track immediately indicates a progression from which there would be no looking back.</p></div><div class="zh-col"><p>他一点时间都不浪费：同名曲一开场就宣告了一段不再回头的进程。</p></div></div><div class="pair"><div class="en-col"><p>Line upon line of highly cerebral improvisation snake between the melody and solos, practically fusing the two.</p></div><div class="zh-col"><p>一行又一行高度智性的即兴在旋律与独奏之间蜿蜒，几乎把两者熔成一体。</p></div></div><div class="pair"><div class="en-col"><p>The resolute intensity of "Countdown" does more to modernize jazz in 141 seconds than many artists do in their entire careers.</p></div><div class="zh-col"><p>《Countdown》那种坚决的强度，在 141 秒里为爵士的现代化做的事，比许多艺术家一辈子做的还多。</p></div></div><div class="pair"><div class="en-col"><p>Tellingly, the contrasting and ultimately pastoral "Naima" was the last tune to be recorded, and is the only track on the original long-player to feature the Kelly-version of the Kind of Blue quartet.</p></div><div class="zh-col"><p>耐人寻味的是，与之形成对照、最终回归牧野气息的《Naima》是最后录的一首，也是原版大碟里唯一用《Kind of Blue》那套 Kelly 版阵容的一曲。</p></div></div><div class="pair"><div class="en-col"><p>What is lost in tempo is more than recouped in intrinsic melodic beauty.</p></div><div class="zh-col"><p>在速度上失去的，内在的旋律之美足以加倍补偿。</p></div></div><div class="pair"><div class="en-col"><p>Both Giant Steps [Deluxe Edition] and the seven-disc Heavyweight Champion: The Complete Atlantic Recordings offer more comprehensive presentations of these sessions.</p></div><div class="zh-col"><p>《Giant Steps [Deluxe Edition]》与七张碟的《Heavyweight Champion: The Complete Atlantic Recordings》，都提供了这些录音更完整的呈现。</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer / TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">「不到三周」这句话经得起查，而且有两种都对上的读法</p><p class="nb">《Kind of Blue》录于 <strong>1959-03-02 与 04-22</strong>；Coltrane 最早的 Atlantic 录音是 <strong>03-26</strong>（距 03-02 那场 24 天），正式进棚是 <strong>05-04 与 05-05</strong>（距《Kind of Blue》收官仅 12 天）。两种读法都落在「不到三周」之内，乐评这句是准确的。</p></div></li><li><span class="n">2</span><div><p class="nt">真正最早的 Atlantic 录音被整场弃用</p><p class="nb">1959-03-26 那场是 <strong>Cedar Walton（钢琴）+ Lex Humphries（鼓）+ Paul Chambers</strong>，Coltrane 对结果不满意，<strong>一个 take 都没用</strong>；但那场里已经有《Giant Steps》与《Naima》的最初版本（比正式版慢），直到 1974/75 年才通过《Alternate Takes》和 1995 年的《Heavyweight Champion》面世。所以「Chambers 出现在每一个录音日」这句成立——他三场全勤。</p></div></li><li><span class="n">3</span><div><p class="nt">棚不是 RVG 的：整张片录于 Atlantic Studios</p><p class="nb"><strong>纽约 Atlantic Studios（1841 Broadway，唱片店楼上）</strong>，工程 <strong>Phil Iehle 与 Tom Dowd</strong>。那间棚小、干、近，混音偏硬偏紧，与 Rudy van Gelder 客厅式的贴脸近场是两种质感——这正是这张片比同年《Kind of Blue》（Columbia 30th Street，Fred Plaut）更「硬」的原因。</p></div></li><li><span class="n">4</span><div><p class="nt">七个曲名里有四个是献给人的</p><p class="nb"><strong>《Naima》</strong> 献给当时的妻子 Naima Grubbs；<strong>《Syeeda's Song Flute》</strong> 献给收养的女儿 Syeeda（她当时正在学长笛，所以才有「Song Flute」）；<strong>《Mr. P.C.》</strong> 是贝斯手 Paul Chambers 的名字缩写；<strong>《Cousin Mary》</strong> 献给表姐 Mary Lyerly Alexander——Coltrane 幼年在北卡罗来纳与费城与她同住近二十年。乐评一句没提，但这张片因此不是「炫技合辑」，而是一封写给身边人的长信。</p></div></li><li><span class="n">5</span><div><p class="nt">《Countdown》与 Miles 的那条暗线</p><p class="nb">《Countdown》是 Miles Davis 的 <strong>《Tune Up》</strong> 的重新和声版本（contrafact），用倒置的「Coltrane changes」写成，速度快过 170 BPM。乐评只夸它「141 秒改造了爵士」，没提它的出身——而这恰恰是它和《Kind of Blue》那段日子里 Miles 的直接对话残留。</p></div></li><li><span class="n">6</span><div><p class="nt">同名曲的和声机制，以及 Flanagan 的挣扎</p><p class="nb">16 小节主题里塞了 <strong>26 个和弦</strong>，三个调中心相隔大三度依次下行（<strong>B 大调 → G 大调 → E♭ 大调</strong>），这就是「Coltrane changes」；其模式来源被普遍指向 Nicolas Slonimsky《Thesaurus of Scales and Melodic Patterns》(1947) 的第 286 号 pattern（Quincy Jones、Lewis Porter 都持此说）。第一组钢琴 <strong>Tommy Flanagan 拿到谱子时以为那是首慢歌，录音时才发现 Coltrane 数到了极快的速度</strong>——他在独奏中途放弃，只撑和弦（后来他在 1982 年的《In Memory of John Coltrane: Giant Steps》里把这首彻底拿下了）。</p></div></li><li><span class="n">7</span><div><p class="nt">「sheets of sound」的出处</p><p class="nb">出自 <strong>Ira Gitler</strong>：1958 年 Prestige《Soultrane》的内页，以及 1958-10-16《Down Beat》那篇著名评论（当时带点贬义，指控 1961 年后的 Coltrane 是「反爵士」）。后来它才变成对 Coltrane 的最高褒奖。</p></div></li><li><span class="n">8</span><div><p class="nt">《Naima》：最后录的一首，也是被否掉两次的一首</p><p class="nb">它在 Flanagan 场和 Walton 场都录过版本，Coltrane 都不满意，才有 <strong>1959-12-02</strong> 的这一版（Wynton Kelly、Jimmy Cobb、Chambers）。乐评说它「最后录、且是唯一用 Kelly/Cobb 阵容的曲子」——两点都对。《Naima》以踏板低音写成，是全片最接近「tone poem」而非「ballad」的一首。</p></div></li><li><span class="n">9</span><div><p class="nt">乐评说的「两个更完整的版本」具体是什么</p><p class="nb"><strong>1998 Rhino Deluxe（R2 75203，12 首 + 180g vinyl）</strong>——8 首附赠曲中 5 首出自 1975 年《Alternate Takes》、3 首出自 1995 年《Heavyweight Champion》；<strong>2020 六十周年豪华版</strong>（2×LP 180g + 一张 7 英寸 45 转，收了大量未完成 take）；<strong>1995 年七张碟《The Heavyweight Champion: The Complete Atlantic Recordings》</strong>（Rhino R2 71984，涵盖 Atlantic 时期全部录音）。此外还有 1994 Mobile Fidelity 金 CD、1987 首张 CD，以及 <strong>2025 年 Rhino Reserve 180g（The Mastering Lab 重刻）</strong>。</p></div></li><li><span class="n">10</span><div><p class="nt">认证与当年评论</p><p class="nb"><strong>2001 年入选 Grammy 名曲堂</strong>；<strong>2004 年入美国国会图书馆国家录音登记</strong>（当年五十张之一）；<strong>2003 年 Rolling Stone「500 大专辑」第 102 位</strong>（2012 版 103，2020 版降到 232）；2018 年获 RIAA 金唱片（50 万张）。当年《Down Beat》1960-03-31 期，Ralph J. Gleason 写下：「You can tag this LP as one of the important ones.」——比乐评还早半年。</p></div></li><li><span class="n">11</span><div><p class="nt">曲目日期两套口径略有出入</p><p class="nb">本稿曲目表按维基／restivo 口径（Countdown、Spiral 记 05-04；Giant Steps、Cousin Mary、Syeeda's Song Flute、Mr. P.C. 记 05-05）；而 jazzdisco／Discogs 的分法把《Cousin Mary》记在 05-04、《Countdown》记在 05-05。两套都是同一对「5 月 4、5 日」的场次内划分，对听感与版本考证没有实质影响。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Giant_Steps">Giant Steps (John Coltrane album) — 曲目/日期/人员/再版史/奖项</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Giant_Steps_(composition)">Giant Steps (composition) — 26 个和弦、Slonimsky 溯源、Cedar Walton 那场、Coltrane changes</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/4021688">Giant Steps, Atlantic 1311 (1961 复刻) — jazzdisco 录音日期口径</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/15989776">Giant Steps 60th Anniversary Deluxe Edition (2020) — 2×LP 180g + 7″ 45 转附赠曲目</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2249591">The Heavyweight Champion: The Complete Atlantic Recordings (1995) — 七张碟全套曲目</a></span></li><li><span class="k">Jazzwise</span><span><a href="https://www.jazzwise.com/content/features/how-john-coltrane-made-giant-steps">How John Coltrane made Giant Steps — 三场录音的来龙去脉、Slonimsky、Flanagan 视点</a></span></li><li><span class="k">Mosaic</span><span><a href="https://www.mosaicrecords.com/john-coltrane-giant-steps/">John Coltrane: Giant Steps — 逐曲注解（Flanagan 的「以为是慢歌」、献曲对象、Chambers 独奏）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
