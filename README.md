@@ -8,11 +8,12 @@
 index.html                              专题首页：特别专题 + 艺人索引 + 体例说明
 ├── coltrane.html                       艺人页 · John Coltrane
 │   ├── coltrane-centennial-bilingual.html   特别专题：百年纪念注解集（排在年表之前）
-│   ├── coltrane-giant-steps-full.html       1960
+│   ├── coltrane-love-supreme-full.html      1965
+│   ├── coltrane-sound-full.html             1964
+│   ├── coltrane-crescent-full.html          1964
 │   ├── coltrane-ballads-full.html           1963
 │   ├── coltrane-hartman-full.html           1963
-│   ├── coltrane-sound-full.html             1964
-│   └── coltrane-crescent-full.html          1964
+│   └── coltrane-giant-steps-full.html       1960
 ├── miles-davis.html                    艺人页 · Miles Davis
 │   └── miles-milestones-full.html          1958
 └── monk.html                           艺人页 · Thelonious Monk
