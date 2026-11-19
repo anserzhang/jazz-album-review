@@ -23,6 +23,19 @@ assets/site.js                          主题切换脚本
 
 直接双击 `index.html` 即可浏览，无需服务器。
 
+## 发布
+
+线上地址：**https://anserzhang.github.io/jazz-album-review/**
+
+GitHub Pages 设置为「Deploy from a branch」= `main` / `/ (root)`，**每次 push 自动重新构建**，无需手动操作。改完内容后：
+
+```bash
+git add -A && git commit -m "..." && git push origin main
+```
+
+约 30–60 秒后线上自动更新。公网路径与仓库内结构一一对应，例如
+`https://anserzhang.github.io/jazz-album-review/coltrane.html`。
+
 ## 约定
 
 - **排序**：专辑页按**发行**年份从新到旧，同年按发行日先后。录音日期另列，方便对照。
