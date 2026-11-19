@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ballads — 情歌集 · 约翰·科特兰四重奏</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="tb-mark">Album Review · 译稿</span>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Ballads</h1>
+    <p class="title-cn">情歌集 · 约翰·科特兰四重奏</p>
+    <p class="byline">– Sam Samuelson</p>
+    <p class="source">原文：Qobuz 专辑页编辑文字（AllMusic 乐评）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Impulse! A-32 / AS-32</li><li>录于 1961-12-21、1962-09-18、1962-11-13</li><li>Rudy van Gelder Studio, Englewood Cliffs</li><li>Tyner + Garrison + Elvin Jones</li><li>八首标准曲，零原创</li><li>Qobuz 编辑文字</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Throughout John Coltrane's discography…</span><span class="toc-cn">把听众撕成几派的专辑</span></li><li><span class="toc-en">Generally, these occur in his later-period works…</span><span class="toc-cn">《Om》《Ascension》：上头的吹奏</span></li><li><span class="toc-en">As a contrast, Ballads is often criticized…</span><span class="toc-cn">对照：《Ballads》太简单、是妥协</span></li><li><span class="toc-en">Seen as an answer to critics…</span><span class="toc-cn">被指为「并非他想做的唱片」</span></li><li><span class="toc-en">These conspiracy theories…</span><span class="toc-cn">阴谋论挡住的只是听歌</span></li><li><span class="toc-en">With Ballads he looks into the warmer side…</span><span class="toc-cn">温暖的那一面</span></li><li><span class="toc-en">Here he lays out for McCoy Tyner mostly…</span><span class="toc-cn">为 McCoy Tyner 铺路</span></li><li><span class="toc-en">He's not aggressive, and he's not outwardly…</span><span class="toc-cn">不激进、不外放（原句残缺）</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd>情歌集（Ballads）· John Coltrane Quartet<br><span class="en">Ballads</span></dd><dt>年份 / Year</dt><dd>1963 年 7 月发行；素材分三场录于 1961-12-21、1962-09-18、1962-11-13</dd><dt>厂牌 / Label</dt><dd>Impulse! A-32（单声道）/ AS-32（立体声）；制作 Bob Thiele，工程 Rudy van Gelder</dd><dt>录音地点</dt><dd>新泽西州 Englewood Cliffs · Rudy van Gelder Studio</dd><dt>编制</dt><dd>John Coltrane（次中音）· McCoy Tyner（钢琴）· Jimmy Garrison（贝斯）· Reggie Workman（贝斯，仅《It's Easy to Remember》）· Elvin Jones（鼓）</dd><dt>曲目</dt><dd>8 首，全部为标准曲、无一首原创；另有《Say It》1962 年单曲版收录其中</dd><dt>文案</dt><dd>Gene Lees（内页记下乐队照着琴行买来的通用谱现场半排练、几乎一条过，以及 Duke 那句「别让他重录」）</dd><dt>再版谱系</dt><dd>1963 原版 → 1994 GRP《Best Ballads》（另一张精选，勿混）→ 1995 GRP GR-156 180g+ → 2001/02 欧洲 CD（含 Naima 等附赠曲）→ 2012 前后 ORG 45 转双张（Bernie Grundman 刻纹）→ 2020 Acoustic Sounds 180g（Ryan K. Smith / Sterling Sound，QRP 压片）→ 2022 Analogue Productions Ultra Tape 2×15ips 开卷带 → 2024 UHQR 45 转</dd><dt>荣誉</dt><dd>2008 年入选 Grammy 名曲堂（注意与 1994 年另一张《Best Ballads》精选辑区分）</dd><dt>本篇来源</dt><dd>Qobuz 专辑页编辑文字（AllMusic 乐评），© Sam Samuelson / TiVo</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Say It (Over and Over Again)</td><td><span class="cn">说吧（一遍又一遍）· Frank Loesser</span></td><td class='ses'>1962-11-13</td><td class='dur'>4:17</td></tr><tr><td class='pos'>A2</td><td class='tt'>You Don't Know What Love Is</td><td><span class="cn">你不懂什么是爱 · Monk / Don Raye</span></td><td class='ses'>1962-11-13</td><td class='dur'>5:12</td></tr><tr><td class='pos'>A3</td><td class='tt'>Too Young to Go Steady</td><td><span class="cn">年纪太轻，还没定性 · McHugh / Adamson</span></td><td class='ses'>1962-11-13</td><td class='dur'>4:21</td></tr><tr><td class='pos'>A4</td><td class='tt'>All or Nothing at All</td><td><span class="cn">要么全给，要么不给 · Altman / Lawrence</span></td><td class='ses'>1962-11-13</td><td class='dur'>3:34</td></tr><tr><td class='pos'>B1</td><td class='tt'>I Wish I Knew</td><td><span class="cn">我但愿知道 · Jimmy Van Heusen</span></td><td class='ses'>1962-11-13</td><td class='dur'>4:55</td></tr><tr><td class='pos'>B2</td><td class='tt'>What's New?</td><td><span class="cn">有什么新鲜事 · Gordon / Warren</span></td><td class='ses'>1962-09-18</td><td class='dur'>3:44</td></tr><tr><td class='pos'>B3</td><td class='tt'>It's Easy to Remember</td><td><span class="cn">记忆总是容易 · Johnny Burke</span></td><td class='ses'>1961-12-21</td><td class='dur'>2:47</td></tr><tr><td class='pos'>B4</td><td class='tt'>Nancy (With the Laughing Face)</td><td><span class="cn">南希（带着笑靥）· Rodgers / Hart</span></td><td class='ses'>1962-09-18</td><td class='dur'>3:11</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Throughout John Coltrane's discography there are a handful of decisive and controversial albums that split his listening camp into factions.</p></div><div class="zh-col"><p>在约翰·科特兰的整个录音生涯里，有那么几张决定性又充满争议的专辑，把他的听众阵营撕成了几派。</p></div></div><div class="pair"><div class="en-col"><p>Generally, these occur in his later-period works such as Om and Ascension, which push into some pretty heady blowing.</p></div><div class="zh-col"><p>通常，这些都出现在他后期的作品里——比如《Om》和《Ascension》——它们把吹奏推进到了相当“上头”的领域。</p></div></div><div class="pair"><div class="en-col"><p>As a contrast, Ballads is often criticized as too easy and as too much of a compromise between Coltrane and Impulse! (the two had just entered into the first year of label representation).</p></div><div class="zh-col"><p>作为一个对照，《Ballads》常被批评为“太简单”，也太像是 Coltrane 与 Impulse! 之间的一场妥协（那时这两方刚刚进入厂牌代理的第一年）。</p></div></div><div class="pair"><div class="en-col"><p>Seen as an answer to critics who found his work complicated with too many notes and too thin a concept, Ballads has even been accused of being a record that Coltrane didn't want to make.</p></div><div class="zh-col"><p>它被看作是对那些“嫌他音符太多、概念太单薄”的评论家的一次回应；甚至还有人指控，这是一张 Coltrane 并不想做的唱片。</p></div></div><div class="pair"><div class="en-col"><p>These conspiracy theories (and there are more) really just get in the way of enjoying a perfectly fine album of Coltrane doing what he always did -- exploring new avenues and modes in an inexhaustible search for personal and artistic enlightenment.</p></div><div class="zh-col"><p>这些阴谋论（而且还不止这一种），其实只是在妨碍我们享受一张完全合格的唱片——Coltrane 做着他一直在做的事：在对个人与艺术境界的无尽追寻中，不断开辟新的路径与新的调式。</p></div></div><div class="pair"><div class="en-col"><p>With Ballads he looks into the warmer side of things, a path he would take with both Johnny Hartman (on John Coltrane &amp; Johnny Hartman) and with Duke Ellington (on Duke Ellington and John Coltrane).</p></div><div class="zh-col"><p>借《Ballads》，他探向了事物温暖的那一面——后来他既与 Johnny Hartman（《John Coltrane &amp; Johnny Hartman》）、也与 Duke Ellington（《Duke Ellington and John Coltrane》）走了同一条路。</p></div></div><div class="pair"><div class="en-col"><p>Here he lays out for McCoy Tyner mostly, and the results positively shimmer at times.</p></div><div class="zh-col"><p>在这里他基本上是为 McCoy Tyner 铺路、留出空间，而成果有时简直在发光。</p></div></div><div class="pair"><div class="en-col"><p>He's not aggressive, and he's not outwardly. Instead he's introspective and at times even predictable, but that is precisely Ballads' draw.</p></div><div class="zh-col"><p>他不具攻击性，也不……外放（原文如此，句子不完整）。相反，他向内审视，有时甚至可预测，但这恰恰正是《Ballads》的吸引力所在。</p></div></div><div class="pair"><div class="en-col"><p>© Sam Samuelson /TiVo</p></div><div class="zh-col"><p>© Sam Samuelson / TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">「阴谋论」不是空穴来风：Thiele 本人认过账</p><p class="nb">AllMusic 的科特兰传记（William Ruhlmann 撰）明确写道：1963 年连发的三张 Impulse! 碟——《<strong>Ballads</strong>》、<strong>《Duke Ellington and John Coltrane》</strong>、<strong>《John Coltrane &amp; Johnny Hartman》</strong>——「<strong>都是在制作人 Bob Thiele 的授意下录的，目的是让批评 Coltrane 那些更极端的演奏的人闭嘴</strong>」。所以乐评说它是「与厂牌之间的妥协」，是有实据的，不只是坊间传说。</p></div></li><li><span class="n">2</span><div><p class="nt">Coltrane 本人的版本：是他自己挑的歌</p><p class="nb">1963 年 Frank Kofsky 访谈里，Kofsky 直接问他「这些项目是谁的主意——你，还是 Bob Thiele？」Coltrane 答：「我告诉你吧。那时候我正处在一段危机里……我觉得 Impulse! 是想要一种平衡感，一个品类齐全的目录，我完全不反对。<strong>这些歌是我自己挑的。</strong>」他还补了一句更狠的：「<strong>到今天，我写的大多数歌——那些我认为是歌的东西——都是叙事曲。</strong>」</p></div></li><li><span class="n">3</span><div><p class="nt">他真正的动机：嘴型出了事故</p><p class="nb">同一段访谈里，Coltrane 讲了 1961–62 年他「把嘴型（哨片／嘴垫）送去修，回来时已经毁了」的经历：某些「更快的效果」再也做不出来，只能收着来，「我对乐器的信心下降了，我需要清空一下（faire le vide）」。这就是为什么《Ballads》会是一张<strong>照着谱子演奏</strong>的碟——不是妥协，是<strong>退回去</strong>。</p></div></li><li><span class="n">4</span><div><p class="nt">「对批评者的回应」这句在时间线上精确成立</p><p class="nb">《Down Beat》<strong>1961-11-21（11 月刊）John Tynan</strong> 那篇把 Coltrane 与 Eric Dolphy 打成「<strong>anti-jazz</strong>」的著名评论发表后，<strong>仅 28 天</strong>——<strong>1961-12-21</strong>——Coltrane 就进了 RVG 的棚，录下《It's Easy to Remember》（原为 1935 年为 Bing Crosby 而作，后成标准曲）。也就是说「退回抒情」这个动作，几乎是贴着那张判决书发生的。乐评说的「作为对那些嫌他音符太多、概念太单薄的评论家的回应」，历史依据很硬。</p></div></li><li><span class="n">5</span><div><p class="nt">编制上的暗线：只有一轨用的是旧贝斯手</p><p class="nb">《It's Easy to Remember》一曲的贝斯是 <strong>Reggie Workman</strong>，其余七曲是 <strong>Jimmy Garrison</strong>——因为 Workman 是 1962 年才被 Garrison 顶掉的。这条编制差异本身就印证了它录于 <strong>1961 年 12 月</strong>（Garrison 尚未入队）。而这一曲后来被放进 Impulse! 的《Greensleeves》单曲作 B 面。</p></div></li><li><span class="n">6</span><div><p class="nt">Gene Lees 的内页故事：他们几乎是照着谱子弹的</p><p class="nb">内页作者 Gene Lees 记下：乐队<strong>从没排练过这些曲子</strong>，录音前从琴店买来普通总谱，<strong>当场商量、写下要用的和声、半小时「半排练」就直接上机</strong>，除《All or Nothing at All》外<strong>全部一条过</strong>。这就解释了乐评说的「predictable」——那是<strong>照谱演奏</strong>的结果，而不是偷懒或技穷。Lees 还引了 Donald Byrd 的一句：「玩了这么多年，我得出的结论之一是，最难的事之一就是照谱子弹旋律，而且弹得好、有好音色、有感觉。」</p></div></li><li><span class="n">7</span><div><p class="nt">原版内页的作曲署名是乱的（收藏时会绊你一下）</p><p class="nb">原版 Impulse! 内页把 B 面几首的作者张冠李戴：《I Wish I Knew》印成 <strong>Warren / Gordon</strong>（这其实是《What's New》的作者），《What's New》印成 <strong>Haggart / Burke</strong>（Haggart 与 Burke 是《How About You?》），《Nancy》印成 <strong>Van Heusen / Silvers</strong>。正确作者见曲目表（Loesser；Monk &amp; Raye；McHugh &amp; Adamson；Altman &amp; Lawrence；Van Heusen；Gordon &amp; Warren；Burke；Rodgers &amp; Hart）。Acoustic Sounds 等再版已按正确署名重排。</p></div></li><li><span class="n">8</span><div><p class="nt">《Om》《Ascension》到底是什么时候的事</p><p class="nb"><strong>《Ascension》</strong>录于 <strong>1965-06-25 与 06-28</strong> 两场，<strong>1966 年 2 月先发行的是 6-28 版（Edition I）</strong>，几个月后才换成 6-25 的<strong>首录版（Edition II）——后者才是 Coltrane 本人偏好的版本</strong>。<strong>《Om》录于 1965 年 10 月，1967 年他去世后才由 Impulse! 发行</strong>。乐评把它们并列为「后期作品」没有错，但《Ascension》拿到手时，它已经是「他离开」之后的存在了。</p></div></li><li><span class="n">9</span><div><p class="nt">「厂牌代理的第一年」这句稍微松了一点</p><p class="nb">Coltrane 是在 <strong>1961 年春</strong>（《My Favorite Things》走红后）被 Impulse! 的 Creed Taylor 从 Atlantic 挖过去的，首张 Impulse! 作品是《Africa/Brass》（1961-09-01 发行）。所以最早的录音（1961-12-21）确实落在<strong>第一年之内</strong>，但两场主要录音（1962-09-18、11-13）已经是<strong>第二年</strong>了；专辑 1963 年 7 月发行时，这段关系已满两年。</p></div></li><li><span class="n">10</span><div><p class="nt">当年的评价与那篇辩护文章</p><p class="nb">《Down Beat》当年对这张碟相当严厉（后来的回顾称只给了两颗星）。正因如此，A. B. Spellman 后 来专门为它撰文辩护：「<strong>这是任何恋人在号上唱过的、最敏感、最动情的音乐……这是『坠入爱河』的音乐。</strong>」（『It's got some of the most sensitive, heartfelt music that any lover ever sang on a horn… This is "falling in love" music.』）</p></div></li><li><span class="n">11</span><div><p class="nt">别把 1994 年的《Best Ballads》当成本碟</p><p class="nb">Impulse!/GRP 在 <strong>1994 年出过一张《Best Ballads》（FVCP 30318）</strong>，那是<strong>另一张精选辑</strong>——把《Ballads》的四曲（What's New / I Wish I Knew / You Don't Know What Love Is / Say It）连同《In a Sentimental Mood》《Lush Life》《Nature Boy》等其他抒情曲混在一起。<strong>《Ballads》本尊是 1963 年那张 A-32 / AS-32。</strong></p></div></li><li><span class="n">12</span><div><p class="nt">原句是一句病句（照录不补）</p><p class="nb">末段「<strong>He's not aggressive, and he's not outwardly.</strong>」在 AllMusic 原文里就是这样——句中缺一个成分（西语译本也只能译成「ni exterior」）。本译稿保留原样不补词，语义按「不具攻击性，也不外放」处理。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/ballads-mw0000649453">Ballads 乐评原文（Sam Samuelson）· 本篇出处</a></span></li><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/artist/john-coltrane-mn0000134704">John Coltrane 传记（William Ruhlmann）· Thiele 承认三张碟「为安抚批评者而录」</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Ballads_(Coltrane_album)">Ballads (Coltrane album) · 录期、编制、2008 名曲堂</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/37346">Ballads 原版母版（编制、曲目、作者署名错位）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/14386998">Ballads Impulse! A-32 1963 首版（内页署名）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/16033176">Acoustic Sounds 2020 180g 再版（Ryan K. Smith / QRP）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/12328710">GRP GR-156 1995 重版（重印署名仍错位）</a></span></li><li><span class="k">Acoustic Sounds</span><span><a href="https://www.audiosoundmusic.com/collections/vinyl/products/john-coltrane-ballads">Ballads 官方商品页：录期、编制、45 转/开卷带、Michael Fremer 评语</a></span></li><li><span class="k">Everything Jazz</span><span><a href="https://www.everythingjazz.com/?p=9815/">John Coltrane: Ballads · Tynan「anti-jazz」背景、Spellman 语录、录期</a></span></li><li><span class="k">ProJazz</span><span><a href="http://projazz.net?p=14517/">Gene Lees 内页引文、2008 Grammy 名曲堂</a></span></li><li><span class="k">法语资料库</span><span><a href="http://american-music.forum-actif.eu/t59-ballads-1963">Coltrane × Frank Kofsky 访谈（嘴型事故、Impulse! 意图、自选曲目）· 分轨录音日期</a></span></li><li><span class="k">官方</span><span><a href="https://johncoltrane.com/biography">johncoltrane.com 官方传记（Ashley Kahn 撰）· Impulse! 签约与《Africa/Brass》</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
