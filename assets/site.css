@@ -229,6 +229,31 @@ hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
 .steps .t{display:block;font:600 14.5px/1.6 var(--font-zh);margin:6px 0 4px}
 .steps .d{display:block;font:400 12.5px/1.7 var(--font-zh);color:var(--faint)}
 
+/* ── disclaimer ───────────────────────── */
+.disc{
+  border:1px solid var(--line2);border-radius:12px;background:var(--bg2);
+  padding:26px 28px;
+}
+.disc h3{
+  font-family:var(--font-zh);font-weight:600;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 18px;
+}
+.disc ul{margin:0;padding:0;list-style:none}
+.disc li{
+  position:relative;padding:0 0 13px 20px;
+  font:400 13.5px/1.85 var(--font-zh);color:var(--muted);
+}
+.disc li:last-child{padding-bottom:0}
+.disc li::before{
+  content:"";position:absolute;left:3px;top:9px;width:5px;height:5px;
+  border-radius:50%;background:var(--accent);opacity:.7;
+}
+.disc li strong{color:var(--text);font-weight:600}
+.disc .en{
+  margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line);
+  font-family:var(--font-en);font-size:13.5px;line-height:1.75;color:var(--faint);
+}
+
 /* ── misc ─────────────────────────────── */
 .note-box{
   background:var(--card);border:1px solid var(--line);border-left:3px solid var(--line2);
