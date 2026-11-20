@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Straight, No Chaser — 一路向前 · 1967 年 Columbia 录音室，Monk 的最后一个四重奏</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="monk.html">Thelonious Monk</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Straight, No Chaser</h1>
+    <p class="title-cn">一路向前 · 1967 年 Columbia 录音室，Monk 的最后一个四重奏</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：AllMusic 专辑乐评（Lindsay Planer）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Columbia CL 2651 单 / CS 9451 立（1967）</li><li>录音 1966–1967，Columbia 30th Street</li><li>Monk / Charlie Rouse / Ben Riley / Larry Gales</li><li>原版 51:24；1996 年 CD 重刻还原后 75:56</li><li>1988 年纪录片另有一张 Columbia 原声 CD（CK 45358）</li><li>Impex 2022 年 45 转限量版 · 无 AP / 无 MFSL</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">This is the sixth studio album cut by Thelonious Monk under the production/direction of Teo Macero for Columbia…</span><span class="toc-cn">「第六张」是对的</span></li><li><span class="toc-en">The band featured here includes: Monk (piano), Charlie Rouse (tenor sax), Ben Riley (drums), and Larry Gales (bass).</span><span class="toc-cn">四重奏名单</span></li><li><span class="toc-en">This would be the final quartet Monk would assemble to record with in the studio.</span><span class="toc-cn">「最后一组」有前提</span></li><li><span class="toc-en">Monk's extended solo in 'Locomotive' never reaches beyond itself…</span><span class="toc-cn">《Locomotive》的长独奏</span></li><li><span class="toc-en">Other recommended quartet selections on this disc include a liberated version of the title track…</span><span class="toc-cn">同名曲与《We See》</span></li><li><span class="toc-en">In addition to the quartet sides, Straight, No Chaser contains two unaccompanied piano solos…</span><span class="toc-cn">⚠️ 这里说的不是原版</span></li><li><span class="toc-en">The original disc only included six performances, half of which were edited…</span><span class="toc-cn">被剪掉的五分钟</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Straight, No Chaser（一路向前）</strong> · Thelonious Monk｜<strong>原版 51:24（六曲）／1996 年 CD 重刻 75:56（九曲）</strong></dd><dt>录音 / 发行</dt><dd><strong>录音 1966–1967 年，Columbia 30th Street Studio（纽约）</strong> ✓｜<strong>发行 1967 年</strong>（Columbia CL 2651 单 / CS 9451 立）；制作 <strong>Teo Macero</strong>，内页 Orrin Keepnews，封面拼贴 Laszlo Kubinyi</dd><dt>编制</dt><dd>Thelonious Monk（钢琴）· <strong>Charlie Rouse</strong>（次中音）· <strong>Larry Gales</strong>（贝斯）· <strong>Ben Riley</strong>（鼓）——<strong>原版内页上后三人的乐器都是「未署名」</strong> ✓</dd><dt>原版曲目（1967）</dt><dd>A1 <strong>Locomotive</strong> 6:38｜A2 <strong>I Didn't Know About You</strong>（Duke Ellington）6:50｜A3 <strong>Straight, No Chaser</strong> 10:31｜B1 <strong>Japanese Folk Song</strong> 11:03｜B2 <strong>Between the Devil and the Deep Blue Sea</strong>（Arlen / Koehler）7:34｜B3 <strong>We See</strong> 8:48</dd><dt>1996 年 CD 重刻（新增/还原）</dt><dd><strong>还原完整长度</strong>：Straight, No Chaser 11:28｜<strong>Japanese Folk Song 16:42（补回 5 分 39 秒）</strong>｜We See 11:37｜<strong>新增三曲</strong>：This Is My Story, This Is My Song（即《Blessed Assurance》）1:42、I Didn't Know About You（另一 take）6:49、<strong>Green Chimneys</strong> 6:34 ✓✓</dd><dt>⭐ 曲名的真相</dt><dd><strong>「Japanese Folk Song」在原版被标为「来源不明的日本民谣」，其实是滝廉太郎的《十五の月》（Kōjō no Tsuki）</strong> ✓✓——1996 年重刻才改正 ✓；这首曲子在 2016 年电影《La La Land》里被角色用来练习背谱 ✓</dd><dt>⚠️ 同名的 1988 年电影</dt><dd><strong>纪录片《Thelonious Monk: Straight, No Chaser》(1988)</strong>，导演 Charlotte Zwerin，制片 Bruce Ricker / Charlotte Zwerin / <strong>Clint Eastwood</strong>（Malpaso），摄影 Christian Blackwood，配乐 Dick Hyman ✓✓；<strong>它另有一张 Columbia 原声 CD：CK 45358（1989，12 曲，Fantasy Studios 由 Joe Gastwirt 数字重刻）</strong> ✓✓——乐评的提醒完全成立</dd><dt>版本谱系</dt><dd>1967 CL 2651 / CS 9451 → <strong>1996 年 CD（CK 64886 / EK 64886）</strong> 还原全长 + 增三曲 ✓ → 欧洲版 064886-2、Legacy EK 64886、日本 SRCS 9200 / SICP 4248 ✓ → <strong>Music On Vinyl MOVLP 288 / Music On CD MOCCD13324</strong> ✓ → <strong>Impex Records IMP6020（2022-06-08 发行的 45 转限量版）</strong> ✓✓ → 非官方 Release Records RR-98-083-2 ✓。<strong>无 Analogue Productions、无 MFSL</strong> ✓</dd><dt>历史坐标</dt><dd><strong>Monk 为 Columbia 录的第六张录音室专辑</strong> ✓✓（Wikipedia 明载）；但这组四重奏<strong>随后又录了《It's Monk's Time》(1968)</strong> ✓✓——「最后一个组合」成立，「最后一次录音」不成立 ✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Locomotive</td><td><span class="cn">火车头 · 四重奏（<strong>Monk 的长独奏在这一曲</strong>）</span></td><td class='ses'>1966–1967</td><td class='dur'>6:38</td></tr><tr><td class='pos'>A2</td><td class='tt'>I Didn't Know About You</td><td><span class="cn">我原本不认识你 · Duke Ellington 作曲（CD 重刻另有一 take）</span></td><td class='ses'>1966–1967</td><td class='dur'>6:50</td></tr><tr><td class='pos'>A3</td><td class='tt'>Straight, No Chaser</td><td><span class="cn">一路向前 · 同名曲（<strong>11:28 为还原后的完整版</strong>）</span></td><td class='ses'>1966–1967</td><td class='dur'>10:31</td></tr><tr><td class='pos'>B1</td><td class='tt'>Japanese Folk Song</td><td><span class="cn">日本民谣 · 实为滝廉太郎《十五の月》（<strong>还原后 16:42</strong>）</span></td><td class='ses'>1966–1967</td><td class='dur'>11:03</td></tr><tr><td class='pos'>B2</td><td class='tt'>Between the Devil and the Deep Blue Sea</td><td><span class="cn">在魔鬼与深蓝海之间 · Arlen / Koehler（<strong>钢琴独奏</strong>）</span></td><td class='ses'>1966–1967</td><td class='dur'>7:34</td></tr><tr><td class='pos'>B3</td><td class='tt'>We See</td><td><span class="cn">我们看见 · 四重奏（<strong>全碟最硬的 bop</strong>）</span></td><td class='ses'>1966–1967</td><td class='dur'>8:48</td></tr><tr><td class='pos'>CD</td><td class='tt'>This Is My Story, This Is My Song</td><td><span class="cn">这是我的故事，这是我的歌（即《Blessed Assurance》）· <strong>只存在于 1996 年后的 CD 重刻</strong></span></td><td class='ses'>1966–1967</td><td class='dur'>1:42</td></tr><tr><td class='pos'>CD</td><td class='tt'>Green Chimneys</td><td><span class="cn">绿烟囱 · Monk 作曲（<strong>首次发行</strong>）</span></td><td class='ses'>1966–1967</td><td class='dur'>6:34</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>This is the sixth studio album cut by Thelonious Monk under the production/direction of Teo Macero for Columbia and as such should not be confused with the original motion picture soundtrack to the 1988 film of the same name.</p></div><div class="zh-col"><p>这是 Thelonious Monk 在 Teo Macero 的制作／指导之下，为 Columbia 录制的<strong>第六张录音室专辑</strong>——因此<strong>不要把它和 1988 年那部同名电影的原声唱片搞混</strong>。</p></div></div><div class="pair"><div class="en-col"><p>The band featured here includes: Monk (piano), Charlie Rouse (tenor sax), Ben Riley (drums), and Larry Gales (bass).</p></div><div class="zh-col"><p>这张碟里的组合是：<strong>Monk（钢琴）、Charlie Rouse（次中音）、Ben Riley（鼓）与 Larry Gales（贝斯）</strong>。</p></div></div><div class="pair"><div class="en-col"><p>This would be the final quartet Monk would assemble to record with in the studio.</p></div><div class="zh-col"><p><strong>这将是 Monk 最后组建、用来做棚内录音的四重奏。</strong></p></div></div><div class="pair"><div class="en-col"><p>While far from being somber, this unit retained a mature flavor which would likewise place Monk's solos in a completely new context.</p></div><div class="zh-col"><p>这个组合<strong>远谈不上阴郁</strong>，但它保有一份成熟的质地——而这同样把 Monk 的独奏放进了一个<strong>全新的语境</strong>里。</p></div></div><div class="pair"><div class="en-col"><p>At times, this adaptation presents itself more subtly than others. For instance, Monk's extended solo in "Locomotive" never reaches beyond itself due in part to the tempo-laden rhythm section.</p></div><div class="zh-col"><p>有时候，这版呈现比别的版本更含蓄。比如《Locomotive》里 Monk 那段长独奏——<strong>部分是因为那节奏组速度压得紧，它始终没有走出自己</strong>。</p></div></div><div class="pair"><div class="en-col"><p>The contrast of styles, however, appreciates the caliber of this particular solo, including an obvious assertion by Monk which leads the band, albeit temporarily, into playing double-time.</p></div><div class="zh-col"><p>然而这种风格上的反差，反而让人品出<strong>这段特定独奏的分量</strong>——其中包括 Monk 一次明显的主导：<strong>他带着乐队（虽然只是短暂地）进入了 double-time</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Other recommended quartet selections on this disc include a liberated version of the title track, which highlights some stellar interaction between Monk and Rouse.</p></div><div class="zh-col"><p>这张碟上其他值得一听的四重奏曲目，还包括<strong>同名曲那版被「解放」了的版本</strong>——它凸显了 Monk 与 Rouse 之间<strong>出色的互动</strong>。</p></div></div><div class="pair"><div class="en-col"><p>The same can be said for "We See," which features the hardest bop on the album.</p></div><div class="zh-col"><p>《We See》同样值得一听，<strong>它带着全碟最硬的一曲 bop</strong>。</p></div></div><div class="pair"><div class="en-col"><p>In addition to the quartet sides, Straight, No Chaser contains two unaccompanied piano solos: "Between the Devil and the Deep Blue Sea" and "This Is My Story, This Is My Song."</p></div><div class="zh-col"><p>除了四重奏的那些曲目之外，《Straight, No Chaser》还收有两首<strong>无伴奏钢琴独奏</strong>：《Between the Devil and the Deep Blue Sea》与《This Is My Story, This Is My Song》。</p></div></div><div class="pair"><div class="en-col"><p>[The original disc only included six performances, half of which were edited due to the stringent time constraints of vinyl; subsequent reissues not only restored all of the previously abridged performances, but also added a trio of sides, two of which ("I Didn't Know About You: Take 1" and "Green Chimneys") are issued here for the first time.]</p></div><div class="zh-col"><p>【原版只收了六首演奏，其中一半因黑胶时间限制而被剪辑过；后来的再版不仅把所有被删减的演奏全部还原，还另外加上了三首，其中两首（《I Didn't Know About You: Take 1》与《Green Chimneys》）是<strong>首次发行</strong>。】</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer / TiVo —— 本篇乐评版权归属。<strong>Lindsay Planer 是 AllMusic 主编</strong>；本篇挂在 2022 年 Impex 版（CD/LP）的条目下。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">✅ 「第六张」与「不要混淆电影原声」——两处都成立</p><p class="nb"><strong>Wikipedia 明载《Straight, No Chaser》是 Monk 为 Columbia 录制的第六张录音室专辑</strong> ✓✓，乐评没写错。<strong>同名的 1988 年纪录片原声确实另有一张 CD：Columbia CK 45358（1989）</strong> ✓✓，12 首曲目全是另一批（《Pannonica》《Trinkle, Tinkle》《Ugly Beauty》《Epistrophy》《Evidence》《Lulu's Back In Town》……）✓✓，1989 年 7 月在 <strong>Fantasy Studios, Berkeley 由 Joe Gastwirt 数字重刻</strong> ✓。<strong>这张提醒非常必要</strong>——两者在流媒体上经常挨着上架。</p></div></li><li><span class="n">2</span><div><p class="nt">⭐⭐ 那部 1988 年的电影，本身就是一段传奇</p><p class="nb"><strong>《Thelonious Monk: Straight, No Chaser》(1988)</strong>：导演 <strong>Charlotte Zwerin</strong>，制片 <strong>Bruce Ricker / Charlotte Zwerin / Clint Eastwood</strong>（Malpaso 出钱），摄影 Christian Blackwood，配乐 Dick Hyman ✓✓。<strong>素材是 1967–68 年 Blackwood 兄弟受西德电视台委托、跟拍 Monk 六个月的那些胶片</strong> ✓✓（Monk 病重时已经无法出镜，1982 年 2 月 17 日中风去世；影片还拍到了他的葬礼）✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⚠️ 关键更正：这篇写的是 1996 年后的 CD，却按「原版专辑」在讲</p><p class="nb"><strong>原版 1967 年 LP 只有一首无伴奏钢琴独奏</strong>——《Between the Devil and the Deep Blue Sea》✓✓；<strong>《This Is My Story, This Is My Song》（即《Blessed Assurance》）只存在于 1996 年之后的 CD 重刻</strong> ✓✓（时长仅 1:42）。另外，<strong>原版还有一首乐评完全没提的《Japanese Folk Song》（11:03）</strong>——那也是一首钢琴曲 ✓✓。<strong>所以别拿 1996 年前的黑胶来对照乐评说的「两首独奏」</strong> ✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐⭐ 「Japanese Folk Song」的真实身份</p><p class="nb"><strong>原版把它标成「来源不明的日本民谣」，其实它是滝廉太郎（Rentarō Taki）的《十五の月》（Kōjō no Tsuki）</strong> ✓✓——<strong>1996 年重刻才把这个标注改正</strong> ✓。顺带一个巧合：<strong>这首曲子在 2016 年的电影《La La Land》里出现</strong>，角色被要求背谱并弹出来 ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">✅ 「一半被剪过」基本准确——但最狠的一刀在《Japanese Folk Song》</p><p class="nb">对照原版与重刻版时长 ✓✓：<strong>Straight, No Chaser 10:31 → 11:28</strong>｜<strong>Japanese Folk Song 11:03 → 16:42（整整补回 5 分 39 秒）</strong>｜<strong>We See 8:48 → 11:37（补回 2 分 49 秒）</strong> ✓✓；而 Locomotive、I Didn't Know About You、Between the Devil 只差 2 秒 ✓。<strong>所以「六首里三首被剪」是对的</strong> ✓，但乐评没说清最惨的是哪一首 ✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⚠️ 「最后一个四重奏」成立，「最后一次录音」不成立</p><p class="nb"><strong>Rouse / Gales / Riley 这组人确实是他最后组建的棚内四重奏</strong> ✓✓，<strong>但同一组合随后又录了《It's Monk's Time》(1968)</strong> ✓✓——那张也是 Columbia、同一组人 ✓。<strong>这张碟是倒数第二张棚内专辑</strong> ✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 编制之外的一条细节：原版内页上，Rouse 之外的乐手全是「未署名」</p><p class="nb"><strong>原版封底的内页只署了 Thelonious Monk（钢琴）、Charlie Rouse（次中音）、Teo Macero（制作）、Orrin Keepnews（内页）、Laszlo Kubinyi（封面拼贴）</strong> ✓✓——<strong>Larry Gales 与 Ben Riley 的名字在原版上根本没有出现</strong> ✓✓。Rouse 之所以有名字，是因为他是 Columbia 合约艺人 ✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐⭐ 版本（对你最实际的一节）</p><p class="nb"><strong>数字版必须用 1996 年那张之后的</strong>（Columbia CK 64886 / EK 64886 ✓✓）——不然你听的是被剪过的版本 ✓✓。<strong>实体版：Music On Vinyl 的 MOVLP 288</strong> ✓✓、<strong>Impex Records 2022 年 6 月 8 日发行的 45 转限量版（IMP6020）</strong> ✓✓（AllMusic 这篇乐评就挂在那个条目下 ✓）——<strong>买它之前先确认用的是还原版母带</strong> ✓。另有 <strong>Columbia MOVLP/日本 SRCS 9200 / SICP 4248</strong> ✓、<strong>Music On CD MOCCD13324</strong> ✓、非官方 Release Records 版 ✓。<strong>没有 Analogue Productions、没有 MFSL</strong> ✓（master 120742 共 62 个版本）。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐⭐ 给你的系统：这张碟是检验「干」与「中频」的样本</p><p class="nb"><strong>① 录音地点就是《Kind of Blue》那间 Columbia 30th Street</strong> ✓✓——同一间棚，中间隔了十年，可以直接做 A/B：<strong>《Kind of Blue》更宽、更柔；《Straight, No Chaser》更干、更近、更硬</strong> ✓✓。<strong>② 中频厚度看《Locomotive》那段长独奏</strong> ✓✓：Monk 的钢琴孤军奋战，<strong>这是这张碟测「钢琴能不能立住」的主考</strong> ✓。<strong>③ 瞬态与推力看《We See》</strong> ✓✓（全碟最硬的 bop ✓）——<strong>Rouse 的重音、Ben Riley 的鼓点，是这套系统的「推力测试」</strong> ✓。<strong>④ 别忘了 1996 年 CD 里那两首钢琴独奏</strong>：纯钢琴无掩护，<strong>测的是衰减与琴槌质感</strong> ✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ 一个安静的注脚：Monk 录音有多「一条过」</p><p class="nb">1988 年那部纪录片里，<strong>Charlie Rouse 说 Monk 几乎总是用第一条录音，最多再来一条，几乎从不用第三条</strong> ✓✓；片里还拍到 Monk 在 Columbia 录音时随手弹了一段，<strong>因为大家以为那只是热身，结果没录</strong> ✓✓，他随后流露出失望。<strong>这张碟正好是那种「一条过」的产物——你听到的多数痕迹，都是第一遍</strong> ✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 一句话收尾</p><p class="nb"><strong>这是 Monk 留给 Columbia 的最后一张「乐队」专辑</strong>（第二张是《It's Monk's Time》）✓✓，也是他 1960 年代末那种<strong>「冷静、精确、几乎对称」的美学走到尽头</strong>的地方 ✓。<strong>如果要在你的系统上验证「干录 + 中频 + 推力」这三件事，这张比任何一张都合适</strong> ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/release/straight-no-chaser-mr0006100915">Lindsay Planer 乐评原文（本篇出处，挂在 2022 年 Impex 版条目下）</a></span></li><li><span class="k">Torn Light Records</span><span><a href="https://www.tornlightrecords.com/shop/monk-straight-no-chaser">同一篇乐评的转载全文（含专辑说明与曲目）</a></span></li><li><span class="k">Wikipedia</span><span><a href="https://wikipedia.thedupacs.net/content/wikipedia_en_all_maxi_2024-01/A/Straight%2C_No_Chaser_(Thelonious_Monk_album)">Straight, No Chaser 条目：第六张 Columbia 录音室专辑、原版与 1996 CD 的逐曲时长对照、《十五の月》的更正、La La Land 引用</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/1292456-Monk-Straight-No-Chaser">原版 Columbia CS 9451（1967）条目：曲目、内页署名（Larry Gales / Ben Riley 未署名）、Teo Macero、Laszlo Kubinyi</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/5347747-Thelonious-Monk-Straight-No-Chaser-Music-From-The-Motion-Picture">《Straight No Chaser (Music From The Motion Picture)》Columbia CK 45358（1989）条目：12 首曲目、Fantasy Studios / Joe Gastwirt 重刻</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/120742-Monk-Straight-No-Chaser">master 120742 全部 62 个版本（CL 2651 / CS 9451、CK 64886、MOVLP 288、Impex IMP6020 45 转等；无 AP / 无 MFSL）</a></span></li><li><span class="k">TCM</span><span><a href="https://tcm.com/articles/385060/thelonius-monk-straight-no-chaser">《Thelonious Monk: Straight, No Chaser》(1988) 影评：Charlotte Zwerin 导演、Clint Eastwood 参与制片、Blackwood 兄弟 1967–68 年跟拍素材、Rouse 谈 Monk 的「一条过」</a></span></li><li><span class="k">Kinorium</span><span><a href="http://kinorium.com/90134/">影片技术资料与幕后：Michael Blackwood Productions / Malpaso / Monk Film Project，Charlotte Zwerin 导演，Dick Hyman 配乐</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

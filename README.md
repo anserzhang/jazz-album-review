@@ -27,8 +27,10 @@ index.html                              专题首页：特别专题 + 艺人索�
 │   └── coltrane-blue-train-full.html        1958
 ├── miles-davis.html                    艺人页 · Miles Davis
 │   ├── miles-kob-full.html                1959
-│   └── miles-milestones-full.html          1958
+│   ├── miles-milestones-full.html          1958
+│   └── miles-botc-full.html                1957（录音 1949–50）
 └── monk.html                           艺人页 · Thelonious Monk
+    ├── monk-snc-full.html                  1967
     ├── monk-coltrane-full.html             1961（柯特兰客席）
     └── monk-bc-full.html                   1957
 assets/site.css                         站点共用样式（与专辑页同一套设计令牌）
