@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Bahia — 巴伊亚 · 1958 年 12 月 26 日科特兰的最后一场 Prestige 录音</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="coltrane.html">John Coltrane</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Bahia</h1>
+    <p class="title-cn">巴伊亚 · 1958 年 12 月 26 日科特兰的最后一场 Prestige 录音</p>
+    <p class="byline">– Ron Wynn</p>
+    <p class="source">原文：AllMusic 专辑乐评（Ron Wynn）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Prestige 7353 / PRST 7353（1965 年发行）</li><li>录音 1958-07-11 与 1958-12-26 两场</li><li>12-26 场 = 科特兰最后一次为 Prestige 录音</li><li>Red Garland / Paul Chambers / Art Taylor</li><li>Wilbur Harden 与 Freddie Hubbard 两位小号</li><li>OJC 415 · Phil De Lancie 母带</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Bahia is a steady, often very good hard-blowing and blues date featuring John Coltrane…</span><span class="toc-cn">稳健、常常相当好的硬吹与布鲁斯</span></li><li><span class="toc-en">recorded during one of his busiest periods, 1957-1958, but not released until 1965.</span><span class="toc-cn">1957–58 录，1965 才发</span></li><li><span class="toc-en">Coltrane cut numerous sessions during the late '50s for Prestige to satisfy a commitment to the label and move to Atlantic…</span><span class="toc-cn">「翻库房」的机制</span></li><li><span class="toc-en">Most were done with the same rhythm section: pianist Red Garland, bassist Paul Chambers, and drummer Art Taylor…</span><span class="toc-cn">同一套节奏组</span></li><li><span class="toc-en">Also featured is additional work by a pair of trumpeters: Wilbur Harden appears on 'My Ideal' and 'I'm a Dreamer, Aren't We All,' while Freddie Hubbard takes over on 'Something I Dreamed Last Night.'</span><span class="toc-cn">两位小号手的分工</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Bahia（巴伊亚）</strong> · John Coltrane with Red Garland and Paul Chambers</dd><dt>年份 / Year</dt><dd><strong>录音 1958-07-11 与 1958-12-26 两场</strong>（纽约 Van Gelder 录音室，<strong>Hackensack 旧棚</strong>）｜<strong>发行 1965 年</strong>（Prestige 7353 / PRST 7353）</dd><dt>内容</dt><dd>5 首：<strong>Bahia</strong> 6:15（Ary Barroso）· <strong>Goldsboro Express</strong> 4:41（Coltrane）· My Ideal 7:30 · I'm A Dreamer (Aren't We All) 7:10 · <strong>Something I Dreamed Last Night</strong> 10:48</dd><dt>编制（12-26 场）</dt><dd>Coltrane（次中音）· Red Garland（钢琴）· Paul Chambers（贝斯）· <strong>Art Taylor（鼓）</strong>；<strong>Freddie Hubbard（小号）只在《Something I Dreamed Last Night》一曲</strong></dd><dt>编制（7-11 场）</dt><dd>Coltrane · Red Garland · Paul Chambers · <strong>Jimmy Cobb（鼓，替 Art Taylor）</strong>；<strong>Wilbur Harden（小号／粗管）在《My Ideal》《I'm a Dreamer》两曲</strong></dd><dt>制作 / 工程</dt><dd>制作 <strong>Bob Weinstock</strong> · 录音与刻纹 Rudy van Gelder · 内页 <strong>Robert Levin</strong></dd><dt>历史坐标</dt><dd><strong>1958-12-26 是科特兰最后一次为 Prestige 录音</strong> ✓；同一批录音在 1959 年的《Two Tenors》里已出现过一次</dd><dt>共享曲目</dt><dd><strong>《My Ideal》《I'm a Dreamer》与《Standard Coltrane》(Prestige 7243) 同出一场（1958-07-11）</strong>——两张碟共享两首 ✓</dd><dt>版本</dt><dd>1965 原版 7353（单声道）/ PRST 7353（立体声）→ <strong>OJC 415 / OJCCD-415-2</strong>（Phil De Lancie 母带）→ 意大利 Jazz Wax Records JWR 4573（<strong>加 bonus track《Do I Love You Because You're Beautiful?》</strong>）。<strong>无 MFSL、无 AP</strong></dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Bahia</td><td><span class="cn">巴伊亚 · Ary Barroso（巴西）</span></td><td class='ses'>1958-12-26</td><td class='dur'>6:15</td></tr><tr><td class='pos'>A2</td><td class='tt'>Goldsboro Express</td><td><span class="cn">戈尔斯伯勒快递 · Coltrane（以北卡小城 Goldsboro 命名）</span></td><td class='ses'>1958-12-26</td><td class='dur'>4:41</td></tr><tr><td class='pos'>A3</td><td class='tt'>My Ideal</td><td><span class="cn">我的理想 · Richard Whiting（Wilbur Harden 小号 / Jimmy Cobb 鼓）</span></td><td class='ses'>1958-07-11</td><td class='dur'>7:30</td></tr><tr><td class='pos'>B1</td><td class='tt'>I'm A Dreamer (Aren't We All)</td><td><span class="cn">我是个梦想家（我们不都是吗）· DeSylva / Brown / Henderson（Wilbur Harden 小号 / Jimmy Cobb 鼓）</span></td><td class='ses'>1958-07-11</td><td class='dur'>7:10</td></tr><tr><td class='pos'>B2</td><td class='tt'>Something I Dreamed Last Night</td><td><span class="cn">昨夜我梦见了什么 · Magidson / Yellen / Fain（Freddie Hubbard 小号）</span></td><td class='ses'>1958-12-26</td><td class='dur'>10:48</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Bahia is a steady, often very good hard-blowing and blues date featuring John Coltrane, recorded during one of his busiest periods, 1957-1958, but not released until 1965.</p></div><div class="zh-col"><p>《Bahia》是一场稳健的、常常相当出色的硬吹与布鲁斯现场，主角是约翰·科特兰；它录于他最忙碌的时期之一（1957–1958 年），却直到 1965 年才发行。</p></div></div><div class="pair"><div class="en-col"><p>(Coltrane cut numerous sessions during the late '50s for Prestige to satisfy a commitment to the label and move to Atlantic; some of these were packaged and released long after they were cut.)</p></div><div class="zh-col"><p>（科特兰在五十年代末为 Prestige 录了大量场次，既是为了履行与该厂的合约、也是为了转投 Atlantic；其中一些被包装成唱片，在录音完成很久之后才终于上市。）</p></div></div><div class="pair"><div class="en-col"><p>Most were done with the same rhythm section: pianist Red Garland, bassist Paul Chambers, and drummer Art Taylor (although Jimmy Cobb substituted for Taylor on two songs).</p></div><div class="zh-col"><p>其中大多数用的是同一套节奏组：钢琴 Red Garland、贝斯 Paul Chambers、鼓 Art Taylor（<strong>其中两首由 Jimmy Cobb 替下 Taylor</strong>）。</p></div></div><div class="pair"><div class="en-col"><p>Also featured is additional work by a pair of trumpeters: Wilbur Harden appears on "My Ideal" and "I'm a Dreamer, Aren't We All," while Freddie Hubbard takes over on "Something I Dreamed Last Night."</p></div><div class="zh-col"><p>另外还请来两位小号手做额外的演奏：<strong>Wilbur Harden 出现在《My Ideal》与《I'm a Dreamer, Aren't We All》两曲</strong>，而 <strong>Freddie Hubbard 接手了《Something I Dreamed Last Night》</strong>。</p></div></div><div class="pair"><div class="en-col"><p>© Ron Wynn /TiVo</p></div><div class="zh-col"><p>© Ron Wynn / TiVo —— 本篇乐评版权归属。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">✅ 这篇乐评的名单，一句不差</p><p class="nb">逐条核对全部成立 ✓✓：<strong>Cobb 替 Taylor 的正是那两首</strong>（《My Ideal》《I'm a Dreamer》，录于 <strong>1958-07-11</strong>）；<strong>Wilbur Harden 在这两首</strong>；<strong>Freddie Hubbard 只在《Something I Dreamed Last Night》一曲</strong>（录于 <strong>1958-12-26</strong>）✓✓。这套分工在《Bahia》内页与 2016 年 Concord 重制内页里写得很清楚。</p></div></li><li><span class="n">2</span><div><p class="nt">⭐⭐ 但同一首曲子的两版官方署名互相矛盾</p><p class="nb"><strong>1965 年的《Bahia》与 2016 年 Concord 重制都写：Freddie Hubbard 演奏《Something I Dreamed Last Night》</strong> ✓；而 <strong>1959 年那张《Two Tenors》（Coltrane 与 Paul Quinichette 同碟）的内页却写：这首是「未署名的 Wilbur Harden」，而 Freddie Hubbard 在《Then I'll Be Tired of You》上</strong> ✓✓。<strong>两种说法都有厂牌内页作证</strong>——录音人自己没留下记录，只能靠当年的同期单据去拼。这是「库房拼盘」时代最典型的混乱：<strong>同一卷带子，被两张唱片引用了两次，署名却不一致。</strong></p></div></li><li><span class="n">3</span><div><p class="nt">⭐ 这张碟的时间坐标</p><p class="nb"><strong>1958 年 12 月 26 日是科特兰最后一次为 Prestige 录音</strong> ✓✓（他 1959 年签 Atlantic，库房里剩下的素材就由 Bob Weinstock 一路拼到 1965 年）。同批录音<strong>在 1959 年的《Two Tenors》里已经发行过一次</strong>——<strong>六年之后又以《Bahia》再发一遍</strong> ✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐ 你可能已经拥有其中两首</p><p class="nb"><strong>《My Ideal》与《I'm a Dreamer》录于 1958-07-11——正是《Standard Coltrane》(Prestige 7243) 的那一场</strong> ✓✓。<strong>如果你已经收了那张 Analogue Productions 2022 年 Kevin Gray 重制的《Standard Coltrane》，这两首你已经有了</strong>；换句话说，《Bahia》多出来的内容是《Bahia》《Goldsboro Express》《Something I Dreamed Last Night》三首。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐ 「Goldsboro Express」的名字</p><p class="nb"><strong>以北卡罗来纳州的 Goldsboro 命名</strong> ✓——科特兰的母亲改嫁后举家迁居过那座小城。这首 4:41 是全碟最压缩、最不客气的一曲：Concord 重制内页的说法是，科特兰在标题曲里「几乎把歌曲形式炸开」，<strong>「而尤其是在《Goldsboro Express》里」</strong> ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐ 这张碟的听觉定位：科特兰最「厚」的一面</p><p class="nb">重制内页有一句总结得很准：<strong>「《Bahia》里的科特兰还在歌曲形式里工作……但在那些可爱的抒情曲里，他抚摸、装饰着旋律与和弦，像是在准备向它们做一次不情愿的告别。」</strong> ✓✓ <strong>如果你喜欢 MUB5 那种 R2R 的厚润、而不喜欢 AK4499EX 那种「太干净太素」，这张碟正好是科特兰版的厚润</strong>——Garland 的木质和声 + Chambers 的胖贝斯 + 1957–58 年 Hackensack 那间客厅棚的近距离拾音 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⚠ 一个背景：这几年的科特兰正在「收」着吹</p><p class="nb">1958–59 年他刚做完那次影响嘴型（哨片垫）的牙科修复，<strong>技术自信处在恢复期</strong>——所以这几首里的线条比 1961 年之后更松弛、更留白、更不炫技 ✓✓。<strong>不是他变弱了，是他在那段日子里选择了少说一点。</strong></p></div></li><li><span class="n">8</span><div><p class="nt">⚠ 别把《Something I Dreamed Last Night》听成「标准曲集」</p><p class="nb">它 10:48，几乎是一整首独奏式的长诗：<strong>Garland 在这曲里的和声铺得很满</strong>（那种 block chords 的箱体感是 1957–58 的 Red Garland 独有），科特兰的次中音在上面走长句。<strong>这曲是全碟最考验中频厚度的一首</strong>，也是最值得用你的系统反复校准的一首 ✓。</p></div></li><li><span class="n">9</span><div><p class="nt">版本：该买哪一个</p><p class="nb"><strong>OJC 415 / OJCCD-415-2</strong>（Fantasy 的 Original Jazz Classics 线，<strong>Phil De Lancie 母带处理</strong>）✓✓ 是数字版里最干净的一版；想要实体，<strong>意大利 Jazz Wax Records 的 JWR 4573 加了 bonus track《Do I Love You Because You're Beautiful?》</strong>（同场次未收进原版）✓✓。<strong>原版 7353 只有单声道（PRST 7353 是后来的立体声再版，母带来源杂）——这张碟的单声道才是它的本来面目。</strong></p></div></li><li><span class="n">10</span><div><p class="nt">给你的听感建议</p><p class="nb"><strong>先把 Dirac 的空间校正关掉</strong>，用 G FOUR 听《Something I Dreamed Last Night》：1958 年 Hackensack 的小房间混响只有零点几秒，Dirac 一做空间校正反而会把这段衰减抹平。<strong>中低频不要动</strong>——Garland 的箱体和 Chambers 的贝斯是这张碟的肉，如果 200–300Hz 听起来偏满，那是录音本来的样子，不是系统的问题。<strong>《Goldsboro Express》则是这张碟的低频考试</strong>：4:41 里塞满压缩乐句，如果在你的系统上它听起来是「一团」而不是「一串」，那才是系统的问题 ✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/bahia">Bahia 乐评原文（Ron Wynn）· 本篇出处</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3844785-John-Coltrane-Bahia">Prestige 7353 原版（曲目、时长、演职员、Robert Levin 内页、1965 年深蓝标）</a></span></li><li><span class="k">Concord / HighResAudio</span><span><a href="https://mag.highresaudio.com/de/album/view/c7m9ku/john-coltrane-quartet-bahia">2016 年重制内页：两场录音日期（1958-07-11 与 12-26）、逐曲乐手分工与重制评语</a></span></li><li><span class="k">Jazz Wax Records</span><span><a href="https://www.jazzmessengers.com/en/70739/john-coltrane/bahia">JWR 4573 再版内页：逐曲人员与场次、bonus track《Do I Love You Because You're Beautiful?》</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/1290152-Original-Jazz-Classics-OJC-415-P-7353-PR-7353-LP-Album-Reissue-Stereo">Original Jazz Classics OJC 415 / OJCCD-415-2（Fantasy 重制版）</a></span></li><li><span class="k">AllMusic / SPB</span><span><a href="http://alphaspb.spb.ru/silversea.spb.ru/details/506610.html">《Two Tenors》(1959) 内页署名：Frederick Hubbard 在《Then I'll Be Tired of You》、未署名的 Wilbur Harden 在《Something I Dreamed Last Night》</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

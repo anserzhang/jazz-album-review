@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Standard Coltrane — 标准科特兰 · 1958 年 7 月 11 日那一场</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="coltrane.html">John Coltrane</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Standard Coltrane</h1>
+    <p class="title-cn">标准科特兰 · 1958 年 7 月 11 日那一场</p>
+    <p class="byline">– Steve Leggett</p>
+    <p class="source">原文：AllMusic 专辑乐评（Steve Leggett）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Prestige PRLP 7243（1962-10-02 发行）</li><li>1958-07-11 一场 · RVG 录音室 Hackensack</li><li>Wilbur Harden / Red Garland / Paul Chambers / Jimmy Cobb</li><li>四首全是抒情曲 · 《Invitation》10:22</li><li>《The Stardust Session》= 整场 8 首</li><li>Analogue Productions 2022 · Kevin Gray</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">John Coltrane had yet to move into his modal post-bop phase in 1958 when he recorded a session for Prestige Records on July 11…</span><span class="toc-cn">1958 年 7 月 11 日那一场</span></li><li><span class="toc-en">the results of which were issued in 1962 as Standard Coltrane.</span><span class="toc-cn">1962 年才以《Standard Coltrane》发行</span></li><li><span class="toc-en">His groundbreaking modal work with Miles Davis on Kind of Blue was still a few months into the future…</span><span class="toc-cn">《Kind of Blue》还有「几个月」——但方向反了</span></li><li><span class="toc-en">which makes this set more historical than vital or transitional, although it's pleasant enough…</span><span class="toc-cn">更多是史料，而非转折点</span></li><li><span class="toc-en">Other Coltrane material from this 1958 Prestige era ended up on the albums Stardust (1963) and Bahia (1965)…</span><span class="toc-cn">同批素材散在两张后碟里</span></li><li><span class="toc-en">all of it, including these four tracks, has been collected on The Stardust Session from Prestige Records, which is probably the way to go.</span><span class="toc-cn">《The Stardust Session》：整场合集</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Standard Coltrane（标准科特兰）</strong> · John Coltrane Quintet</dd><dt>年份 / Year</dt><dd><strong>录音 1958 年 7 月 11 日</strong>（一场）｜纽约 Van Gelder 录音室（Hackensack）｜<strong>发行 1962 年 10 月 2 日</strong>（Prestige PRLP 7243，单声道）</dd><dt>内容</dt><dd>4 首标准曲，全是抒情曲：Don't Take Your Love From Me 9:17 · I'll Get By 8:12 · Spring Is Here 6:55 · <strong>Invitation 10:22</strong>（总长 34:46）</dd><dt>编制</dt><dd>John Coltrane（次中音）· <strong>Wilbur Harden（小号 / 粗管）</strong> · Red Garland（钢琴）· Paul Chambers（贝斯）· Jimmy Cobb（鼓）</dd><dt>制作 / 工程</dt><dd>Rudy van Gelder 录音、刻纹、母带 · Bob Weinstock 监制 · 封面设计与摄影 <strong>Don Schlitten</strong> · 内页 <strong>Robert Levin</strong></dd><dt>同场其余四首</dt><dd><strong>《The Stardust Session》(PCD-24056-2)</strong> = 本场完整 8 首：另四首为《I'm A Dreamer (Aren't We All)》《Love Thy Neighbour》《My Ideal》《Stardust》</dd><dt>拆分史</dt><dd>本碟四首 → *Standard Coltrane*；另两首 → *Stardust*（1963）、另两首 → *Bahia*（1965）；<strong>1970 年复刻《The Master》(PR 7825) 的 CD 版补齐了同场另外四首</strong></dd><dt>版本</dt><dd>1962 原版 PRLP 7243 → 1970《The Master》(PR 7825) → <strong>Analogue Productions 2019 Hybrid SACD + 2022 180g 黑胶（均为 Kevin Gray 重制，原始模拟母带）</strong> → 2014 LP 再版 → 2016 Concord 数字重制（仅四首）</dd><dt>评价</dt><dd>AllMusic <strong>3/5</strong>（Steve Leggett，本篇）· *The Penguin Guide to Jazz Recordings*：「一场低强度的作业，重点在抒情曲」· 1963-03-14《Down Beat》有评论</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Don't Take Your Love From Me</td><td><span class="cn">别把你的爱从我身边带走 · Henry Nemo</span></td><td class='ses'>1958-07-11</td><td class='dur'>9:17</td></tr><tr><td class='pos'>A2</td><td class='tt'>I'll Get By (As Long As I Have You)</td><td><span class="cn">我总能撑过去 · Fred Ahlert / Roy Turk</span></td><td class='ses'>1958-07-11</td><td class='dur'>8:12</td></tr><tr><td class='pos'>B1</td><td class='tt'>Spring Is Here</td><td><span class="cn">春天来了 · Lorenz Hart / Richard Rodgers</span></td><td class='ses'>1958-07-11</td><td class='dur'>6:55</td></tr><tr><td class='pos'>B2</td><td class='tt'>Invitation</td><td><span class="cn">邀约 · Bronislaw Kaper / Paul Francis Webster</span></td><td class='ses'>1958-07-11</td><td class='dur'>10:22</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>John Coltrane had yet to move into his modal post-bop phase in 1958 when he recorded a session for Prestige Records on July 11 with trumpeter/flügelhornist Wilbur Harden, pianist Red Garland, bassist Paul Chambers, and drummer Jimmy Cobb, the results of which were issued in 1962 as Standard Coltrane.</p></div><div class="zh-col"><p>1958 年，约翰·科特兰尚未转入他调式化的后 bop 阶段；就在这一年 7 月 11 日，他为 Prestige 唱片录了一场——小号兼粗管手 Wilbur Harden、钢琴 Red Garland、贝斯 Paul Chambers、鼓 Jimmy Cobb。这场录音的结果，直到 1962 年才以《Standard Coltrane》发行。</p></div></div><div class="pair"><div class="en-col"><p>His groundbreaking modal work with Miles Davis on Kind of Blue was still a few months into the future, which makes this set more historical than vital or transitional, although it's pleasant enough, featuring Coltrane on several standards, including a ten-plus-minute version of "Invitation."</p></div><div class="zh-col"><p>他与迈尔斯·戴维斯合作的那张开创性调式作品《Kind of Blue》当时还在「几个月之后」——这让这张碟与其说是重要或转折性的，不如说更偏史料性质；不过它确实听着挺舒服：科特兰演了好几首标准曲，其中《Invitation》有一版十分钟出头的长篇。</p></div></div><div class="pair"><div class="en-col"><p>Other Coltrane material from this 1958 Prestige era ended up on the albums Stardust (1963) and Bahia (1965), and all of it, including these four tracks, has been collected on The Stardust Session from Prestige Records, which is probably the way to go.</p></div><div class="zh-col"><p>1958 年这批 Prestige 时期的科特兰素材，其余额外部分散在了《Stardust》（1963）与《Bahia》（1965）两张碟里；而它们——连同这四首——如今都被收进了 Prestige 的《The Stardust Session》，<strong>大概那才是正确的打开方式</strong>。</p></div></div><div class="pair"><div class="en-col"><p>© Steve Leggett /TiVo</p></div><div class="zh-col"><p>© Steve Leggett / TiVo —— 本篇乐评版权归属。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ 更正一：《Kind of Blue》不是「未来几个月」，而是「过去三个月」</p><p class="nb">《Kind of Blue》录于 <strong>1958 年 3 月 25 日与 4 月 2 日</strong>（Rudy van Gelder，Englewood Cliffs），<strong>1959 年 8 月才发行</strong>。也就是说，7 月 11 日录这场时，<strong>科特兰的调式里程碑早就录完了，只是还没上市</strong>。乐评那句话只有按「发行」算才勉强成立——而那也是 13 个月之后，不是「几个月」。这个时间差恰好说明：<strong>Prestige 库房里躺着的科特兰，落后 Atlantic 一年多。</strong></p></div></li><li><span class="n">2</span><div><p class="nt">✅ 乐评的硬信息全部准确</p><p class="nb"><strong>1958-07-11 一场</strong>、<strong>Wilbur Harden / Red Garland / Paul Chambers / Jimmy Cobb</strong>、<strong>1962 年 10 月 2 日发行</strong>、<strong>《Invitation》10:22</strong>（ten-plus-minute ✓）、厂牌编号 <strong>PRLP 7243</strong>、总长 34:46 —— 逐条对得上。Steve Leggett 的资料功底扎实，错的只有上面那一处时间关系。</p></div></li><li><span class="n">3</span><div><p class="nt">⚠️ 更正二：那张合辑叫《The Stardust Session》（单数）</p><p class="nb"><strong>《The Stardust Sessions》（复数）是另一个东西</strong>——Prestige 1991 年的 <strong>4CD 大盒</strong>（16PCD-4405），收的是科特兰在 Prestige 当客座的那些场次（Rollins、Elmo Hope、Hank Mobley、Tadd Dameron、Mal Waldron、Flanagan、Teddy Charles、Pepper Adams……），<strong>跟这场 7 月 11 日毫无关系</strong>。乐评指的是 <strong>《The Stardust Session》(PCD-24056-2)</strong> 这张单碟合集。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐ 《The Stardust Session》= 这一场的完整 8 首</p><p class="nb">曲目：Spring Is Here 6:53 / Invitation 10:20 / I'm A Dreamer (Aren't We All) 7:01 / Love Thy Neighbour 9:22 / Don't Take Your Love From Me 9:13 / My Ideal 7:32 / Stardust 10:41 / I'll Get By 8:09。厂牌内页写得很清楚：<strong>全部录于 1958 年 7 月 11 日；此前只以零散形式存在，这是第一次把整场合起来。</strong> 内页作者 <strong>Ira Gitler</strong>，摄影 <strong>Jim Marshall</strong>。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐ 更划算的买法：直接拿合辑</p><p class="nb"><strong>《Standard Coltrane》的四首全部包含在《The Stardust Session》里</strong>（Tracks 1、2、5、8）✓。要听这四首 + 多四首，一碟解决——<strong>这就是乐评说 probably the way to go 的实际含义</strong>，不是客套。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐ 另一条完整路线：《The Master》(PR 7825, 1970)</p><p class="nb"><strong>黑胶版只有四首，CD 版把同一场的另外四首一并补上了</strong> ✓✓。想找这条线的话，1970 年那张《The Master》也是「一次拿到整场」的版本。</p></div></li><li><span class="n">7</span><div><p class="nt">⚠️ 《Stardust》与《Bahia》并不是整张都来自这场</p><p class="nb">*Stardust* 只有 <strong>《Stardust》与《Love Thy Neighbour》</strong>两首出自 7/11/1958（另两首《Time After Time》《Then I'll Be Tired Of You》来自别的场次）；*Bahia* 只有 <strong>《I'm A Dreamer》《My Ideal》</strong>两首（另三首《Bahia》《Goldsboro Express》《Something I Dreamed Last Night》来自别处）。这也解释了为什么那两张碟的鼓手栏里 <strong>Art Taylor 与 Jimmy Cobb 同时出现</strong> ✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 版本：这张碟有 Kevin Gray 的版本</p><p class="nb"><strong>Analogue Productions 2019 年 Hybrid SACD</strong> 与 <strong>2022 年 180g 黑胶</strong>，<strong>均为 Kevin Gray 从原始模拟母带重制</strong> ✓✓——这是这张碟目前最好的版本，正好是你喜欢的路子。另有 2014 年 LP 再版、2016 年 Concord 数字重制（<strong>只有四首</strong>）。<strong>没有 OJC 版本</strong>（OJC 那条线上没有这一张）。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ 这张碟的性格：一场全是抒情曲的录音</p><p class="nb">*The Penguin Guide to Jazz Recordings* 的评语是「<strong>一场低强度的作业，重点在抒情曲</strong>」，并说 <strong>Harden 的小号「温暖而不强调」，非常适合这个场合，几乎不试图做任何吓人的事；他和领奏似乎只是「大致」商量了路子，两人的即兴有一种非正式、松弛的质感——迷人，但谈不上有动力</strong>」✓✓。乐评说「听着挺舒服」，和企鹅的评价其实是同一件事的两面。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ 《Invitation》10:22 是这张碟最值得反复听的一首</p><p class="nb">也是<strong>科特兰抒情曲演奏的代表作之一</strong>：把《Standard Coltrane》《Stardust》《Bahia》三张碟并排听，能听出同一天里他和三位节奏组成员（Garland 的 block chords、Chambers 的走动贝斯、Cobb 的刷子）之间那种<strong>极细微的互相校准</strong>。注意 Cobb 在抒情曲里用的是<strong>刷鼓</strong>——这也是这张碟高频听起来发毛的原因，是录音，不是系统。</p></div></li><li><span class="n">11</span><div><p class="nt">⚠️ 这场录音正落在他「牙口受损」的时期中间</p><p class="nb">1958 年这场之前，科特兰刚做完那副毁掉他部分哨片垫的嘴型修复（《Giant Steps》与《Ballads》之间的空档就来自这件事）。所以这张碟里那种<strong>收敛、留白、不炫技</strong>的质感，一部分来自曲目本身（本来就是抒情曲），一部分来自他的身体状态。<strong>把它当成「科特兰的抒情曲演奏集」来听，而不是「早期的硬 bop」——这是关键的听觉定位。</strong></p></div></li><li><span class="n">12</span><div><p class="nt">封面与内页</p><p class="nb">封面设计与摄影 <strong>Don Schlitten</strong>（Prestige 时代的老搭档）；内页 <strong>Robert Levin</strong>；录音、刻纹、母带全部在 <strong>Rudy van Gelder</strong> 手上；监制 Bob Weinstock。<strong>整张碟的曲目顺序与封面，同样是 Weinstock 单方面决定的</strong>——他没有问过科特兰，也没有问过乐手。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/standard-coltrane">Standard Coltrane 乐评原文（Steve Leggett）· 本篇出处</a></span></li><li><span class="k">Wikipedia</span><span><a href="https://en.wikipedia.org/wiki/Standard_Coltrane">Standard Coltrane（1962-10-02 发行、曲目时长、1970 年《The Master》补曲说明、《企鹅指南》评语）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/12909722-John-Coltrane-The-Stardust-Session">The Stardust Session（PCD-24056-2）· 整场 8 首、曲目时长、Ira Gitler 内页、各曲原始出处</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3051234-John-Coltrane-Standard-Coltrane">Prestige PRLP 7243 原版（曲目、演职员、Don Schlitten 封面、Robert Levin 内页、1958-07-11）</a></span></li><li><span class="k">Analogue Prod.</span><span><a href="https://www.readomnix.com/?p=29426">2022 年 180g 黑胶版（Kevin Gray 重制，原始模拟母带）</a></span></li><li><span class="k">Audio Sound Music</span><span><a href="https://www.audiosoundmusic.com/products/john-coltrane-standard-coltrane-hybrid-sacd">2019 年 Hybrid SACD 版（Kevin Gray 重制）</a></span></li><li><span class="k">HighResAudio</span><span><a href="https://mag.highresaudio.com/de/album/view/tfq43n/john-coltrane-johnny-hartman-standard-coltrane-remaster-2016">2016 年 Concord 数字重制版（曲目与总长）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/704000-John-Coltrane-The-Stardust-Sessions">The Stardust Sessions（Prestige 16PCD-4405，1991 年 4CD 大盒）· 用于辨析同名混淆</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

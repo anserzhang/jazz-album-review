@@ -11,14 +11,18 @@ index.html                              专题首页：特别专题 + 艺人索�
 │   ├── coltrane-olatunji-full.html          2001（录音 1967）
 │   ├── coltrane-africa-brass-full.html      1995（录音 1961）
 │   ├── coltrane-expression-full.html        1967
+│   ├── coltrane-ascension-full.html         1966
+│   ├── coltrane-meditations-full.html       1966
 │   ├── coltrane-love-supreme-full.html      1965
+│   ├── coltrane-bahia-full.html             1965
 │   ├── coltrane-sound-full.html             1964
 │   ├── coltrane-crescent-full.html          1964
 │   ├── coltrane-ballads-full.html           1963
 │   ├── coltrane-hartman-full.html           1963
-│   ├── coltrane-mft-full.html               1961
-│   ├── coltrane-jazz-full.html              1961
 │   ├── coltrane-lushlife-full.html          1961
+│   ├── coltrane-jazz-full.html              1961
+│   ├── coltrane-mft-full.html               1961
+│   ├── coltrane-standard-full.html          1962
 │   ├── coltrane-giant-steps-full.html       1960
 │   └── coltrane-blue-train-full.html        1958
 ├── miles-davis.html                    艺人页 · Miles Davis
@@ -46,7 +50,7 @@ git add -A && git commit -m "..." && git push origin main
 
 ## 约定
 
-- **排序**：专辑页按**发行**年份从新到旧，同年按发行日先后。录音日期另列，方便对照。合辑与档案类按其发行年份计，所以会排在录音更早的正编之前。
+- **排序**：专辑页按**发行**年份从新到旧，同一年内按发行日先后排（早的在前）。录音日期另列，方便对照。合辑与档案类按其发行年份计，所以会排在录音更早的正编之前。
 - **特别专题**：周年、纪念、跨代合作等不进年表，单开一块，排在专辑年表之前。
 - **归类**：按**领奏者**算。领奏是蒙克、柯特兰客席，则归蒙克页，不进柯特兰年表。
 - **专辑页骨架**固定六段：目录 → 专辑档案 → 曲目 → 对照正文 → 译注 → 资料来源。
