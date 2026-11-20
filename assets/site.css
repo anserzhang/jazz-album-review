@@ -99,6 +99,7 @@ hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
   transition:background .18s,transform .18s,border-color .18s;
 }
 .feature:hover{background:var(--card2);transform:translateX(3px)}
+.feature + .feature{margin-top:20px}
 .feature .ft-mark{
   font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
   color:var(--accent);margin-bottom:18px;

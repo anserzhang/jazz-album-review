@@ -8,6 +8,7 @@
 index.html                              专题首页：特别专题 + 艺人索引 + 体例说明
 ├── coltrane.html                       艺人页 · John Coltrane
 │   ├── coltrane-centennial-bilingual.html   特别专题：百年纪念注解集（排在年表之前）
+│   ├── coltrane-eternal-bilingual.html      特别专题：Qobuz 编辑专题「The Eternal John Coltrane」
 │   ├── coltrane-olatunji-full.html          2001（录音 1967）
 │   ├── coltrane-africa-brass-full.html      1995（录音 1961）
 │   ├── coltrane-expression-full.html        1967
