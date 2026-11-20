@@ -13,7 +13,9 @@ index.html                              专题首页：特别专题 + 艺人索�
 │   ├── coltrane-crescent-full.html          1964
 │   ├── coltrane-ballads-full.html           1963
 │   ├── coltrane-hartman-full.html           1963
-│   └── coltrane-giant-steps-full.html       1960
+│   ├── coltrane-jazz-full.html              1961
+│   ├── coltrane-giant-steps-full.html       1960
+│   └── coltrane-blue-train-full.html        1958
 ├── miles-davis.html                    艺人页 · Miles Davis
 │   └── miles-milestones-full.html          1958
 └── monk.html                           艺人页 · Thelonious Monk

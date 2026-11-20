@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Blue Train — 蓝调列车 · 约翰·科特兰</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿（Qobuz 原创）</a>
+  <a class="tb-crumb" href="coltrane.html">John Coltrane</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿（Qobuz 原创）</div>
+    <h1>Blue Train</h1>
+    <p class="title-cn">蓝调列车 · 约翰·科特兰</p>
+    <p class="byline">– Marc Zisman</p>
+    <p class="source">原文：Qobuz 专辑页原创乐评｜英文照录，中文对照</p>
+    <ul class="chips"><li>Blue Note BLP 1577 / BST-81577</li><li>录于 1957-09-15 · RVG 的 Hackensack 棚</li><li>Alfred Lion 制作 · RVG 录音</li><li>五首 · 41:59</li><li>Lee Morgan · Curtis Fuller · Kenny Drew · Chambers · Philly Joe</li><li>1999 Grammy 名曲堂</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">The Coltrane of Blue Train is finally about to cut numerous ties…</span><span class="toc-cn">终于要斩断牵绊，成为自己</span></li><li><span class="toc-en">Recorded on September 15, 1957…</span><span class="toc-cn">1957 年 9 月 15 日，Hackensack</span></li><li><span class="toc-en">Trane, then 31 years old, personally chose the musicians…</span><span class="toc-cn">亲自挑的班底</span></li><li><span class="toc-en">At the time, John Coltrane was playing at New York's Five Spot…</span><span class="toc-cn">同在 Monk 的四重奏</span></li><li><span class="toc-en">Stylistically, we are immersed in a slightly atypical hard bop…</span><span class="toc-cn">「科特兰式」尚未成型</span></li><li><span class="toc-en">Even so, Blue Train remains an incredibly classy record…</span><span class="toc-cn">但它依然雅致得体</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd>蓝调列车（Blue Train）· John Coltrane sextet</dd><dt>年份 / Year</dt><dd>1957 年 9 月 15 日录音，<strong>1958 年 1 月发行</strong>（Billboard 1/27/58 刊出）</dd><dt>厂牌 / Label</dt><dd>Blue Note BLP 1577（单声道，黎明的蓝白胶）/ BST-81577（立体声，约 1962–66 年再版）</dd><dt>录音地点</dt><dd>新泽西州 Hackensack · <strong>Rudy van Gelder 旧棚</strong>（1959 年 11 月才迁到 Englewood Cliffs）</dd><dt>制作 / 录音</dt><dd>制作 Alfred Lion · 录音 Rudy van Gelder · 封面设计 Reid Miles · 封面摄影 Francis Wolff · 内页 Robert Levin</dd><dt>编制</dt><dd>John Coltrane（次中音）· Lee Morgan（小号）· Curtis Fuller（长号）· Kenny Drew（钢琴）· Paul Chambers（低音提琴）· "Philly" Joe Jones（鼓）</dd><dt>曲目</dt><dd>5 首，总长 41:59；除《I'm Old Fashioned》外全为科特兰原创</dd><dt>地位</dt><dd>科特兰在 Blue Note 唯一一张领衔专辑；也是他第一张「自己挑人、自己做曲」的唱片</dd><dt>榜单与认证</dt><dd>发行即登爵士唱片榜<strong>总榜第一</strong>（近五年里第一张登顶的爵士碟）、#95 Billboard 200；2001 年 RIAA 金唱片；1999 年入选 Grammy 名曲堂</dd><dt>再版谱系</dt><dd>1958 原版 → 1997《The Ultimate Blue Train》（附 2 首备录）→ 2003「Rudy Van Gelder Edition」CD → <strong>2008 Analogue Productions 45 转 2×LP（Kevin Gray + Steve Hoffman / AcousTech / RTI，180g）</strong> → 2008 Classic Records 四张 45 转盒装 → <strong>2013 Music Matters 单声道 180g（Kevin Gray / Cohearent Audio / RTI，限量 3,500）</strong> → 2016/17 日本 SHMCD 与 SACD（含附赠曲）</dd><dt>本篇来源</dt><dd>Qobuz 专辑页原创乐评，© Marc Zisman / Qobuz</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Blue Train</td><td><span class="cn">蓝调列车 · Coltrane（同名曲，小调布鲁斯在独奏中转大调）</span></td><td class='ses'>1957-09-15</td><td class='dur'>10:40</td></tr><tr><td class='pos'>A2</td><td class='tt'>Moment's Notice</td><td><span class="cn">一刹那的注意 · Coltrane（后来成为标准曲）</span></td><td class='ses'>1957-09-15</td><td class='dur'>9:08</td></tr><tr><td class='pos'>B1</td><td class='tt'>Locomotion</td><td><span class="cn">运转 · 厂牌署 Coltrane（实源自 Hooker 的同名曲）</span></td><td class='ses'>1957-09-15</td><td class='dur'>7:12</td></tr><tr><td class='pos'>B2</td><td class='tt'>I'm Old Fashioned</td><td><span class="cn">我老派了 · Jerome Kern / Johnny Mercer（1933 年《Roberta》）</span></td><td class='ses'>1957-09-15</td><td class='dur'>7:55</td></tr><tr><td class='pos'>B3</td><td class='tt'>Lazy Bird</td><td><span class="cn">懒鸟 · Coltrane（后来成为标准曲）</span></td><td class='ses'>1957-09-15</td><td class='dur'>7:04</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>The Coltrane of Blue Train is finally about to cut numerous ties to truly become himself.</p></div><div class="zh-col"><p>《Blue Train》里的科特兰，终于即将斩断无数牵绊，真正成为他自己。</p></div></div><div class="pair"><div class="en-col"><p>Recorded on September 15, 1957, by sound engineering master Rudy Van Gelder in his Hackensack studio in New Jersey, and produced by Alfred Lion, this would be the saxophonist's only album as a leader on the Blue Note label.</p></div><div class="zh-col"><p>1957 年 9 月 15 日，由录音工程大师 Rudy van Gelder 在他新泽西的 Hackensack 棚里录下，制作人 Alfred Lion 操盘——这将是这位萨克斯手在 Blue Note 厂牌下唯一一张领衔作品。</p></div></div><div class="pair"><div class="en-col"><p>Trane, then 31 years old, personally chose the musicians around him--regulars from Miles Davis's group and Art Blakey's Jazz Messengers: Lee Morgan on trumpet, Curtis Fuller on trombone, Kenny Drew on piano, Paul Chambers on double bass, and Philly Joe Jones on drums.</p></div><div class="zh-col"><p>当时 31 岁的 Trane 亲自挑选了身边的乐手——来自 Miles Davis 乐队与 Art Blakey 大乐队的熟面孔：小号 Lee Morgan、长号 Curtis Fuller、钢琴 Kenny Drew、低音提琴 Paul Chambers、鼓手 Philly Joe Jones。</p></div></div><div class="pair"><div class="en-col"><p>At the time, John Coltrane was playing at New York's Five Spot in pianist Thelonious Monk's quartet.</p></div><div class="zh-col"><p>那时，约翰·科特兰正在纽约 Five Spot 俱乐部，在钢琴家 Thelonious Monk 的四重奏里演出。</p></div></div><div class="pair"><div class="en-col"><p>Stylistically, we are immersed in a slightly atypical hard bop. The fully Coltranean sound that would go down in history is not yet entirely in place.</p></div><div class="zh-col"><p>风格上，我们浸在一个略显「非典型」的硬波普里。那个后来被写进历史的、完整的「科特兰式」声音，此刻还没有完全就位。</p></div></div><div class="pair"><div class="en-col"><p>Even so, Blue Train remains an incredibly classy record, featuring stunning themes (all composed by Coltrane, except for Mercer and Kern's standard "I'm Old Fashioned") performed by six musicians conversing like never before. Not to mention the formal modernity of the improvisations!</p></div><div class="zh-col"><p>即便如此，《Blue Train》依然是一张极其雅致的唱片：六位乐手以前所未有的方式彼此对话，主题美得惊人（除 Mercer 与 Kern 的标准曲《I'm Old Fashioned》外，全部出自科特兰之手）。更不用说那些即兴在形式上的现代性了！</p></div></div><div class="pair"><div class="en-col"><p>© Marc Zisman/Qobuz</p></div><div class="zh-col"><p>© Marc Zisman / Qobuz</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️「31 岁」差了一个生日</p><p class="nb">科特兰生于 <strong>1926 年 9 月 23 日</strong>，而这场录音在 <strong>1957 年 9 月 15 日</strong>——他那天<strong>满 30 岁</strong>，<strong>八天后</strong>才过 31 岁生日。按录音日期算，这句该写「30 岁」。</p></div></li><li><span class="n">2</span><div><p class="nt">乐评漏掉的最大一件事：它是当年的大卖碟</p><p class="nb">这张 1958 年 1 月发行的唱片<strong>发行即登爵士唱片榜总榜第一</strong>——<strong>是近五年里第一张登顶总榜的爵士专辑</strong>；另进 #95 Billboard 200、Top Album Sales #7、Tastemaker Albums #6；<strong>2001 年拿到 RIAA 金唱片</strong>（50 万张）。放在同一时间的语境里看：同年 Blue Note 的《Somethin' Else》《Out to Lunch》《The Sidewinder》都是爆款，但《Blue Train》是<strong>唯一一张在商业榜上真正赢过爵士以外的唱片</strong>。换句话说：乐评说它「不是破局之作」，指的是音乐史意义，不是市场。</p></div></li><li><span class="n">3</span><div><p class="nt">「科特兰式的完整声音还没就位」——具体差在哪</p><p class="nb">这句话可以落到实处：<strong>《Giant Steps》（同年底）里的科特兰是垂直的和声密度</strong>，而这里的科特兰是<strong>横向的、句法清晰的硬波普线条</strong>——他还没有开始堆叠声之幔，仍然是一个「在和弦上走动的旋律手」。同名曲《Blue Train》本身是<strong>小调布鲁斯、在独奏进行中转成大调</strong>，那段转调正是他硬波普时期最好的独奏之一。而《Moment's Notice》《Lazy Bird》后来都成了标准曲。</p></div></li><li><span class="n">4</span><div><p class="nt">《Locomotion》的署名问题</p><p class="nb">原版内页把《Locomotion》署给<strong>科特兰</strong>，乐评因此把它算作原创——这与唱片一致。但这首曲子的骨架来自 <strong>John Lee Hooker 1955 年的同名曲</strong>。同理，《I'm Old Fashioned》是 <strong>Kern 作曲、Mercer 填词</strong>的 1933 年音乐剧《Roberta》里的歌。<strong>所以这张碟真正的原创是五首里的四首</strong>，其中《Moment's Notice》与《Lazy Bird》后来成了标准曲。</p></div></li><li><span class="n">5</span><div><p class="nt">班底：哪些人是「Miles 的」，哪些是「Blue Note 自家的」</p><p class="nb"><strong>Paul Chambers 与 "Philly" Joe Jones</strong> 是 Miles Davis 乐队的老班底；<strong>Lee Morgan 与 Curtis Fuller</strong> 则是 Blue Note 的自家班底（Morgan 19 岁，是厂牌的首席小号手，后来 1960 年因车祸去世）；<strong>Kenny Drew</strong> 也在 Blakey 的大乐队里待过。所以乐评说「Miles Davis 的乐队和 Blakey 大乐队的熟面孔」大体成立，但更准确的说法是：<strong>Miles 的节奏组 + Blue Note 的喇叭组</strong>——这也是这张碟后来被称为「历史上最好的爵士大编制六重奏唱片之一」的原因。而这批人只合作了<strong>这一场</strong>。</p></div></li><li><span class="n">6</span><div><p class="nt">「在 Monk 的四重奏里」——时间线刚好卡在这里</p><p class="nb">科特兰 <strong>1957 年 7 月</strong>加入 Monk 的四重奏，在纽约 Five Spot 俱乐部驻演（后来出了那张著名的 Prestige《Thelonious Monk with John Coltrane》，录的是 1957 年 4 月与 5 月在纽约 Reeves Sound 录音棚的两场）。<strong>1957 年 9 月 15 日录 Blue Train，他仍在 Monk 的四重奏里</strong>。所以这张碟的底色是 Monk 式的纪律与锐度——<strong>科特兰在 Monk 手下练出的那种「切分精确、句子短促、不容含糊」的打法，在这张碟里听得最清楚</strong>；而半年后他就能在《Giant Steps》里彻底放开。</p></div></li><li><span class="n">7</span><div><p class="nt">Hackensack 这个棚：为什么声音特别近</p><p class="nb"><strong>1957 年 9 月录的时候，RVG 的棚还在新泽西 Hackensack</strong>——一个民居改的小客厅，1959 年 11 月才搬到 Englewood Cliffs。所以《Blue Train》的空间感是<strong>极干、极近、几乎没有混响</strong>的（后来 Blue Note 在 Englewood Cliffs 的那张《Somethin' Else》《Out to Lunch》空间更开阔、乐器更分离）。<strong>这是你听这张碟与同期其他 Blue Note 时最先会发现的差别</strong>，而且是声学差别，不是母带差别。</p></div></li><li><span class="n">8</span><div><p class="nt">封面：同一张脸的两个版本</p><p class="nb">封面设计是 <strong>Reid Miles</strong>——Blue Note 视觉体系的开创者。封面照片坊间常说有两版：<strong>早期压片用的是 Andrew Chesteron 拍的那张，1959 年后由 Francis Wolff 的照片取代</strong>（Wolff 从 1959 年起接手掌管 Blue Note 的封面摄影）。如果你手里是首版或 1959 年前后的压片，值得翻到背面比对一下——<strong>这不是压制等级问题，是两张不同的照片</strong>。</p></div></li><li><span class="n">9</span><div><p class="nt">科特兰自己怎么说</p><p class="nb"><strong>1960 年的一次访谈里，科特兰亲口说《Blue Train》是他截至当时录过的所有唱片里最喜欢的一张</strong>。这句话值得放在这里对照乐评：「The fully Coltranean sound that would go down in history is not yet entirely in place」——<strong>他认为那是自己最好的一张，那时「完整的科特兰」还没成型</strong>。</p></div></li><li><span class="n">10</span><div><p class="nt">版本谱系：你有得挑，而且有几个是真标杆</p><p class="nb">① <strong>2008 年 Analogue Productions 的 45 转 2×LP（AP-81577 / BST-81577）</strong>——<strong>Kevin Gray 与 Steve Hoffman 在 AcousTech 母带、RTI 压片、180g</strong>，五首排成 A/B/C/D 四面。② <strong>2013 年 Music Matters「Blue Note The Definitive Vinyl Reissue Series」MMBLP-1577</strong>——<strong>单声道 180g、Kevin Gray 在 Cohearent Audio 母带兼刻纹、限量 3,500 张</strong>，这是最接近「1958 年原声」的一版。③ <strong>2008 年 Classic Records 的四张 45 转盒装</strong>（同时给单声道与立体声）。④ <strong>1997《The Ultimate Blue Train》与 2003「Rudy Van Gelder Edition」CD</strong> 各附两首备录（《Blue Train》备录 9:55、《Lazy Bird》备录 7:09）。⑤ 2016/17 日本 SHMCD 与 SACD 也带附赠曲。<strong>注意：Mono 版比立体声版更「聚焦」，而 Blue Note 的立体声底噪与左右分配一直被发烧友两派争论——但这一张的立体声版相当好。</strong></p></div></li><li><span class="n">11</span><div><p class="nt">1999 年入 Grammy 名曲堂</p><p class="nb"><strong>《Blue Train》1999 年入选 Grammy 名曲堂</strong>——科特兰名下分批入选的还有《My Favorite Things》（1998）、《Giant Steps》（2001）、《Ballads》（2008）、《John Coltrane and Johnny Hartman》（2013）。<strong>加上 2001 年这张碟的 RIAA 金唱片，说明它的地位在他活着的时候就定了。</strong></p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">Qobuz</span><span><a href="https://www.qobuz.com/us-en/album/blue-train-john-coltrane/0060253726334">Blue Train 专辑页与 Marc Zisman 原创乐评 · 本篇出处</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Blue_Train_(album)">Blue Train (album) · 曲目、编制、榜单成绩、1999 名曲堂、科特兰本人评价</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/11786823-John-Coltrane-Blue-Train">Blue Note BLP 1577 首版内页（1958-01，RVG 死蜡，封面摄影与设计署名）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2360084-John-Coltrane-Blue-Train">Analogue Productions 2008 45 转 2×LP（Kevin Gray + Steve Hoffman / AcousTech / RTI）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/5349832-John-Coltrane-Blue-Train">Music Matters 2013 单声道 180g 限量版（Kevin Gray / Cohearent Audio）</a></span></li><li><span class="k">Progrography</span><span><a href="https://progrography.com/john-coltrane/john-coltrane-blue-train-1957/">Blue Train 评论与完整再版年表（1997 / 2003 / 2008 / 2012 / 2016 / 2017 各版）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
