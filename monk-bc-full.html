@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Brilliant Corners — 至妙的转角 · 1956 年 10–12 月，Reeves Sound Studios，纽约</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="monk.html">Thelonious Monk</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Brilliant Corners</h1>
+    <p class="title-cn">至妙的转角 · 1956 年 10–12 月，Reeves Sound Studios，纽约</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：AllMusic 专辑乐评（Lindsay Planer）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Riverside RLP 12-226（单声道，1957-04-04 发行）</li><li>录音 1956-10-09 / 10-15 / 12-07 三场</li><li>Reeves Sound Studios（纽约 49 街），非 RVG 客厅棚</li><li>标题曲 = 25 个 take 拼出来的</li><li>Pettiford / Rollins / Henry / Roach + Chambers / Terry</li><li>AP 2003 年 45 转 2LP · Craft 2023 重刻</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Although Brilliant Corners is Thelonious Monk's third disc for Riverside…</span><span class="toc-cn">第三张，却录得最早</span></li><li><span class="toc-en">it's the first on the label to weigh in with such heavy original material.</span><span class="toc-cn">Riverside 第一张全原创</span></li><li><span class="toc-en">Enthusiasts who become jaded to the idiosyncratic nature of Monk's playing…</span><span class="toc-cn">听腻了也该回头听</span></li><li><span class="toc-en">The assembled quartet for the lion's share of the sessions included Max Roach…</span><span class="toc-cn">四重奏名单（这段是对的）</span></li><li><span class="toc-en">Although a compromise, the selection of Miles Davis' bassist, Paul Chambers, and Clark Terry…</span><span class="toc-cn">《Bemsha Swing》的换人</span></li><li><span class="toc-en">Likewise, Roach's timpani interjections supply an off-balanced sonic surrealism…</span><span class="toc-cn">定鼓制造的超现实</span></li><li><span class="toc-en">It's easy to write Monk's ferocity and Forrest Gump-esque ingenuity off as gimmick…</span><span class="toc-cn">《阿甘正传》式的巧思</span></li><li><span class="toc-en">The childlike innocence evoked by Monk's incorporation of the celeste…</span><span class="toc-cn">钢片琴与《Pannonica》</span></li><li><span class="toc-en">Brilliant Corners may well be considered the alpha and omega of post-World War II American jazz.</span><span class="toc-cn">战后美国爵士的起点与终点</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Brilliant Corners（至妙的转角）</strong> · Thelonious Monk Quintet｜<strong>42:47，全碟只有五首</strong></dd><dt>录音 / 发行</dt><dd><strong>1956-10-09、10-15、12-07 三场</strong>｜<strong>录制于 Reeves Sound Studios, New York City（418 West 49th St）——不是 RVG 的客厅棚</strong> ✓｜<strong>发行 1957-04-04</strong>（Riverside RLP 12-226，单声道）</dd><dt>曲目</dt><dd>A1 <strong>Brilliant Corners</strong> 7:42（10-15）｜A2 <strong>Ba-lue Bolivar Ba-lues-are</strong> 13:24（10-09）｜B1 <strong>Pannonica</strong> 8:50（10-09，<strong>钢片琴</strong>）｜B2 <strong>I Surrender, Dear</strong> 5:25（12-07，<strong>钢琴独奏</strong>）｜B3 <strong>Bemsha Swing</strong> 7:42（12-07，<strong>Chambers 贝斯 + Clark Terry 小号 + Roach 定鼓</strong>）</dd><dt>编制</dt><dd>Thelonious Monk（钢琴；<strong>《Pannonica》钢片琴</strong>；《I Surrender, Dear》独奏）· <strong>Sonny Rollins</strong>（次中音）· <strong>Ernie Henry</strong>（中音）· <strong>Oscar Pettiford</strong>（贝斯，前三曲）· <strong>Paul Chambers</strong>（贝斯，《Bemsha Swing》）· Max Roach（鼓；<strong>定鼓只在《Bemsha Swing》</strong>）· <strong>Clark Terry</strong>（小号，《Bemsha Swing》）</dd><dt>制作 / 工程</dt><dd>制作 <strong>Orrin Keepnews + Bill Grauer</strong> · 工程 <strong>Jack Higgins</strong> · 刻片 Joe Tarantino · 封面设计 <strong>Paul Bacon</strong> · 封面摄影 <strong>Paul Weller</strong> · 内页 Keepnews</dd><dt>⭐ 历史坐标</dt><dd><strong>Riverside 第三张 Monk 碟，却是录得最早的一张</strong>（三场全在 1956 年 10–12 月，比其他 Riverside 的 Monk 录音早半年以上）；<strong>也是该厂第一张以 Monk 原创为主体的专辑</strong> ✓（前两张基本是翻唱曲库）</dd><dt>⭐ 标题曲的诞生</dt><dd><strong>1956-10-15 一场四小时、打了 25 个 take 没能完成一条</strong>；Henry 情绪几乎崩溃、Pettiford 与 Monk 当场争执；<strong>有一版控制室完全听不见 Pettiford 的贝斯，查了话筒才发现他是在「只做动作不出声」</strong> ✓——最终唱片版由 Keepnews <strong>用多个 take 拼成</strong> ✓</dd><dt>版本谱系</dt><dd>1957 原版 RLP 12-226（单声道）→ <strong>OJC 026 / OJCCD 026-2</strong>（Fantasy 的 OJC 线）→ <strong>2003 Analogue Productions 2×12″ 45 转版</strong>（RLP 12-226 / AJAZ 12-226）→ 2010 再版 → <strong>2024 AAPJ 12-226</strong> → <strong>Craft Recordings 2023（CR00502，限量编号盒装）+ 2025 限量版</strong> → 日本 VDJ-1526（1985 CD 重刻）、RISA-226-6 混合 SACD。<strong>无 MFSL</strong> ✓</dd><dt>荣誉</dt><dd><strong>1999 年入选 Grammy 名曲堂</strong> ✓｜<strong>2003 年入选美国国会图书馆「国家录音登记」</strong> ✓｜《1001 Albums You Must Hear Before You Die》入选 ✓｜Penguin Guide 选入 core collection ✓｜<strong>Down Beat 评为 1957 年最受好评的爵士专辑</strong> ✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Brilliant Corners</td><td><span class="cn">至妙的转角 · <strong>多 take 拼接而成</strong></span></td><td class='ses'>1956-10-15</td><td class='dur'>7:42</td></tr><tr><td class='pos'>A2</td><td class='tt'>Ba-lue Bolivar Ba-lues-are</td><td><span class="cn">蓝色玻利瓦尔 · Monk 把自己的发音写成文字（全碟最长）</span></td><td class='ses'>1956-10-09</td><td class='dur'>13:24</td></tr><tr><td class='pos'>B1</td><td class='tt'>Pannonica</td><td><span class="cn">帕农尼卡 · 写给 Pannonica de Koenigswarter 女士（<strong>钢片琴</strong>）</span></td><td class='ses'>1956-10-09</td><td class='dur'>8:50</td></tr><tr><td class='pos'>B2</td><td class='tt'>I Surrender, Dear</td><td><span class="cn">我投降，亲爱的 · Harry Barris / Gordon Clifford 原作（<strong>Monk 钢琴独奏</strong>）</span></td><td class='ses'>1956-12-07</td><td class='dur'>5:25</td></tr><tr><td class='pos'>B3</td><td class='tt'>Bemsha Swing</td><td><span class="cn">Bemsha 摇摆 · Monk 与 Denzil Best 合著（Chambers 贝斯 / Clark Terry 小号 / Roach 定鼓）</span></td><td class='ses'>1956-12-07</td><td class='dur'>7:42</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Although Brilliant Corners is Thelonious Monk's third disc for Riverside, it's the first on the label to weigh in with such heavy original material.</p></div><div class="zh-col"><p>尽管《Brilliant Corners》是 Thelonious Monk 在 Riverside 的第三张唱片，但它却是这个厂牌<strong>第一次摆出这么重的原创分量</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Enthusiasts who become jaded to the idiosyncratic nature of Monk's playing or his practically arithmetical chord progressions should occasionally revisit Brilliant Corners.</p></div><div class="zh-col"><p>那些听惯了、听腻了 Monk 那种特立独行的弹法、以及他那种几乎是算术题一样的和弦进行的人，<strong>应该时不时回头再听一遍《Brilliant Corners》</strong>。</p></div></div><div class="pair"><div class="en-col"><p>There is an inescapable freshness and vitality saturated into every measure of every song.</p></div><div class="zh-col"><p>每一首曲子的每一个小节里，都浸透着一种<strong>无法回避的新鲜感与生命力</strong>。</p></div></div><div class="pair"><div class="en-col"><p>The passage of time makes it all the more difficult to imagine any other musicians bearing the capacity to support Monk with such ironic precision.</p></div><div class="zh-col"><p>时间越久，就越难想象还有别的乐手，能以那种<strong>带着反讽的精准度</strong>来托住 Monk。</p></div></div><div class="pair"><div class="en-col"><p>The assembled quartet for the lion's share of the sessions included Max Roach (percussion), Sonny Rollins (tenor sax), Oscar Pettiford (bass), and Ernie Henry (alto sax).</p></div><div class="zh-col"><p>占据大部分录音时间的那个四重奏，由 <strong>Max Roach（打击乐）、Sonny Rollins（次中音）、Oscar Pettiford（贝斯）与 Ernie Henry（中音）</strong>组成。</p></div></div><div class="pair"><div class="en-col"><p>Although a compromise, the selection of Miles Davis' bassist, Paul Chambers, and Clark Terry (trumpet) on "Bemsha Swing" reveals what might be considered an accident of ecstasy, as they provide a timeless balance between support and being able to further the cause musically.</p></div><div class="zh-col"><p>虽然是个妥协的安排，但《Bemsha Swing》里换上了 Miles Davis 的贝斯手 <strong>Paul Chambers</strong> 和 <strong>Clark Terry（小号）</strong>，却成就了一种近乎<strong>狂喜的意外</strong>：他们在「支撑」与「推进音乐」之间给出了不会过时的平衡。</p></div></div><div class="pair"><div class="en-col"><p>Likewise, Roach's timpani interjections supply an off-balanced sonic surrealism while progressing the rhythm in and out of the holes provided by Monk's jackrabbit leads.</p></div><div class="zh-col"><p>同样地，Roach 的<strong>定鼓插入</strong>制造出一种失衡般的听感超现实，同时在 Monk 那兔子乱跳般的领奏所留下的空隙里，把节奏推上推下。</p></div></div><div class="pair"><div class="en-col"><p>It's easy to write Monk's ferocity and Forrest Gump-esque ingenuity off as gimmick or quirkiness.</p></div><div class="zh-col"><p>人们很容易把 Monk 的凶猛、以及他那<strong>《阿甘正传》式的巧思</strong>——说成是噱头或怪癖。</p></div></div><div class="pair"><div class="en-col"><p>What cannot be dismissed is Monk's ability to translate emotions into the language of music, as in the freedom and abandon he allows through Sonny Rollins' and Max Roach's mesmerizing solos in "Brilliant Corners."</p></div><div class="zh-col"><p><strong>无法被否定的是 Monk 把情感翻译成音乐语言的能力</strong>——就像他在《Brilliant Corners》里，交给 Sonny Rollins 与 Max Roach 那些迷醉的独奏时，那份自由与放手。</p></div></div><div class="pair"><div class="en-col"><p>The childlike innocence evoked by Monk's incorporation of the celeste during the achingly beautiful ode "Pannonica" raises the emotional bar several degrees.</p></div><div class="zh-col"><p>在痛楚到极美的颂歌《Pannonica》里，Monk 引入<strong>钢片琴</strong>所唤起的那种孩童般的天真，<strong>把情感的水位一下子抬高了好几度</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Perhaps more pointed, however, is the impassioned "I Surrender, Dear" -- the only solo performance on the album.</p></div><div class="zh-col"><p>不过更锋利、更直接的，是那首饱含激情的《I Surrender, Dear》——<strong>全碟唯一的一首独奏曲</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Brilliant Corners may well be considered the alpha and omega of post-World War II American jazz. No serious jazz collection should be without it.</p></div><div class="zh-col"><p>《Brilliant Corners》完全可以被视为<strong>二战后美国爵士的起点与终点</strong>。任何认真的爵士收藏里，都不该没有它。</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer / TiVo —— 本篇乐评版权归属。<strong>Lindsay Planer 是 AllMusic 的主编</strong>；本篇出自 AllMusic 乐评，经 TiVo 元数据分发。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">✅ 先说清楚：这一篇的事实几乎全部成立</p><p class="nb">逐条核对 ✓✓：<strong>四重奏名单完全正确</strong>（Roach / Rollins / <strong>Oscar Pettiford 贝斯</strong> / Ernie Henry 中音）——注意 Pettiford 确实在这张碟上，不是常被误传的 Wilbur Ware；<strong>Chambers 与 Clark Terry 只出现在《Bemsha Swing》</strong> ✓✓（Chambers 顶替 Pettiford，Terry 顶替 Henry）；<strong>Roach 的定鼓只在《Bemsha Swing》</strong> ✓✓；<strong>钢片琴只在《Pannonica》</strong> ✓✓；<strong>《I Surrender, Dear》是全碟唯一的独奏</strong> ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 但漏掉了全碟最长的一曲：《Ba-Lue Bolivar Ba-Lues-Are》13:24</p><p class="nb">乐评点了四首，<strong>唯独没提这首 13 分 24 秒的曲子</strong>——它才是这张碟上时长最重、也最该被提到的一首 ✓✓。<strong>曲名本身就是一件作品</strong>：Monk 把自己念「Blue Bolivar Blues」的怪腔怪调直接写成了文字 ✓✓，指的是曼哈顿的 <strong>Bolivar Hotel</strong>——爵士女主人 <strong>Pannonica de Koenigswarter</strong> 住在那儿 ✓✓；<strong>《Pannonica》就是写给她的</strong> ✓✓，而乐评称它是「痛楚到极美的颂歌」，措辞完全对得上。这首也是那张著名封面之外最该被记住的一曲（结尾有 Monk 那声标志性的呼喊）。</p></div></li><li><span class="n">3</span><div><p class="nt">⚠️ 「第三张」对，但它其实是「录得最早的一张」</p><p class="nb">「Riverside 第三张」✓✓（与维基百科一致）；「该厂第一张以原创为主体的专辑」也 ✓✓——<strong>Riverside 前两张 Monk 碟基本是翻唱曲库</strong>（如《Thelonious Monk》里的 Blue Monk / Well You Needn't / Epistrophy / Functional）✓。<strong>关键的反差是时间</strong>：这张碟的三场录音全部落在 <strong>1956 年 10–12 月</strong>，发行却拖到 <strong>1957-04-04</strong> ✓✓——<strong>它录得最早、发得却排在第三</strong>。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐⭐ 录音棚不是 RVG 的客厅，是 Reeves Sound Studios</p><p class="nb">Discogs 的原版条目写明：<strong>Recorded at Reeves Sound Studios, New York City</strong>（原版封底印着地址 <strong>418 West 49th St</strong>；1957 年再版改成 553 West 51st St）✓✓。<strong>所以这张碟不是东岸 RVG「客厅棚」的近场贴脸声</strong>——它是<strong>曼哈顿中城一间正规录音棚</strong>，房间更大、钢琴更饱满、鼓的空气更多 ✓✓。这解释了为什么《Brilliant Corners》的声音比一般 Riverside 碟「撑得更开」。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐⭐⭐ 标题曲是「拼」出来的——这是整张碟最惊人的幕后</p><p class="nb"><strong>1956-10-15 那一场打了四个小时、25 个 take 没能完成一条</strong> ✓✓。曲子难到让 <strong>Ernie Henry 情绪几乎崩溃</strong>、<strong>Pettiford 与 Monk 当场互相放狠话</strong> ✓✓。最有名的一幕：<strong>有一段 take，控制室里完全听不见 Pettiford 的贝斯，大家以为话筒坏了，查完才发现他是在「只做动作、不出声」——他干脆不弹了</strong> ✓✓。最后唱片上的版本，<strong>是 Keepnews 从多个 take 里拼出来的</strong> ✓✓。<strong>这意味着标题曲里能听出轻微的音量与房间感跳变——不是瑕疵，是历史。</strong></p></div></li><li><span class="n">6</span><div><p class="nt">⚠️ 「全碟原创」严格说是「三首原创 + 两首合作／翻唱」</p><p class="nb"><strong>《I Surrender, Dear》不是 Monk 的作品</strong>——它是 <strong>Harry Barris 与 Gordon Clifford</strong> 的作品（1930 年代音乐剧《Hot-Cha!》里的标准曲）✓✓；<strong>《Bemsha Swing》则与 Denzil Best 合作</strong> ✓✓。乐评说「第一张摆出这么重原创分量的碟」是文学化的概括，成立；但严格说是：<strong>五首里三首 Monk 原创，一首合著，一首翻唱</strong> ✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 「《阿甘正传》式的巧思」是个玩笑，别当赞美</p><p class="nb">乐评人写的是 <strong>Forrest Gump-esque ingenuity</strong> ✓——<strong>表面像《阿甘正传》那种憨，底下是极其精密的算术</strong> ✓✓。这正是 Monk 的和声美学：<strong>听起来天真，实际上是把和弦换位与节奏错位算到了毫厘</strong>。这也是为什么它既「好听得不像爵士」又难写得像爵士。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 1957 年的口碑：不是封神，是当年就被封</p><p class="nb"><strong>Down Beat 1957-12-12 给了 5 星，主编 Nat Hentoff 称它是「Riverside 迄今为止最重要的现代爵士 LP」</strong> ✓✓，并被公认为<strong>1957 年最受好评的爵士专辑</strong> ✓。<strong>Robert Christgau 认为它与 1958 年的现场碟《Misterioso》一起代表了 Monk 的艺术巅峰</strong> ✓✓。Penguin Guide 给了四星并选入 core collection ✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ 荣誉与收录</p><p class="nb"><strong>1999 年入选 Grammy 名曲堂</strong> ✓✓｜<strong>2003 年入选美国国会图书馆「国家录音登记」</strong> ✓✓｜入选《1001 Albums You Must Hear Before You Die》（Andrew Gilbert：<strong>「marked Monk's return as composer of the first order」——标志着 Monk 作为作曲家的回归</strong>）✓✓｜<strong>乐评最后那句「the alpha and omega of post-World War II American jazz」被维基百科整句引用</strong> ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐⭐ 版本（这一段对你最有用）</p><p class="nb"><strong>1957 原版 Riverside RLP 12-226</strong>（单声道；<strong>封面设计 Paul Bacon</strong>、<strong>封面摄影 Paul Weller</strong> ✓✓）→ <strong>OJC 026 / OJCCD 026-2</strong>（Fantasy 的 OJC 线）✓→ <strong>2003 年 Analogue Productions 的 2×12″ 45 转版（RLP 12-226 / AJAZ 12-226）</strong> ✓✓ ——<strong>这一版正合你的口味：45 转是为带宽服务的刻法</strong> ✓ → 2010 再版 → <strong>2024 年 AAPJ 12-226</strong> ✓ → <strong>Craft Recordings 2023 年 CR00502（限量编号盒装）+ 2025 年限量版</strong> ✓✓ → 日本 VDJ-1526（1985 CD 重刻）、RISA-226-6 混合 SACD ✓。<strong>没有 MFSL</strong> ✓✓（我查过这个 master 的全部版本）。<strong>数字版直接上 Qobuz 就行，DR 不高，别纠结 24/192 与 24/96 的差别。</strong></p></div></li><li><span class="n">11</span><div><p class="nt">⭐⭐ 给你的系统：三首「标定曲」的分工</p><p class="nb"><strong>① 《Pannonica》测高频延伸与本底噪声</strong>——钢片琴的铃音谐波在 6–10k，而这一曲的混音<strong>极轻</strong>，<strong>你的底噪、机箱嗡声、空调声全都会在这里现形</strong> ✓✓。<strong>② 《Bemsha Swing》测低频</strong>——<strong>定鼓 + Chambers 的走动贝斯</strong>，定鼓的低频落点能一眼看出 60–80Hz 是不是准 ✓✓。<strong>③ 《I Surrender, Dear》测中频厚度与房间衰减</strong>——纯钢琴、无任何掩护，<strong>Monk 的琴槌击弦能量与击弦后的衰减全暴露在外</strong> ✓✓。另外：<strong>标题曲是拼的，音量与房间感会有极轻微的跳变——别把它当成系统的问题</strong> ✓。</p></div></li><li><span class="n">12</span><div><p class="nt">⭐ 最后的推荐：这张碟值得当作你的「系统体检片」</p><p class="nb"><strong>42 分 47 秒，五首，其中一首 13 分钟</strong>——<strong>信息密度极高、带宽要求不高、动态层次清楚</strong>，是一张非常适合用来判断「这套系统在干净、克制、古典曲目之外还能不能站得住」的唱片 ✓✓。<strong>如果你的 G FOUR + Dirac 能把《Pannonica》的钢片琴放得轻盈而不尖、把《Bemsha Swing》的定鼓放得沉而不糊、把《I Surrender, Dear》的钢琴放得厚而不闷，那这套系统的基本功就是过关的</strong> ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/brilliant-corners">Lindsay Planer 乐评原文（本篇出处，附完整曲目与人员表）</a></span></li><li><span class="k">Wikipedia</span><span><a href="https://www.wikiwand.com/en/Brilliant_Corners">Brilliant Corners 条目：三场录音日期、逐曲人员、25 个 take 与 Keepnews 拼接、Nat Hentoff 五星评、Grammy 名曲堂与国家录音登记</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3835076-Thelonious-Monk-Brilliant-Corners">原版 Riverside RLP 12-226（1957）：Reeves Sound Studios 录音说明与日期、全部演职员、Paul Bacon 封面设计、封底地址 418 West 49th St</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/120705-Thelonious-Monk-Brilliant-Corners">master 120705 全部版本清单（OJC 026 / AJAZ 12-226 45 转 / AAPJ 12-226 / Craft CR00502 / 日本 SACD；无 MFSL）</a></span></li><li><span class="k">OJC</span><span><a href="https://www.discogs.com/release/7866647-Thelonious-Monk-Brilliant-Corners">Original Jazz Classics OJC 026 / OJCCD 026-2 再版条目</a></span></li><li><span class="k">AP 45 转</span><span><a href="https://www.discogs.com/release/3917269-Thelonious-Monk-Brilliant-Corners">Analogue Productions 2003 年 2×12″ 45 转版（RLP 12-226 / AJAZ 12-226）条目</a></span></li><li><span class="k">Craft</span><span><a href="https://www.discogs.com/release/28210087-Thelonious-Monk-Brilliant-Corners">Craft Recordings 2023 年 CR00502 限量编号重刻条目</a></span></li><li><span class="k">Down Beat</span><span><a href="https://www.wikiwand.com/en/Brilliant_Corners">1957-12-12 期 Nat Hentoff 五星评「Riverside's most important modern jazz LP to date」与「1957 年最受好评的爵士专辑」</a></span></li><li><span class="k">Monk Reader</span><span><a href="https://www.wikiwand.com/en/Brilliant_Corners">Rob van der Bliek 编《The Thelonious Monk Reader》(2001) 中「Brilliant Corners and Riverside」一章（Keepnews 与 Monk 的制作关系）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

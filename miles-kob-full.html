@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Kind of Blue — 泛蓝调调 · 1959 年 3 月 25 日与 4 月 2 日，Columbia 30th Street</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="miles-davis.html">Miles Davis</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Kind of Blue</h1>
+    <p class="title-cn">泛蓝调调 · 1959 年 3 月 25 日与 4 月 2 日，Columbia 30th Street</p>
+    <p class="byline">– Robert Baird</p>
+    <p class="source">原文：Qobuz 专辑页编辑文字（Robert Baird）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Columbia CL 1355 单 / CS 8163 立体声（1959-08-17）</li><li>录音 1959-03-25 与 04-02 两场，相隔 8 天</li><li>Columbia 30th Street Studio（207 E 30th St）</li><li>工程师 Fred Plaut · 制作 Irving Townsend</li><li>三通道单声道折叠 + 混凝土混响室只给小号与贝斯</li><li>无 AP / 无 MFSL / 无 45 转</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Sixty years after the release of Miles Davis' masterpiece, explanations for its everlasting allure…</span><span class="toc-cn">六十年后，谜仍在</span></li><li><span class="toc-en">often cited as the best-selling jazz album in history.</span><span class="toc-cn">史上最畅销的爵士唱片</span></li><li><span class="toc-en">Recorded in long, whole takes over only two sessions 51 days apart…</span><span class="toc-cn">「相隔 51 天」是错的</span></li><li><span class="toc-en">with its relaxed tempi, rich colors and sleek silences…</span><span class="toc-cn">松弛的速度与沉默</span></li><li><span class="toc-en">Captured in great depth and detail by engineer Fred Plaut…</span><span class="toc-cn">Fred Plaut 与五首曲子</span></li><li><span class="toc-en">building potent chemistry between musicians of contrasting styles…</span><span class="toc-cn">相反者的化学反应</span></li><li><span class="toc-en">According to Evans' original liner notes, Davis came up with these five explorations the night before…</span><span class="toc-cn">「前一晚」也说过头了</span></li><li><span class="toc-en">or what Evans accurately summed up here as 'collective coherent thinking'…</span><span class="toc-cn">Evans 的两句原话</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Kind of Blue（泛蓝调调）</strong> · Miles Davis Sextet</dd><dt>录音 / 发行</dt><dd><strong>录音 1959-03-25 与 04-02 两场</strong>（Columbia 30th Street Studio，207 E 30th St，纽约，<strong>前亚美尼亚教堂</strong>）｜<strong>发行 1959-08-17</strong>（CL 1355 单声道 / CS 8163 立体声）</dd><dt>编制</dt><dd>Miles Davis（小号）· John Coltrane（次中音）· Cannonball Adderley（中音）· Bill Evans（钢琴）· <strong>Wynton Kelly（钢琴，仅《Freddie Freeloader》一曲）</strong> · Paul Chambers（贝斯）· Jimmy Cobb（鼓）</dd><dt>曲目</dt><dd>So What 9:22｜Freddie Freeloader 9:46｜Blue in Green 5:37｜All Blues 11:33｜Flamenco Sketches 9:50（<strong>总长 45:34</strong>）</dd><dt>制作 / 工程</dt><dd>工程师 <strong>Fred Plaut</strong> · 制作 <strong>Irving Townsend</strong> · 内页文案 <strong>Bill Evans</strong> · 封面 David Stone Martin</dd><dt>⭐ 录音机制</dt><dd><strong>1959 年 Columbia 同时开四台机器</strong>：单声道主机 + 单声道备份、三轨主机 + 三轨备份；所谓立体声 = <strong>三通道折叠</strong>（左 / 中 / 右），<strong>不是真正的立体声拾音</strong> ✓；<strong>混凝土混响室只接在中心通道（小号 + 贝斯）的收发线上</strong> ✓</dd><dt>⭐ 母带状态</dt><dd><strong>原始单声道母带已失传</strong>（推测被消磁重用或遗失），现存单声道版皆由三轨折下 ✓；<strong>1992 年 Mark Wilder 发现三轨机走带偏慢 → 原版立体声 A 面音高略偏高</strong>（单声道来自另一台机器，不受影响），2009 Legacy 与 2019 单声道重刻均已修正 ✓</dd><dt>版本谱系</dt><dd>1959 原版单声道 CL 1355（6-Eye 标） / 立体声 CS 8163 → 1997 CK 64911 → <strong>2008 50 周年蓝色 180g 盒装</strong> → <strong>2009 Legacy Edition 2LP/2CD</strong>（Steve Hoffman 从原模拟母带重刻，含《Flamenco Sketches》另一 take 与 studio sequences）→ <strong>2019 Record Store Day 单声道 180g</strong>（88883761031，<strong>Ryan K. Smith @ Sterling Sound</strong>）＋《The Original Mono Recordings》9CD 盒 → 日本 Sony SACD。<strong>无 Analogue Productions、无 MFSL、无 45 转</strong> ✓</dd><dt>认证 / 档案</dt><dd><strong>RIAA 2019 年五白金</strong> ✓｜<strong>2002 年入选美国国会图书馆「国家录音登记」首批 50 首</strong> ✓｜2002 年后长期以「史上销量最高的爵士专辑」被引用 ✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>So What</td><td><span class="cn">那又怎样 · 16 小节一个音阶、8 小节另一个、再 8 小节回到第一个</span></td><td class='ses'>1959-03-25</td><td class='dur'>9:22</td></tr><tr><td class='pos'>A2</td><td class='tt'>Freddie Freeloader</td><td><span class="cn">弗雷迪漫无目的 · 十二小节布鲁斯（<strong>Wynton Kelly 弹钢琴</strong>）</span></td><td class='ses'>1959-03-25</td><td class='dur'>9:46</td></tr><tr><td class='pos'>A3</td><td class='tt'>Blue In Green</td><td><span class="cn">绿中蓝 · 十小节循环形式，钢琴与贝斯自由开场</span></td><td class='ses'>1959-03-25</td><td class='dur'>5:37</td></tr><tr><td class='pos'>B1</td><td class='tt'>All Blues</td><td><span class="cn">全部布鲁斯 · 六八拍十二小节布鲁斯，<strong>现场曾叫 All Blue</strong></span></td><td class='ses'>1959-04-02</td><td class='dur'>11:33</td></tr><tr><td class='pos'>B2</td><td class='tt'>Flamenco Sketches</td><td><span class="cn">弗拉门戈素描 · <strong>五个音阶依次演奏，各自随意延长</strong>（最纯粹的调式曲）</span></td><td class='ses'>1959-04-02</td><td class='dur'>9:50</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Sixty years after the release of Miles Davis' masterpiece, explanations for its everlasting allure and mysterious beauty remain elusive.</p></div><div class="zh-col"><p>在 Miles Davis 这张杰作发行六十年之后，人们依然说不出它那历久不衰的吸引力与神秘之美究竟从何而来。</p></div></div><div class="pair"><div class="en-col"><p>Over the years—in books, magazines and documentary films—a parade of Miles' contemporaries have struggled to explain this 1959 album, often cited as the best-selling jazz album in history.</p></div><div class="zh-col"><p>这些年来——在书里、杂志里、纪录片里——一拨又一拨与 Miles 同时代的乐手费尽力气想解释这张 1959 年的专辑；它常被援引为<strong>史上销量最高的爵士专辑</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Recorded in long, whole takes over only two sessions 51 days apart, at Columbia Records' famed 30th Street Studios, Kind of Blue is a landmark in the evolution of jazz as the first modal classic—where the improvising is based on scales rather than the dense clusters of chord changes that powered bebop.</p></div><div class="zh-col"><p>它是在 Columbia 传奇的 30th Street 录音棚里、以长段完整的一条录音方式，分<strong>两场</strong>完成的（原文称两场相隔 51 天）；《Kind of Blue》因而成为爵士演进中的一座里程碑——<strong>第一张调式经典</strong>：即兴建立在音阶上，而不是像 bebop 那样建立在密集堆叠的和弦变化上。</p></div></div><div class="pair"><div class="en-col"><p>This stylish, beloved cornerstone of any jazz collection, with its relaxed tempi, rich colors and sleek silences, also possesses a timeless simplicity that continues to sound familiar and inviting.</p></div><div class="zh-col"><p>这张时髦而招人爱的唱片是任何爵士藏品的基石：它有松弛的速度、丰富的色彩与干净的沉默，还带着一种<strong>永恒的简洁</strong>——直到今天听上去依然熟悉、依然让人想靠近。</p></div></div><div class="pair"><div class="en-col"><p>Captured in great depth and detail by engineer Fred Plaut, brooding opener "So What," upbeat, merry "Freddie Freeloader," Bill Evans' dreamy "Blue In Green," the 6/8 double waltz "All Blues," (an aural sketch of weaving through city traffic), and the album's most purely modal number and closer "Flamenco Sketches," have all endured to become the most atmospheric, resonant and ultimately sexiest single set of recorded tunes in jazz history.</p></div><div class="zh-col"><p>工程师 Fred Plaut 以极大的深度与细节捕捉下的这些音乐——阴郁的开场曲《So What》、轻快欢乐的《Freddie Freeloader》、Bill Evans 梦一般的《Blue In Green》、六八拍双华尔兹《All Blues》（一段穿梭于城市车流之间的听觉速写）、以及全碟最纯粹的调式作品兼终曲《Flamenco Sketches》——<strong>全都存活了下来，成为爵士史上最具氛围感、共鸣感、也最终最性感的一整组录音</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Much of its undiminished magnetism comes from Miles' innate genius in building potent chemistry between musicians of contrasting styles.</p></div><div class="zh-col"><p>它那丝毫不减的吸引力，很大一部分来自 Miles 一种天赋般的本事：<strong>在风格彼此对立的乐手之间造出强烈的化学反应</strong>。</p></div></div><div class="pair"><div class="en-col"><p>From the leader's icy tone to John Coltrane's muscular cascade of tenor saxophone notes, through Cannonball Adderley's soulful alto sax exuberance and pianist Bill Evans' spacious, incisive contributions, this collision of musical opposites, all driven by the underrated bassist Paul Chambers and steady drummer Jimmy Cobb, creates a mood and defines the jazz ethos of "cool" from the first dark notes of the famous opening bass line.</p></div><div class="zh-col"><p>从领队的冰冷音色，到 John Coltrane 那 muscular cascade（肌肉感迸发）的次中音音符流，再到 Cannonball Adderley 灵魂味十足的中音 sax 丰盈、以及钢琴家 Bill Evans 开阔而锋利的贡献——<strong>这种音乐上相反者的碰撞</strong>，由被低估的贝斯手 Paul Chambers 与沉稳的鼓手 Jimmy Cobb 从底下驱动着，从那段著名开场贝斯线的最初几个暗音起，就造出一种氛围，并<strong>定义了爵士「cool」的那种精神气质</strong>。</p></div></div><div class="pair"><div class="en-col"><p>According to Evans' original liner notes, Davis came up with these five explorations the night before the first recording session.</p></div><div class="zh-col"><p>按照 Evans 原始内页的说法，Davis 是在<strong>第一场录音的前一夜</strong>想出了这五段探索。</p></div></div><div class="pair"><div class="en-col"><p>It's proof yet again that spontaneity and serendipity are the soul of jazz, or what Evans accurately summed up here as "collective coherent thinking" where the "direct deed is the most meaningful reflection."</p></div><div class="zh-col"><p>这再一次证明了：<strong>即兴与巧合才是爵士的灵魂</strong>——或者用 Evans 在此处的准确概括：「<strong>集体的、连贯的思考</strong>」，而其中「<strong>直接的行动才是最意味深长的映照</strong>」。</p></div></div><div class="pair"><div class="en-col"><p>© Robert Baird/Qobuz</p></div><div class="zh-col"><p>© Robert Baird / Qobuz —— 本篇乐评版权归属。Robert Baird 是 Qobuz 的编辑作者（不是 AllMusic 稿）。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ 硬伤：两场录音不是「相隔 51 天」，是 8 天</p><p class="nb"><strong>权威档案一致记为 1959-03-25 与 1959-04-02</strong>（Miles: The Columbia Years、jazzdisco、Wikipedia 均同）✓✓，<strong>相隔 8 天</strong>。<strong>「51 天」这个数字本身是算得出来的——只要把日期写成「3 月 2 日与 4 月 22 日」</strong>（这正是 Qobuz/AllMusic 式的专辑元数据里流传的写法）✓，3 月 2 日到 4 月 22 日正好 51 天。<strong>换句话说：错误的是日期，而「51 天」是错误日期的忠实推算</strong> ✓✓。<strong>旁证</strong>：Coltrane 在 <strong>1959-03-26</strong>（Kind of Blue 第一场<strong>次日</strong>）就去 Atlantic 录了那批被弃用的《Giant Steps》素材 ✓✓ —— 这条时间链只有在「3 月 25 日」这个日期下才成立。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 「前一晚」也比 Evans 原话过头了</p><p class="nb"><strong>Evans 内页的原文是：「Miles conceived these settings only hours before the recording dates」——「录音日期前几小时」，不是「第一场录音的前一晚」</strong> ✓✓，而且是「录音日期」（复数）之前，不特指第一场前夜。<strong>原文还漏掉了同一段里的关键一句</strong>：这些曲子在录音前<strong>从未被合练过</strong>，每个曲子的第一次完整演奏「without exception」就是一个 take ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">✅ 引文是准确的</p><p class="nb">「<strong>collective coherent thinking</strong>」与「<strong>direct deed is the most meaningful reflection</strong>」<strong>都是 Evans 内页的原句</strong> ✓✓。原文完整语境是：「This conviction that direct deed is the most meaningful reflection, I believe, has prompted the evolution of the extremely severe and unique disciplines of the jazz or improvising musician.」以及「Aside from the weighty technical problem of collective coherent thinking, there is the very human, even social need for sympathy from all members to bend for the common result.」——<strong>这两句是爵士史上被引用最多的乐手自述之一</strong>，乐评引得很准。</p></div></li><li><span class="n">4</span><div><p class="nt">⚠️ 漏掉了一位乐手：Wynton Kelly 只在一曲里弹钢琴</p><p class="nb"><strong>《Freddie Freeloader》由 Wynton Kelly 弹钢琴，Bill Evans 不在场</strong> ✓✓（原版内页、Robert Palmer 长文、cannonball-adderley.com 三处一致）。原因是 Miles 保留了当时的钢琴手 Kelly——<strong>一个真正的布鲁斯手</strong>——专门来处理这张碟上唯一的十二小节布鲁斯（Evans 不是布鲁斯型钢琴手）✓✓。乐评把「pianist Bill Evans' spacious, incisive contributions」写成贯穿全碟，属于漏记。<strong>顺带</strong>：Kelly 在《Freddie Freeloader》里的即兴，是 Down Beat 当期评论特别点名的段落 ✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⚠️ 「穿梭于城市车流」查无出处</p><p class="nb">Evans 内页对《All Blues》的定义只有一句：<strong>「a 6/8 12-measure blues form that produces its mood through only a few modal changes and Miles Davis' free melodic conception」</strong> ✓。「城市车流」这个意象在权威资料里找不到对应，属于乐评的文学化发挥。<strong>能查到的真实花絮反而更有意思</strong>：在 Blackhawk 俱乐部的现场，<strong>Miles 把这首曲子反复介绍为「All Blue」</strong>；唱片上改叫《All Blues》，只是因为同一个 A 面的另一首得让出这个名字 ✓✓（C. H. Garrigues, San Francisco Examiner, 1959-10-11）。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐ 「So What」和「Blue in Green」都是剪辑合成</p><p class="nb">Evans 宣称每首都是一次完整的一条 ✓，但<strong>实际母带上《So What》与《Blue in Green》都做了拼接</strong> ✓✓——<strong>2009 Legacy Edition 收录的 studio sequence 片段（《So What》1:54 + 0:12、《Blue in Green》1:57）就是这些剪辑点的证据</strong> ✓✓；《All Blues》与《Flamenco Sketches》基本是完整的一条。<strong>这对你做 A/B 有用</strong>：同一张碟里，剪辑曲与完整曲的「一气呵成感」是可以直接对比的。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐⭐ 声场真相：这是三通道单声道折叠，不是立体声</p><p class="nb">Columbia 当时<strong>同时开四台机器</strong>：单声道主机 + 单声道备份、三轨主机 + 三轨备份 ✓✓。<strong>今天你听到的「立体声」是把三个通道（左 / 中 / 右）折叠出来的，没有任何真正的立体声拾音</strong> ✓。用 Ashley Kahn《Kind of Blue》一书里的原话：<strong>乐器被放在相当局促的左、中、右三个位置上；但中置的 Davis 小号加上 Paul Chambers 贝斯，稳如磐石</strong> ✓✓。<strong>更要命的是混响</strong>：<strong>30th Street 那间混凝土混响室只接在中心通道（小号与贝斯）的收发线上</strong> ✓✓ ——<strong>也就是说，这张碟的「空气感」主要来自小号和贝斯，钢琴与萨克斯其实是干的</strong> ✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐⭐ A 面音高是偏高的（老原版的坑）</p><p class="nb"><strong>1992 年，Sony 的 Mark Wilder 发现三轨机在录音时走带偏慢 → 1959 年原版立体声 LP 的 A 面音高略偏高</strong> ✓✓（单声道版来自另一台机器，不受影响）✓。<strong>2009 Legacy Edition 与 2019 年的单声道重刻都已修正速度</strong> ✓✓。<strong>手里有老原版立体声的可以自己验</strong>：A 面和 B 面用同一台机器、同一首曲子（比如《Blue in Green》与《All Blues》）对照，音高差是听得出来的。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ 它并不是一发行就封神——首轮评论其实很冷</p><p class="nb"><strong>1959 年 10 月《American Record Guide》的 Joe Goldberg 写道：那些稀疏的笔触不见了，「只剩下互不相关的长串独奏」，「缺的是乐队的整体感」</strong> ✓✓；还有评论形容 Miles 吹得「morose / maudlin / 甚至 sluggish (!) and low in energy output」✓。<strong>Down Beat 当期给了 5 星</strong>，但结语是「This is the soul of Miles Davis, and it's a beautiful soul」——保留归保留，分数照给 ✓。<strong>封神是后来几十年重新评价的结果</strong> ✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ 鼓手拿了多少钱</p><p class="nb"><strong>Jimmy Cobb 拿的是 session scale（据 NPR 讣告，总额约 100 美元），而且从未拿到任何版税</strong> ✓✓。他自己的评价被 Nisenson 记了下来：<strong>「It must have been made in heaven.」（这一定是在天堂里录成的。）</strong> ✓✓</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 「调式」这个词的思想出处</p><p class="nb">「调式爵士」的理论出处不是 Miles，而是<strong>George Russell 的《Lydian Chromatic Concept of Tonal Organization》（1959）</strong> ✓✓——Miles 看到了这套思路，但只取其「简化」的一面。Miles 自己在 <strong>1958 年《The Jazz Review》</strong>的访谈里已经说过：<strong>「The music has gotten thick… There will be fewer chords but infinite possibilities as to what to do with them.」</strong> ✓✓ <strong>所以严格说，《Kind of Blue》不是「第一张」调式唱片——一年前的《Milestones》已经在同一条路上</strong> ✓。</p></div></li><li><span class="n">12</span><div><p class="nt">⭐⭐ 版本：一个「没有发烧再版」的经典</p><p class="nb">我把 Discogs 上这张 master 的<strong>全部 300 多个版本过了一遍</strong>：<strong>没有 Analogue Productions、没有 Mobile Fidelity、也没有任何 45 转版</strong> ✓✓ ——<strong>对你这种专收 AP / Kevin Gray 的耳朵来说，这张碟是个遗憾</strong> ✓。<strong>实际可买的路径</strong>：① <strong>2009 Legacy Edition 2LP/2CD</strong>（Steve Hoffman 从原模拟母带重刻，含《Flamenco Sketches》的另一 take、各曲的 studio sequence，以及第二张的 1958 年录音与 1960 年海牙现场）✓✓；② <strong>2019 Record Store Day 单声道 180g</strong>（88883761031，<strong>Ryan K. Smith @ Sterling Sound</strong> 从三轨折下的单声道）✓✓；③ 想要「原味」就收 <strong>1959 年 6-Eye 标单声道 CL 1355</strong>（编号 1AJ 那批）✓——它更奶白、更闷，但那是它本来的样子 ✓。</p></div></li><li><span class="n">13</span><div><p class="nt">⭐⭐ 给你的系统：这张碟该怎么听、该测什么</p><p class="nb"><strong>① 先做「立体声折单声道」的实验</strong>：在 E70V 或 MUB5 里把 L/R 相加成单声道再放一遍 ✓✓ —— 因为混响室只作用于小号与贝斯，折成单声道后那种「一半带空间、一半不带」的割裂感会消失，<strong>乐器的层次与钢琴的存在感都会更稳</strong> ✓（Analog Planet 的母带工程师也是这个结论：单声道版的整体平衡更好、钢琴更突出、声像更结实）。<strong>② 低频测《So What》开头那四小节的贝斯独奏</strong>——Chambers 的走动贝斯加上房间混响，是这张碟的低频与近场感基准 ✓。<strong>③ 中频厚度测《Freddie Freeloader》</strong>——六人齐奏加 Kelly 的钢琴 ✓。<strong>④ 空气与空间测《Blue in Green》</strong>——但记住<strong>空气感只在小号和贝斯上</strong>，钢琴与萨克斯是干的 ✓；<strong>如果空间感不均匀，那是录音本来的样子，不是系统的问题</strong> ✓。<strong>⑤ 最狠的一首是《Flamenco Sketches》</strong>：Miles 的 Harmon 弱音器与 Coltrane 的对话，是这张碟的高频与「暗色对比度」考试 ✓。</p></div></li><li><span class="n">14</span><div><p class="nt">⭐ Coltrane 的「Coltrane tone」是从这里开始的</p><p class="nb"><strong>这是 Coltrane 唯一一张与 Miles 合作的录音室专辑</strong> ✓✓——<strong>也是那张《Milestones》之后、进入 Impulse! 之前，他与 Miles 的最后一次录音室合作</strong> ✓。<strong>它在摇滚圈的影响同样具体</strong>：Duane Allman 曾对 Robert Palmer 直说，<strong>「那种弹法来自 Miles 和 Coltrane，尤其是《Kind of Blue》」</strong> ✓✓。<strong>顺带一条谱系</strong>：Kind of Blue 第一场（3 月 25 日）的<strong>次日</strong>，Coltrane 就带着同一批节奏组（Chambers + Taylor）去了 Atlantic 录《Giant Steps》的弃用版 ✓✓ —— <strong>同一副身体，两个极端</strong>：3 月 25 日在留白里呼吸，3 月 26 日在十七和弦里狂奔。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">Qobuz</span><span><a href="https://flac24bitmusic.com/154593-miles-davis-kind-of-blue-legacy-edition-1959-16bit.html">本篇乐评原文（Robert Baird）· 「Kind of Blue (Legacy Edition)」专辑页编辑文字全文</a></span></li><li><span class="k">Bill Evans</span><span><a href="http://kindofbluetribute.com/album-liner-notes.html">1959 年原始内页《Improvisation in Jazz》全文（含「only hours before」「collective coherent thinking」「direct deed…」三处关键句）</a></span></li><li><span class="k">SFJazz Blog</span><span><a href="http://sfjazz.blogspot.com/2015/03/kind-of-blue-bill-evans-liner-notes.html">同一份 Evans 内页的另一份转录（含被误传的「March 2nd」日期，可对照看错误是怎么流传的）</a></span></li><li><span class="k">Robert Palmer</span><span><a href="http://cannonball-adderley.com/miles/miles07.htm">Columbia 再版内页长文：Wynton Kelly 只在《Freddie Freeloader》、Miles 1958 年《The Jazz Review》访谈、Cobb 的「made in heaven」、Duane Allman 的回忆、1959 年首轮评论</a></span></li><li><span class="k">The Jazz Tome</span><span><a href="https://thejazztome.info/?p=3584">按曲目的编制表（Wynton Kelly 只演一首）+ 1959 年 Billboard / Cash Box / ARG / Down Beat 等同期评论原文</a></span></li><li><span class="k">Mark Wilder</span><span><a href="https://audiophilestyle.com/forums/topic/25796-comparing-vinyl-to-flac-miles-davis-kind-of-blue/page/2/">Sony 资深母带工程师访谈要点：30th Street 1959 年四机同走、三轨折叠、无真正立体声拾音、A 面走带偏慢导致音高偏高、混凝土混响室只接小号与贝斯（引自 Stereophile 访谈）</a></span></li><li><span class="k">Analog Planet</span><span><a href="https://www.analogplanet.com/content/miles-davis-kind-blue-monophonic-reissue-sonylegacy-analog-planet-exclusive">2019 年单声道 180g 试听过后：原始单声道母带已失传、Ryan K. Smith 的单声道重刻、三轨折单声道为何更好听</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/5460-Miles-Davis-Kind-Of-Blue">master 5460 全部 300+ 版本清单（CL 1355 / CS 8163 原版、Sony Legacy、日本 SACD；无 AP / 无 MFSL / 无 45 转）</a></span></li><li><span class="k">30th Street</span><span><a href="https://grokipedia.opelly.me/articles/columbia-records-30th-street-studio">Columbia 30th Street Studio 沿革：207 East 30th Street、前亚美尼亚教堂、1950–1981、教堂天然的混响时间</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
