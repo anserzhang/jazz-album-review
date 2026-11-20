@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Lush Life — 丰盛的一生 · 科特兰的 Prestige 三重奏与五重奏</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="coltrane.html">John Coltrane</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Lush Life</h1>
+    <p class="title-cn">丰盛的一生 · 科特兰的 Prestige 三重奏与五重奏</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：AllMusic 专辑乐评（Lindsay Planer）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Prestige 7188（1961 年 1 月发行，单声道）</li><li>1957-05-31 / 08-16 · 1958-01-10 三场</li><li>RVG 录音室 Hackensack · Rudy van Gelder 录</li><li>A 面：Earl May + Art Taylor 三重奏（无钢琴）</li><li>B 面：Garland / Byrd / Chambers / Hayes</li><li>内页：Joe Goldberg（1959）+ Martin Williams（1968）</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Lush Life (1958) is among John Coltrane's best endeavors on the Prestige label.</span><span class="toc-cn">Prestige 时期最好的几张之一</span></li><li><span class="toc-en">One reason can easily be attributed to the interesting personnel and the subsequent lack of a keyboard player for the August 16, 1957 session…</span><span class="toc-cn">A 面那场为什么没有钢琴</span></li><li><span class="toc-en">Coltrane (tenor sax) had to essentially lead the compact trio of himself, Earl May (bass), and Art Taylor (drums).</span><span class="toc-cn">紧凑的三重奏</span></li><li><span class="toc-en">Coltrane doesn't have to supplement the frequent redundancy inherent in pianists…</span><span class="toc-cn">没有钢琴冗余的负担</span></li><li><span class="toc-en">Unifying the slippery syncopation and slightly Eastern feel of "I Love You"…</span><span class="toc-cn">《I Love You》的滑溜切分</span></li><li><span class="toc-en">A careful comparison will reveal that "Trane's Slo Blues" is actually a fairly evident derivation (or possibly a different take) of "Slowtrane."</span><span class="toc-cn">《Trane's Slo Blues》与《Slowtrane》</span></li><li><span class="toc-en">May provides a platform for Coltrane's even keeled runs before the tenor drops out…</span><span class="toc-cn">May 的贝斯托住科特兰</span></li><li><span class="toc-en">The practically quarter-hour reading of Billy Strayhorn's "Lush Life" is not only the focal point of this album…</span><span class="toc-cn">《Lush Life》：全碟焦点</span></li><li><span class="toc-en">It should be noted that the reading here does not include a vocal from Johnny Hartman.</span><span class="toc-cn">与 Hartman 版的关系</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Lush Life（丰盛的一生）</strong> · John Coltrane（Prestige 时期）</dd><dt>年份 / Year</dt><dd><strong>1961 年 1 月发行</strong>（Prestige 7188 / PRLP 7188，单声道）｜录音：<strong>1957-05-31、1957-08-16、1958-01-10</strong>，纽约 Van Gelder 录音室（Hackensack）</dd><dt>内容</dt><dd>5 轨：A 面为无钢琴三重奏，B 面为加小号的五重奏 + 一首四重奏</dd><dt>制作 / 工程</dt><dd>Rudy van Gelder 录音 · Bob Weinstock 监制 · 封面设计 <strong>Esmond Edwards</strong> · 内页两篇：<strong>Joe Goldberg（1959）</strong> 与 <strong>Martin Williams（1968）</strong></dd><dt>编制</dt><dd><strong>A 面（8/16/1957）</strong>：Coltrane（次中音）· Earl May（贝斯）· Art Taylor（鼓）｜<strong>B 面标题曲（1/10/1958）</strong>：Coltrane · <strong>Donald Byrd（小号）· Red Garland（钢琴）· Paul Chambers（贝斯）· Louis Hayes（鼓）</strong>｜<strong>《I Hear A Rhapsody》（5/31/1957）</strong>：Garland · Chambers · Albert "Tootie" Heath（鼓）</dd><dt>曲目</dt><dd>Like Someone in Love 4:55 · I Love You 5:28 · Trane's Slo Blues 6:00 · <strong>Lush Life 13:51</strong> · I Hear A Rhapsody 5:57</dd><dt>曲名来源</dt><dd>Jimmy Van Heusen / Johnny Burke · Cole Porter · Coltrane · <strong>Billy Strayhorn</strong>（1957 年《A Day in the Life》）· Fragos / Gasparre / Baker（1920 年代）</dd><dt>版本</dt><dd>1961 原版 7188 单声道 → 立体声 PR 7581 / PRST 7581 → <strong>OJC 131 / OJCCD-131-2</strong>（Fantasy 重制）→ <strong>12 寸 45 转 AJAZ 7188</strong> → InnerSleeve 等近年再版。<strong>无 MFSL、无 AP 豪华版</strong></dd><dt>同批素材</dt><dd>同批 1957–58 场次的其余部分 → <strong>《Coltrane》(Prestige 7126)</strong> 与 <strong>《The Last Trane》(Prestige 7378, 1965)</strong>，<strong>全部未经科特兰参与</strong></dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Like Someone in Love</td><td><span class="cn">像有人在爱 · Jimmy Van Heusen / Johnny Burke</span></td><td class='ses'>1957-08-16</td><td class='dur'>4:55</td></tr><tr><td class='pos'>A2</td><td class='tt'>I Love You</td><td><span class="cn">我爱你 · Cole Porter</span></td><td class='ses'>1957-08-16</td><td class='dur'>5:28</td></tr><tr><td class='pos'>A3</td><td class='tt'>Trane's Slo Blues</td><td><span class="cn">科特兰的慢布鲁斯 · Coltrane</span></td><td class='ses'>1957-08-16</td><td class='dur'>6:00</td></tr><tr><td class='pos'>B1</td><td class='tt'>Lush Life</td><td><span class="cn">丰盛的一生 · Billy Strayhorn</span></td><td class='ses'>1958-01-10</td><td class='dur'>13:51</td></tr><tr><td class='pos'>B2</td><td class='tt'>I Hear A Rhapsody</td><td><span class="cn">我听见一段狂想曲 · Fragos / Gasparre / Baker</span></td><td class='ses'>1957-05-31</td><td class='dur'>5:57</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Lush Life (1958) is among John Coltrane's best endeavors on the Prestige label.</p></div><div class="zh-col"><p>《Lush Life》是约翰·科特兰在 Prestige 厂牌最出色的几张作品之一。</p></div></div><div class="pair"><div class="en-col"><p>One reason can easily be attributed to the interesting personnel and the subsequent lack of a keyboard player for the August 16, 1957 session that yielded the majority of the material.</p></div><div class="zh-col"><p>其中一个原因，很容易就归到 1957 年 8 月 16 日那场——也是这张碟大部分素材的来源——那场录音里那套有意思的人员配置，以及随后的<strong>没有键盘手</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane (tenor sax) had to essentially lead the compact trio of himself, Earl May (bass), and Art Taylor (drums).</p></div><div class="zh-col"><p>科特兰（次中音号管）几乎得自己撑起这个紧凑的三重奏：他、Earl May（贝斯）、Art Taylor（鼓）。</p></div></div><div class="pair"><div class="en-col"><p>The intimate setting is perfect for ballads such as the opener "Like Someone in Love."</p></div><div class="zh-col"><p>这种亲密的小编制，最适合《Like Someone in Love》这样的开场抒情曲。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane doesn't have to supplement the frequent redundancy inherent in pianists, so he has plenty of room to express himself through simple and ornate passages.</p></div><div class="zh-col"><p>科特兰不必去补钢琴手那种经常出现的冗余，于是他有充足的空间通过简单或华丽的乐句来表达自己。</p></div></div><div class="pair"><div class="en-col"><p>Unifying the slippery syncopation and slightly Eastern feel of "I Love You" is the tenor's prevalent capacity for flawless, if not downright inspired on-the-spot "head" arrangements that emerge singular and clear, never sounding preconceived.</p></div><div class="zh-col"><p>把《I Love You》那种滑溜的切分与略带东方色彩的感觉统一起来的，是这位次中音手那种屡见不鲜的能力：现场编出无可挑剔、甚至可以说相当有灵感的「曲头」处理——它们总是单一而清晰，听上去绝不像是事先排练好的。</p></div></div><div class="pair"><div class="en-col"><p>Even at an accelerated pace, the rhythm section ably prods the backbeat without interfering.</p></div><div class="zh-col"><p>即便在加速之后，节奏组依然得力地推着反拍，而不去干扰。</p></div></div><div class="pair"><div class="en-col"><p>A careful comparison will reveal that "Trane's Slo Blues" is actually a fairly evident derivation (or possibly a different take) of "Slowtrane."</p></div><div class="zh-col"><p>仔细比对就会发现，《Trane's Slo Blues》其实很明显是《Slowtrane》的衍生（也可能只是另一个 take）。</p></div></div><div class="pair"><div class="en-col"><p>But don't let the title fool you as the mid-tempo blues is undergirded by a lightheartedness.</p></div><div class="zh-col"><p>但别被标题骗了——这首中速布鲁斯底下垫着的是一种轻盈。</p></div></div><div class="pair"><div class="en-col"><p>May provides a platform for Coltrane's even keeled runs before the tenor drops out, allowing both May and then Taylor a chance to shine.</p></div><div class="zh-col"><p>在次中音手退下之前，是 May 的贝斯为科特兰那些稳稳的乐句搭起了平台，随后 May、再随后是 Taylor 都得到了各自发挥的机会。</p></div></div><div class="pair"><div class="en-col"><p>The fun cat-and-mouse-like antics continue as Taylor can be heard encouraging the tenor player to raise the stakes and the tempo -- which he does to great effect.</p></div><div class="zh-col"><p>那种猫捉老鼠似的有趣互动还在继续——听得出来 Taylor 在怂恿次中音手把赌注和速度都往上加，而他确实做到了，效果极佳。</p></div></div><div class="pair"><div class="en-col"><p>The practically quarter-hour reading of Billy Strayhorn's "Lush Life" is not only the focal point of this album, it is rightfully considered as one of Coltrane's unqualified masterworks.</p></div><div class="zh-col"><p>这首几乎是四分之一小时的 Billy Strayhorn 作品《Lush Life》，不只是这张碟的焦点，也理所当然地被视作科特兰毫无争议的杰作之一。</p></div></div><div class="pair"><div class="en-col"><p>The performance hails from January 10, 1958 as Coltrane sits in with Red Garland (piano), Donald Byrd (trumpet), Paul Chambers (bass), and Louis Hayes (drums).</p></div><div class="zh-col"><p>这一版录于 1958 年 1 月 10 日，科特兰与 Red Garland（钢琴）、Donald Byrd（小号）、Paul Chambers（贝斯）、Louis Hayes（鼓）同台。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane handles the tune's delicate complexities with infinite style and finesse. Garland similarly sparkles at the 88s, while Byrd's solo offers a bit of a tonal alternative.</p></div><div class="zh-col"><p>科特兰以无限的从容与精到驾驭这首曲子的细腻复杂度；Garland 在 88 键上同样熠熠生辉，而 Byrd 的独奏则给出了一种音调上的替代方案。</p></div></div><div class="pair"><div class="en-col"><p>It should be noted that the reading here does not include a vocal from Johnny Hartman. That version can be found on the ever imaginatively monikered John Coltrane &amp; Johnny Hartman (1963).</p></div><div class="zh-col"><p>需要说明的是，这里的版本没有 Johnny Hartman 的人声。那个版本可以在那张开名极富想象力的《John Coltrane &amp; Johnny Hartman》（1963）里找到。</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer / TiVo —— 本篇乐评版权归属。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ 更正一：发行年份是 1961 年 1 月，不是 1958</p><p class="nb">乐评标题写 "Lush Life (1958)"。<strong>1957–58 是录音年份</strong>（1957-05-31、1957-08-16、1958-01-10 三场），<strong>实际发行是 1961 年 1 月</strong>（Prestige 7188，单声道）。原因很直白：科特兰 1959 年签了 Atlantic 并凭《Giant Steps》成名，<strong>Prestige 趁着名头把库房里的旧素材拼盘上市</strong>。意大利维基的原话是：用这些尘封录音做一张唱片来变现，<strong>未经本人在艺术上的授权与认可</strong>。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 更正二：「没有键盘手」不是艺术选择，是钢琴手没来</p><p class="nb">乐评把它写成 personnel 安排上的一个有趣设计。<strong>Joe Goldberg 在 1959 年的内页里说得更朴素：「那天不安排钢琴并不是什么艺术策略……事实很平淡：钢琴手没来。」</strong> 缺席者很可能是 <strong>Red Garland 或 Mal Waldron</strong>（科特兰早期的常客）——而 Red Garland 恰恰出现在同一批录音的另一场里。</p></div></li><li><span class="n">3</span><div><p class="nt">✅ 乐评说的两个场次日期与人员，全部准确</p><p class="nb"><strong>1957-08-16 三重奏</strong>（Coltrane / Earl May / Art Taylor）与 <strong>1958-01-10 五重奏</strong>（加 Red Garland、Donald Byrd、Paul Chambers、Louis Hayes）——日期、乐器、编制都对得上厂牌内页与 Discogs 的演职员表。这篇乐评的考据底子其实很扎实，错的只有年份和「设计」这个解读。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐ 《Trane's Slo Blues》与《Slowtrane》：乐评的猜测方向对了</p><p class="nb"><strong>《Slowtrane》与 A 面那三首同出一场</strong>——编制同样是 Earl May + Art Taylor 的无钢琴三重奏 ✓。它后来收在 Prestige 的<strong>《The Last Trane》(7378, 1965)</strong> 里。OJC 内页的说法是：「《By the Numbers》（同碟另一首慢布鲁斯）与<strong>八个月前</strong>录的《Slowtrane》对照起来很有意思。」（1958-03-26 往前推八个月 ≈ 1957 年年中 ✓。）所以「衍生」——甚至「同一个曲头的另一个 take」——都说得通。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐ 这批素材后来被拆成了好几张碟</p><p class="nb">同一批 1957–58 场次的其余部分，分别以 <strong>《Coltrane》(Prestige 7126)</strong> 与 <strong>《The Last Trane》(7378, 1965)</strong> 发行；后者装的是《Lover》《Slowtrane》《By the Numbers》《Come Rain or Come Shine》。<strong>Prestige 一路发到 1965 年，全都没有科特兰点头。</strong></p></div></li><li><span class="n">6</span><div><p class="nt">⚠️ 曲名与曲目上的三个小坑</p><p class="nb">① 原版 LP 的曲名是 <strong>"Trane's Slo Blues"</strong>（不是 "Slow Blues"）✓；② <strong>《I Hear A Rhapsody》录于 1957-05-31</strong>，是这张碟上唯一一首<strong>有钢琴但没有小号</strong>的曲子（Garland + Chambers + Albert "Tootie" Heath 鼓）——别按 A 面「无钢琴」的印象去理解它；③ 这首曲子出自 1920 年代（Fragos/Gasparre/Baker），与 Strayhorn 的《Lush Life》完全不是一个年代。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 《Lush Life》这首歌的来路</p><p class="nb">Billy Strayhorn 写于 1957 年的《A Day in the Life》；<strong>Nat King Cole 的《After Midnight》(1957)</strong> 里已经有了那个著名的编曲版本——科特兰这一版是听着它长大的。同一首歌还有另外两个著名版本：<strong>1962 年《Duke Ellington &amp; John Coltrane》</strong> 与 <strong>1963 年《John Coltrane &amp; Johnny Hartman》</strong>——后者录于 1963-03-07 同一场，但<strong>并不在当时的录音计划里</strong>，是后来才加进唱片的。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 13:51 这一版的分量在哪</p><p class="nb"><strong>Garland + Chambers + Hayes 是 Blue Note 的「节奏组三件套」</strong>，这套配置后来支撑了 Cannonball Adderley 的整个时代。乐评说 Byrd 的独奏「给出音调上的替代方案」是对的：<strong>这首曲子的和声走向主要是靠 Chambers 的贝斯线勾出来的</strong>。13 分 51 秒里，科特兰的次中音几乎一直在线上；Red Garland 那套 block chords 在 88 键上的颗粒感，是这张碟的「肉」。</p></div></li><li><span class="n">9</span><div><p class="nt">⚠️ 「Earl May 的贝斯偏糊」是录音本来的样子</p><p class="nb">当年的评论者（Joe Goldberg、后来的评述者）都提到这一点：<strong>A 面另外两首的节奏组动态不足，May 的贝斯听起来有点浑</strong>。别把它当成你的系统问题——那正是 1957 年 Hackensack 那间客厅棚、那套近距离拾音的产物。</p></div></li><li><span class="n">10</span><div><p class="nt">版本谱系与「别买立体声」的提醒</p><p class="nb"><strong>1961 原版 Prestige 7188（单声道）</strong> → 后期的<strong>立体声 PR 7581 / PRST 7581</strong>（附 1968 年 Martin Williams 内页；这批立体声母带来源很杂）→ <strong>OJC 131 / OJCCD-131-2</strong>（Fantasy 的 Original Jazz Classics 线，Joe Tarantino 1987 于 Fantasy Studios 重制；另有署 Steve Hoffman 的再版）→ <strong>12 寸 45 转 AJAZ 7188</strong>（单声道）→ 近年 InnerSleeve 等再版。<strong>无 MFSL、无 AP 豪华版。</strong></p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 封面和曲目顺序，Bob Weinstock 一手包办</p><p class="nb">封面上连乐手名单都是 Weinstock 自己排的，封面设计（<strong>Esmond Edwards</strong>）也被他改过。整张碟从选曲到顺序，都是厂牌单方面决定——Flophouse 那篇乐评说得挺不客气：「Prestige 连商量一下的礼貌都没有。」</p></div></li><li><span class="n">12</span><div><p class="nt">别忘了这是 Hackensack 时期，不是 Atlantic 时期</p><p class="nb">同为 Rudy van Gelder 录音，但这是<strong>他 1957 年在 Hackensack 的客厅棚</strong>：房间小、近距离拾音、单点定位。所以这张碟的<strong>近场感、鼓的「贴脸」和低频的结实度</strong>，比 Atlantic 时期的《Blue Train》更粗、更近、更有房间味。<strong>这是欣赏它正确的方式，而不是它的缺点。</strong></p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/lush-life">Lush Life 乐评原文（Lindsay Planer）· 本篇出处</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/4941040-John-Coltrane-Lush-Life">Prestige 7188 原版（曲目时长、演职员、封面 Esmond Edwards、两篇内页署名）</a></span></li><li><span class="k">InnerSleeve</span><span><a href="https://www.innersleeve.com/products/lush-life-3">Lush Life 再版内页（A 面三重奏 / B 面五重奏、三场录音日期、Joe Tarantino 重制）</a></span></li><li><span class="k">InnerSleeve</span><span><a href="https://www.innersleeve.com/products/last-trane">The Last Trane（《Slowtrane》的人员与场次）</a></span></li><li><span class="k">OJC / Music Direct</span><span><a href="https://www.musicdirect.com/vinyl/john-coltrane-the-last-trane-vinyl-lp">OJC 内页：「《By the Numbers》与八个月前的《Slowtrane》对照很有意思」</a></span></li><li><span class="k">Flophouse</span><span><a href="http://flophousemagazine.com/2014/08/26/john-coltrane-lush-life-prestige-1957581961">Lush Life 专文（Joe Goldberg 的「钢琴手没来」、Prestige 从不与科特兰商议、Byrd 的 Fats Navarro 血统）</a></span></li><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/john-coltrane-johnny-hartman">John Coltrane &amp; Johnny Hartman（Hartman 版出处）</a></span></li><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/duke-ellington-john-coltrane">Duke Ellington &amp; John Coltrane（《Lush Life》的第三个著名版本）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

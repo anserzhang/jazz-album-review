@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>My Favorite Things — 我最喜欢的东西 · 约翰·科特兰四重奏</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="coltrane.html">John Coltrane</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>My Favorite Things</h1>
+    <p class="title-cn">我最喜欢的东西 · 约翰·科特兰四重奏</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：AllMusic 专辑乐评（Lindsay Planer）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Atlantic 1361 / SD 1361（1961 年 3 月）</li><li>1960-10-21 / 10-24 / 10-26 三个场次</li><li>Nesuhi Ertegün 制作 · Tom Dowd、Phil Iehle 工程</li><li>Steve Davis 贝斯 —— 「前古典」四重奏的最后一站</li><li>科特兰首张以高音号管为主奏的专辑</li><li>1998 年格莱美名人堂</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Although seemingly impossible to comprehend, this landmark jazz date made in 1960 was recorded in less than three days.</span><span class="toc-cn">「不到三天」录完一个里程碑式的录音日</span></li><li><span class="toc-en">All the more remarkable is that the same sessions which yielded My Favorite Things would also inform a majority of the albums…</span><span class="toc-cn">同一批场次喂出了后面三张碟</span></li><li><span class="toc-en">It is easy to understand the appeal that these sides continue to hold.</span><span class="toc-cn">这些录音为何至今仍有吸引力</span></li><li><span class="toc-en">The unforced, practically casual soloing styles of the assembled quartet…</span><span class="toc-cn">毫不费力的即兴</span></li><li><span class="toc-en">Each track of this album is a joy to revisit.</span><span class="toc-cn">首首值得重听</span></li><li><span class="toc-en">The ultimate listenability may reside in this quartet's capacity to not be overwhelmed by the soloist.</span><span class="toc-cn">不被独奏者淹没</span></li><li><span class="toc-en">Likewise, they are able to push the grooves along surreptitiously and unfettered.</span><span class="toc-cn">在暗处推着 groove 走</span></li><li><span class="toc-en">For instance, the support that the trio — most notably Tyner — gives to Coltrane on the title track…</span><span class="toc-cn">以标题曲为例</span></li><li><span class="toc-en">As a soloist, the definitive soprano sax runs during the Cole Porter standard…</span><span class="toc-cn">作为独奏者：两件乐器的开拓者</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>My Favorite Things（我最喜欢的东西）</strong> · The John Coltrane Quartet<br><span class="en">My Favorite Things</span></dd><dt>年份 / Year</dt><dd><strong>1961 年 3 月发行</strong>（Atlantic 1361 单声道 / SD 1361 立体声）｜录音：<strong>1960 年 10 月 21、24、26 日</strong>，纽约 Atlantic Studios</dd><dt>内容</dt><dd>4 首流行标准曲，<strong>没有一首原创</strong>；总时长 40:42</dd><dt>制作 / 工程</dt><dd>制作 Nesuhi Ertegün · 录音 Tom Dowd、Phil Iehle · 母带由 Atlantic 自行完成</dd><dt>编制</dt><dd>John Coltrane（<strong>A 面主奏改用高音号管</strong>，B 面次中音）· McCoy Tyner（钢琴）· <strong>Steve Davis（贝斯）</strong> · Elvin Jones（鼓）</dd><dt>曲目来源</dt><dd>Rodgers &amp; Hammerstein《音乐之声》(1959) · Cole Porter《Rosalie》(1936) · Gershwin 兄弟 / DuBose Heyward《Porgy and Bess》(1935) · Gershwin 兄弟《Girl Crazy》(1930)</dd><dt>曲式</dt><dd>标题曲为<strong>调式处理</strong>：3/4 拍，绕 <strong>Em 与 E 大调</strong>两个主和弦做 vamp 长独奏，绕开原曲和声</dd><dt>商业成绩</dt><dd>标题曲剪成 <strong>Atlantic 45-5012</strong>（1961，7 寸 45 转）单曲，当年真的走红；这张碟成为科特兰最畅销的唱片之一</dd><dt>荣誉</dt><dd><strong>1998 年入选格莱美名人堂（Grammy Hall of Fame）</strong></dd><dt>后续发行</dt><dd>同一批 1960 年 10 月场次 → <strong>Coltrane Plays the Blues</strong>(1962) · <strong>Coltrane's Sound</strong>(1964) · <strong>The Coltrane Legacy</strong>(1965/1970)，<strong>均无科特兰本人参与选曲与排序</strong></dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>My Favorite Things</td><td><span class="cn">我最喜欢的东西 · Rodgers &amp; Hammerstein，1959（《音乐之声》）</span></td><td class='ses'>1960-10-21</td><td class='dur'>13:41</td></tr><tr><td class='pos'>A2</td><td class='tt'>Everytime We Say Goodbye</td><td><span class="cn">每次说再见 · Cole Porter，1936（电影《Rosalie》）</span></td><td class='ses'>1960-10-26</td><td class='dur'>5:39</td></tr><tr><td class='pos'>B1</td><td class='tt'>Summertime</td><td><span class="cn">夏日 · Gershwin 兄弟 / DuBose Heyward（《Porgy and Bess》）</span></td><td class='ses'>1960-10-24</td><td class='dur'>11:31</td></tr><tr><td class='pos'>B2</td><td class='tt'>But Not for Me</td><td><span class="cn">不是我 · Gershwin 兄弟（《Girl Crazy》）</span></td><td class='ses'>1960-10-26</td><td class='dur'>9:35</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Although seemingly impossible to comprehend, this landmark jazz date made in 1960 was recorded in less than three days.</p></div><div class="zh-col"><p>1960 年这个里程碑式的录音日，整个只用了不到三天就录完——乍听上去几乎让人无法理解。</p></div></div><div class="pair"><div class="en-col"><p>All the more remarkable is that the same sessions which yielded My Favorite Things would also inform a majority of the albums Coltrane Plays the Blues, Coltrane's Sound, and Coltrane Legacy.</p></div><div class="zh-col"><p>更了不起的是：产出《My Favorite Things》的这同一批场次，日后还支撑起了《Coltrane Plays the Blues》《Coltrane's Sound》与《Coltrane Legacy》这几张专辑中的大部分内容。</p></div></div><div class="pair"><div class="en-col"><p>It is easy to understand the appeal that these sides continue to hold.</p></div><div class="zh-col"><p>这些录音之所以到今天还能牢牢抓住人，很容易理解。</p></div></div><div class="pair"><div class="en-col"><p>The unforced, practically casual soloing styles of the assembled quartet -- which includes Coltrane (soprano/tenor sax), McCoy Tyner (piano), Steve Davis (bass), and Elvin Jones (drums) -- allow for tastefully executed passages à la the Miles Davis Quintet, a trait Coltrane no doubt honed during his tenure in that band.</p></div><div class="zh-col"><p>这个临时成型的四重奏——科特兰（高音号管／次中音号管）、麦考伊·泰纳（钢琴）、史蒂夫·戴维斯（贝斯）、埃尔文·琼斯（鼓）——那种毫不费力、几乎称得上随意的即兴方式，让他们得以演奏出一些有品位的、迈尔斯·戴维斯五重奏式的段落；这一手本事，科特兰在戴维斯乐队任职期间无疑已经磨砺出来了。</p></div></div><div class="pair"><div class="en-col"><p>Each track of this album is a joy to revisit.</p></div><div class="zh-col"><p>这张专辑里的每一首，都是重听一遍的快乐。</p></div></div><div class="pair"><div class="en-col"><p>The ultimate listenability may reside in this quartet's capacity to not be overwhelmed by the soloist.</p></div><div class="zh-col"><p>这张碟之所以百听不厌，或许恰恰在于这个四重奏有本事——不被独奏者压过去。</p></div></div><div class="pair"><div class="en-col"><p>Likewise, they are able to push the grooves along surreptitiously and unfettered.</p></div><div class="zh-col"><p>同样地，他们也能在不知不觉之间把 groove 一直往前推，而且不束手束脚。</p></div></div><div class="pair"><div class="en-col"><p>For instance, the support that the trio -- most notably Tyner -- gives to Coltrane on the title track winds the melody in and around itself. However, instead of becoming entangled and directionless, these musical sidebars simultaneously define the direction the song is taking.</p></div><div class="zh-col"><p>举个例子：在标题曲里，三重奏（尤其是泰纳）给科特兰的支撑，会把旋律绕着它自己盘起来。然而这些音乐上的旁枝非但没有纠缠成一团、失去方向，反而同时勾勒出了这首歌正要走的方向。</p></div></div><div class="pair"><div class="en-col"><p>As a soloist, the definitive soprano sax runs during the Cole Porter standard "Everytime We Say Goodbye" and tenor solos on "But Not for Me" easily establish Coltrane as a pioneer of both instruments.</p></div><div class="zh-col"><p>作为独奏者：科尔·波特的经典曲《Everytime We Say Goodbye》里那些不容置疑的高音号管乐句，加上《But Not for Me》里的次中音独奏，足以让科特兰作为这两件乐器的开拓者的身份确立无疑。</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer / TiVo —— 本篇乐评版权归属。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ 更正一：「不到三天」其实是「三个录音日、跨六天」</p><p class="nb">原版 Atlantic 1361 的母带说明逐曲写明录音日期：<strong>A1 标题曲 = 1960-10-21</strong>、<strong>B1「Summertime」= 10-24</strong>、<strong>A2 与 B2 = 10-26</strong>。也就是说，<strong>三个场次、六个日历日</strong>（10 月 21 → 26），不是连着三天一口气录完。Discogs 上那位乐评的说法更准："the same <strong>three days' worth of sessions</strong>"（同样那三天份的场次）。乐评原文的 "less than three days" 属于粗略化的说法，实际是<strong>整三天的录音量</strong>。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 更正二：「同一批场次喂饱三张后碟」——前两张 100%，第三张只有三分之一</p><p class="nb">逐张核对录音日期：
+
+- <strong>Coltrane Plays the Blues</strong>（Atlantic 1382，1962）：<strong>六首全部</strong>录于 <strong>1960-10-24</strong> ✓
+- <strong>Coltrane's Sound</strong>（SD 1419，1964）：<strong>六首全部</strong>录于 <strong>10-24（Central Park West、Body and Soul、Satellite）与 10-26（The Night Has a Thousand Eyes、Liberia、Equinox）</strong> ✓
+- <strong>The Coltrane Legacy</strong>（1965 初版 / 1970 再版 SD 1553）：<strong>只有 A1「26-2」与 A3「Untitled Original」出自 10 月场次</strong>；A2「Original Untitled Ballad」录于 <strong>1961-05-25</strong>，B1–B3 更早，录于 <strong>1959-01-15</strong>。
+
+所以乐评说的 "a majority of the albums" 只对前两张成立，第三张只有三分之一。</p></div></li><li><span class="n">3</span><div><p class="nt">这三张后碟，科特兰本人没参与</p><p class="nb">1961 年 1 月，科特兰签下 <strong>Impulse!</strong>，Atlantic 随后把这些库存录音拼盘发行——<strong>选曲、曲目顺序、封面文案他都没有参与，也没被告知</strong>。乐评人 Ben Ratliff 在《Coltrane: The Story of A Sound》(2007) 里的评价很公道：<strong>"Coltrane Plays the Blues… turned out to be one of the great records in jazz. It was nevertheless overshadowed by other material he recorded during the same sessions."</strong>（这张碟最终成了爵士史上的杰作之一，却被同一批场次录下的其他素材盖过了风头。）</p></div></li><li><span class="n">4</span><div><p class="nt">⭐ Steve Davis：留在这张碟就走了</p><p class="nb">1960 年秋定型的阵容是 <strong>Tyner / Steve Davis / Elvin Jones</strong>。<strong>Jimmy Garrison 是 1961 年末才接替 Davis 的</strong>——所以《My Favorite Things》这张碟，正好是 <strong>Steve Davis 在科特兰乐队里的最后一站</strong>，也是所谓「前古典四重奏」（pre-Garrison quartet）的收尾。加上 1960-10-21 同场录下的《Village Blues》被放进《Coltrane Jazz》，这批 10 月素材是这条线的分水岭。</p></div></li><li><span class="n">5</span><div><p class="nt">高音号管是哪来的：迈尔斯送的</p><p class="nb">1960 年 3 月，科特兰还在欧洲巡演时，<strong>迈尔斯·戴维斯给他买了一把高音号管</strong>（见 Miles《Miles: The Autobiography》）。当时爵士乐里用这乐器的人已经很少——<strong>Steve Lacy</strong> 是最重要的先驱（Cecil Taylor 合作过）。科特兰此前还说过他仰慕 Sidney Bechet。这张碟是他<strong>第一张以高音号管为主奏的专辑</strong>，也是他在这件乐器上的公开首秀。</p></div></li><li><span class="n">6</span><div><p class="nt">⚠️ 常见误传：《Giant Steps》里并没有高音号管</p><p class="nb">网上（包括一些英文资料）流传「Giant Steps 是他用高音号管的初次录音」——<strong>不对</strong>。《Giant Steps》（Atlantic 1311，1959 年 3–5 月录制）<strong>通篇是次中音号管</strong>，一张唱片都没有高音号管。科特兰的高音号管首秀，就是这张《My Favorite Things》。</p></div></li><li><span class="n">7</span><div><p class="nt">标题曲的调式做法：整张碟的关键</p><p class="nb">Rodgers &amp; Hammerstein 的原曲写在 3/4 拍里；科特兰他们保留了节拍，却把<strong>作曲和声整个绕开</strong>，只在 <strong>Em 与 E（大调）两个主和弦</strong>的 vamp 上跑长独奏。Tyner 的左手是那个把人「钉住」的循环音型。这正是这张碟被视为<strong>科特兰从 bebop 转向调式爵士</strong>最清晰标志的原因——比《Giant Steps》更日常，也因此更普及。</p></div></li><li><span class="n">8</span><div><p class="nt">两处小更正：曲名与《But Not for Me》的和声</p><p class="nb">① <strong>原版 LP 的曲名是 "Ev'ry Time We Say Goodbye"</strong>（乐评与后来的多数再版写作 "Everytime We Say Goodbye"）。② 换奏位：<strong>A 面整面用高音号管、B 面整面用次中音</strong>——所以乐评说的「《But Not for Me》里的次中音独奏」是对的。这首用的是<strong>《Giant Steps》时期那种以大三度移位替代常规四度循环</strong>的"Coltrane changes"，A 段不走常规转位进行。</p></div></li><li><span class="n">9</span><div><p class="nt">商业成绩与荣誉</p><p class="nb">标题曲被剪成 <strong>Atlantic 45-5012</strong>（1961 年，7 寸 45 转），A 面 "My Favorite Things (Part 1)"、B 面 "(Part 2)"，<strong>当年真的在电台爆红</strong>——这是科特兰第一次真正意义上跨出爵士圈层。整张碟成为他当时最畅销的唱片之一。<strong>1998 年 3 月 3 日入选格莱美名人堂。</strong></p></div></li><li><span class="n">10</span><div><p class="nt">版本谱系</p><p class="nb">- <strong>1961 原版</strong>：Atlantic <strong>1361</strong>（单声道）/ <strong>SD 1361</strong>（立体声）；欧洲版 ATL 5022 / SAL 5022
+- <strong>1998 Rhino Atlantic Jazz Gallery R2 75204</strong>：附当年单曲两面（Part 1 / Part 2）
+- <strong>2013 ORG 2×12" 45 转 / 180g / Bernie Grundman 重制</strong>：A1 / B1 / C1 / D1 各占一面，附原始场次日期标注
+- <strong>2017 Movie Mars「Mono &amp; Stereo Original Recordings」2CD</strong>：<strong>碟一 = 立体声 + 4 首同场 outtake</strong>；<strong>碟二 = 罕见的单声道混音 + 1961 年 7 月 1 日 Newport 现场三曲</strong>
+- <strong>2018 Record Store Day</strong>：复刻 45 转单曲（R7 5012）</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 罕见细节：单声道版与立体声版不是一回事</p><p class="nb">2017 那套的价值正在这里：1961 年的<strong>单声道混音</strong>与后来的<strong>立体声母带</strong>，在推位、频宽、声场宽度上完全不同（单声道版更收、更近、更像「在房间里」）。发烧圈长期流传「科特兰本人更喜欢早期单声道」的说法——至少可以确定的是，<strong>这两个版本值得各听一遍</strong>，而不是用立体声版一票否决。此外 Atlantic 早期单声道 LP 的封面是<strong>灰蓝底 + 白色圈状边框</strong>那一版设计，与后来的彩色封面很好区分。</p></div></li><li><span class="n">12</span><div><p class="nt">2017 版碟二那三首现场：日期别搞错</p><p class="nb">有些资料把这几首 Newport 现场写成 <strong>1963 年 7 月 7 日</strong>——<strong>不对</strong>。Movie Mars 那套碟二收录的是 <strong>1961 年 7 月 1 日</strong> Newport Jazz Festival 的现场（其中还有一段 "Announcement" 报幕与一版更长的《My Favorite Things》）。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/my-favorite-things-mw0000232250">My Favorite Things 乐评原文（Lindsay Planer）· 本篇出处</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/13040821-John-Coltrane-My-Favorite-Things">Atlantic 1361 原版母带说明（逐曲录音日期、曲目名、时长）</a></span></li><li><span class="k">Wikipedia</span><span><a href="https://en.wikipedia.org/wiki/My_Favorite_Things_(album)">My Favorite Things (album)：发行日期、曲目表、格莱美名人堂、戴维斯赠笛</a></span></li><li><span class="k">jazzdisco</span><span><a href="https://www.jazzdisco.org/john-coltrane/discography-1960-1961/">1960–1961 Atlantic 场次逐日清单（Coltrane's Sound 各曲日期）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2011407-John-Coltrane-Coltrane-Plays-The-Blues">Coltrane Plays the Blues（1382，1962）· 六首全部录于 1960-10-24</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/75645-John-Coltrane-Coltranes-Sound">Coltrane's Sound（SD 1419，1964）· 六首全部录于 1960-10-24 / 10-26</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/1373321-John-Coltrane-The-Coltrane-Legacy">The Coltrane Legacy（SD 1553，1970 再版）· 仅 A1、A3 出自 10 月场次</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/4408279-John-Coltrane-My-Favorite-Things">1961 单曲 Atlantic 45-5012</a></span></li><li><span class="k">ORG Music</span><span><a href="https://www.audiosoundmusic.com/products/john-coltrane-my-favorite-things">2013 2×12" 45 转 / 180g / Bernie Grundman 重制版</a></span></li><li><span class="k">Movie Mars</span><span><a href="https://www.moviemars.com/products/my-favorite-things-mono-stereo-original-recordings">2017《My Favorite Things: Mono &amp; Stereo Original Recordings》2CD</a></span></li><li><span class="k">Ratliff</span><span><a href="http://projazz.net/?p=24121">Ben Ratliff《Coltrane: The Story of A Sound》(2007) 对 Coltrane Plays the Blues 的评述（ProJazz 转引）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

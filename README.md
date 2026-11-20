@@ -8,12 +8,17 @@
 index.html                              专题首页：特别专题 + 艺人索引 + 体例说明
 ├── coltrane.html                       艺人页 · John Coltrane
 │   ├── coltrane-centennial-bilingual.html   特别专题：百年纪念注解集（排在年表之前）
+│   ├── coltrane-olatunji-full.html          2001（录音 1967）
+│   ├── coltrane-africa-brass-full.html      1995（录音 1961）
+│   ├── coltrane-expression-full.html        1967
 │   ├── coltrane-love-supreme-full.html      1965
 │   ├── coltrane-sound-full.html             1964
 │   ├── coltrane-crescent-full.html          1964
 │   ├── coltrane-ballads-full.html           1963
 │   ├── coltrane-hartman-full.html           1963
+│   ├── coltrane-mft-full.html               1961
 │   ├── coltrane-jazz-full.html              1961
+│   ├── coltrane-lushlife-full.html          1961
 │   ├── coltrane-giant-steps-full.html       1960
 │   └── coltrane-blue-train-full.html        1958
 ├── miles-davis.html                    艺人页 · Miles Davis
@@ -41,15 +46,17 @@ git add -A && git commit -m "..." && git push origin main
 
 ## 约定
 
-- **排序**：专辑页按**发行**年份从新到旧，同年按发行日先后。录音日期另列，方便对照。
+- **排序**：专辑页按**发行**年份从新到旧，同年按发行日先后。录音日期另列，方便对照。合辑与档案类按其发行年份计，所以会排在录音更早的正编之前。
 - **特别专题**：周年、纪念、跨代合作等不进年表，单开一块，排在专辑年表之前。
 - **归类**：按**领奏者**算。领奏是蒙克、柯特兰客席，则归蒙克页，不进柯特兰年表。
 - **专辑页骨架**固定六段：目录 → 专辑档案 → 曲目 → 对照正文 → 译注 → 资料来源。
 - **主题**：全站统一用 `mavis-theme` 键（百年纪念页兼容旧的 `coltrane-theme`），偏好存浏览器本地。
+- **图标**：`favicon.svg` 全站各页都引（标签页/书签栏真正显示的图标）；标题里的 🎺 只保留在 `index.html`，其余页面用纯标题；顶栏站名前不加 emoji。
 
 ## 新增一篇专辑评论
 
 1. 照 `coltrane-*-full.html` 做一份 `xxx-full.html`，保持六段骨架。
-2. 在对应艺人页的 `<ol class="albums">` 里按年份插到正确位置。
-3. 在 `index.html` 该艺人的 `<ul class="a-list">` 里加一行。
-4. 换新艺人：复制 `miles-davis.html` 改名，再去 `index.html` 加一张艺人卡片。
+2. 补好页头与顶栏：`<link rel="icon" href="favicon.svg" type="image/svg+xml">`、顶栏 `<a class="tb-mark" href="index.html">…</a>` 加 `<a class="tb-crumb" href="coltrane.html">John Coltrane</a>`，以及对应的 `.tb-mark` / `.tb-crumb` 样式。
+3. 在对应艺人页的 `<ol class="albums">` 里按年份插到正确位置。
+4. 在 `index.html` 该艺人的 `<ul class="a-list">` 里加一行，并更新首页计数与免责声明里的作者名单。
+5. 换新艺人：复制 `miles-davis.html` 改名，再去 `index.html` 加一张艺人卡片。

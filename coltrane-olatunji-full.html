@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>The Olatunji Concert: The Last Live Recording — 奥拉通吉音乐会：最后的现场录音 · 约翰·科特兰</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="coltrane.html">John Coltrane</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>The Olatunji Concert: The Last Live Recording</h1>
+    <p class="title-cn">奥拉通吉音乐会：最后的现场录音 · 约翰·科特兰</p>
+    <p class="byline">– Sam Samuelson</p>
+    <p class="source">原文：AllMusic 专辑乐评（Sam Samuelson）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Impulse! 589 120-2（2001 年 CD）</li><li>1967-04-23 纽约 Olatunji 文化中心</li><li>Bernard Drayton 私人录音 · 电台 WLIB 转播</li><li>Billy Taylor 报幕 · 全长 63:38</li><li>《Ogunde》28:25 —— 棚内版只有 3:34</li><li>Pitchfork 10/10 · Rolling Stone 百大爵士 #88</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Since most (if not all) of the master tapes from legit Impulse! recording sessions have been released…</span><span class="toc-cn">「翻库房」与一卷 1967 年的私人带</span></li><li><span class="toc-en">Subsequently, they came across this recording that 'Trane arranged to record without the assistance (or interference) of Impulse!.</span><span class="toc-cn">厂牌之外，科特兰自己安排的录音</span></li><li><span class="toc-en">Olatunji Concert: The Last Live Recording documents a live performance on April 23, 1967…</span><span class="toc-cn">1967 年 4 月 23 日，纽约</span></li><li><span class="toc-en">Strictly as a document, this is a rich and telling recording.</span><span class="toc-cn">作为「文献」，它信息量极大</span></li><li><span class="toc-en">It demonstrates his sonic blast free jazz direction that was becoming more aggressive and out of bounds…</span><span class="toc-cn">声音上的爆炸式自由爵士</span></li><li><span class="toc-en">It portrays what could have been one of the most dynamically stellar groups of the mid-1960s avant jazz scene…</span><span class="toc-cn">可能是 60 年代中期最炸的组合</span></li><li><span class="toc-en">it also gives the average collector a taste of what the maniacal collector goes out of their way to find…</span><span class="toc-cn">让普通收藏者尝到发烧友才会去寻的东西</span></li><li><span class="toc-en">Don't expect to hear Bob Theil's warm production or one of Rudy Van Gelder's pristine live recordings…</span><span class="toc-cn">别指望 Thiele 的温暖与 RVG 的干净</span></li><li><span class="toc-en">Besides that though, this is essential for seasoned Coltrane listeners.</span><span class="toc-cn">但老听众非听不可</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>The Olatunji Concert: The Last Live Recording（奥拉通吉音乐会：最后的现场录音）</strong> · John Coltrane</dd><dt>年份 / Year</dt><dd><strong>录音 1967 年 4 月 23 日</strong>（纽约 Olatunji Center of African Culture，43 E 125 St）｜<strong>发行 2001 年</strong>（Impulse! 589 120-2，CD）</dd><dt>内容</dt><dd>3 轨：Billy Taylor 报幕 0:35 · <strong>Ogunde 28:25</strong> · <strong>My Favorite Things 34:38</strong>（总长 63:38）</dd><dt>制作 / 工程</dt><dd><strong>录音 Bernard Drayton</strong>（摇摆时代贝斯手 Charles Drayton 之子）——<strong>科特兰指名，且明确在 Impulse! 合约之外</strong>；原始录音由 Drayton 与科特兰共同制作，2001 年由 Bryan Koniarz 复刻发行；母带 Kevin Reeves / Universal Mastering Studios-East</dd><dt>编制</dt><dd>John Coltrane（次中音 + 高音）· Pharoah Sanders（次中音）· Alice Coltrane（钢琴）· <strong>Jimmy Garrison（贝斯）</strong> · Rashied Ali（鼓）· Algie DeWitt（Batá 鼓）· Jumma Santos（打击乐，内页标注「可能」）</dd><dt>场合</dt><dd>Olatunji 文化中心 <strong>1967 年 3 月 27 日开幕</strong>，首季节目「Roots of Africa」；当天乐队演两场（16:00 / 18:00），<strong>录音来自下午那场</strong>；本为电台 <strong>WLIB</strong> 的转播而录</dd><dt>曲目来源</dt><dd>Ogunde = 巴西民谣 <strong>Ogunde Varere</strong>（科特兰从 Francisco Ernani Braga 的改编「Prayer of the Gods」学到）· My Favorite Things = Rodgers &amp; Hammerstein</dd><dt>评价</dt><dd>AllMusic <strong>4/5</strong>（Sam Samuelson，本篇）· <strong>Pitchfork 10/10</strong> · <strong>Rolling Stone 2013 百大爵士 #88</strong> · *The Penguin Guide to Jazz on CD*（Cook &amp; Morton 2002）<strong>不给星级</strong>，只作文献讨论</dd><dt>版本</dt><dd><strong>正式发行只有 2001 年这一张 CD</strong>，至今无黑胶、无再版、无 audiophile 压片；另有俄罗斯非官方版本（RAO 314 589 120-2）</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>Intro</td><td class='tt'>Introduction by Billy Taylor</td><td><span class="cn">报幕 · 钢琴家 Billy Taylor 为 WLIB 电台节目开场</span></td><td class='ses'>1967-04-23</td><td class='dur'>0:35</td></tr><tr><td class='pos'>1</td><td class='tt'>Ogunde</td><td><span class="cn">奥贡德 · 巴西民谣 Ogunde Varere（曲名署名 Coltrane）</span></td><td class='ses'>1967-04-23</td><td class='dur'>28:25</td></tr><tr><td class='pos'>2</td><td class='tt'>My Favorite Things</td><td><span class="cn">我最喜欢的东西 · Rodgers &amp; Hammerstein（1961 年 Atlantic 同名曲的现场终章）</span></td><td class='ses'>1967-04-23</td><td class='dur'>34:38</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Since most (if not all) of the master tapes from legit Impulse! recording sessions have been released, the label continued on with a "digging in the crates" approach to expanding their John Coltrane catalog. Subsequently, they came across this recording that 'Trane arranged to record without the assistance (or interference) of Impulse!.</p></div><div class="zh-col"><p>既然 Impulse! 正规录音场次的母带（几乎）都已出尽，厂牌便继续用「翻库房」的办法来扩充自家的科特兰目录。翻着翻着，他们碰到了这一卷录音——'Trane 事先安排好要在没有 Impulse! 协助（也没有 Impulse! 干涉）的情况下把它录下来。'</p></div></div><div class="pair"><div class="en-col"><p>Olatunji Concert: The Last Live Recording documents a live performance on April 23, 1967, one of the last times Coltrane would appear on stage, as he passed three months later.</p></div><div class="zh-col"><p>《奥拉通吉音乐会：最后的现场录音》记录的是 1967 年 4 月 23 日的一场演出——科特兰最后一次登台的几场之一；三个月后他便离世了。</p></div></div><div class="pair"><div class="en-col"><p>Strictly as a document, this is a rich and telling recording.</p></div><div class="zh-col"><p>严格说，作为一份文献，这是一张信息量极大、极具意味的录音。</p></div></div><div class="pair"><div class="en-col"><p>It demonstrates his sonic blast free jazz direction that was becoming more aggressive and out of bounds; It portrays what could have been one of the most dynamically stellar groups of the mid-1960s avant jazz scene with Pharoah Sanders (who, in some ways, steals the show), Alice Coltrane, Rashied Ali, and Jimmy Garrison totally ripping it up; it also gives the average collector a taste of what the maniacal collector goes out of their way to find, as the sound quality is on the level of a sub-par bootleg.</p></div><div class="zh-col"><p>它呈现了他那种声音上的爆炸式自由爵士走向——而且正在变得更加激进、更加出格；它描绘出一支可能是六十年代中期先锋爵士乐坛里最富动感的一组人马：Pharoah Sanders（在某种意义上抢了整场的风头）、Alice Coltrane、Rashied Ali，以及把一切彻底撕碎的 Jimmy Garrison；它也让普通收藏者尝到一点那些疯狂收藏家会特意去寻找的东西——毕竟这音质只相当于一张次品级别的盗版。</p></div></div><div class="pair"><div class="en-col"><p>Don't expect to hear Bob Theil's warm production or one of Rudy Van Gelder's pristine live recordings á la Live at the Village Vanguard. Instead the equalization is uneven, and there are some parts where the tape drops out.</p></div><div class="zh-col"><p>别指望听到 Bob Theil 那种温暖的制作，也别指望听到 Rudy van Gelder 那种如《Live at the Village Vanguard》般干净无瑕的现场录音；实际拿到的是不均匀的均衡，而且有些段落磁带直接掉信号。</p></div></div><div class="pair"><div class="en-col"><p>Besides that though, this is essential for seasoned Coltrane listeners .</p></div><div class="zh-col"><p>但即便如此，对老资格的科特兰乐迷来说，这张碟仍然是必需的。</p></div></div><div class="pair"><div class="en-col"><p>© Sam Samuelson /TiVo</p></div><div class="zh-col"><p>© Sam Samuelson / TiVo —— 本篇乐评版权归属。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">✅ 乐评最关键的那句是准的：这确实是「厂牌之外」的产物</p><p class="nb">录音由 <strong>Bernard Drayton</strong> 完成——他是摇摆时代贝斯手 <strong>Charles Drayton</strong> 的儿子、鼓手 Milford Graves 的熟人。<strong>是科特兰自己请他去录的，而且明确绕开了 Impulse! 的合约</strong>（David Wild 2001 年内页；维基脚注引述）。所以 "Trane arranged to record without the assistance (or interference) of Impulse!" 这句<strong>成立</strong>。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 但「翻库房」这个说法要修正</p><p class="nb">这<strong>不是</strong> Impulse! 从自家库房里翻出来的母带，而是一卷<strong>私人 tapes</strong>：Drayton 那一卷在科特兰身边躺了三十多年，直到 <strong>2001 年</strong>才被 Verve / Impulse! 收进目录发行（母带由 Kevin Reeves 在 Universal Mastering Studios-East 重制）。也就是说它是<strong>外部来源</strong>，不是「库房存货」——差别在于<strong>这卷带子从一开始就没打算给唱片公司</strong>。</p></div></li><li><span class="n">3</span><div><p class="nt">⭐ 这卷带子真正的用途：电台转播</p><p class="nb">它本来是给 <strong>Billy Taylor 的本地电台 WLIB</strong> 做节目用的——开头那 35 秒的报幕就是他的电台口播（他顺口称科特兰是 "one of the most remarkable forces in jazz"）。这同时解释了糟糕的收音条件：<strong>单机位、架在观众席边、无人做均衡</strong>。Drayton 录到的是<strong>下午 4 点那一场</strong>，乐队当天共演两场（4 点与 6 点）。</p></div></li><li><span class="n">4</span><div><p class="nt">⚠️ 更正：这不是科特兰的最后一场演出</p><p class="nb">他在这之后还登台两次：<strong>1967 年 5 月 5 日密歇根州 Saugatuck</strong>（民间以《Coltrane's Last Concert》流通的录音），以及 <strong>5 月 7 日巴尔的摩 Famous Ballroom</strong>（Left Bank Jazz Society 主办，有当年现场乐评与口述史，但<strong>没有录音</strong>）。所以乐评的 "one of the last times Coltrane would appear on stage" 是<strong>准确</strong>的；严格属于本碟的称号是「<strong>最后一场有录音的现场</strong>」。</p></div></li><li><span class="n">5</span><div><p class="nt">关于 Jimmy Garrison：一个需要澄清的常见误记</p><p class="nb">Garrison 生于 1934 年 3 月 3 日，<strong>卒于 1976 年 4 月 7 日</strong>（肺癌，纽约）——<strong>不是 1966 年</strong>。他 1967 年 5 月 7 日还在巴尔的摩与科特兰同台，担任科特兰最后一场演出的贝斯手。所以这张碟的<strong>贝斯署名完全正确</strong>。（常见误记源于他把 1976 年的卒年写成 1966，或与 1966 年 Coltrane 离开他之后的阵容混淆。）</p></div></li><li><span class="n">6</span><div><p class="nt">⭐ 《Ogunde》：棚内版 3:34，现场版 28:25</p><p class="nb">这首曲子源自<strong>巴西民谣 Ogunde Varere</strong>，科特兰是从作曲家 <strong>Francisco Ernani Braga</strong> 的改编里认识的——Braga 把它译名「Prayer of the Gods」，并形容它是一首「用非洲方言写成的黑人灵歌」。<strong>同一首曲子在《Expression》（1967）里只有 3 分 34 秒</strong>，那是科特兰最后一次进棚（<strong>1967 年 3 月 17 日</strong>，Rudy van Gelder 位于 Englewood Cliffs 的录音室）录的。现场这一版被拉成将近半小时，是全碟最凶的一段——科特兰首奏后交给 Sanders，Sanders 在最高音区嘶鸣并不断插入短句，Alice Coltrane 随后以「一整串十六分音符」还击。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 《My Favorite Things》已经面目全非</p><p class="nb">David Wild 在 2001 年内页里写：这一版「离原作有<strong>光年之远</strong>」。开头是 <strong>Jimmy Garrison 一段又长又暗的贝斯独奏</strong>（Wild 形容为「像暴风雨前的平静」）；科特兰从<strong>高音号管</strong>切入，「鼻音、棱角分明」；主题只是被简短暗示；<strong>Sanders 用一堆声音碎片拼出自己的独奏</strong>，最后科特兰与 Sanders 合流。对照 1961 年 Atlantic 那张同名专辑——从 13:41 的调式 vamp，变成 34:38 的自由即兴。</p></div></li><li><span class="n">8</span><div><p class="nt">为什么评分会这么分裂</p><p class="nb">AllMusic 给 <strong>4/5</strong>（Sam Samuelson，本篇），<strong>Pitchfork 给满分 10/10</strong>，<strong>Rolling Stone 2013「百大爵士专辑」排第 88 位</strong>；而 *The Penguin Guide to Jazz on CD*（Cook &amp; Morton，2002 第 6 版）<strong>干脆不给星级</strong>，只当文献讨论，形容它是「一场狂野、喧闹的演出，被 Pharoah Sanders 主导——他像是要把朋友身上那件皮外套甩掉」。分歧点不在音乐，在录音。</p></div></li><li><span class="n">9</span><div><p class="nt">「Bob Theil」应作 Bob Thiele</p><p class="nb">原文拼写有误（<strong>Thiele</strong> 是《A Love Supreme》《Ballads》背后的制作人）。不过这句讽刺本身完全成立：这张碟的原始录音制作人署名是 <strong>John Coltrane 与 Bernard Drayton</strong>，<strong>Thiele 根本没参与</strong>——他 1967 年 1 月已经离开 Impulse! 去了 CTI。</p></div></li><li><span class="n">10</span><div><p class="nt">别拿它跟 RVG 的现场比</p><p class="nb">*Live at the Village Vanguard*（1961 年 11 月）与 *Live at the Village Vanguard Again*（1966）确实是 Rudy van Gelder 录的；但 1967 年 4 月这场是 Drayton 用一台机器在观众席边录的，<strong>电平忽高忽低、有段落掉带</strong>。要听 RVG 味道的科特兰现场，用那两张；要听「最后的科特兰」，用这张。</p></div></li><li><span class="n">11</span><div><p class="nt">关于他当时的健康</p><p class="nb">传闻「科特兰已经病重到站不住」被 Lewis Porter《John Coltrane: His Life and Music》驳斥；鼓手 <strong>Rashied Ali</strong> 的说法更朴素：他那天可能只是累了。<strong>腹部剧痛是 1967 年 5 月才开始的</strong>（这场之后约一个月），7 月 17 日因肝癌去世，年仅 40 岁。</p></div></li><li><span class="n">12</span><div><p class="nt">版本情况很冷清</p><p class="nb"><strong>正式发行只有 2001 年那一张 CD</strong>（Impulse! 589 120-2，UMG/Verve，6 面板 digipak + 12 页 booklet），<strong>至今没有黑胶、没有再版、没有 audiophile 压片</strong>；另有俄罗斯非官方版本（RAO 314 589 120-2）。封面用的是当年演出海报的一角（海报上科特兰在吹长笛），完整海报收在 booklet 内页。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/the-olatunji-concert-the-last-live-recording">The Olatunji Concert 乐评原文（Sam Samuelson）· 本篇出处</a></span></li><li><span class="k">Wikipedia</span><span><a href="https://en.wikipedia.org/wiki/The_Olatunji_Concert:_The_Last_Live_Recording">The Olatunji Concert: The Last Live Recording（场地、曲目、编制、David Wild 内页引文）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/1404556-John-Coltrane-The-Olatunji-Concert-The-Last-Live-Recording">Impulse! 589 120-2（2001，digipak CD）· 曲目、演职员、录制日期</a></span></li><li><span class="k">Wikipedia</span><span><a href="https://en.wikipedia.org/wiki/Jimmy_Garrison">Jimmy Garrison（1934-03-03 – 1976-04-07）</a></span></li><li><span class="k">Baltimore Or Less</span><span><a href="https://www.baltimoreorless.com/?p=17543/">1967-05-07 巴尔的摩最后一场演出（引 Cathleen Carris《Music at the Crossroads》与 Carole Stanier 1967 年评述）</a></span></li><li><span class="k">Pitchfork</span><span><a href="http://www.pitchforkmedia.com/article/record_review/16262-the-olatunji-concert-the-last-live-recording">评分 10/10</a></span></li><li><span class="k">jazzdisco</span><span><a href="https://www.jazzdisco.org/john-coltrane/discography-1967/">John Coltrane 1967 年场次表（含 1967-03-17 最后一次进 RVG 棚）</a></span></li><li><span class="k">Penguin</span><span><a href="https://en.wikipedia.org/wiki/The_Penguin_Guide_to_Jazz">Cook &amp; Morton《The Penguin Guide to Jazz on CD》第 6 版（2002）· 不评星级，只作文献讨论</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

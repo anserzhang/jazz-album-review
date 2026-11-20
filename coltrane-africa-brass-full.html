@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>The Complete Africa/Brass Sessions — 非洲/黄铜 全记录 · 约翰·科特兰大乐队</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:none;min-width:0}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="coltrane.html">John Coltrane</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>The Complete Africa/Brass Sessions</h1>
+    <p class="title-cn">非洲/黄铜 全记录 · 约翰·科特兰大乐队</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：Qobuz 专辑页编辑文字（AllMusic 乐评）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Impulse! IMPD-2-168（1995 双碟）</li><li>1961-05-23 + 1961 年 6 月初两场</li><li>Creed Taylor 制作 · RVG 工程</li><li>两场合计 21 位乐手</li><li>首张按录音场次顺序重排</li><li>《The Damned Don't Cry》自《Trane's Modes》迁入</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">This two-disc collection gathers the results of two recording sessions…</span><span class="toc-cn">双碟合集（日期有出入）</span></li><li><span class="toc-en">As the title indicates, The Complete Africa/Brass Sessions includes both volumes…</span><span class="toc-cn">两卷合一，并迁曲</span></li><li><span class="toc-en">On this collection, these recordings replicate the sequence…</span><span class="toc-cn">按记录顺序重排</span></li><li><span class="toc-en">After a successful string of albums on Atlantic Records…</span><span class="toc-cn">从 Atlantic 转投 Impulse!</span></li><li><span class="toc-en">Shortly after reprising his role in the Miles Davis Sextet…</span><span class="toc-cn">17 人大乐队</span></li><li><span class="toc-en">Among the jazz luminaries contributing to these landmark sessions…</span><span class="toc-cn">参与的爵士名家</span></li><li><span class="toc-en">Coltrane manipulates their power into masterful contrasts…</span><span class="toc-cn">切分节奏 vs 波普猛攻</span></li><li><span class="toc-en">This is a key work in understanding the path John Coltrane's music took…</span><span class="toc-cn">理解最后阶段的关键</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd>The Complete Africa/Brass Sessions（非洲/黄铜 全记录）· The John Coltrane Quartet<br><span class="en">The Complete Africa/Brass Sessions</span></dd><dt>年份 / Year</dt><dd><strong>1995 年 10 月 10 日发行</strong>（Impulse! IMPD-2-168，双碟 digipak + 28 页内页，20-bit Super Mapping 重制）</dd><dt>内容</dt><dd>1961-05-23 与 1961 年 6 月初两场录音的全部 9 首</dd><dt>制作 / 工程</dt><dd>制作 Creed Taylor · 录音 Rudy van Gelder · 1961 年 5 月 23 日是科特兰第一次进 RVG 位于 Englewood Cliffs 的新棚</dd><dt>编制</dt><dd>John Coltrane（高音与次中音）· Eric Dolphy（中音萨克斯/长笛/低音单簧管）· McCoy Tyner（钢琴、改编）· <strong>Reggie Workman（贝斯，主奏）</strong> · Elvin Jones（鼓）· Booker Little、Freddie Hubbard（小号）· Julian Priester、Charles Greenlee、Carl Bowman（粗管）· Pat Patrick（次中音）· Julius Watkins、Bob Northern、Donald Corrado、Robert Swisshelm、Jim Buffington（圆号）· Garvin Bushell（短笛/木管）· Bill Barber（大号）——<strong>两场合计 21 位乐手</strong></dd><dt>贝斯署名</dt><dd><strong>Paul Chambers 只出现在《Africa (First Version)》一曲</strong>；第二场的两版《Africa》由 <strong>Art Davis</strong> 演奏贝斯</dd><dt>曲目</dt><dd>第一碟（5/23）9 首中的 5 首 · 第二碟（6 月）4 首</dd><dt>收录史</dt><dd>1961 原版《Africa/Brass》(A-21) + 1974《The Africa/Brass Sessions, Volume 2》+ 1976/79《Trane's Modes》里的《The Damned Don't Cry》与《Africa (First Version)》——<strong>本辑首次把两场按录音顺序排在同一张碟上</strong></dd><dt>本篇来源</dt><dd>Qobuz 专辑页编辑文字（AllMusic 乐评），© Lindsay Planer / TiVo</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>1-1</td><td class='tt'>Greensleeves</td><td><span class="cn">绿袖子 · 英格兰民谣（1961 原版）</span></td><td class='ses'>1961-05-23</td><td class='dur'>9:57</td></tr><tr><td class='pos'>1-2</td><td class='tt'>Song of the Underground Railroad</td><td><span class="cn">地下铁路之歌 · 民谣（1961 原版）</span></td><td class='ses'>1961-05-23</td><td class='dur'>6:44</td></tr><tr><td class='pos'>1-3</td><td class='tt'>Greensleeves (Alternate Take)</td><td><span class="cn">绿袖子（备录）· 1974 年初收</span></td><td class='ses'>1961-05-23</td><td class='dur'>10:53</td></tr><tr><td class='pos'>1-4</td><td class='tt'>The Damned Don't Cry</td><td><span class="cn">被诅咒者不哭 · Cal Massey 作曲，<strong>Romulus Franceschini 改编与指挥</strong>（原收于《Trane's Modes》）</span></td><td class='ses'>1961-05-23</td><td class='dur'>7:34</td></tr><tr><td class='pos'>1-5</td><td class='tt'>Africa (First Version)</td><td><span class="cn">非洲（第一版）· 贝斯 Paul Chambers（原收于《Trane's Modes》）</span></td><td class='ses'>1961-05-23</td><td class='dur'>14:08</td></tr><tr><td class='pos'>2-1</td><td class='tt'>Blues Minor</td><td><span class="cn">小调布鲁斯 · Coltrane（1961 原版）</span></td><td class='ses'>1961-06</td><td class='dur'>7:20</td></tr><tr><td class='pos'>2-2</td><td class='tt'>Africa (Alternate Take)</td><td><span class="cn">非洲（备录）· 贝斯 Art Davis</span></td><td class='ses'>1961-06</td><td class='dur'>16:08</td></tr><tr><td class='pos'>2-3</td><td class='tt'>Africa</td><td><span class="cn">非洲 · 贝斯 Art Davis（1961 原版）</span></td><td class='ses'>1961-06</td><td class='dur'>16:29</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>This two-disc collection gathers the results of two recording sessions from April and May 1961 with the John Coltrane Orchestra.</p></div><div class="zh-col"><p>这套双碟合集收录的是 1961 年 4 月与 5 月两场录音的结果，演奏者是约翰·科特兰大乐队。</p></div></div><div class="pair"><div class="en-col"><p>As the title indicates, The Complete Africa/Brass Sessions includes both volumes of the work and relocates "The Damned Don't Cry" -- originally issued on the Trane's Modes compilation -- to this more chronologically sound release.</p></div><div class="zh-col"><p>顾名思义，《The Complete Africa/Brass Sessions》把这部作品的两卷都收了进来，并且把《The Damned Don't Cry》——最初收录在《Trane's Modes》这张合辑里——挪到了这张更符合时间顺序的发行中。</p></div></div><div class="pair"><div class="en-col"><p>On this collection, these recordings replicate the sequence in which they were documented.</p></div><div class="zh-col"><p>在这套合集里，这些录音按它们被记录的先后顺序重新排布。</p></div></div><div class="pair"><div class="en-col"><p>After a successful string of albums on Atlantic Records, Coltrane signed to the burgeoning and jazz-intensive Impulse! label -- a relationship which would be kept for the remainder of his career.</p></div><div class="zh-col"><p>在 Atlantic 度过一串成功的专辑之后，科特兰签给了当时正新兴、以爵士为主打的 Impulse!——而这段关系将伴随他余生的职业生涯。</p></div></div><div class="pair"><div class="en-col"><p>Shortly after reprising his role in the Miles Davis Sextet on "Teo" as well as the title track for Davis' Someday My Prince Will Come long-player, Coltrane assembled a 17-piece orchestra and began recording what would become known as Africa/Brass.</p></div><div class="zh-col"><p>就在他重新回到 Miles Davis 六重奏、在《Teo》以及 Davis 的《Someday My Prince Will Come》同名大碟的标题曲上露面之后不久，科特兰组织起一支 17 人的大乐队，开始录制后来被称为《Africa/Brass》的东西。</p></div></div><div class="pair"><div class="en-col"><p>Among the jazz luminaries contributing to these landmark sessions are: Booker Little (trumpet), Freddie Hubbard (trumpet), Julian Priester (trombone), Eric Dolphy (alto sax/bass clarinet), McCoy Tyner (piano), Paul Chambers (bass), and Elvin Jones (drums).</p></div><div class="zh-col"><p>参与这些里程碑场次的爵士名家包括：小号 Booker Little、小号 Freddie Hubbard、长号 Julian Priester、中音萨克斯与低音单簧管 Eric Dolphy、钢琴 McCoy Tyner、贝斯 Paul Chambers，以及鼓 Elvin Jones。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane manipulates their power into masterful contrasts between the syncopated rhythms of "Greensleeves" or the full-out bop onslaught of "Songs of the Underground Railroad."</p></div><div class="zh-col"><p>科特兰把他们各自的能量揉捏成精妙的对比——一边是《Greensleeves》的切分节奏，一边是《Songs of the Underground Railroad》那场火力全开的波普猛攻。</p></div></div><div class="pair"><div class="en-col"><p>The amazing virtuosity in Coltrane's solos has begun to show signs of the future direction his later avant-garde sides would take.</p></div><div class="zh-col"><p>科特兰独奏里那种惊人的炫技，已经开始显露出他日后那些前卫专辑将要走的路向。</p></div></div><div class="pair"><div class="en-col"><p>The interaction with Tyner on "Songs of the Underground Railroad" is impeccable.</p></div><div class="zh-col"><p>他与 Tyner 在《Songs of the Underground Railroad》里的配合无可挑剔。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane allows room for Elvin Jones and Reggie Workman to likewise engage Tyner for some high-spirited improvisation.</p></div><div class="zh-col"><p>科特兰也留出空间，让 Elvin Jones 与 Reggie Workman 同样去和 Tyner 玩几段意气风发的即兴。</p></div></div><div class="pair"><div class="en-col"><p>This is a key work in understanding the path John Coltrane's music took in its final phases.</p></div><div class="zh-col"><p>要理解约翰·科特兰的音乐在最后阶段走了哪条路，这是一张关键的唱片。</p></div></div><div class="pair"><div class="en-col"><p>The Complete Africa/Brass Sessions brilliantly documents this pivotal era in Coltrane's music.</p></div><div class="zh-col"><p>《The Complete Africa/Brass Sessions》精彩地记录下了科特兰音乐中这个转折性的时代。</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer / TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ 两处更正：场次日期与贝斯手</p><p class="nb">① <strong>不是「4 月与 5 月」</strong>。两场是 <strong>1961-05-23</strong> 与 <strong>1961 年 6 月初</strong>——1995 年那张双碟的厂牌内页写的是 <strong>6 月 4 日</strong>，而 jazzdisco 与维基口径记 <strong>6 月 7 日</strong>（引用时注明即可）。乐评那句「April and May 1961」两处都对不上。② <strong>Paul Chambers 不是这张碟的主贝斯</strong>——他只出现在 <strong>《Africa (First Version)》</strong> 一曲（那版是从《Trane's Modes》迁过来的 5 月 23 日素材）；<strong>主线贝斯是 Reggie Workman</strong>，第二场（6 月）的两版《Africa》由 <strong>Art Davis</strong> 演奏贝斯。乐评在名单里列 Chambers、在正文里又提 Workman，两处其实不矛盾，只是把主次说反了。</p></div></li><li><span class="n">2</span><div><p class="nt">⭐ 这套合集真正做了哪件事：把「年代」换成「场次」</p><p class="nb">在此之前，同一批素材散在三处：<strong>1961 年的《Africa/Brass》(A-21)</strong>、<strong>1974 年的《The Africa/Brass Sessions, Volume 2》</strong>、以及 <strong>1976/79 年《Trane's Modes》</strong>（那张碟的 A–C 面是 1961 年 11 月 Village Vanguard 的现场，D 面才是 1961-05-23 这场棚内素材）。<strong>1995 年这套双碟第一次按录音场次排：碟一 = 5 月 23 日（5 首），碟二 = 6 月初（4 首）</strong>，并把《The Damned Don't Cry》和《Africa (First Version)》一并从《Trane's Modes》里迁回来。顺带一提：<strong>乐评只提到了《The Damned Don't Cry》这一首的迁入，其实《Africa (First Version)》也是同期迁回来的。</strong></p></div></li><li><span class="n">3</span><div><p class="nt">《The Damned Don't Cry》：全片唯一的「外来作品」</p><p class="nb">这首是 <strong>Cal Massey</strong> 作曲（《A Blowing Session》《Blues for Mongo》的那个贝斯手兼曲作者），<strong>改编与指挥交给 Romulus Franceschini</strong>——他是整张唱片里唯一拿到「指挥」署名的外部音乐家（Dolphy 的署名里也有 Conductor，但那是修订后的说法，见下条）。其余八首全部是 Coltrane 作曲或传统民谣（《Greensleeves》《Song of the Underground Railroad》）。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐ 改编署名被改过：1961 原版只写 Dolphy</p><p class="nb"><strong>1961 年原版把改编全部署名给 Eric Dolphy 一人</strong>；<strong>1995 年这套重制把它改正为「改编：John Coltrane、McCoy Tyner」</strong>，Dolphy 的署名则回到「中音萨克斯、长笛、低音单簧管（兼指挥）」。也就是说：<strong>科特兰自己说的版本，是 Tyner 一起参与编排的。</strong>这在「非洲/黄铜」的历史里不是小事——它直接关系到「是谁把 21 个人组织成一个整体」这个问题。</p></div></li><li><span class="n">5</span><div><p class="nt">他进的是新棚：1961 年 5 月 23 日是 Englewood Cliffs 的第一次</p><p class="nb"><strong>1961 年 5 月 23 日，科特兰第一次走进 RVG 在新泽西 Englewood Cliffs 的新棚</strong>（此前他在 Hackensack 的旧客厅棚里录了《Blue Train》《Coltrane Jazz》）。这间更大的棚加上 21 人的编制，正是《Africa/Brass》那种「鼓号齐鸣、层层叠叠」质感的物理来源——<strong>跟《Blue Train》那种贴脸、近乎干透的听感完全是两个房间</strong>。</p></div></li><li><span class="n">6</span><div><p class="nt">「17 人」与「21 人」都对得上</p><p class="nb"><strong>5 月 23 日那一场是 17 人</strong>（科特兰、Dolphy、Tyner、Workman、Elvin Jones、Booker Little、Freddie Hubbard、Pat Patrick、Bill Barber，加上 5 支圆号与 3 支粗管、Garvin Bushell 等），<strong>两场合计 21 位不同的乐手</strong>。乐评说的「17-piece orchestra」对应第一场，而「21 人」是整张专辑去重后的总数。</p></div></li><li><span class="n">7</span><div><p class="nt">《Africa》为什么有三种版本</p><p class="nb">这张碟上有 <strong>三版《Africa》</strong>：5 月 23 日的 <strong>First Version（14:08，贝斯 Paul Chambers）</strong>、6 月场的 <strong>Alternate Take（16:08）与正式版（16:29，贝斯 Art Davis）</strong>——同一天、同一首曲子的三个 take 长达 46 分钟。<strong>原版 1961 年碟上只留了 6 月那版 16:29 的。</strong>换句话说：<strong>你现在能在同一张 CD 上听到「同一首曲子、换了一个贝斯手」的完整对照</strong>。</p></div></li><li><span class="n">8</span><div><p class="nt">当年的时间线：两首大碟夹着它</p><p class="nb"><strong>1961 年 3 月 20–21 日</strong>，科特兰在 Miles Davis 六重奏里录了《Someday My Prince Will Come》的同名曲与《Teo》——<strong>4 月他录完 Columbia 的《Someday My Prince Will Come》，5–6 月就组起 21 人录《Africa/Brass》</strong>。乐评说「Shortly after reprising his role…」是准确的。<strong>同一年 10 月，《My Favorite Things》让他的名字进了千家万户；11 月 1–3 日 Village Vanguard 那三晚，就是《Trane's Modes》的 A–C 面。</strong></p></div></li><li><span class="n">9</span><div><p class="nt">两位不在爵士圈的人，留下了最锋利的两句评价</p><p class="nb"><strong>《Down Beat》1962 年 1 月 18 日</strong> Martin Williams：「在这些曲子里，科特兰把他在现场反复做的事录了下来——<strong>把一切变成一小把和弦，常常只有两三个，然后用各种想象得到的方式转来转去</strong>……」而<strong>极简主义作曲家 Steve Reich</strong> 听完后的反应更著名：他说这张唱片「<strong>基本上就是半小时的 E</strong>」，爵士乐手则接一句「嘿伙计，和弦呢？」「E。」「不！是半小时的 E！」——<strong>一个是乐评人的技术解剖，一个是外行乐迷的荒诞总结，两句话一起构成了这张碟的两种读法。</strong></p></div></li><li><span class="n">10</span><div><p class="nt">它为什么是「最后阶段」的关键</p><p class="nb">《Africa/Brass》是科特兰<strong>唯一一次把编制放大到接近大乐队</strong>的实验，也是他「把一切化成一两个和弦、自由旋转」的思路最早的录音证据——这段思路一直通向《Ascension》《Om》《Meditations》。所以维基条目本身用的措辞就是：<strong>「更近的评论者把它描述为『惊人』，并且是『理解科特兰音乐在最后阶段所走路径的关键作品』」</strong>——乐评最后那两句，几乎是维基原句的转写。</p></div></li><li><span class="n">11</span><div><p class="nt">版本谱系</p><p class="nb"><strong>1961 原版《Africa/Brass》</strong>(Impulse! A-21 单声道；同期另有立体声版) → <strong>1974《The Africa/Brass Sessions, Volume 2》</strong> → <strong>1976/79《Trane's Modes》</strong>（含《The Damned Don't Cry》《Africa (First Version)》）→ <strong>1995《The Complete Africa/Brass Sessions》</strong>(IMPD-2-168，20-bit Super Mapping) → 1999 再版 → <strong>2012 Not Now Music 2LP/CD 合一版</strong> → 2018 日本版 → 数字版。⚠️ <strong>这张碟没有 MFSL、也没有 Analogue Productions 的 180g 豪华版</strong>——想要音质的话，2012 年那张 Not Now 的 2LP 是目前最好找的选择，而 1995 年那张双碟 CD 的重制（Erick Labson 时代的技术）是数字端的基准。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/the-complete-africa-brass-sessions-mw0000658099">The Complete Africa/Brass Sessions 乐评原文（Lindsay Planer）· 本篇出处</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/1214790-The-John-Coltrane-Quartet-The-Complete-Africa-Brass-Sessions">1995 年双碟 IMPD-2-168 内页（逐曲来源、分碟场次、全部人员与改编署名）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2116855-John-Coltrane-Tranes-Modes">《Trane's Modes》内页（A–C 面为 1961-11-01~03 Village Vanguard 现场，D 面为 1961-05-23 棚内）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/875493-The-John-Coltrane-Quartet-Africa-Brass">1961 年原版《Africa/Brass》A-21（mono）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Africa/Brass">Africa/Brass · 两场录音、21 人编制、1995 双碟的编排方式、Martin Williams 与 Steve Reich 的引语</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
