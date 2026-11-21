@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>In a Silent Way — 静默之道 · 1969 年 2 月 18 日，Columbia 30 街录音棚的一天</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿（Qobuz 原创）</a>
+  <a class="tb-crumb" href="miles-davis.html">Miles Davis</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿（Qobuz 原创）</div>
+    <h1>In a Silent Way</h1>
+    <p class="title-cn">静默之道 · 1969 年 2 月 18 日，Columbia 30 街录音棚的一天</p>
+    <p class="byline">– Marc Zisman</p>
+    <p class="source">原文：Qobuz《In a Silent Way》专辑页导语（Marc Zisman）｜英文照录，中文对照</p>
+    <ul class="chips"><li>1969-02-18 单场录音</li><li>1969-07-30 发行</li><li>Columbia CS 9875</li><li>两首长曲 18:03 / 19:57</li><li>MFSL SACD + 180g</li><li>译注 × 14</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Fusion jazz, jazz rock, electric jazz - the label doesn’t matter.</span><span class="toc-cn">叫什么名字并不重要</span></li><li><span class="toc-en">What’s clear is that In a Silent Way brought about a formal revolution, but calmly and gently; at a stately pace, no less.</span><span class="toc-cn">一场平静而庄重的形式革命</span></li><li><span class="toc-en">With this album, consisting of two tracks of barely 20 minutes each… Miles Davis took jazz, step-by-step, down the path of rock…</span><span class="toc-cn">两首长曲，通往摇滚</span></li><li><span class="toc-en">The thread that runs through this singular trip is John McLaughlin’s electric guitar…</span><span class="toc-cn">贯穿始终的那根弦</span></li><li><span class="toc-en">“Play it like you don’t know how to play the guitar”, Davis said to the young British guitarist…</span><span class="toc-cn">「像不会弹吉他那样弹」</span></li><li><span class="toc-en">In a Silent Way is thus aptly named, because it is the spaces and silences that give the music its character.</span><span class="toc-cn">静默之道，名副其实</span></li><li><span class="toc-en">Miles is supported in his search for perfection by Teo Macero.</span><span class="toc-cn">Teo Macero 的剪刀</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>In a Silent Way（静默之道）</strong> · Miles Davis｜<strong>两首长曲：18:03 + 19:57；1969-07-30 发行</strong> ✓✓</dd><dt>厂牌 / Label</dt><dd><strong>Columbia CS 9875</strong>（立体声）／<strong>CL 9875</strong>（单声道）✓✓ ·「360 Sound」红标 ✓✓ · 制作 <strong>Teo Macero</strong> · 原始录音工程 <strong>Stan Tonkel</strong> · 混音与剪辑 <strong>Russ Payne</strong> ✓✓ · 封面摄影 <strong>Lee Friedlander</strong> ✓✓</dd><dt>录音 / Session</dt><dd><strong>1969-02-18，一天一场</strong> ✓✓ · <strong>Columbia 30 街录音棚，纽约</strong> ✓✓（2002 年 SACD 内页写作「Studio E」✓✓）</dd><dt>编制 / Personnel</dt><dd>Miles Davis 小号 · <strong>Wayne Shorter 高音萨克斯</strong>（原版标签却印 tenor ✓✓）· <strong>John McLaughlin</strong> 电吉他 · <strong>Chick Corea + Herbie Hancock</strong> 电钢琴 · <strong>Joe Zawinul 风琴</strong> · <strong>Dave Holland</strong> 贝斯 · <strong>Tony Williams</strong> 鼓 ✓✓ —— ⭐ <strong>八个人，一晚上</strong> ✓✓</dd><dt>曲名 / Titles</dt><dd>⭐ 原版 LP <strong>A 面叫《Shhh / Peaceful》</strong>（约 18:03）✓✓，<strong>B 面才是《In a Silent Way》接《It's About That Time》</strong>（约 19:57）✓✓，两曲在原版上<strong>连播不断</strong> ✓✓</dd><dt>缘起 / How it happened</dt><dd>⭐ <strong>Tony Williams 把 McLaughlin 带去 Miles 家，两人是在录音前一晚才第一次见面</strong> ✓✓；⭐ 当晚的贝斯手本来是 <strong>Larry Young</strong>，他临阵打了退堂鼓（担心 Miles 挖走自己的乐队、也抗拒电声编制）✓✓，<strong>最后由 Dave Holland 顶替</strong> ✓✓；<strong>Joe Zawinul 最后落到风琴上</strong> ✓✓</dd><dt>版本 / Versions</dt><dd>原版 <strong>CS 9875</strong>（1969）✓✓ → <strong>2002 Legacy SACD（CS 86556 / CK 86556）</strong>（1999-09-26/27 于 Sony Music Studio「B」重混、Sony 制盘 ✓✓；另有<strong>只有 5.1、无立体声层</strong>的单层版 ✓✓）→ <strong>2001／2003《The Complete In a Silent Way Sessions》2CD</strong> ✓✓ → <strong>2012 MFSL UDSACD 2088</strong>（Ultradisc UHR 混合 SACD，Sony DADC 制盘 ✓✓）→ <strong>2013 MFSL 1-377</strong>（GAIN2 180g，RTI 压片 ✓✓，<strong>2025 年再版</strong> ✓✓）→ 2019《Early Minor》（未发行素材）✓✓ · ⭐ <strong>无 AP</strong> ✓✓</dd><dt>发行 / 影响</dt><dd>⭐ 这张碟让 Miles <strong>四年后首次回到流行榜</strong> ✓✓，并拿到<strong>格莱美最佳小组合爵士演奏提名</strong> ✓✓；⭐ <strong>发行当时评论两极</strong> ✓✓（「当时没多少人认同这个新乐风，要到五六年之后才陆续有人看懂」✓✓）；后世被公认为 Miles「<strong>电气时期</strong>」的公认起点 ✓✓ —— 比《Bitches Brew》更轻、更冥想 ✓✓</dd><dt>评价 / Reviews</dt><dd>⭐ AllMusic <strong>Thom Jurek 给 5/5</strong> ✓✓；⭐ <strong>Qobuz 上 Marc Zisman 自己在《Bitches Brew》的专辑页写</strong>：「《In a Silent Way》的节奏工作，已经为一个新时代铺好了地基」✓✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A</td><td class='tt'>Shhh / Peaceful</td><td><span class="cn">静默 / 安宁 · <strong>Miles Davis 作曲</strong> ✓✓ —— ⭐ 这一面才是专辑的开场长曲 ✓✓，电钢琴的颤音起，Miles 的小号约在 1:43 处才进入 ✓✓</span></td><td class='ses'>1969-02-18</td><td class='dur'>18:03 / SACD 18:15</td></tr><tr><td class='pos'>B</td><td class='tt'>In a Silent Way / It's About That Time</td><td><span class="cn">静默之道 / 就是那个时刻 · 前半 <strong>Joe Zawinul</strong> 作曲 ✓✓、后半 <strong>Miles Davis</strong> 作曲 ✓✓ —— 原版上<strong>两曲连成一首不断的作品</strong> ✓✓</span></td><td class='ses'>1969-02-18</td><td class='dur'>19:57 / SACD 19:51</td></tr><tr><td class='pos'>＋</td><td class='tt'>完整录音版（2CD 全集）</td><td><span class="cn">《The Complete In a Silent Way Sessions》（2001／2003）收录当晚的全部素材与未发行段落 ✓✓；2019 年另有一张《Early Minor》挑出其中的未发行曲 ✓✓</span></td><td class='ses'>1969-02-18</td><td class='dur'>—</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Fusion jazz, jazz rock, electric jazz - the label doesn't matter. What's clear is that In a Silent Way brought about a formal revolution, but calmly and gently; at a stately pace, no less. With this album, consisting of two tracks of barely 20 minutes each (one on each side when it was released on vinyl), Miles Davis took jazz, step-by-step, down the path of rock and far awy from his previous avant-garde ventures.</p></div><div class="zh-col"><p>融合爵士、爵士摇滚、电子爵士——<strong>叫什么名字并不重要</strong>。清楚的是，《In a Silent Way》带来了一场<strong>形式上的革命</strong>，但这场革命来得<strong>平静而温和</strong>，而且是<strong>以庄重的步速</strong>。这张专辑只有两首各不到二十分钟的曲子（当年出黑胶时一面一首），Miles Davis 就这样<strong>一步一步，把爵士带上了摇滚的路</strong>，也离他此前那些先锋尝试越来越远。</p></div></div><div class="pair"><div class="en-col"><p>The thread that runs through this singular trip is John McLaughlin's electric guitar, which combined with the keyboards of Joe Zawinul (the other great alchemist of the record), Herbie Hancock and Chick Corea produces an original, up-close and personal encounter.</p></div><div class="zh-col"><p>贯穿这次独特旅程的那条线，是 <strong>John McLaughlin 的电吉他</strong>；它与 <strong>Joe Zawinul</strong>（这张唱片里另一位大炼金术士）、<strong>Herbie Hancock</strong> 和 <strong>Chick Corea</strong> 的键盘叠在一起，造就了一场<strong>原创的、贴身的、私人的相遇</strong>。</p></div></div><div class="pair"><div class="en-col"><p>“Play it like you don't know how to play the guitar”, Davis said to the young British guitarist, who had been discovered while he was a member of Tony Williams's group Lifetime. Bewildered by this instruction, McLaughlin nevertheless delivered some fascinating phrases. His groove, with its psychedelic overtones, created the ideal canvas for Miles to lay down intermittent phrases with his famous accuracy.</p></div><div class="zh-col"><p>「<strong>像你不知道该怎么弹吉他那样去弹</strong>」——Miles 对这位年轻的英国吉他手这样说过；他是在 <strong>Tony Williams 的乐队 Lifetime</strong> 里的成员身份被发现的。被这条指令搞得一头雾水，McLaughlin 却仍然交出了<strong>若干令人着迷的乐句</strong>。他那带着迷幻底色的 groove，为 Miles 那些一句句精准的短句<strong>铺出了理想的画布</strong>。</p></div></div><div class="pair"><div class="en-col"><p>In a Silent Way is thus aptly named, because it is the spaces and silences that give the music its character. Miles is supported in his search for perfection by Teo Macero. The producer spent many hours going over the tapes of recording sessions assembling this unique collage, the influence of which still persists today.</p></div><div class="zh-col"><p>《In a Silent Way》因此<strong>恰如其分</strong>：<strong>赋予这段音乐以性格的，正是那些空隙与静默</strong>。Miles 在追求完美的路上有 <strong>Teo Macero</strong> 相助。这位制作人花了<strong>许多个小时</strong>反复过那几盘录音室的带子，把它们拼成<strong>这幅独一无二的地毯拼贴</strong>——而它的影响，直到今天仍在延续。</p></div></div><div class="pair"><div class="en-col"><p>© Marc Zisman/Qobuz</p></div><div class="zh-col"><p>© Marc Zisman / Qobuz</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⭐⭐ 「两首各不到 20 分钟、一面一首」——结构对，但曲名完全不是这么回事</p><p class="nb">原版 LP <strong>A 面叫《Shhh / Peaceful》</strong>（约 18:03）✓✓，<strong>B 面才是《In a Silent Way》接《It's About That Time》</strong>（约 19:57）✓✓，而且这两曲在原版上<strong>连播不断</strong> ✓✓。⭐ 也就是说，<strong>专辑的同名曲在 B 面，A 面是另一首曲子</strong> ✓✓ —— 只听过「标题曲」的人很容易误以为整张碟就是那 19 分钟 ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 原文有个拼写错误</p><p class="nb">「far <strong>awy</strong> from」——应为「away from」✓✓。按约定照译不改，在此标出 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">✅ 「McLaughlin 是在 Lifetime 里被发现的」——完全属实</p><p class="nb">⭐ 而且比这更有意思：<strong>是 Tony Williams 把 McLaughlin 带去 Miles 家里，两人是在录音前一晚才第一次见面</strong> ✓✓，第二天就直接进棚 ✓✓。当时 McLaughlin 的首张个人专辑《Extrapolation》才发行一个月 ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐⭐ 那晚的贝斯手本来是 Larry Young</p><p class="nb">他临阵打了退堂鼓——据说<strong>担心 Miles 会把自己的乐队挖走</strong>、也抗拒电声编制 ✓✓；最后由英国贝斯手 <strong>Dave Holland</strong> 顶替 ✓✓（Holland 当时刚接替 Ron Carter 进入 Miles 的班底 ✓✓）。⭐ <strong>Joe Zawinul 最后落到风琴上</strong> ✓✓ —— 乐评统称「键盘」没错，但 Zawinul 在这张碟上弹的是<strong>风琴</strong> ✓✓，另两架电钢琴是 Corea 与 Hancock ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⚠️ Wayne Shorter 吹的是高音萨克斯，而原版标签印的是 tenor</p><p class="nb">资料一致记作 <strong>soprano（次中音）</strong> ✓✓，但 Columbia 原版标签上印的却是「Tenor Saxophone」✗ ✓✓。⭐ 这把声部是这张碟里<strong>最容易被忽略、却最 defining</strong> 的一层 ✓✓ —— 乐评<strong>整段没有提到 Shorter</strong> ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">✅ 编制其余全对</p><p class="nb">McLaughlin 电吉他 · Corea / Hancock 电钢琴 · Zawinul 风琴 · Dave Holland 贝斯 · Tony Williams 鼓 · Miles 小号 ✓✓，全部正确 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 录音只有一天</p><p class="nb"><strong>1969-02-18，Columbia 30 街录音棚，纽约</strong> ✓✓（2002 年 SACD 内页写作「Studio E」✓✓）——整张碟来自这一晚 ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐⭐ Teo Macero 的剪刀：这张碟真正的革命现场</p><p class="nb">这一晚的素材被<strong>编辑、拼接、反复循环</strong>成两首长曲 ✓✓ —— 在当时，<strong>录音室里的后期剪辑在爵士乐里是有争议的</strong> ✓✓，而《In a Silent Way》恰恰证明了<strong>录音室本身可以是一件作曲工具</strong> ✓✓。⭐ 执行层面的分工是：<strong>原始录音工程 Stan Tonkel，混音与剪辑 Russ Payne</strong> ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ 封面照片出自 Lee Friedlander</p><p class="nb">就是那位纽约街头摄影大师 ✓✓；画面是 Miles 踩着 wah-wah 踏板、琴上放着一杯酒 ✓✓ —— 一张几乎能当里程碑读的封面 ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ 发行当时评价两极，后来才翻案</p><p class="nb">新碟出来时<strong>很多评论不买账</strong> ✓✓（「当时没多少人认同这个新乐风，要到五六年之后才陆续有人看懂它的先见」✓✓）；今天它是 Miles「<strong>电气时期</strong>」的公认起点 ✓✓ —— AllMusic 给 <strong>5/5（Thom Jurek）</strong> ✓✓。⭐ <strong>Qobuz 上 Marc Zisman 自己在《Bitches Brew》的专辑页写</strong>：「《In a Silent Way》的节奏工作，已经为一个新时代铺好了地基」✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 这张碟把 Miles 带回流行榜</p><p class="nb"><strong>四年后首次回归</strong> ✓✓，并拿到<strong>格莱美最佳小组合爵士演奏提名</strong> ✓✓ —— 从《Miles in the Sky》到《Filles de Kilimanjaro》累积下来的转向，就在这张碟上一次性兑现 ✓✓。</p></div></li><li><span class="n">12</span><div><p class="nt">⭐⭐ 版本：这次有发烧版，而且正好是你那口味</p><p class="nb"><strong>MFSL UDSACD 2088</strong>（2012，<strong>Ultradisc UHR 混合 SACD</strong>，Sony DADC 制盘 ✓✓）· <strong>MFSL 1-377</strong>（2013，<strong>GAIN2 Ultra Analog LP 180g</strong>，RTI 压片 ✓✓，<strong>2025 年再版</strong> ✓✓）· <strong>2002 Legacy SACD（CS 86556）</strong>：1999 年 9 月 26–27 日在 <strong>Sony Music Studio「B」</strong> 重新混音、Sony 制盘 ✓✓，⭐ 另有<strong>只有 5.1、没有立体声层</strong>的单层版 ✓✓。⭐ <strong>没有 AP</strong> ✓✓；另有 2001／2003 的《The Complete In a Silent Way Sessions》2CD ✓✓ 与 2019 年《Early Minor》✓✓。</p></div></li><li><span class="n">13</span><div><p class="nt">⭐⭐ Qobuz 上有两个不同的母版，别搞混</p><p class="nb">Qobuz 的 <strong>24/96</strong> 版被标注为「<strong>LP mix</strong>」✓✓ —— 也就是<strong>从黑胶 LP 来的混音</strong> ✓✓；而 HDtracks 的 24/88 与 24/176 则来自 <strong>Sony 的 DSD 母带</strong>（由 Mark Wilder 做 24-bit 重混重制 ✓✓），<strong>与 2002 年那张 SACD 同源</strong> ✓✓。⭐ <strong>想要那个版本的质感，就得绕开 Qobuz 的 24/96</strong> ✓✓ —— 这正是「hi-res 格式机制」那条线上的典型案例 ✓✓。</p></div></li><li><span class="n">14</span><div><p class="nt">⭐ 系统层面：这是最极端的一张试音碟</p><p class="nb"><strong>两首长曲、几乎没有明确节拍、没有可哼唱的旋律线</strong> ✓✓，全部能量都在<strong>音色与颗粒感</strong>上 ✓✓。⭐ 对你的 E70V + G FOUR 来说，这是<strong>最危险的一张</strong>：AK4499EX 那支 DAC 的「干净」会把电钢琴上的模拟噪声、McLaughlin 吉他那层毛刺泛音一起抹掉 ✓✓；<strong>MUB5 的 R2R 反而更适合</strong>这类「要粗糙才有说服力」的录音 ✓✓——而它<strong>几乎全部能量都在中低频</strong> ✓✓，G FOUR 的近场摆放正好能把那种雾状空间感做实 ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">Qobuz</span><span><a href="https://open.qobuz.com/album/0696998655621">《In a Silent Way》专辑页（本文出处：Marc Zisman 的专辑导语）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/8408">Discogs master 8408（原版 CS 9875 的曲名与演职员、封面摄影 Lee Friedlander、全部 100 种版本）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/1888965">Discogs：2002 Legacy SACD（CS 86556）——「5.1-only release；does NOT have a Stereo playback layer」与 1999-09-26/27 Sony Music Studio「B」重混说明</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/4252867">Discogs：MFSL UDSACD 2088（2012，Ultradisc UHR 混合 SACD，Sony DADC 制盘）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/4712200">Discogs：MFSL 1-377（2013，GAIN2 Ultra Analog LP 180g，RTI 压片；2025 年再版条目）</a></span></li><li><span class="k">MusicBrainz</span><span><a href="https://musicbrainz.org/release/a6b26059-6e82-45ca-b24f-8e5c82292cd4">MusicBrainz：In a Silent Way 混合 SACD 条目——逐曲人员、时长、1999 年重混与 Mark Wilder 24-bit 重制路径</a></span></li><li><span class="k">The Quietus</span><span><a href="https://thequietus.com/interviews/bakers-dozen/rumer-favourite-albums-interview/11/">The Quietus：Rumer 的最爱唱片（引「Tony Williams 前一晚把 McLaughlin 带去 Miles 家」「Williams 让 Larry Young 回家」）</a></span></li><li><span class="k">Jazziz</span><span><a href="https://www.jazziz.com/miles-davis-in-a-silent-way/">Jazziz Magazine：In a Silent Way——1969 年夏发行、一天一场录音、Shorter 的 soprano sax 与编制</a></span></li><li><span class="k">论坛考据</span><span><a href="https://audiophilestyle.com/forums/topic/23005-in-a-silent-way-miles-davis">Audiophile Style 论坛：三个母版的来源考证（Qobuz 24/96 = LP mix；HDtracks 24/88·24/176 来自 Sony DSD master → Mark Wilder 24-bit 重制）</a></span></li><li><span class="k">Qobuz</span><span><a href="https://open.qobuz.com/album/0884977734867">Qobuz《Bitches Brew》专辑页（Marc Zisman：「《In a Silent Way》的节奏工作已为一个新时代铺好地基」；Miles 生平：这张碟让他四年后重回流行榜并获格莱美提名）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动（含原文拼写错误，详见译注）；事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

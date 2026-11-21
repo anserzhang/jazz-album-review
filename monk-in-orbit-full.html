@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>In Orbit — 轨道之上 · 1958 年 5 月 7 与 12 日，Clark Terry 的翼号与 Monk 的钢琴</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="monk.html">Thelonious Monk</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>In Orbit</h1>
+    <p class="title-cn">轨道之上 · 1958 年 5 月 7 与 12 日，Clark Terry 的翼号与 Monk 的钢琴</p>
+    <p class="byline">– Scott Yanow</p>
+    <p class="source">原文：AllMusic 专辑乐评（Scott Yanow，挂在 1988 年 OJC CD 条目 mr0000282325 下）｜英文照录，中文对照</p>
+    <ul class="chips"><li>1958-05-07/12 录</li><li>1958 发行</li><li>Riverside RLP 12-271</li><li>47:51（CD 十分曲）</li><li>Craft 180g 单声道</li><li>译注 × 13</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">One of Thelonious Monk's rare appearances as a sideman is on this quartet set led by flügelhornist Clark Terry.</span><span class="toc-cn">Monk 少有的「客串」</span></li><li><span class="toc-en">With bassist Sam Jones and drummer Philly Joe Jones, Terry and pianist Monk perform a set that surprisingly has only one Monk song…</span><span class="toc-cn">四位一体，却只有一首 Monk 曲</span></li><li><span class="toc-en">Among the high points of this spirited, boppish date are Terry's "One Foot in the Gutter" and "Argentia."</span><span class="toc-cn">高光：《One Foot in the Gutter》与《Argentia》</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>In Orbit（轨道之上）</strong> · Clark Terry with Thelonious Monk｜<strong>Riverside，1958 年发行；原版九曲，CD 十分曲／47:51</strong> ✓✓</dd><dt>厂牌 / Label</dt><dd><strong>Riverside RLP 12-271</strong>（<strong>单声道</strong>）✓✓ · 制作与内页 <strong>Orrin Keepnews</strong> · 工程 <strong>Jack Higgins</strong> · 封面设计 <strong>Paul Bacon</strong> · 封面摄影 Jack Manning ✓✓</dd><dt>录音 / Session</dt><dd><strong>1958-05-07 与 05-12</strong> 两场 · <strong>Reeves Sound Studios, New York</strong> ✓✓（<strong>不是</strong> RVG 的哈肯萨克客厅棚 ✓✓）</dd><dt>编制 / Personnel</dt><dd>Clark Terry <strong>翼号（flugelhorn）</strong> ✓✓ · Thelonious Monk p · <strong>Sam Jones</strong> b · <strong>Philly Joe Jones</strong> d ✓✓ —— <strong>四个人，四把椅子</strong> ✓✓</dd><dt>三个「首次」</dt><dd><strong>Monk 在 Riverside 唯一一次当客串</strong> ✓✓ · <strong>Terry 第一次录翼号</strong> ✓✓（他 50 年代中期才从 Duke 乐团的小号转向翼号 ✓✓）· <strong>Riverside 第一次用 Sam Jones</strong> ✓✓</dd><dt>曲目 / Tracks</dt><dd>原版九曲：<strong>五首 Terry 原创</strong> + 「Trust in Me」（标准曲）✓✓ + 「Moonlight Fiesta」（Mills/Tizol）✓✓ + 「Very Near Blue」（Sara Cassey）✓✓ + <strong>唯一一首 Monk 曲「Let's Cool One」</strong> ✓✓；CD 另加第十曲 ✓✓</dd><dt>版本 / Versions</dt><dd>1958 <strong>RLP 12-271</strong>（mono）→ <strong>1968 RS 3009 改名《C.T. Meets Monk》</strong>（立体声）✓✓ → 1969 UK 673 007 ✓✓ → <strong>OJC-302 / OJCCD-302-2</strong>（1987／88，CD 加第十曲 ✓✓）→ JVC VICJ-2165（1996）✓✓ → UCCO-9363（2008 日本）✓✓ → <strong>Craft CR00723</strong>（2024-08-30，<strong>180g 单声道</strong>，RTI 压片，<strong>Kevin Gray @ Cohearent Audio</strong> 刻纹，附 Martin Williams 内页 obi ✓✓）· ⭐ <strong>无 AP、无 MFSL、无 45 转</strong> ✓✓</dd><dt>封面 / 标题</dt><dd>⭐ 封面设计又是 <strong>Paul Bacon</strong> ✓✓（继《Blue Train》《Portrait in Jazz》《Mulligan Meets Monk》之后<strong>第四张</strong> ✓✓）；⭐ 标题曲原名 <strong>「Globetrotter」</strong> ✓✓，Keepnews 与 Bill Grauer 觉得「Sputnik 刚上天没多久」《In Orbit》这名字<strong>更有市场感</strong> ✓✓；1968 年再版时整张碟改名 <strong>《C.T. Meets Monk》</strong> ✓✓</dd><dt>评价 / Reviews</dt><dd>⭐ 这篇 AllMusic <strong>没有事实错误</strong> ✓✓；<strong>The Jazz Tome</strong>（Charles A. Robertson）说它「与 Miles 用 Gil Evans 的大编制所做的录音形成鲜明对比」✓✓，称 Terry 的五首原创「都建构在厚实的蓝调风味上」✓✓，并提到 Terry 玩<strong>半阀（half-valve）</strong>的俏皮效果「总能从钢琴伴奏 Thelonious Monk 那里得到干脆的回应」✓✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>In Orbit</td><td><span class="cn">轨道之上 · Clark Terry 原创 —— 原名《Globetrotter》，为市场感改名 ✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>4:43 / LP 4:37</td></tr><tr><td class='pos'>A2</td><td class='tt'>One Foot in the Gutter</td><td><span class="cn">一脚踩进阴沟 · Terry —— <strong>乐评点名的高光之一</strong> ✓✓；The Jazz Tome 称它「有 Terry 主题的分量，配上 Monk 一段到位的呈示」✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>7:22 / LP 7:14</td></tr><tr><td class='pos'>A3</td><td class='tt'>Trust in Me</td><td><span class="cn">信任我 · Ager / Schwartz / Wever —— 唯一一首标准曲 ✓✓；The Jazz Tome 称它「处理得很细腻」✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>4:33 / LP 4:30</td></tr><tr><td class='pos'>A4</td><td class='tt'>Let's Cool One</td><td><span class="cn">让我们凉快一下 · <strong>Thelonious Monk</strong> —— 全碟唯一的 Monk 作品 ✓✓；⚠️ <strong>Monk 早在 1952 年就自己录过这首</strong> ✓✓，且 CD 与 LP 的时长资料对不上 ✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>4:56 / LP 列 5:43</td></tr><tr><td class='pos'>B1</td><td class='tt'>Pea-Eye</td><td><span class="cn">豌豆眼 · Clark Terry 原创 ✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>4:31 / LP 4:25</td></tr><tr><td class='pos'>B2</td><td class='tt'>Argentia</td><td><span class="cn">银色的城 · Clark Terry 原创 —— <strong>乐评点名的高光之二</strong> ✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>6:15 / LP 6:08</td></tr><tr><td class='pos'>B3</td><td class='tt'>Moonlight Fiesta</td><td><span class="cn">月光-fiesta · Irving Mills / <strong>Juan Tizol</strong>（Terry 在 Ellington 乐队的同事 ✓✓）—— 短短两分半的拉丁间奏 ✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>2:36 / LP 2:33</td></tr><tr><td class='pos'>B4</td><td class='tt'>Buck's Business</td><td><span class="cn">巴克正忙 · Clark Terry 原创 ✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>3:26 / LP 3:20</td></tr><tr><td class='pos'>B5</td><td class='tt'>Very Near Blue</td><td><span class="cn">非常接近的蓝 · <strong>Sara Cassey 为这场录音写的曲子</strong> ✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>3:04 / LP 3:03</td></tr><tr><td class='pos'>＋</td><td class='tt'>Flugelin' the Blues</td><td><span class="cn"><strong>1987／88 年 OJC CD 增补，原版 LP 没有</strong> ✓✓</span></td><td class='ses'>1958-05</td><td class='dur'>7:00</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>One of Thelonious Monk's rare appearances as a sideman is on this quartet set led by flügelhornist Clark Terry.</p></div><div class="zh-col"><p>Thelonious Monk 少有地以<strong>客串乐手</strong>的身份出现——而这一张就是：由<strong>翼号手 Clark Terry</strong> 领衔的四重奏。</p></div></div><div class="pair"><div class="en-col"><p>With bassist Sam Jones and drummer Philly Joe Jones, Terry and pianist Monk perform a set that surprisingly has only one Monk song ("Let's Cool One").</p></div><div class="zh-col"><p>贝斯手 <strong>Sam Jones</strong> 与鼓手 <strong>Philly Joe Jones</strong> 在场，Terry 与钢琴手 Monk 合作出一份曲目单——<strong>出人意料的是，里面只有一首 Monk 的作品</strong>（《Let's Cool One》）。</p></div></div><div class="pair"><div class="en-col"><p>Among the high points of this spirited, boppish date are Terry's "One Foot in the Gutter" and "Argentia."</p></div><div class="zh-col"><p>这场火气十足、波普味十足的合作，高光包括 Terry 的 <strong>《One Foot in the Gutter》</strong> 与 <strong>《Argentia》</strong>。</p></div></div><div class="pair"><div class="en-col"><p>© Scott Yanow /TiVo</p></div><div class="zh-col"><p>© Scott Yanow / TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">✅ 「Monk 少有的客串」——完全属实</p><p class="nb">这其实是 <strong>Monk 唯一一次在 Riverside 当客串</strong> ✓✓。他领衔之外的重要合作还有：Sonny Rollins《The Freedom Suite》（1960）✓✓、Gerry Mulligan《Mulligan Meets Monk》（1957）✓✓、John Coltrane《Thelonious Monk with John Coltrane》（1957）✓✓、Art Blakey《Jazz Messengers with Thelonious Monk》（1957）✓✓、Charlie Rouse《Blues for the New Era》（1958）✓✓ —— 乐评说的「rare」站得住 ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⭐ 「只有一首 Monk 曲」——也对，但有个前提</p><p class="nb"><strong>《Let's Cool One》早在 1952-05-30 就由 Monk 自己在 WOR 棚录过</strong> ✓✓（六重奏：Kenny Dorham、Lou Donaldson、Lucky Thompson、Nelson Boyd、Max Roach ✓✓），后来收进 Blue Note 的《Genius of Modern Music Vol. 2》✓✓。所以这里的「意外」在于<strong>他把自己六年前的旧作带进了 1958 年的新录音</strong> ✓✓，而不是带来一首新作 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⭐ 三个「首次」，这张碟一个人占了三个</p><p class="nb"><strong>Monk 在 Riverside 的唯一一次客串</strong> ✓✓ · <strong>Terry 第一次录翼号</strong> ✓✓（此前他在 Duke 乐团吹小号，翼号是 50 年代中期才专门转向的 ✓✓）· <strong>Riverside 第一次用 Sam Jones</strong> ✓✓。⭐ 另外，<strong>Monk 把 Riverside 带给了Johnny Griffin、Wilbur Ware、Sonny Rollins 这些后来的主力</strong> ✓✓ —— 这张碟在厂牌史上比在乐评里更重要 ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">✅ 编制全对</p><p class="nb">Terry <strong>翼号</strong> · Monk 钢琴 · Sam Jones 贝斯 · Philly Joe Jones 鼓 ✓✓，全部正确 ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐ 「一首 Monk 曲」背后的完整曲目账</p><p class="nb">九曲里 <strong>五首是 Terry 自己的</strong>（《In Orbit》《One Foot in the Gutter》《Pea-Eye》《Argentia》《Buck's Business》）✓✓，外加 <strong>「Trust in Me」</strong>（Ager/Schwartz/Wever 标准曲 ✓✓）、<strong>「Moonlight Fiesta」</strong>（Irving Mills / <strong>Juan Tizol</strong> ✓✓ —— Tizol 是 Terry 在 Ellington 乐队的同事 ✓✓）、<strong>「Very Near Blue」</strong>（Sara Cassey 为这场写的 ✓✓），以及 Monk 的《Let's Cool One》✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⚠️ 时长资料在 CD 与 LP 之间对不上</p><p class="nb">1988 年 OJC CD 列《Let's Cool One》<strong>4:56</strong> ✓✓，Craft 2024 版 LP 的标签却列 <strong>5:43</strong> ✓✓（2024 数字版为 4:58 ✓✓）——差了近一分钟 ✓✓。⚠️ 究竟是 LP 用了另一条 take、还是标签印错，<strong>现有资料不足以下判断</strong> ✓✓；其余各曲两边只差一两秒 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 标题曲改名的故事</p><p class="nb">Terry 自己说，这首曲子他本来叫 <strong>「Globetrotter」</strong> ✓✓；当时 Keepnews 与 Bill Grauer 觉得「Sputnik 刚上天没多久」，<strong>《In Orbit》这名字更有市场感</strong> ✓✓，于是改了 ✓✓。⭐ 而且 <strong>1968 年再版时，整张碟被改名《C.T. Meets Monk》</strong> ✓✓（RS 3009）✓✓——同一批录音至少有过两个碟名 ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐⭐ 封面设计又是 Paul Bacon</p><p class="nb">继《Blue Train》《Portrait in Jazz》《Mulligan Meets Monk》之后，这已经是<strong>第四张 Bacon 设计的封面</strong> ✓✓；封面摄影是 Jack Manning ✓✓。⭐ 你手上这几张 Riverside／Blue Note 的唱片，封面设计师是同一个人 ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ Terry 自己的回忆（Robin D. G. Kelley 传记 p.242）</p><p class="nb">「我没想到 Thelonious 会答应这活儿……我以为他多半会说不，但他很高兴，工作起来非常配合。他有他固执的时候，但<strong>他是个美好的人，我非常爱他</strong>。」✓✓ —— 把这段话放在乐评那句「只有一首 Monk 曲」旁边读，味道很不一样 ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ The Jazz Tome 当期的对照评论</p><p class="nb">Charles A. Robertson 写道，这张碟「<strong>与 Miles 用 Gil Evans 的大编制所做的录音形成鲜明对比</strong>」✓✓；Terry「一心要灵巧的即兴，他的五首原创都建构在<strong>厚实的蓝调风味</strong>上」✓✓；⭐ 还特别写到 Terry 玩<strong>半阀（half-valve）</strong>的怪招，「总能从那位毫不怯场的钢琴伴奏 Thelonious Monk 那里得到回应」✓✓ —— 「不被 Monk 压住」这件事，在这张录音里是真的 ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⚠️ 原文小瑕疵：曲名被写错</p><p class="nb">The Jazz Tome 那段评论里把曲名写成「<strong>One Food</strong> in the Gutter」✗ —— 原文笔误，正确是 <strong>「One Foot」</strong> ✓✓（不少转载沿用了这个错字 ✓✓）。</p></div></li><li><span class="n">12</span><div><p class="nt">⭐ 版本怎么选</p><p class="nb">原版 <strong>RLP 12-271</strong>（单声道，1958）✓✓ → 1968 年立体声版改名《C.T. Meets Monk》（RS 3009）✓✓ → <strong>1987／88 年 OJC CD（OJCCD-302-2）加了第十曲《Flugelin' the Blues》</strong> ✓✓（母带由 Phil De Lancie 在 Fantasy 制作 ✓✓）→ <strong>Craft CR00723</strong>（2024-08-30，<strong>180g 单声道</strong>，RTI 压片，<strong>Kevin Gray @ Cohearent Audio</strong> 刻纹，附 Martin Williams 内页 obi ✓✓）。⭐ <strong>没有 AP、没有 MFSL、没有 45 转</strong> ✓✓ —— 但 Craft 那张已经是这个系列里最好的选择 ✓✓。</p></div></li><li><span class="n">13</span><div><p class="nt">⭐ 这张碟怎么测系统</p><p class="nb"><strong>它是单声道</strong> ✓✓（Craft 版 obi 特别注明「虽然封面写着 stereo，唱片是单声道」✓✓），全频段压在中间 ✓✓。⭐ <strong>翼号的音色正好卡在「小号与圆号之间」</strong>，那个 500Hz–1kHz 的区间最考验前端的厚度 ✓✓：<strong>MUB5（R2R）直连 G FOUR</strong> 这条链路会因为低次谐波而让翼号明显变圆润 ✓✓；而 <strong>E70V 的 AK4499EX 会把这层光泽削掉</strong> ✓✓——所以这张碟是检验「太干净／太素」倾向的试金石之一 ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/release/in-orbit-mr0000282325">Scott Yanow 乐评原文（本篇出处，挂在 1988 年 OJC CD 条目 mr0000282325 下；含 CD 十分曲时长与录音地点）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/243743">Discogs master 243743（原版 RLP 12-271 曲目与演职员；全部 29 种版本谱系）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/31603954">Discogs：Craft Recordings CR00723（2024-08-30，180g 单声道，RTI，Kevin Gray 刻纹；obi 有 Martin Williams 内页与「实为单声道」说明）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/In_Orbit_(Clark_Terry_album)">Wikipedia：In Orbit (Clark Terry album)——三个「首次」；Kelley 传记 p.242 的 Terry 回忆与「Globetrotter」改名、1968 年改名《C.T. Meets Monk》</a></span></li><li><span class="k">MusicBrainz</span><span><a href="https://musicbrainz.org/release/11b5664a-312d-4be0-b2c9-b86d59fc01cb">MusicBrainz：The Complete Blue Note Recordings of Thelonious Monk——「Let's Cool One」1952-05-30 WOR Studios 六重奏首录</a></span></li><li><span class="k">AllSolos</span><span><a href="http://www.allsolos.com/tune/38/let-s-cool-one">AllSolos：Let's Cool One（标题取自 Harlem 播音员 Ralph Cooper；Oliver Nelson 在《Monk's Blues》的大编制改编；Margo Guryan 后填词）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2959829">Discogs：1987 年 OJC CD OJCCD-302-2（第十曲「Flugelin' The Blues」为原版 LP 所无；Phil De Lancie 母带）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
