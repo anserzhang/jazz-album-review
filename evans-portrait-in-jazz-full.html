@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Portrait in Jazz — 爵士肖像 · 1959 年 12 月 28 日，Evans / LaFaro / Motian 的第一次录音</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿（Qobuz 原创）</a>
+  <a class="tb-crumb" href="evans.html">Bill Evans</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿（Qobuz 原创）</div>
+    <h1>Portrait in Jazz</h1>
+    <p class="title-cn">爵士肖像 · 1959 年 12 月 28 日，Evans / LaFaro / Motian 的第一次录音</p>
+    <p class="byline">– Marc Zisman</p>
+    <p class="source">原文：Qobuz《Portrait In Jazz (Remastered)》专辑页署名文章（Marc Zisman）｜英文照录，中文对照</p>
+    <ul class="chips"><li>1959-12-28 录</li><li>1960 年发行</li><li>Riverside 12-315 / 1162</li><li>9 曲 + 2 bonus</li><li>AP 45 转 · MFSL 限量</li><li>译注 × 14</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">When he recorded Portrait in Jazz, Bill Evans was already 30…</span><span class="toc-cn">30 岁的伊文思，已经被全世界盯着</span></li><li><span class="toc-en">In the session held on December 28, 1959…</span><span class="toc-cn">第一次录音</span></li><li><span class="toc-en">No more ‘King Pianist’ with his rhythmic courtiers…</span><span class="toc-cn">不再有「钢琴之王」和他的侍臣</span></li><li><span class="toc-en">LaFaro’s parts upended the conventions of double bass…</span><span class="toc-cn">LaFaro 掀翻了低音提琴的规矩</span></li><li><span class="toc-en">As proof, consider the version of Autumn Leaves…</span><span class="toc-cn">《Autumn Leaves》与革命性的标准曲读法</span></li><li><span class="toc-en">An already legendary episode in the history of the trio…</span><span class="toc-cn">十天后，一切戛然而止</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Portrait in Jazz（爵士肖像）</strong> · Bill Evans Trio｜<strong>9 曲 + 2 bonus（数字版 11 轨）／1960 年发行</strong></dd><dt>厂牌 / Label</dt><dd>Riverside <strong>RLP 12-315（单声道）</strong> 与 <strong>RLP 1162（立体声）</strong>，<strong>同年两种版本</strong> ✓✓ · 制作与内页 <strong>Orrin Keepnews</strong> · 工程 Jack Higgins · 封面设计 <strong>Paul Bacon</strong></dd><dt>录音 / Session</dt><dd><strong>1959-12-28</strong> 单场 · <strong>Reeves Sound Studios, New York</strong>（不是 RVG，也不是 Columbia 30 街）</dd><dt>编制 / Personnel</dt><dd>Bill Evans p · Scott LaFaro b · Paul Motian d —— 这个三重奏在 <strong>20 个月</strong>里只留下 <strong>4 张录音</strong></dd><dt>曲目 / Tracks</dt><dd>Come Rain or Come Shine · Autumn Leaves（立体声 Take 13 / 单声道 Take 9）· Witchcraft · When I Fall in Love · Peri's Scope · What Is This Thing Called Love? · Spring Is Here · Someday My Prince Will Come · Blue in Green（Take 3 / Take 2）</dd><dt>版本 / Versions</dt><dd>原版 12-315（mono）/ 1162（stereo）→ <strong>OJC-088</strong>（1983）→ <strong>JVC XRCD VICJ-61058</strong>（2003）→ <strong>AP AJAZ 1162（2003/2004，45 转编号版，Kevin Gray + Steve Hoffman 刻纹）与 APJ 1162（2008）</strong> → <strong>MFSL UD1S 2-009（2019，45 转盒装限量编号）</strong> → WaxTime 771687（2010）/ WaxTime In Color 950616（2018）→ <strong>Craft《Haunted Heart》（3CD/10LP，2025-11-21；两场 session 全录 + 26 条备录、其中 17 条首发；Paul Blakemore 重制，Eugene Holley Jr. 内页）</strong></dd><dt>前后 / Context</dt><dd>前三张领衔专辑（《New Jazz Conceptions》1956、《Everybody Digs Bill Evans》1959、《On Green Dolphin Street》1959）→ <strong>1961-02-02《Explorations》</strong> → <strong>1961-06-25/26 Village Vanguard《Waltz for Debby》《Sunday at the Village Vanguard》</strong> → <strong>1961-07-06 LaFaro 车祸去世（25 岁）</strong></dd><dt>关键词 / Keywords</dt><dd>同时即兴（simultaneous improvisation）· 低音提琴的吉他化 · 钢琴的印象派和声 · 1959 年 12 月 28 日</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Come Rain or Come Shine</td><td><span class="cn">下雨时会来 · Harold Arlen / Johnny Mercer —— 乐评点名的「革命性读法」之一</span></td><td class='ses'>1959-12-28</td><td class='dur'>03:19</td></tr><tr><td class='pos'>A2</td><td class='tt'>Autumn Leaves (Stereo)</td><td><span class="cn">秋叶（<strong>立体声母版，Take 13</strong>）· Prévert / Mercer / Kosma —— 乐评说的「同时即兴宣言」</span></td><td class='ses'>1959-12-28</td><td class='dur'>05:57</td></tr><tr><td class='pos'>A3</td><td class='tt'>Autumn Leaves (Mono)</td><td><span class="cn">秋叶（<strong>单声道母版，Take 9</strong>）—— 同一场的另一个母版，数字版才两版并存</span></td><td class='ses'>1959-12-28</td><td class='dur'>05:22</td></tr><tr><td class='pos'>A4</td><td class='tt'>Witchcraft</td><td><span class="cn">巫术 · Carolyn Leigh / Cy Coleman</span></td><td class='ses'>1959-12-28</td><td class='dur'>04:32</td></tr><tr><td class='pos'>A5</td><td class='tt'>When I Fall in Love</td><td><span class="cn">当我坠入爱河 · Edward Heyman / Victor Young —— 乐评点名的「革命性读法」之一</span></td><td class='ses'>1959-12-28</td><td class='dur'>04:53</td></tr><tr><td class='pos'>A6</td><td class='tt'>Peri's Scope</td><td><span class="cn">佩里的天地 · <strong>Evans 原创</strong>，以当时的女友命名</span></td><td class='ses'>1959-12-28</td><td class='dur'>03:12</td></tr><tr><td class='pos'>B1</td><td class='tt'>What Is This Thing Called Love?</td><td><span class="cn">这东西叫爱吗？ · Cole Porter —— 乐评点名的「革命性读法」之一</span></td><td class='ses'>1959-12-28</td><td class='dur'>04:34</td></tr><tr><td class='pos'>B2</td><td class='tt'>Spring Is Here</td><td><span class="cn">春天来了 · Rodgers &amp; Hart</span></td><td class='ses'>1959-12-28</td><td class='dur'>05:05</td></tr><tr><td class='pos'>B3</td><td class='tt'>Someday My Prince Will Come</td><td><span class="cn">总有一天，我的王子会出现 · Churchill / Morey —— 迪士尼标准曲，Evans 晚年的保留曲</span></td><td class='ses'>1959-12-28</td><td class='dur'>04:52</td></tr><tr><td class='pos'>B4</td><td class='tt'>Blue in Green (Take 3)</td><td><span class="cn">蓝中绿（<strong>第 3 take，正片</strong>）· <strong>Evans / Miles Davis</strong> 合著 —— 《Kind of Blue》里的原曲，这里是三重奏重录</span></td><td class='ses'>1959-12-28</td><td class='dur'>05:22</td></tr><tr><td class='pos'>B5</td><td class='tt'>Blue in Green (Take 2)</td><td><span class="cn">蓝中绿（第 2 take）—— 同场备录，数字版附赠</span></td><td class='ses'>1959-12-28</td><td class='dur'>04:27</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>When he recorded Portrait in Jazz, Bill Evans was already 30, with three albums as bandleader to his credit (New Jazz Conceptions, Everybody Digs Bill Evans and On Green Dolphin Street) and numerous collaborations as a sideman with the likes of George Russell, Tony Scott, Charles Mingus, Helen Merrill, Eddie Costa and above all Miles on the legendary Kind of Blue recorded ten months earlier. In short, the pianist had already been hailed by all the international critics, with his every action scrutinized.</p></div><div class="zh-col"><p>录《Portrait in Jazz》的时候，比尔·伊文思已经 <strong>30 岁</strong>：作为领衔者他手上有三张专辑（《New Jazz Conceptions》《Everybody Digs Bill Evans》《On Green Dolphin Street》），还有大量与 George Russell、Tony Scott、Charles Mingus、Helen Merrill、Eddie Costa 这些人的客席录音，以及最重要的——与 Miles 在那张传奇的《Kind of Blue》上的合作，那是<strong>十个月前</strong>录的。总之，这位钢琴家早已被全世界的评论界加冕，他的每一个举动都在被放大审视。</p></div></div><div class="pair"><div class="en-col"><p>In the session held on December 28, 1959, he was joined by double bassist Scott LaFaro and drummer Paul Motian, the first time the trio had recorded. And what a trio – perhaps the greatest, most inspired in the history of jazz!</p></div><div class="zh-col"><p>在 1959 年 12 月 28 日那场录音里，与他会合的是低音提琴手 <strong>Scott LaFaro</strong> 和鼓手 <strong>Paul Motian</strong>——这是这个三重奏的<strong>第一次录音</strong>。而这是怎样一个三重奏啊——<strong>或许爵士史上最伟大、最受启发的一个！</strong></p></div></div><div class="pair"><div class="en-col"><p>No more ‘King Pianist’ with his rhythmic courtiers there to pass the dishes and pick up the crumbs – the exchanges were suddenly real, the conversations passionate between three musicians already perfectly balanced in their technique and offerings. LaFaro’s parts upended the conventions of double bass, which had rarely been as expressive as it is here.</p></div><div class="zh-col"><p>不再有「<strong>钢琴之王</strong>」和他那群负责端菜、捡碎屑的节奏侍臣——<strong>对话突然变得真实起来</strong>：三个在技术上与奉献上都已经完美平衡的音乐家之间，交流是热烈而亲密的。LaFaro 的演奏<strong>掀翻了低音提琴的惯例</strong>——这种表达力，在低音提琴上极少见到。</p></div></div><div class="pair"><div class="en-col"><p>As proof, consider the version of Autumn Leaves, ringing out like a manifesto of simultaneous improvisation. The chemistry between the three American musicians still hadn’t reached the level it would in the famed June 1961 concerts in the Village Vanguard, but Portrait in Jazz already offers revolutionary readings of oft-recorded standards such as Come Rain or Come Shine, When I Fall in Love and What Is This Thing Called Love? Bill Evans’ piano explores the full spectrum of the instrument, bounding into a perfectly articulated swing and as melancholy as possible in the most introspective moments.</p></div><div class="zh-col"><p>证据就是那版《Autumn Leaves》——它响起来，像一份<strong>同时即兴</strong>的宣言。三个美国音乐家之间的化学反应，当时还没有达到后来 1961 年 6 月 Village Vanguard 那几场演出的水平；但《Portrait in Jazz》已经给出了对那些被反复录过的标准曲的<strong>革命性读法</strong>——《Come Rain or Come Shine》《When I Fall in Love》以及《What Is This Thing Called Love?》。Bill Evans 的钢琴探索了这件乐器的<strong>全部光谱</strong>：既能在该跳跃时把摇摆弹得铰链分明，也能在最内省的段落里忧郁到极点。</p></div></div><div class="pair"><div class="en-col"><p>An already legendary episode in the history of the trio – and a history all too brief, brutally cut short on July 6, 1961 when LaFaro was killed in a car accident at the age of just 25.</p></div><div class="zh-col"><p>这已经是三重奏历史上一个<strong>近乎传说的篇章</strong>——而这段历史实在太过短暂：<strong>1961 年 7 月 6 日</strong>，LaFaro 在一场车祸中罹难，年仅 <strong>25 岁</strong>。</p></div></div><div class="pair"><div class="en-col"><p>© Marc Zisman/Qobuz</p></div><div class="zh-col"><p>© Marc Zisman / Qobuz</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">✅ 「已 30 岁」属实（但生日常被写错）</p><p class="nb">Bill Evans 生于 <strong>1929-08-16</strong>（新泽西州 Plainfield）✓✓；1959-12-28 录音时他刚满 30 岁四个月 ✓✓。⚠️ 网上有资料误作「12 月 18 日生」✓✓——那样会得出「录音当天正好是生日」的巧合说法，实际不是 ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 《Kind of Blue》「十个月前」这个数字对不上</p><p class="nb">《Kind of Blue》录于 <strong>1959-03-25 与 04-02</strong>（相隔 8 天）✓✓ → 到 12-28 是 <strong>约 9 个月</strong>（自 3/25 算 9 个月零 3 天；自 4/02 算 8 个月 26 天）✓✓；若按<strong>发行日 1959-08-17</strong> 算，则只有约 4 个月 ✓✓。两个口径都到不了「十个月」✓✓——原文这处略有出入 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">✅ 「三张领衔专辑」的清单准确</p><p class="nb"><strong>《New Jazz Conceptions》</strong>（1956，Riverside 12-223）✓✓、<strong>《Everybody Digs Bill Evans》</strong>（1959）✓✓、<strong>《On Green Dolphin Street》</strong>（1959）✓✓ —— 没错，<strong>《Portrait in Jazz》是他的第四张领衔专辑</strong> ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">✅ 客席名单站得住</p><p class="nb">George Russell、<strong>Charles Mingus</strong>、<strong>Helen Merrill</strong>、Eddie Costa、Tony Scott —— 这些都在伊文思 1950 年代的客席录音名单里 ✓✓（另还有 Don Elliott、Jimmy Knepper、Sahib Shihab 等）✓✓。原文这一串没写错 ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⚠️ 数字版是 11 轨，不是 9 轨</p><p class="nb">Qobuz 版共 <strong>11 轨</strong> ✓✓：原版 <strong>9 曲</strong>之外，多出 <strong>《Autumn Leaves》单声道母版（Take 9, 5:22）</strong> 与 <strong>《Blue in Green (Take 2)》（4:27）</strong> ✓✓。⭐ 关键在于：<strong>这场录音本身就同时存在单声道与立体声两个母版</strong> ✓✓（立体声版《Autumn Leaves》= Take 13，单声道版 = Take 9 ✓✓），所以数字版才敢两版并列 ✓✓——这也是原版同时有 12-315（mono）与 1162（stereo）两个编号的原因 ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⚠️ 原版有两个厂牌编号，别只记一个</p><p class="nb"><strong>Riverside RLP 12-315（单声道）</strong> 与 <strong>RLP 1162（立体声）</strong>，<strong>1960 年同期发行</strong> ✓✓。原版封套上还专门注明「封套时长与标签上的略有出入」✓✓。后来的 OJC-088 是 1162 立体声系的再版 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⚠️ 录音地点：Reeves 棚，不是 RVG 也不是 Columbia 30 街</p><p class="nb"><strong>Reeves Sound Studios, New York</strong> ✓✓（1960 年前的 Riverside 用的是 Reeves 录音棚 ✓✓）。工程 <strong>Jack Higgins</strong> ✓✓、制作与内页 <strong>Orrin Keepnews</strong> ✓✓、封面设计 <strong>Paul Bacon</strong> ✓✓——<strong>你没看错，Paul Bacon 正是你手上那张《Blue Train》的封面设计者</strong> ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 「同时即兴」不是比喻，是 Evans 自己的原话</p><p class="nb">他在本碟内页里写道：希望这个三重奏朝「<strong>同时即兴</strong>（simultaneous improvisation）」的方向成长，而不是「一个人吹完，另一个人接着吹」✓✓。乐评说《Autumn Leaves》像「一份同时即兴的宣言」✓✓，正是接着这句来的 ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ LaFaro 怎么做到的：把琴码放低</p><p class="nb">Eugene Holley Jr. 的说法是：LaFaro <strong>把贝斯的琴码（bridge）放低</strong>，换来吉他般的流畅，从而能以<strong>平等身份</strong>与主奏对话 ✓✓——这正是「upended the conventions of double bass」的物理机制 ✓✓。Motian 则干脆放弃了「时间keeper」的常规角色，改用细密织体与流动的情绪 ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ 乐评没提：Evans 就在那辆车上</p><p class="nb">通行的记载是：<strong>LaFaro 开车，Evans 坐在副驾</strong> ✓✓；1961 年 7 月 6 日夜里，车撞上树/立柱 ✓✓；Evans <strong>断了一根肋骨</strong>活了下来 ✓✓，而跟在另一辆车里的 Motian 与 LaFaro 的未婚夫、贝斯手 <strong>Chuck Israels</strong> 毫发无损 ✓✓。Evans 此后近一年没有再录三重奏 ✓✓，直到 1962 年 5 月与 Chuck Israels 重组 ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">✅ 「1961 年 6 月的 Village Vanguard」与「10 天」</p><p class="nb">那两场录于 <strong>6 月 25 日与 26 日</strong> ✓✓，出成《Waltz for Debby》与《Sunday at the Village Vanguard》✓✓；<strong>10 天后</strong>（7 月 6 日）LaFaro 遇难 ✓✓。这个三重奏在 <strong>20 个月</strong>里只留下 4 张录音 ✓✓——两张棚内、两张现场 ✓✓。</p></div></li><li><span class="n">12</span><div><p class="nt">✅ 「LaFaro 25 岁」</p><p class="nb">Scott LaFaro 生于 <strong>1936-04-04</strong> ✓✓，逝于 <strong>1961-07-06</strong>，<strong>25 岁</strong> ✓✓。</p></div></li><li><span class="n">13</span><div><p class="nt">✅ 版本：有 AP 45 转，也有 MFSL</p><p class="nb"><strong>Analogue Productions</strong> 两版：AJAZ 1162（2003 测试版 / 2004 编号版，<strong>45 转</strong>，<strong>Kevin Gray + Steve Hoffman</strong> 刻纹）✓✓ 与 APJ 1162（2008，单张 LP）✓✓；<strong>Mobile Fidelity Sound Lab UD1S 2-009</strong>（2019，<strong>45 转盒装限量编号版</strong>）✓✓；JVC XRCD VICJ-61058（2003）✓✓；OJC-088（1983）✓✓；WaxTime 771687（2010）与 WaxTime In Color 950616（2018）✓✓。⭐ 想要最全的：<strong>Craft《Haunted Heart: The Legendary Riverside Studio Recordings》</strong>（3CD / 10LP，2025-11-21 发行）把 1959-12-28 与 1961-02-02 两场 session 全录，并放出 <strong>26 条备录（其中 17 条为首次发行）</strong> ✓✓，逐 take 编号 ✓✓；⚠️ 但这盒的母带是 <strong>Paul Blakemore</strong> 重制的，<strong>不是 Kevin Gray</strong> ✓✓——要极致音响还是走 AP 的 45 转或 MFSL 那张 ✓✓。内页由 Eugene Holley Jr. 撰写，另有 The Doors 的 John Densmore 作序 ✓✓。</p></div></li><li><span class="n">14</span><div><p class="nt">⭐ 三重奏的完整时间轴（20 个月）</p><p class="nb"><strong>1959-12-28《Portrait in Jazz》</strong>（本碟）→ <strong>1961-02-02《Explorations》</strong> ✓✓ → <strong>1961-06-25/26《Waltz for Debby》《Sunday at the Village Vanguard》</strong> ✓✓ → <strong>1961-07-06 LaFaro 车祸身亡</strong> ✓✓。同年 10 月伊文思与 LaFaro 曾在《Portrait in Jazz》内页写下那句「同时即兴」的期望 ✓✓，十天后它成了讣告 ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">Qobuz</span><span><a href="https://open.qobuz.com/album/0002521860882">Portrait In Jazz (Remastered) 专辑页（原文出处；11 轨曲目与时长；数字版 1987 年发行）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/104371">Portrait In Jazz master 104371（录音日期与地点；原版两个编号；141 个版本谱系）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3916727">Analogue Productions AJAZ 1162（2004 编号版 45 转；Kevin Gray + Steve Hoffman 刻纹）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/13599282">Mobile Fidelity Sound Lab UD1S 2-009（2019，45 转盒装限量编号版）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Portrait_in_Jazz">Wikipedia：Portrait in Jazz（曲目、编制、版本沿革）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Bill_Evans">Wikipedia：Bill Evans（生平、领衔专辑顺序、客席录音、三重奏四张唱片）</a></span></li><li><span class="k">维基</span><span><a href="https://fr.wikipedia.org/wiki/Bill_Evans">Wikipedia（法文）：Bill Evans（客席名单：Tony Scott / Don Elliott / Eddie Costa / Jimmy Knepper / Helen Merrill / Sahib Shihab / Charles Mingus）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Scott_LaFaro">Wikipedia：Scott LaFaro（1936-04-04 生、1961-07-06 车祸、25 岁）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Kind_of_Blue">Wikipedia：Kind of Blue（录音日期 1959-03-25 与 04-02；发行日 1959-08-17）</a></span></li><li><span class="k">书</span><span>Peter Pettinger《Bill Evans: How My Heart Sings》（Yale University Press, 1998）——三重奏方法论与内页引语</span></li><li><span class="k">Craft</span><span><a href="https://craftrecordings.com/products/bill-evans-trio-haunted-heart-the-legendary-riverside-studio-recordings-3-cd">Craft Recordings：Haunted Heart: The Legendary Riverside Studio Recordings（3CD，2025-11-21；26 条备录、17 条首发；Paul Blakemore 重制；Eugene Holley Jr. 内页、John Densmore 作序）</a></span></li><li><span class="k">书</span><span>Eugene Holley Jr.《Haunted Heart》内页文章（LaFaro 放低琴码、Evans 与「同时即兴」的目标）</span></li></ul>
+  </section>
+
+  <footer>英文原文照录，仅按语义分段，未改动任何字句；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

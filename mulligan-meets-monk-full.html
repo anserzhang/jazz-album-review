@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Mulligan Meets Monk — 马利根遇上蒙克 · 1957 年 8 月 12–13 日，Reeves 棚里唯一的一次合作</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="monk.html">Thelonious Monk</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Mulligan Meets Monk</h1>
+    <p class="title-cn">马利根遇上蒙克 · 1957 年 8 月 12–13 日，Reeves 棚里唯一的一次合作</p>
+    <p class="byline">– Anthony Tognazzini</p>
+    <p class="source">原文：AllMusic 专辑乐评（Anthony Tognazzini，挂在 WaxTime 2011 年版条目下）｜英文照录，中文对照</p>
+    <ul class="chips"><li>1957-08-12/13 录</li><li>1957-10 发行</li><li>Riverside RLP 12-247</li><li>40:52（原版六曲）</li><li>AP 45 转 · Craft 单声道</li><li>译注 × 13</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Mulligan Meets Monk documents the 1957 meeting of two sharp musical minds.</span><span class="toc-cn">1957 年的这一次相遇</span></li><li><span class="toc-en">Though the pairing may seem unlikely… sound remarkable together.</span><span class="toc-cn">看似不可能的配对</span></li><li><span class="toc-en">In fact, it is the contrast between the players’ styles that lends this set its balance…</span><span class="toc-cn">反差，正是这张碟的平衡</span></li><li><span class="toc-en">The program, which includes four compositions by Monk and one by Mulligan…</span><span class="toc-cn">四首 Monk + 一首 Mulligan</span></li><li><span class="toc-en">Mulligan’s “Decidedly,” a bright bop workout…</span><span class="toc-cn">《Decidedly》：明亮的波普练习</span></li><li><span class="toc-en">Bassist Wilbur Ware and drummer Shadow Wilson lend solid support…</span><span class="toc-cn">节奏组，与「一代经典」的定性</span></li><li><span class="toc-en">[Some reissues include a handful of alternate takes.]</span><span class="toc-cn">再版里那几条备录</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Mulligan Meets Monk（马利根遇上蒙克）</strong> · Thelonious Monk &amp; Gerry Mulligan｜<strong>原版 40:52（六曲）／1957 年 10 月发行</strong></dd><dt>厂牌 / Label</dt><dd>Riverside <strong>RLP 12-247</strong>（<strong>单声道</strong>）；<strong>立体声版 RLP 1106 迟至 1959 年才出</strong> ✓✓ · 制作与内页 <strong>Orrin Keepnews</strong> · 工程 Jack Higgins · 封面设计 <strong>Paul Bacon</strong> · 封面摄影 Robert Parent</dd><dt>录音 / Session</dt><dd><strong>1957-08-12 与 08-13</strong> 两场下午 · <strong>Reeves Sound Studios, New York</strong>（不是 RVG 的哈肯萨克客厅棚）· 全程<strong>无叠录</strong></dd><dt>编制 / Personnel</dt><dd>Thelonious Monk p · Gerry Mulligan 上低音号 · <strong>Wilbur Ware</strong> b · <strong>Shadow Wilson</strong> d —— 四人，一镜到底</dd><dt>曲目 / Tracks</dt><dd>'Round Midnight 8:29（8/13）· Rhythm-a-Ning 5:19（8/12）· Sweet and Lovely 7:17（8/13）· Decidedly 5:54（8/13）· Straight No Chaser 7:00（8/12）· I Mean You 6:53（8/12）</dd><dt>版本 / Versions</dt><dd>1957 原版 12-247（mono）→ 1959 <strong>RLP 1106（立体声）</strong> → <strong>OJC-301 / OJCCD 301-2</strong>（1987，<strong>加三条备录</strong>）→ <strong>JVC XRCD JVCXR-0032-2</strong>（1997）→ <strong>Riverside 混合 SACD RISA 11106-6</strong>（2004）→ <strong>AP AJAZ 1106</strong>（2004，<strong>45 转 180g 编号版</strong>，Kevin Gray + Steve Hoffman 刻纹）→ WaxTime 771715（2011）→ <strong>Craft CR00873</strong>（2025 RSD，<strong>单声道 180g</strong>，限量 3000 张，RTI 压片）</dd><dt>缘起 / How it happened</dt><dd>Keepnews 本想录 <strong>Monk 在 Five Spot 的四重奏</strong>（John Coltrane + Ware + Wilson），Coltrane 走不开 → 改请两边都熟的朋友 <strong>Mulligan</strong> 顶替 ✓✓；而 Monk 的 cabaret card 1951 年被吊销、<strong>1957 年才恢复</strong> ✓✓，正是他重振旗鼓的节点 ✓✓</dd><dt>评价 / Reviews</dt><dd><strong>Down Beat 4½ 星</strong>（1957）✓✓ · *The Jazz Review*（Gunther Schuller, 1958-11）「像水加油」✓✓ · PopMatters（John Bergstrom, 2013）「偶有弹错、风格不总能合拍，但极其耐听」✓✓ · Glide（2025）「独特，但非必需」✓✓ · <strong>Mulligan 本人称之为「bruised（瘀青）」</strong> ✓✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>'Round Midnight</td><td><span class="cn">午夜圆舞曲 · <strong>Monk + Cootie Williams + Bernie Hanighen</strong> 合写（<strong>8/13 录</strong>）——开场即是标准曲里的名篇</span></td><td class='ses'>1957-08-13</td><td class='dur'>8:29</td></tr><tr><td class='pos'>A2</td><td class='tt'>Rhythm-a-Ning</td><td><span class="cn">节奏之歌 · Monk（<strong>8/12 录</strong>）</span></td><td class='ses'>1957-08-12</td><td class='dur'>5:19</td></tr><tr><td class='pos'>A3</td><td class='tt'>Sweet and Lovely</td><td><span class="cn">甜美而可爱 · <strong>Gus Arnheim / Jules LeMare / Harry Tobias</strong>（<strong>8/13 录</strong>）——<strong>全碟唯一不是 Monk 写的曲子</strong></span></td><td class='ses'>1957-08-13</td><td class='dur'>7:17</td></tr><tr><td class='pos'>B1</td><td class='tt'>Decidedly</td><td><span class="cn">果断决定 · <strong>Gerry Mulligan 原创</strong>（<strong>8/13 录</strong>）——明亮的波普练习；1987 CD 另收单声道 Take 5</span></td><td class='ses'>1957-08-13</td><td class='dur'>5:54</td></tr><tr><td class='pos'>B2</td><td class='tt'>Straight, No Chaser</td><td><span class="cn">不绕弯子 · Monk（<strong>8/12 录</strong>）——1987 CD 另收 Take 1</span></td><td class='ses'>1957-08-12</td><td class='dur'>7:00</td></tr><tr><td class='pos'>B3</td><td class='tt'>I Mean You</td><td><span class="cn">我懂你的意思 · <strong>Monk + Coleman Hawkins 合著</strong>（<strong>8/12 录</strong>）——<strong>乐评没点名的第四首 Monk 作品</strong></span></td><td class='ses'>1957-08-12</td><td class='dur'>6:53</td></tr><tr><td class='pos'>＋</td><td class='tt'>Decidedly (Take 5, Mono)</td><td><span class="cn">1987 年 OJC CD 增补的单声道 take</span></td><td class='ses'>1957-08-13</td><td class='dur'>6:37</td></tr><tr><td class='pos'>＋</td><td class='tt'>Straight No Chaser (Take 1)</td><td><span class="cn">1987 年 OJC CD 增补；此时 Mulligan 还在摸索，Monk 没有独奏</span></td><td class='ses'>1957-08-12</td><td class='dur'>5:29</td></tr><tr><td class='pos'>＋</td><td class='tt'>I Mean You (Alternate Take)</td><td><span class="cn">1987 年 OJC CD 增补</span></td><td class='ses'>1957-08-12</td><td class='dur'>6:30</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Mulligan Meets Monk documents the 1957 meeting of two sharp musical minds. Though the pairing may seem unlikely, baritone saxophonist Gerry Mulligan -- whose cool, West Coast style blends dexterity with laid-back grace -- and Thelonious Monk -- whose radical, angular piano playing and thoroughly modern compositions are blueprints for the possibilities of bop -- sound remarkable together. In fact, it is the contrast between the players' styles that lends this set its balance and appeal.</p></div><div class="zh-col"><p>《Mulligan Meets Monk》记录下了 <strong>1957 年</strong>两位锋利头脑的相遇。这个组合乍看之下似乎不可能成立：上低音号手 <strong>Gerry Mulligan</strong>——他那种冷静的西海岸风格，把技巧与从容的优雅揉在一起；钢琴手 <strong>Thelonious Monk</strong>——他激进而棱角分明的钢琴演奏、以及彻底现代的作曲，是波普可能性的蓝图——<strong>但两人在一起出奇地好听</strong>。事实上，<strong>正是两人风格之间的反差，给了这张碟平衡与魅力</strong>。</p></div></div><div class="pair"><div class="en-col"><p>The program, which includes four compositions by Monk and one by Mulligan, is unassailable. Mulligan acquits himself admirably on the Monk classics "'Round Midnight," "Rhythm-a-ning," and "Straight, No Chaser," unfurling his smooth tone over their zigzagging melodies and ambitious scalar architecture. Mulligan's "Decidedly," a bright bop workout, fits easily alongside Monk's tunes, especially with the help of Monk's off-kilter, accented comping.</p></div><div class="zh-col"><p>这份曲目单——<strong>四首 Monk 的作品加一首 Mulligan 的作品</strong>——无可挑剔。Mulligan 在几首 Monk 名作《'Round Midnight》《Rhythm-a-ning》与《Straight, No Chaser》上表现出色，把<strong>圆润的音色铺展在那些之字形前进的旋律与大胆的音阶架构之上</strong>。Mulligan 的《Decidedly》是一段明亮的波普练习，<strong>与 Monk 的曲子并肩而立毫不费力</strong>——尤其得益于 Monk 那<strong>错位而带重音的钢琴伴奏</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Bassist Wilbur Ware and drummer Shadow Wilson lend solid support to the spirited playing of the two leaders, making this top-notch session -- with its great tunes, chemistry, and soloing -- a true classic. [Some reissues include a handful of alternate takes.]</p></div><div class="zh-col"><p>贝斯手 <strong>Wilbur Ware</strong> 与鼓手 <strong>Shadow Wilson</strong> 为两位领衔者火气十足的演奏提供了扎实的支撑，让这场一流的录音——凭借好曲、好化学反应与好独奏——成为<strong>一代经典</strong>。［部分再版还收录了几条备录。］</p></div></div><div class="pair"><div class="en-col"><p>© Anthony Tognazzini /TiVo</p></div><div class="zh-col"><p>© Anthony Tognazzini / TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">✅ 「1957 年的相遇」——属实</p><p class="nb">录音是 <strong>1957 年 8 月 12 日与 13 日</strong>两场下午 ✓✓（AllMusic 与维基一致 ✓✓），地点 <strong>Reeves Sound Studios, New York</strong> ✓✓。⚠️ 但要注意：<strong>原版直到 1957 年 10 月才发行</strong> ✓✓——「相遇」与「成片」之间隔了两个月 ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 厂牌是 Riverside，不是 Pacific Jazz</p><p class="nb">原版 <strong>Riverside RLP 12-247</strong> ✓✓，而且<strong>立体声版 RLP 1106 迟至 1959 年才出</strong> ✓✓——也就是说 1957 年市面上<strong>只有单声道</strong> ✓✓。这条对收藏最要紧：想要「1957 年原汁原味」，只有单声道这一条路 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">✅ 「四首 Monk + 一首 Mulligan」完全正确</p><p class="nb">Monk 的四首是：《'Round Midnight》（与 <strong>Cootie Williams、Bernie Hanighen</strong> 合写）✓✓、《Rhythm-a-ning》✓✓、《Straight, No Chaser》✓✓、《I Mean You》（与 <strong>Coleman Hawkins</strong> 合著）✓✓；加上 Mulligan 的《Decidedly》✓✓ 与 1930 年的标准曲《Sweet and Lovely》（<strong>Gus Arnheim / Jules LeMare / Harry Tobias</strong>）✓✓。⭐ 也就是说，<strong>《Sweet and Lovely》才是全碟唯一不是 Monk 写的曲子</strong> ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⚠️ 乐评漏点了《I Mean You》</p><p class="nb">它点名的是《'Round Midnight》《Rhythm-a-ning》《Straight, No Chaser》三首 ✓✓，<strong>第四首 Monk 作品《I Mean You》全文未提</strong> ✓✓；《Sweet and Lovely》同样未提 ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">✅ 「再版含若干备录」——具体是三条</p><p class="nb"><strong>1987 年的 OJC CD（OJCCD 301-2）加的三条是</strong> ✓✓：《Decidedly》<strong>单声道 Take 5</strong>（6:37）✓✓、《Straight No Chaser》<strong>Take 1</strong>（5:29）✓✓、《I Mean You》<strong>另一 take</strong>（6:30）✓✓。2003 年的 Keepnews 收藏版把曲目顺序也改了 ✓✓，2013 年的 OJC 24-bit 再版沿用同一套增补 ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐ 这张碟是怎么凑成的</p><p class="nb">Keepnews 本来想录的是 <strong>Monk 在 Five Spot 的四重奏</strong>（John Coltrane + Wilbur Ware + Shadow Wilson）✓✓，但 Coltrane 有合约走不开，于是他找了两边都熟的朋友 <strong>Mulligan</strong> 顶替 ✓✓。而 <strong>Monk 的 cabaret card 1951 年因毒品事件被吊销、1957 年才恢复</strong> ✓✓——正好是他在纽约俱乐部重获资格、事业回暖的节点 ✓✓。同年 Monk 还在 Riverside 出了《Monk's Music》，<strong>Mulligan 也在那张里演奏</strong> ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐⭐ 「一代经典」是这篇里最乐观的一端——同期评论史并非如此</p><p class="nb">Down Beat 给了 <strong>4½ 星</strong> ✓✓；但 *The Jazz Review*（Gunther Schuller，1958-11）说这像「<strong>水加油</strong>」，虽然同时称赞了 Monk 的独奏与「出色的主题式伴奏」✓✓；PopMatters（John Bergstrom，2013）指出「<strong>偶有弹错的音、两人的风格并不总能合拍</strong>」，但仍称它「<strong>极其耐听</strong>」✓✓；2025 年 Glide Magazine 给的是「独特，但非必需」✓✓。⭐ 而 <strong>Mulligan 本人后来把这场合作形容为「bruised（瘀青）」</strong> ✓✓——所以这篇 AllMusic 的定性处在光谱的最乐观一侧 ✓✓，值得你知道另一头是什么声音 ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 备录能听出什么：同一场录音有两个母版</p><p class="nb">原版选的是《Straight, No Chaser》的 <strong>Take 3</strong>（7:00，含一段完整的 Monk 独奏）✓✓，而备录 <strong>Take 1</strong> 里 Mulligan 还在摸索、<strong>Monk 完全没有独奏</strong> ✓✓；《Decidedly》录了至少五遍，<strong>立体声用 Take 4、单声道用 Take 5</strong> ✓✓——⭐ 也就是说，<strong>原版那张单声道 LP 与后来的立体声版，母带 take 都不一样</strong> ✓✓（这与你手上《Portrait in Jazz》那碟「单/立体声两个母版」是同一类现象 ✓✓）。</p></div></li><li><span class="n">9</span><div><p class="nt">✅ 编制与「全程无叠录」</p><p class="nb">Monk 钢琴、Mulligan 上低音号、<strong>Wilbur Ware</strong> 贝斯、<strong>Shadow Wilson</strong> 鼓 ✓✓，全部正确 ✓✓；整场<strong>一镜到底、无叠录</strong> ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">✅ 「Mulligan 圆润的音色铺在之字形旋律之上」这个听感很准</p><p class="nb">Ware 的走动贝斯撑住底子，Wilson 的摇摆感把 Mulligan 的冷线条与 Monk 的棱角接在一起 ✓✓（Stuart Broomer 的评论是同一判断 ✓✓）；不过要注意反面：备录里也能听到两人风格不合拍、甚至弹错音的地方 ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 封面设计又是 Paul Bacon</p><p class="nb">继《Blue Train》《Portrait in Jazz》之后，这是<strong>第三张 Paul Bacon 设计的封面</strong> ✓✓；封面摄影是 Robert Parent ✓✓。</p></div></li><li><span class="n">12</span><div><p class="nt">✅ 曲序是刻意的编排</p><p class="nb"><strong>快慢交替</strong>：抒情曲《'Round Midnight》开场 → 快曲《Rhythm-a-Ning》→ 抒情曲《Sweet and Lovely》→ 快曲《Decidedly》→《Straight, No Chaser》→《I Mean You》✓✓。</p></div></li><li><span class="n">13</span><div><p class="nt">⭐ 版本怎么选</p><p class="nb">1957 原版 <strong>RLP 12-247</strong>（mono）✓✓ → 1959 <strong>RLP 1106</strong>（立体声）✓✓ → <strong>OJC-301 / OJCCD 301-2</strong>（1987，加三条备录 ✓✓）→ <strong>JVC XRCD JVCXR-0032-2</strong>（1997）✓✓ → <strong>Riverside 混合 SACD RISA 11106-6</strong>（2004）✓✓ → <strong>AP AJAZ 1106</strong>（2004，<strong>45 转 180g 编号版</strong>，<strong>Kevin Gray + Steve Hoffman</strong> 刻纹 ✓✓）✓✓ → WaxTime 771715（2011，180g）✓✓ → <strong>Craft CR00873</strong>（2025-04-12 记录商店日，<strong>单声道 180g，限量 3000 张，RTI 压片，母带直接刻自原带</strong>）✓✓。⭐ <strong>想听 1957 年的原汁原味 → Craft 那张单声道；想要音响 → AP 的 45 转</strong> ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/release/mulligan-meets-monk-mr0003429346">Anthony Tognazzini 乐评原文（本篇出处，挂在 WaxTime 2011 年版条目 mr0003429346 下）</a></span></li><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/mulligan-meets-monk-mw0000194831">AllMusic 专辑页（艺人署名 Gerry Mulligan / Thelonious Monk；录音日期 1957-08-12 与 08-13；录音地点 Reeves Sound Studios, NY；时长 59:01）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/175091">Mulligan Meets Monk master 175091（原版曲目与作曲署名；全部版本谱系；52 种压片）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/5269555">Analogue Productions AJAZ 1106（2004，45 转 180g 编号版；Kevin Gray + Steve Hoffman 刻纹；notes 记 1957-08-12/13 纽约）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/33677535">Craft Recordings CR00873（2025 记录商店日，单声道 180g 限量版）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Mulligan_Meets_Monk">Wikipedia：Mulligan Meets Monk（曲目与时长；1987 CD 增补三条备录；制作人员）</a></span></li><li><span class="k">JazzCodex</span><span><a href="https://jazzcodex.com/albums/thelonious-monk-mulligan-meets-monk">JazzCodex：Mulligan Meets Monk 的压片与版本考据（引 Cash Box 1957、Jazz Journal 2021、PopMatters 2013）</a></span></li><li><span class="k">汇总</span><span><a href="https://grokipedia.com/page/Mulligan_Meets_Monk">逐轨录音日期、Keepnews 的录制缘起、Schuller 与 PopMatters 的评价、Mulligan 的「bruised」说法（词条汇总页，用于交叉核对）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
