@@ -33,6 +33,7 @@ index.html                              专题首页：特别专题 + 艺人索�
 │   ├── miles-sos-full.html                1960（录音 1959–60）
 │   ├── miles-kob-full.html                1959
 │   ├── miles-milestones-full.html          1958
+│   ├── miles-ram-full.html                 1957
 │   └── miles-botc-full.html                1957（录音 1949–50）
 ├── monk.html                           艺人页 · Thelonious Monk
 │   ├── monk-underground-full.html           1968
@@ -41,13 +42,17 @@ index.html                              专题首页：特别专题 + 艺人索�
 │   ├── monk-in-orbit-full.html             1958（Clark Terry 领衔，蒙克客串）
 │   ├── monk-bc-full.html                   1957
 │   └── mulligan-meets-monk-full.html       1957（与 Gerry Mulligan 合录）
-└── evans.html                          艺人页 · Bill Evans
-    └── evans-portrait-in-jazz-full.html    1960（录音 1959）
+├── evans.html                          艺人页 · Bill Evans
+│   ├── evans-vanguard-full.html           1961（录音 1961-06-25）
+│   └── evans-portrait-in-jazz-full.html    1960（录音 1959）
+└── others.html                         其他页 · 其他领奏者（不在四位主线）
+    ├── brubeck-timeout-full.html          1959（Dave Brubeck）
+    └── adderley-se-full.html              1958（Cannonball Adderley）
 assets/site.css                         站点共用样式（与专辑页同一套设计令牌）
 assets/site.js                          主题切换脚本
 ```
 
-共 4 位艺人、31 篇专辑评论、2 篇特别专题。直接双击 `index.html` 即可浏览，无需服务器。
+共 4 位艺人（另有 1 页「其他领奏」专辑）、35 篇专辑评论、2 篇特别专题。直接双击 `index.html` 即可浏览，无需服务器。
 
 ## 发布
 
@@ -67,6 +72,7 @@ git add -A && git commit -m "..." && git push origin main
 - **排序**：专辑页按**发行**年份从新到旧，同一年内按发行日先后排（早的在前）。录音日期另列，方便对照。合辑与档案类按其发行年份计，所以会排在录音更早的正编之前。
 - **特别专题**：周年、纪念、跨代合作等不进年表，单开一块，排在专辑年表之前。
 - **归类**：按**领奏者**算。领奏是蒙克、柯特兰客席，则归蒙克页，不进柯特兰年表；《马利根遇上蒙克》是蒙克与 Mulligan 并列署名的合录，归蒙克页。《轨道之上》(In Orbit) 领奏是翼号手 Clark Terry、蒙克只是客串，因本站暂无 Terry 的艺人页，仍列在蒙克页并注明是例外。
+- **其他页**：领奏者不在四位主线上的专辑不单独开艺人页，统一收在 `others.html`，条目按「**发行年份 领奏 专辑名**」列出，排序与其他年表一致（发行年份从新到旧）。首页对应一张「Others」卡片。
 - **专辑页骨架**固定六段：目录 → 专辑档案 → 曲目 → 对照正文 → 译注 → 资料来源。特别专题另有自己的骨架（人物档案 / 编年表）。
 - **主题**：全站统一用 `mavis-theme` 键（百年纪念页兼容旧的 `coltrane-theme`），偏好存浏览器本地。
 - **图标**：`favicon.svg` 全站各页都引（标签页/书签栏真正显示的图标）；标题里不放 emoji，顶栏站名前也不加——favicon 即站点标识。

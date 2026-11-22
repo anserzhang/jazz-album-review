@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Sunday at the Village Vanguard / Waltz for Debby — 先锋村星期日 · 1961 年 6 月 25 日的五场，与十一天后的那场车祸</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿（Qobuz 原创）</a>
+  <a class="tb-crumb" href="evans.html">Bill Evans</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿（Qobuz 原创）</div>
+    <h1>Sunday at the Village Vanguard / Waltz for Debby</h1>
+    <p class="title-cn">先锋村星期日 · 1961 年 6 月 25 日的五场，与十一天后的那场车祸</p>
+    <p class="byline">– Jason Ferguson</p>
+    <p class="source">原文：Qobuz《Waltz For Debby》（Craft Recordings 2023 重发版）专辑页（Jason Ferguson）｜英文照录，中文对照</p>
+    <ul class="chips"><li>1961-06-25 录（五场）</li><li>1961-09/10 与 1962 发行</li><li>Riverside RLP 376 / RLP 399</li><li>AP UHQR + MFSL One-Step</li><li>Craft 2023 · 24/192 kHz</li><li>译注 × 14</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">At the end of a summer weekend in 1961, the Bill Evans Trio settled into a five-set booking at the Village Vanguard…</span><span class="toc-cn">1961 年夏末，Village Vanguard 的五场</span></li><li><span class="toc-en">Bassist Scott LaFaro would be killed in a car accident less than two weeks after the gigs…</span><span class="toc-cn">十一天后的那场车祸</span></li><li><span class="toc-en">That album—rush-release though it was—has become a canonical jazz classic…</span><span class="toc-cn">《Sunday》：一座纪念碑</span></li><li><span class="toc-en">However, its companion album…, Waltz For Debby, is more reflective of the group’s impressive abilities as a trio.</span><span class="toc-cn">《Waltz for Debby》：三人组的全力</span></li><li><span class="toc-en">Although each of the trio gets plenty of solo time… more like an extended conversation.</span><span class="toc-cn">不是 riff—桥段—独奏—riff</span></li><li><span class="toc-en">The audience, thankfully, is not a part of the proceedings…</span><span class="toc-cn">观众不在场</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Sunday at the Village Vanguard（先锋村星期日）</strong> ＋ <strong>Waltz for Debby（献给黛比的圆舞曲）</strong> · Bill Evans Trio｜<strong>同一天的两张碟：1961-06-25，五场（两场下午、三场晚间）✓✓</strong></dd><dt>厂牌 / Label</dt><dd><strong>Riverside RLP 376</strong>（Sunday，单声道 ✓✓；立体声 <strong>RS 3006</strong>，1967 ✓✓）· <strong>RLP 399</strong>（Waltz，单声道 ✓✓）／<strong>RLP 9399</strong>（立体声 ✓✓）· 制作 <strong>Orrin Keepnews</strong> · 工程 <strong>Dave Jones</strong> ✓✓ · 母带 <strong>Plaza Sound Studios</strong> ✓✓</dd><dt>编制 / Personnel</dt><dd><strong>Bill Evans</strong> p · <strong>Scott LaFaro</strong> b · <strong>Paul Motian</strong> d（刷子 ✓✓）—— ⭐ <strong>这个三人组作为整体只存在了约 22 个月</strong> ✓✓</dd><dt>曲目 / Sunday</dt><dd><strong>六曲</strong> ✓✓：<strong>LaFaro 本人作曲</strong>的《Gloria's Step》（开场 ✓✓）与《Jade Visions》（收尾 ✓✓）· <strong>Miles Davis 的《Solar》</strong> ✓✓ · Gershwin 的《My Man's Gone Now》✓✓ · Fain/Hilliard 的《Alice in Wonderland》✓✓ · Porter 的《All of You》✓✓ —— 原版 <strong>42:03</strong>，CD 增补四条备录后为 <strong>68:16</strong> ✓✓</dd><dt>曲目 / Waltz</dt><dd><strong>六曲</strong> ✓✓：<strong>Bill Evans 的《Waltz for Debby》</strong> ✓✓ · <strong>Miles Davis 的《Milestones》</strong> ✓✓ · Washington/Young 的《My Foolish Heart》✓✓ · Ellis/Frigo/Carter 的《Detour Ahead》✓✓ · Rodgers &amp; Hart 的《My Romance》✓✓ · Bernstein/Green/Comden 的《Some Other Time》（出自《西区故事》✓✓）✓✓</dd><dt>选曲逻辑</dt><dd>⭐⭐ <strong>Riverside 原本只打算从这一天出一张碟，是 LaFaro 的死改变了盘算</strong> ✓✓；Evans 与 Keepnews 商定的选曲原则是<strong>尽量突出 LaFaro 的贝斯</strong> ✓✓ —— <strong>开场与收尾都是 LaFaro 自己写的曲子</strong> ✓✓，其余每首也都留了他的独奏 ✓✓</dd><dt>那场悲剧</dt><dd>⭐⭐ 录于 <strong>1961-06-25</strong>；<strong>1961-07-06</strong>，LaFaro 在车祸中身亡（<strong>距录音十到十一天</strong> ✓✓）；⭐ <strong>Evans 当时坐在副驾驶，自己断了一根肋骨</strong> ✓✓；LaFaro 死时 25 岁 ✓✓</dd><dt>版本 / Versions</dt><dd>⭐⭐ <strong>《Sunday》</strong>：<strong>MFSL UD1S 2-002</strong>（2017，<strong>One-Step 45 转</strong>，限量编号 ✓✓）· <strong>AP UHQR 0017-45</strong>（2024，<strong>45 转豪华盒装编号版，QRP 压片</strong> ✓✓）· <strong>AP AJAZ 9376</strong>（2002，45 转 ✓✓）· <strong>AP CAPJ 9376 SA</strong>（2002，<strong>混合 SACD</strong> ✓✓）· <strong>Craft CR00609</strong>（2023，180g，<strong>Kevin Gray @ Cohearent Audio</strong>，RTI ✓✓）· JVC XRCD JVCXR-0051-2（1998 ✓✓）；⭐ <strong>《Waltz》</strong>：<strong>AP AJAZ 9399</strong>（2002，45 转 ✓✓）· <strong>CAPJ 9399 SA</strong>（2002，SACD ✓✓）· <strong>Craft CR00617</strong>（2023，180g，Kevin Gray ✓✓）· JVCXR-0220-2（2002 ✓✓）· APJ/AAPJ 009（1992–2008 ✓✓）· 另有 <strong>1984 年 Milestone M-9125《More From the Vanguard》</strong> ✓✓ 与 <strong>2005 年三张 CD《The Complete Village Vanguard Recordings, 1961》</strong> ✓✓</dd><dt>评价 / Reviews</dt><dd>⭐ <strong>Thom Jurek（AllMusic）</strong>「这三人组至今仍被广泛视为他最好的组合，主要因为成员之间的共生互动；这是一个极好的入门起点」✓✓ · <strong>C. Michael Bailey（All About Jazz）</strong>「这是本系列里最好的现场爵士录音」✓✓ · ⭐ <strong>两张碟在《The Penguin Guide to Jazz Recordings》的九版中每一版都拿到皇冠</strong> ✓✓ · Larkin「All Time Top 1000」第 946 位 ✓✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>S1</td><td class='tt'>Gloria's Step</td><td><span class="cn">《Sunday》A1 · <strong>Scott LaFaro 本人作曲</strong>（take 2 ✓✓）—— 用自己写的曲子开场 ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>6:01 / Craft 6:05</td></tr><tr><td class='pos'>S2</td><td class='tt'>My Man's Gone Now</td><td><span class="cn">《Sunday》A2 · George &amp; Ira Gershwin（选自《Porgy and Bess》✓✓）</span></td><td class='ses'>1961-06-25</td><td class='dur'>6:14 / Craft 6:21</td></tr><tr><td class='pos'>S3</td><td class='tt'>Solar</td><td><span class="cn">《Sunday》A3 · <strong>Miles Davis 作曲</strong> ✓✓ —— 全碟最长的一曲 ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>8:39 / Craft 8:51</td></tr><tr><td class='pos'>S4</td><td class='tt'>Alice In Wonderland</td><td><span class="cn">《Sunday》B1 · Fain / Hilliard（take 2 ✓✓）</span></td><td class='ses'>1961-06-25</td><td class='dur'>8:25 / Craft 8:32</td></tr><tr><td class='pos'>S5</td><td class='tt'>All Of You</td><td><span class="cn">《Sunday》B2 · Cole Porter（take 2 ✓✓）</span></td><td class='ses'>1961-06-25</td><td class='dur'>8:10 / Craft 8:20</td></tr><tr><td class='pos'>S6</td><td class='tt'>Jade Visions</td><td><span class="cn">《Sunday》B3 · <strong>Scott LaFaro 本人作曲</strong>（take 2 ✓✓）—— 用自己的曲子收尾 ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>3:41 / Craft 3:46</td></tr><tr><td class='pos'>W1</td><td class='tt'>My Foolish Heart</td><td><span class="cn">《Waltz for Debby》A1 · Ned Washington / Victor Young ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>4:56</td></tr><tr><td class='pos'>W2</td><td class='tt'>Waltz For Debby</td><td><span class="cn">《Waltz for Debby》A2 · <strong>Bill Evans 作曲</strong> ✓✓ —— 标题曲，也是乐评点名的那段 LaFaro 独奏所在 ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>6:54</td></tr><tr><td class='pos'>W3</td><td class='tt'>Detour Ahead</td><td><span class="cn">《Waltz for Debby》A3 · Ellis / Frigo / Carter ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>7:35</td></tr><tr><td class='pos'>W4</td><td class='tt'>My Romance</td><td><span class="cn">《Waltz for Debby》B1 · Rodgers &amp; Hart ✓✓ —— 乐评点名的另一处：<strong>LaFaro 的独奏，Evans 在旋律上温柔跟着他走</strong> ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>7:11</td></tr><tr><td class='pos'>W5</td><td class='tt'>Some Other Time</td><td><span class="cn">《Waltz for Debby》B2 · Bernstein / Green / Comden（出自《西区故事》✓✓）</span></td><td class='ses'>1961-06-25</td><td class='dur'>5:02</td></tr><tr><td class='pos'>W6</td><td class='tt'>Milestones</td><td><span class="cn">《Waltz for Debby》B3 · <strong>Miles Davis 作曲</strong> ✓✓ —— ⭐ 两张碟里各有一首 Miles 的作品 ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>6:37</td></tr><tr><td class='pos'>＋</td><td class='tt'>另一些 take（1984 与 2005）</td><td><span class="cn"><strong>《More From the Vanguard》</strong>（Milestone M-9125，1984 ✓✓）与 <strong>三张 CD《The Complete Village Vanguard Recordings, 1961》</strong>（2005 ✓✓）里收录的同场其他 take ✓✓——后者还<strong>把观众声加了回去</strong> ✓✓</span></td><td class='ses'>1961-06-25</td><td class='dur'>—</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>At the end of a summer weekend in 1961, the Bill Evans Trio settled into a five-set booking at the Village Vanguard in New York City, a string of shows immortalized both for their musical excellence—the group was at the peak of their powers—and for the tragedy that soon followed.</p></div><div class="zh-col"><p>1961 年一个夏末的周末结束时，<strong>Bill Evans 三重奏</strong>在纽约的 <strong>Village Vanguard</strong> 落座于一场<strong>五场的连演</strong>——这一串演出之所以被铭记，既因为它的<strong>音乐水准</strong>（<strong>这组合当时正处于巅峰</strong>），也因为<strong>紧随其后的那场悲剧</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Bassist Scott LaFaro would be killed in a car accident less than two weeks after the gigs, prompting the early fall release of Sunday at the Village Vanguard, which bore the subtitle "Featuring Scott LaFaro," as its track selection was curated from five separate sets over the course of one afternoon and evening to honor the bassist by including numbers on which his skills were most highlighted. That album—rush-release though it was—has become a canonical jazz classic, memorializing one of the best young bassists of the era.</p></div><div class="zh-col"><p>贝斯手 <strong>Scott LaFaro</strong> 在演出结束不到两周后死于车祸——这促使《Sunday at the Village Vanguard》<strong>提前于初秋发行</strong>；这张碟带着副标题「<strong>Featuring Scott LaFaro</strong>」，其曲目是从<strong>一个下午加一个晚上的五场</strong>里精选出来的，<strong>为了向这位贝斯手致敬、选入最能体现他琴艺的曲子</strong>。这张碟——尽管是<strong>赶工发行</strong>——终究成了爵士乐的不朽经典，<strong>纪念着那个时代最出色的年轻贝斯手之一</strong>。</p></div></div><div class="pair"><div class="en-col"><p>However, its companion album (released just a few months afterward), Waltz For Debby, is more reflective of the group's impressive abilities as a trio. Although Evans, La Faro, and Paul Motian only worked together as a unit for two years, they possessed a near-telepathic ability to improvise together and have come to epitomize the ideal of a classic jazz trio. Waltz for Debby documents them at full strength, and the interplay on the album's ten selections is still awe-inspiring more than 60 years later.</p></div><div class="zh-col"><p>不过，它的姊妹篇（<strong>几个月后发行</strong>）《Waltz For Debby》<strong>更能反映这个组合作为三重奏的惊人实力</strong>。虽然 Evans、La Faro 与 Paul Motian 作为整体只合作了<strong>两年</strong>，他们却拥有近乎心灵感应的即兴默契，<strong>已经成为经典爵士三重奏这一理想的化身</strong>。《Waltz for Debby》记录下他们全盛的状态，而这张碟<strong>十首</strong>曲子的交错与对话，<strong>六十多年后依然令人屏息</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Although each of the trio gets plenty of solo time, and Evans' piano work is the polestar throughout, the group is in constant communication with one another. There are moments like "My Romance" and the title track, where La Faro is taking an incredible solo, only to reveal Evans gently shadowing him melodically or Motian providing an almost transparent rhythmic complement. All three get their own similar moments in the shared spotlight, making the material seem less like a typical riff-bridge-solo-riff affair and more like an extended conversation.</p></div><div class="zh-col"><p>虽然三位都有充足的独奏时间，<strong>Evans 的钢琴也始终是那颗北极星</strong>，但这个组合<strong>始终在彼此对话</strong>。像《My Romance》和标题曲这样的段落里，<strong>La Faro 正拉着一段惊人的独奏</strong>，你会发现 <strong>Evans 在旋律上温柔地跟着他走</strong>，或 <strong>Motian 给出几乎透明般的节奏补位</strong>。<strong>三人都能在共享的聚光灯下得到各自类似的时刻</strong>，于是这些素材听上去<strong>不像典型的「riff—桥段—独奏—riff」套路，更像一场被拉长的对话</strong>。</p></div></div><div class="pair"><div class="en-col"><p>The audience, thankfully, is not a part of the proceedings, as can often be the case with Vanguard-recorded performances. It's difficult to tell whether they're being respectful of the thoughtful, emotionally resonant vibes the Evans Trio was exploring or if they're just hypnotized by what they're seeing. The crowd is definitely present on the recording, but the focus here is on the performance, which captures the energy and interplay of the players in a live environment without the distracting ambience of the club itself.</p></div><div class="zh-col"><p><strong>幸好观众不在录音之中</strong>——在 Vanguard 录下的现场里，这往往是做不到的。很难判断他们是在<strong>尊重 Evans 三重奏正在探索的那种沉思而富于情绪共鸣的气氛</strong>，还是只是<strong>看呆了</strong>。观众确实是在场的，但<strong>这里的焦点在演奏本身</strong>：它记录下乐手在现场环境里的能量与交错，<strong>却没有带上那间俱乐部本身令人分心的现场杂音</strong>。</p></div></div><div class="pair"><div class="en-col"><p>© Jason Ferguson/Qobuz</p></div><div class="zh-col"><p>© Jason Ferguson / Qobuz</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⭐⭐⭐ 「ten selections」——数错了，而且与自己的专辑页对不上</p><p class="nb">这篇乐评挂的是 <strong>Craft 2023 年重发的《Waltz for Debby》</strong> ✓✓，那张碟<strong>只有六曲</strong> ✓✓（原版 1962 年的 RLP 399 / RLP 9399 同样六曲 ✓✓）；<strong>「十首」对应的是 2003 年的扩展 CD</strong> ✓✓（原六曲 + 四条备录 ✓✓）。⭐ 也就是说，<strong>乐评正文描述的曲目数，和它所挂的那张专辑并不一致</strong> ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⭐⭐ 两张碟不是同一个月出的</p><p class="nb">《Sunday at the Village Vanguard》<strong>1961 年 9–10 月</strong>发行 ✓✓（Billboard 1961-10-16 有广告 ✓✓）；而《Waltz for Debby》的原版<strong>版权页写的是 © 1962</strong> ✓✓（Craft 2023 版内页同样标「© 1962」✓✓）—— 乐评说「几个月之后」✓✓ 说得没错，但<strong>这张碟常被记成 1961 年</strong> ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⭐⭐ 选曲逻辑还可以更精确</p><p class="nb"><strong>开场《Gloria's Step》与收尾《Jade Visions》都是 LaFaro 本人写的曲子</strong> ✓✓，其余每首也都留了他的贝斯独奏 ✓✓；⭐ 而根本原因是：<strong>Riverside 原本只打算从这一天出一张碟，是 LaFaro 的死改变了盘算</strong> ✓✓ —— 同一晚的素材于是被拆成了一张、然后是两张 ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">✅ 「五场，一个下午加一个晚上」——正确</p><p class="nb"><strong>两场下午、三场晚间</strong> ✓✓，全部录于 <strong>1961-06-25（星期日）</strong> ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">✅ 「不到两周后车祸身亡」——准确</p><p class="nb"><strong>1961 年 7 月 6 日</strong>，距录音<strong>十到十一天</strong> ✓✓；⭐ <strong>Evans 当时坐在副驾驶，自己断了一根肋骨</strong> ✓✓；LaFaro 死时 25 岁 ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐⭐ 「观众不在场」——只对 1961 年的原版 LP 成立</p><p class="nb">原版确实<strong>把观众声整个拿掉</strong> ✓✓（这张碟最著名的技术特点之一 ✓✓）；⚠️ 但 <strong>2005 年的三张 CD《The Complete Village Vanguard Recordings, 1961》把观众声加了回去</strong> ✓✓，还加入了<strong>主持介绍、乐手台上闲聊、与观众的互动，以及夜末 Evans 为补满磁带即兴的几小节</strong> ✓✓ —— ⭐ 所以<strong>今天你在 CD 上听到的，和 1961 年那张 LP 不是同一个混音</strong> ✓✓。⚠️ Craft 2023 版是从原始母带重制 ✓✓，但<strong>它是否带观众声，资料未明</strong> ✓✓，值得试听再决定 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐⭐ 《Sunday》里有一首 Miles Davis 的作品，《Waltz for Debby》里也有一首</p><p class="nb"><strong>《Solar》</strong> ✓✓ 与 <strong>《Milestones》</strong> ✓✓ —— 你那几张 Miles 可以连着听 ✓✓；⭐ 而《Waltz for Debby》的标题曲是 <strong>Bill Evans 自己写的</strong> ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 「只有两年」——说得过去</p><p class="nb">Motian 于 1959 年 8 月接替 Teddy Kotick ✓✓、LaFaro 于 1959 年 9 月接替 Paul Chambers ✓✓，到 1961 年 7 月约 <strong>22 个月</strong> ✓✓；⭐ 三人组的第一张碟是 <strong>《Explorations》（1959）</strong> ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ 曲目细节与时长</p><p class="nb"><strong>《Sunday》原版六曲 42:03</strong> ✓✓，CD 增补四条备录（《Gloria's Step》take 3、《Alice in Wonderland》take 1、《All of You》take 3、《Jade Visions》take 1 ✓✓）后为 <strong>68:16</strong> ✓✓；<strong>《Waltz for Debby》原版六曲</strong> ✓✓，其中《Detour Ahead》出自 Art Tatum 名录 ✓✓、《Some Other Time》出自《西区故事》✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐⭐ 版本：这次是真正的发烧盘天堂，而且两碟都是</p><p class="nb"><strong>AP UHQR 0017-45</strong>（2024，<strong>45 转豪华盒装编号版，QRP 压片</strong> ✓✓）与 <strong>MFSL UD1S 2-002</strong>（2017，<strong>UltraDisc One-Step 45 转，限量编号</strong> ✓✓）都在《Sunday》一侧 ✓✓；《Sunday》另有 <strong>AP AJAZ 9376</strong>（45 转 ✓✓）与 <strong>CAPJ 9376 SA</strong>（混合 SACD ✓✓）✓✓；《Waltz for Debby》则有 <strong>AP AJAZ 9399</strong>（45 转 ✓✓）与 <strong>CAPJ 9399 SA</strong>（SACD ✓✓）✓✓。⭐⭐ <strong>Craft 2023（CR00609 / CR00617，180g，Kevin Gray @ Cohearent Audio，RTI ✓✓）就是 Qobuz 上那两张，24/192 kHz ✓✓</strong> —— ⭐ <strong>要那个母带，就直接上 Qobuz 的 Craft 数字版 ✓✓</strong>；要黑胶则 <strong>AP UHQR 45 转是天花板 ✓✓</strong>。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 设计与照片</p><p class="nb"><strong>Ken Deardoff</strong> 操刀两张的专辑设计 ✓✓；封面照片 <strong>Donald Silverstein</strong> ✓✓；《Sunday》背封照片是 <strong>Steve Schapiro</strong> 拍的「<strong>三人在 Vanguard 后室、两场之间</strong>」✓✓；内页 <strong>Ira Gitler 与 Orrin Keepnews</strong>（Sunday ✓✓）/ <strong>Joe Goldberg</strong>（Waltz ✓✓）✓✓；工程 <strong>Dave Jones</strong> ✓✓；母带 <strong>Plaza Sound Studios</strong> ✓✓。</p></div></li><li><span class="n">12</span><div><p class="nt">⭐⭐ 评价规格高得离谱</p><p class="nb"><strong>Thom Jurek（AllMusic）</strong>：「这三人组至今仍被广泛视为他最好的组合，主要因为成员之间的共生互动；这是一个极好的入门起点。」✓✓ <strong>C. Michael Bailey（All About Jazz）</strong>：「《Sunday at the Village Vanguard》与《Waltz for Debby》<strong>是本系列里第一好的现场爵士录音</strong>。」✓✓ ⭐ <strong>两张碟在《The Penguin Guide to Jazz Recordings》的九版里每一版都拿到皇冠</strong> ✓✓ —— 这是乐评指南里的最高规格 ✓✓。</p></div></li><li><span class="n">13</span><div><p class="nt">⭐⭐ 原声与混音的取舍</p><p class="nb">⭐ 原版把「现场感」换成了「干净」 ✓✓ —— <strong>观众声没了，房间感也跟着淡了</strong> ✓✓；<strong>2005 年三张 CD 完整版</strong>把观众声加回并保留台上对谈 ✓✓，信息量最全 ✓✓；Craft 2023 版则按<strong>原始母带</strong>重新刻纹 ✓✓。⭐ <strong>想要「当年那张 LP 的样子」→ AP / Craft 的 45 转 ✓✓；想要「完整的一晚」→ 2005 年三张 CD ✓✓。</strong></p></div></li><li><span class="n">14</span><div><p class="nt">⭐⭐ 系统层面：这张碟的特殊挑战</p><p class="nb">⭐ 原版<strong>把观众声和一部分现场混响一起去掉了</strong> ✓✓ —— 所以它的低频<strong>不是「房间里的」，而是「干」的</strong> ✓✓；⭐ 因此听这张碟时<strong>你的 Dirac 低频修正一定要留够余量</strong> ✓✓（否则你会以为录音薄，可那是录音取向，不是你的房间 ✓✓）。⭐ 而 <strong>LaFaro 的贝斯是独奏级的音量级</strong> ✓✓（<strong>80–200Hz</strong> ✓✓），<strong>Motian 的刷子是「耳语」</strong> ✓✓（<strong>2–5kHz</strong> ✓✓）——⭐ <strong>两个极端在同一张碟上</strong> ✓✓：<strong>你的系统能不能同时让贝斯有分量、又让刷子的沙沙声不刺耳，就是这张碟的答卷</strong> ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">Qobuz</span><span><a href="https://www.qobuz.com/us-en/album/waltz-for-debby-bill-evans-trio/q8m2djqmky77b">《Waltz For Debby》（Craft Recordings，2023-07-07）专辑页——本文出处：Jason Ferguson 乐评 + 六轨曲目与 24/192 规格</a></span></li><li><span class="k">作者</span><span><a href="https://medium.com/@jason-ferguson/bill-evans-trio-waltz-for-debby-ojc-2023-593ac047fabe">Medium：Jason Ferguson 的 Qobuz 重发评论全文（英文原文与出品说明）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/104372">Discogs master 104372（Sunday at the Village Vanguard：原版 RLP 376 六曲、LaFaro 作曲、Ken Deardoff 设计、Donald Silverstein / Steve Schapiro 照片、演职员）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/104369">Discogs master 104369（Waltz for Debby：原版 RLP 399 / RLP 9399 六曲与作曲、Joe Goldberg 内页、「Recorded live at The Village Vanguard; June 25, 1961」注记、Plaza Sound 母带）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/27345327">Discogs：Craft CR00617（Waltz for Debby 2023，180g，Kevin Gray @ Cohearent Audio，RTI；内页标「© 1962」）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/28861354">Discogs：Craft CR00609（Sunday at the Village Vanguard 2023，180g，Kevin Gray @ Cohearent Audio，RTI）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/31293074">Discogs：AP UHQR 0017-45（Sunday，2024，45 转豪华盒装编号版，QRP 压片）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/10440728">Discogs：MFSL UD1S 2-002（Sunday，2017，UltraDisc One-Step 45 转限量编号版）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Sunday_at_the_Village_Vanguard">Wikipedia：Sunday at the Village Vanguard——五场制、选曲逻辑、2005 年三张 CD 完整版与观众声、Penguin 九版皇冠、LaFaro 之死</a></span></li><li><span class="k">综述</span><span><a href="https://alchetron.com/Sunday-at-the-Village-Vanguard">Alchetron：Sunday at the Village Vanguard 与 Waltz for Debby——发行年份、录音日期与地点、CD 增补曲目表</a></span></li><li><span class="k">评论</span><span><a href="http://projazz.net/?p=19934/">Projazz 转载的 Thom Jurek（AllMusic）评论全文——三人组的共生互动、CD 增补的四条备录、LaFaro 的《Gloria's Step》与《Jade Visions》</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

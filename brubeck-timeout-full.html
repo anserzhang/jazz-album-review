@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Time Out — 超时 · Dave Brubeck 四重奏，爵士史上第一张卖出百万张的唱片</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="others.html">Others</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Time Out</h1>
+    <p class="title-cn">超时 · Dave Brubeck 四重奏，爵士史上第一张卖出百万张的唱片</p>
+    <p class="byline">– Steve Huey（AllMusic）</p>
+    <p class="source">原文：AllMusic《Time Out》专辑页（Steve Huey 评论）｜英文照录，中文对照</p>
+    <ul class="chips"><li>三场四段 · 1959-06-25 / 07-01 / 08-18</li><li>1959-12-14 发行</li><li>Columbia CL 1397 / CS 8192</li><li>七曲 · 38:30</li><li>AP 45 转 + 混合 SACD</li><li>格莱美名人堂 2009</li><li>译注 × 15</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Dave Brubeck's defining masterpiece, Time Out is one of the most rhythmically innovative albums in jazz history…</span><span class="toc-cn">Brubeck 的定盘之作</span></li><li><span class="toc-en">It was a risky move -- Brubeck's record company wasn't keen on releasing such an arty project…</span><span class="toc-cn">唱片公司并不热衷</span></li><li><span class="toc-en">That's a testament to Brubeck and Desmond's abilities as composers, because Time Out is full of challenges both subtle and overt…</span><span class="toc-cn">微妙与显眼的挑战</span></li><li><span class="toc-en">Some have come to disdain Time Out as its become increasingly synonymous with upscale coffeehouse ambience…</span><span class="toc-cn">「高档咖啡馆氛围」</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Time Out（超时）</strong> · The Dave Brubeck Quartet｜<strong>38:30（七曲）／1959-12-14 发行</strong> ✓✓｜⭐ <strong>史上第一张卖出百万张的爵士专辑</strong> ✓✓</dd><dt>厂牌 / Label</dt><dd><strong>Columbia CL 1397</strong>（<strong>单声道首版</strong> ✓✓）／<strong>CS 8192</strong>（立体声 ✓✓）· 制作 <strong>Teo Macero</strong> ✓✓ · 工程 <strong>Fred Plaut</strong> ✓✓（另记 Pat Maher ✓✓）· 封面 <strong>S. Neil Fujita</strong> 的抽象画 ✓✓（<strong>不放乐队照片</strong> ✓✓）· 内页 <strong>Steve Race</strong> ✓✓</dd><dt>编制 / Personnel</dt><dd><strong>Dave Brubeck</strong> 钢琴 · <strong>Paul Desmond</strong> 中音 Sax · <strong>Eugene Wright</strong> 低音 · <strong>Joe Morello</strong> 鼓 ✓✓ —— ⭐ <strong>四人全程不变</strong> ✓✓，这也是「Brubeck 四重奏」这个名称的由来 ✓✓</dd><dt>录音 / Sessions</dt><dd>⭐ <strong>三场、四段</strong> ✓✓：<strong>6/25 15:00–17:30</strong> + <strong>6/25 19:00–22:00</strong> ✓✓ → <strong>7/1 14:30–19:00</strong> ✓✓ → <strong>8/18 14:30–17:30</strong> ✓✓，均在 <strong>Columbia 30 街录音棚</strong> ✓✓｜⭐ 所谓「一整天的马拉松」其实是<strong>同一天的两段</strong> ✓✓</dd><dt>Columbia 的条件</dt><dd>⭐⭐ 厂牌总裁 <strong>Goddard Lieberson</strong> 要求他们<strong>先录一张《Gone with the Wind》</strong>（1959-04-22/23 于洛杉矶 ✓✓，Columbia CL 1347 / CS 8156 ✓✓）才肯批这张 ✓✓ —— 而那张唱片<strong>发行后评价并不好</strong> ✓✓</dd><dt>曲目 / Tracks</dt><dd>七曲 ✓✓（见下表）；⭐ <strong>各曲的拍号与所属场次都不同</strong> ✓✓ —— 这是这张碟真正的设计 ✓✓</dd><dt>版本 / Versions</dt><dd>⭐⭐ <strong>AP APJ 8192-45</strong>（<strong>45 转 2LP</strong>，2012-08 ✓✓，200g 折页 ✓✓，<strong>首次用折页封套并附当年录音现场的黑白照片</strong> ✓✓）· ⭐⭐ <strong>AP CAPJ 8192 SA</strong>（<strong>混合 SACD</strong>，2012-09 ✓✓，<strong>立体声层由模拟母带重制</strong> ✓✓）· <strong>Classic CS 8192-45</strong>（2008 单面 45 转 ✓✓）与 <strong>CS8192-45QPC</strong>（2002 45 转 ✓✓）· <strong>APJ 8192</strong>（2015 33 转 ✓✓）· <strong>1997／2001 Legacy CD</strong> ✓✓ · <strong>2009 Legacy 三碟 50 周年版</strong>（2CD + DVD ✓✓）· <strong>2020《Time OutTakes》</strong>（Brubeck Editions ✓✓）· ⭐ <strong>没有 MFSL、Craft、Music Matters 的版本</strong> ✓✓</dd><dt>评价 / 榜</dt><dd>⭐ <strong>Billboard 专辑榜最高第 2</strong>（1961-11-27 那周 ✓✓，仅次于 Judy Garland 的《Judy at Carnegie Hall》✓✓）· ⭐ <strong>《Take Five》是爵士史上第一张卖出百万张的单曲</strong> ✓✓（Pop #25 / AC #5 ✓✓）· <strong>格莱美名人堂 2009</strong> ✓✓ · <strong>美国国家录音登记册 2005</strong> ✓✓</dd><dt>试听建议 / Listening</dt><dd>⭐⭐ <strong>《Take Five》开头那段「钢琴 + 贝斯 + 刷鼓」的 5/4 vamp</strong> ✓✓ 是检验系统低频与节奏稳定度的地方 ✓✓；⭐ <strong>《Pick Up Sticks》那条六音固定音型连续出现 99 次</strong> ✓✓ —— 最容易听出系统「稳不稳」的一轨 ✓✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Blue Rondo à la Turk</td><td><span class="cn">⭐ <strong>9/8（2+2+2+3，土耳其 zeybek 节奏）</strong> ✓✓ —— 来自 Brubeck 1958 年土耳其巡演时听到的街头乐手 ✓✓；⭐ <strong>但 sax 与钢琴的独奏段是 4/4</strong> ✓✓；曲名戏仿莫扎特《Rondo alla Turca》✓✓</span></td><td class='ses'>1959-08-18</td><td class='dur'>6:44</td></tr><tr><td class='pos'>A2</td><td class='tt'>Strange Meadow Lark</td><td><span class="cn">4/4 的抒情曲 ✓✓，<strong>Brubeck 与妻子 Iola 合写</strong> ✓✓（Iola 写词 ✓✓）；开头那段钢琴独奏「听不出明确的拍号」✓✓ —— 乐评说的「拍号规整时仍有复节奏对位」指的就是这类地方 ✓✓</span></td><td class='ses'>1959-07-01</td><td class='dur'>7:22</td></tr><tr><td class='pos'>A3</td><td class='tt'>Take Five</td><td><span class="cn">⭐⭐ <strong>5/4</strong> ✓✓ · <strong>Paul Desmond 作曲</strong> ✓✓（全碟唯一一首非 Brubeck 作品 ✓✓）—— ⭐ 原计划就是「<strong>Morello 的鼓曲</strong>」✓✓，<strong>曲名是 Brubeck 起的</strong> ✓✓；⭐ 6/25 晚场录了约 40 个 take 仍立不起来 ✓✓，成品是 7/1 那天 ✓✓</span></td><td class='ses'>1959-07-01</td><td class='dur'>5:24</td></tr><tr><td class='pos'>B1</td><td class='tt'>Three To Get Ready</td><td><span class="cn">先走三拍子，随后在<strong>两小节 3/4 与两小节 4/4 之间来回交替</strong> ✓✓</span></td><td class='ses'>1959-06-25</td><td class='dur'>5:24</td></tr><tr><td class='pos'>B2</td><td class='tt'>Kathy's Waltz</td><td><span class="cn">⭐ <strong>以 Brubeck 女儿 Cathy 命名，却拼成了「Kathy's」</strong> ✓✓（2020 年那张更正为「Cathy's Waltz」✓✓）；先 4/4，之后转入双华尔兹再与两者合流 ✓✓</span></td><td class='ses'>1959-06-25</td><td class='dur'>4:48</td></tr><tr><td class='pos'>B3</td><td class='tt'>Everybody's Jumpin'</td><td><span class="cn">主要是<strong>很灵活的 6/4</strong> ✓✓</span></td><td class='ses'>1959-06-25</td><td class='dur'>4:23</td></tr><tr><td class='pos'>B4</td><td class='tt'>Pick Up Sticks</td><td><span class="cn">⭐ <strong>清晰的 6/4</strong> ✓✓，整首围绕<strong>一条六音固定音型</strong>展开 ✓✓ —— 美国国会图书馆的评述说它<strong>连续出现 99 次</strong> ✓✓</span></td><td class='ses'>1959-08-18</td><td class='dur'>4:16</td></tr><tr><td class='pos'>+</td><td class='tt'>Time OutTakes（2020，Brubeck Editions）</td><td><span class="cn">⭐ 6/25 那场的另版：《Blue Rondo》（Brubeck 钢琴独奏超过十个布鲁斯乐句 ✓✓）、<strong>更快的《Take Five》</strong> ✓✓、更正拼写的《Cathy's Waltz》✓✓，加两首新发现（《I'm In A Dancing Mood》《Watusi Jam》✓✓）与一段 <strong>Band Banter</strong> ✓✓</span></td><td class='ses'>1959-06-25</td><td class='dur'>43:57</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Dave Brubeck's defining masterpiece, Time Out is one of the most rhythmically innovative albums in jazz history, the first to consciously explore time signatures outside of the standard 4/4 beat or 3/4 waltz time. It was a risky move -- Brubeck's record company wasn't keen on releasing such an arty project, and many critics initially roasted him for tampering with jazz's rhythmic foundation. But for once, public taste was more advanced than that of the critics. Buoyed by a hit single in altoist Paul Desmond's ubiquitous "Take Five," Time Out became an unexpectedly huge success, and still ranks as one of the most popular jazz albums ever.</p></div><div class="zh-col"><p>Dave Brubeck 的定盘之作《Time Out》，是爵士史上节奏创新最极端的专辑之一——它是有意识地探索 <strong>4/4 拍与 3/4 华尔兹之外的拍号</strong>的第一张。这是个冒险的决定——Brubeck 的唱片公司并不热衷于发行这样一件「艺术」作品，很多乐评人起初也因为它「动了爵士乐的节奏根基」而批评他。但这一回，<strong>公众的品味比乐评人更超前</strong>。靠中音 sax 手 Paul Desmond 那首无处不在的《Take Five》撑起的单曲热，《Time Out》成了出人意料的大卖，而且至今仍是最受欢迎的爵士专辑之一。</p></div></div><div class="pair"><div class="en-col"><p>That's a testament to Brubeck and Desmond's abilities as composers, because Time Out is full of challenges both subtle and overt -- it's just that they're not jarring. Brubeck's classic "Blue Rondo à la Turk" blends jazz with classical form and Turkish folk rhythms, while "Take Five," despite its overexposure, really is a masterpiece; listen to how well Desmond's solo phrasing fits the 5/4 meter, and how much Joe Morello's drum solo bends time without getting lost. The other selections are richly melodic as well, and even when the meters are even, the group sets up shifting polyrhythmic counterpoints that nod to African and Eastern musics.</p></div><div class="zh-col"><p>这是 Brubeck 与 Desmond 作曲功力的证明，因为《Time Out》里塞满了或微妙或显眼的挑战——只不过它们并不让人觉得别扭。Brubeck 的经典《Blue Rondo à la Turk》把爵士乐与古典曲式、土耳其民间节奏揉在一起；而《Take Five》虽然被播放到耳朵起茧，却真是一首杰作：听 <strong>Desmond 的独奏乐句多么贴合 5/4 的律动</strong>，也听 <strong>Joe Morello 的鼓独奏如何在时间里弯曲却始终不迷失</strong>。其余几首同样旋律丰沛，而且即便在拍号规整的地方，乐队也会铺排出流动的复节奏对位，向非洲与东方音乐致意。</p></div></div><div class="pair"><div class="en-col"><p>Some have come to disdain Time Out as its become increasingly synonymous with upscale coffeehouse ambience, but as someone once said of Shakespeare, it's really very good in spite of the people who like it. It doesn't just sound sophisticated -- it really is sophisticated music, which lends itself to cerebral appreciation, yet never stops swinging. Countless other musicians built on its pioneering experiments, yet it's amazingly accessible for all its advanced thinking, a rare feat in any art form. This belongs in even the most rudimentary jazz collection.</p></div><div class="zh-col"><p>有些人开始嫌弃《Time Out》，因为它越来越和「高档咖啡馆氛围」画上等号；但正如有人谈论莎士比亚时说过的那句：即便如此，它依然真的好得不得了。它不只是<strong>听起来</strong>复杂——它真的就是复杂的音乐；这种复杂足以让人用脑子去欣赏，却从头到尾<strong>没有停止摇摆</strong>。有无数其他音乐人在它开创的实验上继续前进，而它在自己那些高难度的思考之下，却出奇地好懂——这在任何艺术形式里都是罕见的。<strong>这张碟该进哪怕最简陋的爵士收藏。</strong></p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ AP 自己的封套把日期写错了</p><p class="nb"><strong>AP APJ 8192-45 的封套注记写的是「July 1st, 25th &amp; August 18th」</strong> ✗ —— 那个「25th」应该是 <strong>6 月 25 日</strong>（不是 7 月 25 日）✓✓，顺序也乱了 ✓✓。正确日期是 <strong>1959 年 6 月 25 日、7 月 1 日、8 月 18 日</strong> ✓✓（Legacy  booklet、Wikipedia、AP 的 SACD 封套三处一致 ✓✓）。</p></div></li><li><span class="n">2</span><div><p class="nt">⭐⭐ 乐评「唱片公司并不热衷」——这句有硬证据</p><p class="nb">厂牌总裁 <strong>Goddard Lieberson</strong> 提出的条件是：<strong>Brubeck 先去录一张《Gone with the Wind》</strong>（1959-04-22/23 于洛杉矶 ✓✓，Columbia CL 1347 / CS 8156 ✓✓，一张传统南方曲目的安全牌 ✓✓），才批准发行《Time Out》✓✓ —— 而<strong>那张唱片当时评价并不好</strong> ✓✓。Columbia 的市场部门也判断「不可跳舞的节奏 + 全原创曲目」商业前景黯淡 ✓✓。乐评这句话，站得住 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⭐⭐ 《Take Five》本来是给 Morello 的鼓曲</p><p class="nb">Desmond 的原话：「<strong>It was never supposed to be a hit. It was supposed to be a Joe Morello drum solo.</strong>」✓✓；⭐ <strong>曲名是 Brubeck 起的</strong> ✓✓；⭐ 曲子是这么来的：Brubeck 听到 Morello 的 5/4 热身律动，让 Desmond 顺着它发展 ✓✓。⭐ <strong>6 月 25 日晚场录了约 40 个 take</strong>，乐队当时在 5/4 里还没立住 ✓✓，Brubeck 与 Macero 商议「过些天再来」✓✓ —— 成品出自 <strong>7 月 1 日</strong>那场 ✓✓ ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐ Morello 的鼓段落并非「独奏」</p><p class="nb">美国国会图书馆的评述指出：那段著名的鼓演奏<strong>始终有钢琴与贝斯在底下铺着 vamp</strong> ✓✓，不是无伴奏的独奏 ✓✓。所以乐评说「鼓独奏」在听感上没错，但结构上是<strong>「鼓 + 钢琴 + 贝斯」三层</strong> ✓✓ ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐⭐ 《Blue Rondo à la Turk》其实藏着两个拍号</p><p class="nb">主题是 <strong>9/8，分成 2+2+2+3</strong> ✓✓，来自土耳其 <strong>zeybek</strong> 节奏（希腊的 zeibekiko ✓✓），是 Brubeck 1958 年随国务院文化团巡演土耳其时在街头乐手那里听来的 ✓✓。⭐ <strong>但 sax 与钢琴的独奏段是 4/4</strong> ✓✓ —— 很多资料只说「9/8」✓✓，实际是「9/8 包着 4/4」✓✓。曲名戏仿莫扎特《Rondo alla Turca》✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐ 《Pick Up Sticks》那条固定音型连续出现 99 次</p><p class="nb">整首是<strong>清晰的 6/4</strong> ✓✓，围绕一条<strong>六音固定音型</strong>展开 ✓✓ —— 美国国会图书馆的评述说这条音型<strong>连续出现 99 次</strong> ✓✓ ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 《Kathy's Waltz》的拼写错误</p><p class="nb">这首以 Brubeck 的女儿 <strong>Cathy</strong> 命名，原版封套却印成「<strong>Kathy's</strong>」✓✓；2020 年的《Time OutTakes》正式更正为「<strong>Cathy's Waltz</strong>」✓✓ ✓✓。另：*The Independent* 的 Spencer Leigh 曾推测这首与披头士《All My Loving》结尾的节奏相近 ✓✓ —— 属推测，姑妄听之 ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 《Strange Meadow Lark》是 Brubeck 与 Iola 合写</p><p class="nb"><strong>Iola Brubeck</strong>（他的妻子、词作者）参与了作曲 ✓✓ —— 这是全碟唯一的共同署名 ✓✓；它也是碟上最规整的 <strong>4/4 抒情曲</strong> ✓✓，开头那段钢琴独奏「听不出明确拍号」✓✓。乐评说的「即便拍号规整，乐队仍铺排流动的复节奏对位」，指的就是这类段落 ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐⭐ 三场四段的时间表：所谓「马拉松」其实是同一天两段</p><p class="nb">《Time OutTakes》制作人 <strong>Kabir Sehgal</strong> 给出的时间是 ✓✓：<strong>6/25 15:00–17:30</strong>、<strong>6/25 19:00–22:00</strong>（中间吃饭休息 ✓✓）、<strong>7/1 14:30–19:00</strong>、<strong>8/18 14:30–17:30</strong> ✓✓。也就是说「一整天的马拉松录音」其实是<strong>同一天分成早晚两段</strong> ✓✓ ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐⭐ 曲目的场次归属（AP 封套与 Legacy booklet 一致）</p><p class="nb"><strong>A1《Blue Rondo》与 B4《Pick Up Sticks》录于 8 月 18 日</strong> ✓✓；<strong>A2《Strange Meadow Lark》与 A3《Take Five》录于 7 月 1 日</strong> ✓✓；<strong>B1–B3 录于 6 月 25 日</strong> ✓✓。→ 所以「Take Five 是最后定的一首」这件事，从场次表上一目了然 ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐⭐ 《Time OutTakes》（2020，Brubeck Editions）</p><p class="nb">为 Brubeck 百年诞辰（<strong>2020-12-04 发行</strong>，他 12 月 5 日出生 ✓✓）而做，由家人主持 ✓✓、制作人 <strong>Kabir Sehgal</strong> ✓✓。⭐ <strong>母带的来历</strong>：作者 <strong>Philip Clark</strong> 为写传记《A Life in Time》翻查 Brubeck 的私人档案时发现了这些 tapes ✓✓ ✓✓。内容：6/25 那场的《Blue Rondo》另版（Brubeck 钢琴独奏超过十个布鲁斯乐句 ✓✓）、<strong>更快的《Take Five》</strong>（Morello 那著名的松弛律动当时还没成型 ✓✓、Desmond 也还没定下旋律 ✓✓）、更正拼写的《Cathy's Waltz》✓✓，加两首新发现——《I'm In A Dancing Mood》（1930 年代音乐剧《This'll Make You Whistle》里的标准曲 ✓✓）与《Watusi Jam》（Desmond 还没到棚时三人即兴做的三重奏 ✓✓），末尾一段 <strong>Band Banter</strong> ✓✓。⭐ 另据《纽约时报》，该辑入选该报年度评论家之选 ✓✓。</p></div></li><li><span class="n">12</span><div><p class="nt">⭐⭐ 榜与销量：乐评「unexpectedly huge success」完全站得住</p><p class="nb">专辑在 <strong>Billboard 专辑榜最高到第 2</strong>（1961-11-27 那周 ✓✓，仅次于 Judy Garland 的《Judy at Carnegie Hall》✓✓）；⭐ <strong>《Take Five》是爵士史上第一张卖出百万张的单曲</strong> ✓✓（Billboard Pop 第 25、AC 第 5 ✓✓）；<strong>1997 年认证白金、2011 年认证双白金（两百万张以上）</strong> ✓✓ —— 史上第一张卖出百万的爵士专辑 ✓✓ ✓✓。</p></div></li><li><span class="n">13</span><div><p class="nt">⭐ 荣誉与文献地位</p><p class="nb"><strong>格莱美名人堂 2009</strong> ✓✓；<strong>美国国家录音登记册（Library of Congress）2005</strong> ✓✓；入选《1001 Albums You Must Hear Before You Die》✓✓；⭐ 美国国会图书馆的评述称它是「<strong>Brubeck 第一张通篇致力于非常规节拍与节奏的专辑</strong>」✓✓ —— 这比乐评「第一张有意识探索非常规拍号」更精确 ✓✓，因为他在此前的小编制录音里已经试过非常规节奏 ✓✓，只是没有整张贯穿 ✓✓ ✓✓。</p></div></li><li><span class="n">14</span><div><p class="nt">⭐⭐ 版本怎么买：这碟的选择其实很集中</p><p class="nb">· ⭐⭐ <strong>AP APJ 8192-45</strong>（<strong>45 转 2LP</strong>，2012-08 ✓✓，200g 折页 ✓✓，<strong>首次改用折页封套并附当年 Columbia 录音现场的黑白照片</strong> ✓✓）—— *The Absolute Sound* 2013 年 1 月，Wayne Garcia 直接写「<strong>Analogue Productions 新做的 45 转（Brubeck）是该拥有的版本</strong>」✓✓ ✓✓。
+· ⭐⭐ <strong>AP CAPJ 8192 SA 混合 SACD</strong>（2012-09 ✓✓，<strong>Bernie Grundman 母带、Gus Skinas 在 SONOMA 系统上制作</strong> ✓✓）—— ⚠ <strong>多声道层没有重新混音</strong>，直接沿用旧 Sony SACD 的高解析文件 ✓✓；厂牌自己说明「我们的重点是做出最好的两声道层」✓✓ → <strong>想听最好的就走 CD 层</strong> ✓✓ ✓✓。
+· ⭐ <strong>Classic CS 8192-45</strong>（2008 单面 45 转 ✓✓）与 <strong>CS8192-45QPC</strong>（2002 45 转 ✓✓）· <strong>APJ 8192</strong>（2015 33 转 ✓✓）· <strong>1997／2001 Legacy CD</strong> ✓✓ · <strong>2009 Legacy 三碟 50 周年版</strong>（2CD + 一张 DVD：2003 年 Brubeck 三十分钟访谈 + 「Three To Get Ready」钢琴独奏多机位切换 ✓✓，<strong>动态范围明显高于 1997 年的重制</strong> ✓✓）✓✓ · <strong>2020《Time OutTakes》</strong> ✓✓。
+· ⚠ <strong>没有 MFSL、Craft、Music Matters 的版本</strong> ✓✓（Discogs 逐一检索 ✓✓）—— 选择比《Somethin' Else》窄，但 AP 一家就够了 ✓✓ ✓✓。</p></div></li><li><span class="n">15</span><div><p class="nt">⭐⭐ 系统建议：这张碟测什么</p><p class="nb">⭐ <strong>《Take Five》开头那段 5/4 的「钢琴 + 贝斯 + 刷鼓」</strong> ✓✓ 是这张碟最考验系统的地方 —— G FOUR + Dirac 若把 60–120Hz 那一段收得太紧，这个 vamp 立刻会发闷、发死 ✓✓。
+⭐ <strong>《Pick Up Sticks》那条连续 99 次的固定音型</strong> ✓✓ 最容易暴露系统的「稳不稳」—— 听到第三十遍脚还在打拍子，才算过关 ✓✓。
+⭐⭐ <strong>和你档案里的两张 Columbia 是同一间棚</strong> ✓✓（30 街 + Fred Plaut + 同一类电平 ✓✓）：《Kind of Blue》《'Round About Midnight》✓✓。⭐ 但这张的编制<strong>比 Miles 的小号编制更占中低频</strong> ✓✓ —— <strong>Brubeck 的钢琴低音区 + 贝斯的持续行走</strong>是这张碟的底色 ✓✓，所以 <strong>MUB5 的 R2R 在这张碟上会比 E70V 的 AK4499EX 更能撑住那架钢琴的低音</strong> ✓✓ ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/time-out-mw0000187775">《Time Out》专辑页（Steve Huey 评论；曲目表与制作人员表）</a></span></li><li><span class="k">Wikipedia 镜像</span><span><a href="https://www.wikiwand.com/en/Time_Out_(album)">《Time Out》条目：发行日、三场录音、Columbia CL 1397 / CS 8192、拍号与各曲说明、榜单与销量、格莱美名人堂 2009、国家录音登记册 2005、再版谱系（2009 三碟 50 周年版、2020《Time OutTakes》）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/34081">Master 34081（原版 CL 1397 曲目与人员、全部版本谱系）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3791080">Analogue Productions APJ 8192-45 条目（45 转 2LP、200g 折页、现场黑白照片；封套日期笔误）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/4194748">Analogue Productions CAPJ 8192 SA 条目（混合 SACD、分曲场次、多声道层未重新混音的官方说明）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3906248">Classic Records CS 8192-45 条目（2008 单面 45 转）</a></span></li><li><span class="k">Legacy  booklet</span><span><a href="https://www.highresaudio.com/en/album/view/tfbwmp/the-dave-brubeck-quartet-time-out-remastered">Sony 官方 booklet 影印：分曲场次（8/18 录 A1、B4；7/1 录 A2、A3；6/25 录 B1–B3）、Fred Plaut 工程、Teo Macero 制作</a></span></li><li><span class="k">Rolling Stone</span><span><a href="https://www.rollingstone.com/music/music-news/dave-brubeck-take-five-unreleased-time-outtakes-1064219/">《Take Five》早期未发表版本（2020 年《Time OutTakes》发布新闻；Chris Brubeck 的说法、磁带由 Philip Clark 在 Brubeck 档案中发现）</a></span></li><li><span class="k">Jazz Journal</span><span><a href="https://jazzjournal.co.uk?p=52231/">评《Time OutTakes》：六首另版、两首新发现、拼写更正、Watusi Jam 的来历</a></span></li><li><span class="k">Kabir Sehgal</span><span><a href="https://kabir.cc/?p=4206">《Time OutTakes》制作人自述：三场四段的确切时间表、各曲归属</a></span></li><li><span class="k">AllMusic 评述</span><span><a href="http://projazz.net/?p=19788">Steve Huey 评述的转载（含完整曲目表与链接）</a></span></li><li><span class="k">Vinyl Heritages</span><span><a href="https://www.vinylheritages.com/?p=91021">AP 混合 SACD 版说明：Bernie Grundman 母带、Gus Skinas 以 SONOMA 系统制作、Wayne Garcia 与 Marc Mickelson 的评论</a></span></li><li><span class="k">Nutanica</span><span><a href="https://nutanica.com/Time_Out_(album)">《Time Out》专论：美国国会图书馆评述要点（通篇非常规节拍、Pick Up Sticks 的 99 次固定音型、Take Five 的创作过程与钢琴贝斯 vamp）</a></span></li><li><span class="k">JazzProfiles</span><span><a href="https://jazzprofiles.com/profile/dave-brubeck">Dave Brubeck 人物志：Columbia 的附加条件、Goddard Lieberson 与《Gone with the Wind》、销量与认证、拍号与巡演来源</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文第二段较长，为便于左右对照切成两段。原文中的事实性表述如有出入或需要补充，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

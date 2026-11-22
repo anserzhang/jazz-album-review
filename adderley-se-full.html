@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Somethin' Else — 别的什么 · Cannonball Adderley 唯一一张 Blue Note，Miles Davis 回头当乐手的那一场</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="others.html">Others</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Somethin' Else</h1>
+    <p class="title-cn">别的什么 · Cannonball Adderley 唯一一张 Blue Note，Miles Davis 回头当乐手的那一场</p>
+    <p class="byline">– Rovi Staff（AllMusic）</p>
+    <p class="source">原文：AllMusic《Somethin' Else》专辑页（Rovi Staff 评论）｜英文照录，中文对照</p>
+    <ul class="chips"><li>1958-03-09 录音</li><li>1958-08 发行</li><li>Blue Note BLP 1595</li><li>原版五曲 · 43:43</li><li>AP 45 转 / MFSL One-Step</li><li>AP 与 MFSL 双 SACD</li><li>译注 × 16</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Cannonball Adderley gave up his own band in 1957 when he had the opportunity to become a sideman in Miles Davis' epic ensemble with John Coltrane…</span><span class="toc-cn">1957 年，他放弃自己的乐队</span></li><li><span class="toc-en">Davis returned the favor in March of 1958, appearing as a sideman on Adderley's all-star quintet date for Blue Note…</span><span class="toc-cn">1958 年 3 月，Miles 回头当乐手</span></li><li><span class="toc-en">Both horn players are at their peak of lyrical invention, crafting gorgeous, flowing blues lines on the title tune and "One for Daddy-O"…</span><span class="toc-cn">两位管乐手都在顶点</span></li><li><span class="toc-en">Adderley's lush, romantic improvisation on "Dancing in the Dark" is worthy of Charlie Parker or Johnny Hodges…</span><span class="toc-cn">《Dancing in the Dark》</span></li><li><span class="toc-en">And "Alison's Uncle" puts a boppish coda on Somethin' Else, one of the most gloriously laid-back blowing sessions of the hard bop era.</span><span class="toc-cn">《Alison's Uncle》的波普收尾</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Somethin' Else（别的什么）</strong> · Cannonball Adderley｜<strong>43:43（原版五曲）／1958 年 8 月发行</strong> ✓✓｜⭐ <strong>Adderley 唯一一张 Blue Note</strong> ✓✓｜⭐ 常被称作「<strong>Kind of Blue II</strong>」✓✓</dd><dt>厂牌 / Label</dt><dd><strong>Blue Note BLP 1595</strong>（<strong>单声道首版</strong>，Terre Haute 压片 ✓✓）／<strong>BST 1595</strong>（<strong>立体声，1959 年</strong> ✓✓）· 制作 <strong>Alfred Lion</strong> ✓✓ · 录音 <strong>Rudy Van Gelder</strong>（新泽西 Hackensack 的 Van Gelder Studio ✓✓）· 内页 <strong>Leonard Feather</strong> ✓✓ · 封面设计 <strong>Reid Miles</strong> ✓✓ · 摄影 <strong>Francis Wolff</strong> ✓✓</dd><dt>编制 / Personnel</dt><dd><strong>Cannonball Adderley</strong> 中音 Sax · <strong>Miles Davis</strong> 小号（<strong>名义上是客串乐手，实际主导了整场</strong> ✓✓）· <strong>Hank Jones</strong> 钢琴 · <strong>Sam Jones</strong> 低音 · <strong>Art Blakey</strong> 鼓 ✓✓｜⭐ 原版封套注明：「<strong>Miles Davis performs by courtesy of Columbia Records. Hank Jones performs by courtesy of Capitol Records.</strong>」✓✓</dd><dt>录音 / Session</dt><dd><strong>1958-03-09</strong> · Van Gelder Studio, Hackensack, New Jersey ✓✓｜⭐ <strong>距离《Milestones》最后几轨（3 月 4 日）只隔五天</strong> ✓✓——那几天 Adderley 一直在赶场 ✓✓</dd><dt>曲目 / Tracks</dt><dd>⭐ <strong>原版只有五曲</strong> ✓✓（见下表）；《Alison's Uncle》<strong>不在原版 LP 上</strong> ✓✓——它是 1982 年在 Blue Note 库房发现、<strong>1983 年先以日本 12 吋单曲发行</strong>（又名 <strong>Bangoon</strong> ✓✓）的后来补入曲 ✓✓</dd><dt>版本 / Versions</dt><dd>⭐⭐ <strong>AP AP-81595</strong>（<strong>45 转 2LP</strong>，2008 初版 / 2011 QRP 再压，<strong>Gray + Hoffman @ AcousTech</strong> ✓✓）· ⭐⭐ <strong>AP CBNJ 81595 SA</strong>（<strong>混合 SACD</strong>，2009 / 2021 再版，Sony DADC ✓✓）· ⭐⭐ <strong>MFSL UD1S 2-022</strong>（<strong>One-Step 45 转 2LP</strong>，2023，编号 6000 ✓✓）· ⭐⭐ <strong>MFSL UDSACD 2270</strong>（<strong>Ultradisc UHR 混合 SACD</strong>，2024 编号版 ✓✓，Sony DADC ✓✓）· <strong>Music Matters MMBST-81595</strong>（SRX，33 转，Cohearent Audio 母带 ✓✓）· <strong>Classic Records Clarity SV-P II 45 转</strong>（<strong>Bernie Grundman 母带</strong> ✓✓，单面，立体声与单声道各一 ✓✓）· Classic <strong>HDAD 24/192</strong>（2005 ✓✓）· ⭐ <strong>没有 Craft 版</strong> ✓✓</dd><dt>评价 / Reception</dt><dd>⭐ <strong>Down Beat 五星</strong>（Dom Cerulli，1958-11-27 ✓✓）、<strong>Metronome「本月最佳」</strong>（Bill Coss ✓✓）· Billboard 1958-10-20 ✓✓ · Cashbox 1958-11-29 ✓✓ · Audio（Charles A. Robertson：「今年最佳之一」✓✓）· Record Guide（Joe Goldberg：「这就是 Miles Davis 的音乐，弹得漂亮」✓✓）· ⭐ <strong>1958 年的「Parker 衣钵」论战</strong> ✓✓</dd><dt>试听建议 / Listening</dt><dd>⚠️ <strong>《One for Daddy-O》右声道有明显吊镲嘶声</strong> ✓✓ —— MUB5 现在的 <strong>M2 会抬 6–10k</strong> ✓✓，这张碟的镲片本来就躁，<strong>建议先切 M1 或 FINE 压一档</strong> ✓✓｜⭐ 这碟与《Kind of Blue》共享同一套「Miles 的弱音器美学 + Van Gelder 的房间」，<strong>是天然的对照组</strong> ✓✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>Title</th><th>中文</th><th>录音场次</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Autumn Leaves</td><td><span class="cn"><strong>Joseph Kosma</strong> 曲 / <strong>Jacques Prévert</strong> 法文词 ✓✓（英文词 Mack David ✓✓）—— ⭐ <strong>Miles 说这个处理版本是听 Ahmad Jamal 得来的</strong> ✓✓；⭐ 全碟最长的一轨，结尾悬在半空 ✓✓</span></td><td class='ses'>1958-03-09</td><td class='dur'>10:58 / 45 转 11:00</td></tr><tr><td class='pos'>A2</td><td class='tt'>Love for Sale</td><td><span class="cn"><strong>Cole Porter</strong>（1930 年百老汇音乐剧 ✓✓）—— <strong>Miles 吹弱音器</strong> ✓✓；有拉丁段落，三个独奏者轮流上前 ✓✓</span></td><td class='ses'>1958-03-09</td><td class='dur'>7:03 / 45 转 7:00</td></tr><tr><td class='pos'>B1</td><td class='tt'>Somethin' Else</td><td><span class="cn">⭐⭐ <strong>标题曲是 Miles Davis 自己写的</strong> ✓✓（原版标签署名 ✓✓）—— 乐评完全没提这一点 ✓✓；<strong>Miles 开口小号</strong> ✓✓，开头是两位管乐手的一问一答 ✓✓；结尾可以听到 Miles 冲着控制室问 Alfred Lion：「<strong>Is that what you wanted, Alfred?</strong>」✓✓</span></td><td class='ses'>1958-03-09</td><td class='dur'>8:12 / 45 转 8:10</td></tr><tr><td class='pos'>B2</td><td class='tt'>One For Daddy-O</td><td><span class="cn">⭐ <strong>Nat Adderley</strong> 写给芝加哥电台 DJ <strong>Daddy-O Daylie</strong> 的题献曲 ✓✓（Leonard Feather 内页 ✓✓）—— 后段转成小调蓝调，<strong>Miles 的弱音降七度</strong>与上行的音区都是名场面 ✓✓</span></td><td class='ses'>1958-03-09</td><td class='dur'>8:21 / 45 转 8:20</td></tr><tr><td class='pos'>B3</td><td class='tt'>Dancing In The Dark</td><td><span class="cn"><strong>Arthur Schwartz</strong> 曲 / <strong>Howard Dietz</strong> 词，<strong>1931 年百老汇《The Band Wagon》</strong>首演 ✓✓，Bing Crosby 同年首录 ✓✓ —— ⭐⭐ <strong>这一轨 Miles 没有吹</strong> ✓✓，是 Adderley 一个人的舞台 ✓✓</span></td><td class='ses'>1958-03-09</td><td class='dur'>4:04 / 45 转 4:00</td></tr><tr><td class='pos'>+</td><td class='tt'>Alison's Uncle (AKA Bangoon)</td><td><span class="cn">⭐ <strong>不在原版 LP 上</strong> ✓✓ —— 1982 年在 Blue Note 库房发现、<strong>1983 年先以日本 12 吋单曲发行</strong> ✓✓；作曲署名 Blue Note 与 MFSL 一侧作 <strong>Nat Adderley</strong> ✓✓，另有资料称是 <strong>Hank Jones</strong> 的作品 ✓✓</span></td><td class='ses'>同场素材</td><td class='dur'>5:10</td></tr><tr><td class='pos'>伴碟</td><td class='tt'>Sophisticated Swing（EmArcy，1957-02）</td><td><span class="cn">Groove Replica 的 2LP+CD 版附赠这张 EmArcy 时期作品 ✓✓ —— Adderley 兄弟与 Junior Mance、Sam Jones、Jimmy Cobb ✓✓，是听 Adderley 自己当领队的对照组 ✓✓</span></td><td class='ses'>1957-02</td><td class='dur'>约 32 分</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Cannonball Adderley gave up his own band in 1957 when he had the opportunity to become a sideman in Miles Davis' epic ensemble with John Coltrane, eventually resulting in some of the greatest jazz recordings of all time (including Milestones and Kind of Blue).</p></div><div class="zh-col"><p>1957 年，Cannonball Adderley 放弃了自己的乐队——当时他有机会去 Miles Davis 那支传奇阵容里当乐手，而那支阵容里还有 John Coltrane；后来成就了爵士史上一些最重要的录音（包括《Milestones》和《Kind of Blue》）。</p></div></div><div class="pair"><div class="en-col"><p>Davis returned the favor in March of 1958, appearing as a sideman on Adderley's all-star quintet date for Blue Note, and the resulting session is indeed Somethin' Else.</p></div><div class="zh-col"><p>1958 年 3 月，Miles Davis 投桃报李——在 Adderley 为 Blue Note 录下的这场<strong>全明星五重奏</strong>里现身担任乐手。而这一场录下来的，正是《Somethin' Else》。</p></div></div><div class="pair"><div class="en-col"><p>Both horn players are at their peak of lyrical invention, crafting gorgeous, flowing blues lines on the title tune and "One for Daddy-O," as the rhythm team (Hank Jones, Sam Jones, Art Blakey) creates a taut, focused groove (pianist Hank Jones' sly, intuitive orchestrations are studies of harmonic understatement).</p></div><div class="zh-col"><p>两位管乐手都处在<strong>旋律发明力</strong>的顶点，在标题曲和《One for Daddy-O》上铺写出华丽、流动的蓝调线条；节奏组（Hank Jones、Sam Jones、Art Blakey）则造出紧绷、专注的律动——钢琴家 Hank Jones 那些狡黠而直觉的编配，是<strong>关于和声留白</strong>的教科书。</p></div></div><div class="pair"><div class="en-col"><p>Adderley's lush, romantic improvisation on "Dancing in the Dark" is worthy of Charlie Parker or Johnny Hodges, while the band refurbishes "Autumn Leaves" and "Love for Sale" into cliché-free swingers.</p></div><div class="zh-col"><p>Adderley 在《Dancing in the Dark》里那段丰沛而浪漫的即兴，足以与 Charlie Parker 或 Johnny Hodges 比肩；与此同时，乐队把《Autumn Leaves》和《Love for Sale》翻新成了<strong>没有套路</strong>的摇摆曲。</p></div></div><div class="pair"><div class="en-col"><p>And "Alison's Uncle" puts a boppish coda on Somethin' Else, one of the most gloriously laid-back blowing sessions of the hard bop era.</p></div><div class="zh-col"><p>而《Alison's Uncle》则为《Somethin' Else》收了一个<strong>波普式的尾</strong>——这是硬波普时代最逍遥松开的即兴演奏场次之一。</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ 最大的一处：《Alison's Uncle》根本不在原版 LP 上</p><p class="nb"><strong>原版只有五曲</strong> ✓✓（Autumn Leaves / Love for Sale / Somethin' Else / One for Daddy-O / Dancing in the Dark ✓✓）。这首是 <strong>1982 年在 Blue Note 库房发现、1983 年先以日本 12 吋单曲发行</strong> ✓✓（又名 <strong>Bangoon</strong> ✓✓），后来的再版才把它补进去 ✓✓。所以乐评说「《Alison's Uncle》为这张碟收尾」，<strong>只对再版成立</strong> ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 《Alison's Uncle》的作曲署名两说</p><p class="nb"><strong>Blue Note 与 MFSL 一侧署 Nat Adderley</strong> ✓✓（MFSL One-Step 的曲目表即如此 ✓✓），而 Jazz Journal 评 Groove Replica 版时称它是 <strong>Hank Jones</strong> 的作品 ✓✓；拼法也有 <strong>Alison's / Allison's</strong> 两种 ✓✓。此处并列存疑，不作定论 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⭐⭐ 乐评完全没提、但最重要的一件事：标题曲是 Miles 写的</p><p class="nb"><strong>《Somethin' Else》作曲署名 Miles Davis</strong> ✓✓（原版标签与各再版一致 ✓✓）—— 而这张碟的曲目基本由 Miles 挑选 ✓✓、他在场主导整场 ✓✓，之后还把《Autumn Leaves》和《Love for Sale》留进了自己的曲目单 ✓✓。<strong>整张碟基本可以看作《Kind of Blue》的彩排</strong> ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐⭐ 《Dancing in the Dark》Miles 没有吹</p><p class="nb">这一轨是 <strong>Adderley 一个人的舞台</strong> ✓✓ —— Leonard Feather 的原版内页称之为「Cannonball 的个人展示」✓✓，当年的评论也说「五曲中有一轨由 Cannonball 独吹、Davis 不在场」✓✓，并且明确记录 Miles 让他吹的理由：「<strong>我记着 Sarah Vaughan 是那么唱的</strong>」✓✓。→ 所以乐评「两位管乐手都处在顶点」的说法<strong>不适用于这一轨</strong> ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐ 《One for Daddy-O》的题献对象</p><p class="nb"><strong>Nat Adderley</strong> 作曲，题献给芝加哥 DJ <strong>Daddy-O Daylie</strong> ✓✓（Leonard Feather 内页原话 ✓✓）。它是十二小节蓝调，后段转成<strong>小调蓝调</strong> ✓✓ —— Miles 在这段里的弱音降七度与上行音区，是全碟最被反复引用的段落之一 ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐ 《Dancing in the Dark》的来历</p><p class="nb"><strong>Arthur Schwartz</strong> 曲 / <strong>Howard Dietz</strong> 词，<strong>1931 年百老汇讽刺歌舞剧《The Band Wagon》</strong> 首演 ✓✓，<strong>1931-08-19 由 Bing Crosby 首录</strong> ✓✓，Artie Shaw 1941 年的版本是其标志 ✓✓，1953 年 MGM 电影版配 Fred Astaire 与 Cyd Charisse 的舞蹈 ✓✓。⭐ 有趣的是 <strong>Adderley 后来也以歌手身份录过这首</strong> ✓✓ —— 对一位以乐器自居的乐手来说挺不寻常 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 《Autumn Leaves》的来历与 Jamal 的影响</p><p class="nb"><strong>Joseph Kosma</strong> 曲 / <strong>Jacques Prévert</strong> 法文词 ✓✓（英文词出自 Mack David ✓✓），原版标签也印 Prévert / Kosma ✓✓。⭐ <strong>Miles 说这个处理版本是听 Ahmad Jamal 得来的</strong> ✓✓（内页原话：「I got the idea for this treatment of Autumn Leaves from listening to him」✓✓）—— Leonard Feather 与 Charles A. Robertson 当年的评论都点出了这份影响 ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐⭐ 录音末尾那段对话</p><p class="nb">乐评完全没提，但这是这场录音最有画面感的一幕：<strong>Miles 冲着控制室问 Alfred Lion「Is that what you wanted, Alfred?」</strong> ✓✓ —— 有资料记在标题曲结尾 ✓✓，也有记在《One for Daddy-O》结尾 ✓✓；Leonard Feather 的内页也记了这一幕，并加了一句「Alfred Lion 想要的正是这个」✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐⭐ 时间线：这五天里发生的事</p><p class="nb">这场录音是 <strong>1958-03-09</strong> ✓✓，而《Milestones》的最后几轨录于 <strong>3 月 4 日</strong> ✓✓——<strong>中间只隔五天</strong> ✓✓。Adderley 那天先在 Columbia 赶完《Milestones》，接着就奔到 Hackensack 录这张 Blue Note ✓✓。⭐ 三个月后，《Kind of Blue》开工 ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ Adderley 并非只在 Miles 队里待了一小段</p><p class="nb">他 <strong>1957 年 10 月入班，一直待到 1975 年</strong> ✓✓（同《Sketches of Spain》一篇的更正一致 ✓✓）；当年他是在 <strong>Dizzy Gillespie 与 Miles Davis 之间选了 Miles</strong> ✓✓，也顺手解散了与 Nat 合组的五重奏 ✓✓。乐评「gave up his own band」这句没错，但容易让人以为只是短暂借调 ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 原版封套里的授权说明</p><p class="nb">封套明写：「<strong>Miles Davis performs by courtesy of Columbia Records. Hank Jones performs by courtesy of Capitol Records.</strong>」✓✓ —— 这行小字说明这张碟的跨厂牌授权路径，也解释了为什么 Blue Note 愿意让 Miles 主导 ✓✓。</p></div></li><li><span class="n">12</span><div><p class="nt">⚠️ AllMusic 把录音地点写成了 New York</p><p class="nb">AllMusic 专辑页的 Recording Location 写「<strong>New York, NY</strong>」✗ —— 实际是 <strong>新泽西州 Hackensack 的 Van Gelder Studio</strong> ✓✓（Discogs 封套注记 ✓✓）。另外 AllMusic 记发行日期为 <strong>August 1958</strong> ✓✓，Discogs 记 <strong>1958-05</strong> ✓✓；10 月 Billboard、11 月 Cashbox、12 月 Metronome/Audio 都已刊出评论 ✓✓。</p></div></li><li><span class="n">13</span><div><p class="nt">⭐⭐ 1958 年的「Parker 衣钵」风波</p><p class="nb"><strong>Ralph J. Gleason 在《旧金山纪事报》撰文</strong>（1958-10-26 ✓✓），称 Adderley 是「Parker 之后第一位完全原创的声音」✓✓；<strong>Sonny Stitt 怒斥「胡扯！」</strong> ✓✓，说 Cannonball 根本没听过 Bird ✓✓；Adderley 本人的回应很得体：「我不是新的 Charlie Parker，我是 <strong>Cannonball the First</strong>」✓✓。Adderley 当时也在<strong>小手术后的休养期</strong> ✓✓——这篇评论闹得动静不小 ✓✓。</p></div></li><li><span class="n">14</span><div><p class="nt">⭐⭐ 45 转的两版：AP AP-81595 与 MFSL UD1S 2-022</p><p class="nb">· ⭐ <strong>AP AP-81595</strong>（<strong>45 转 2LP</strong>，200g，<strong>Gray + Hoffman @ AcousTech</strong> ✓✓，2008 初版 ✓✓ / 2011 QRP 再压 ✓✓）—— 买家普遍给满分，评价是「乐器之间空气感很足、声场宽阔、低频紧实、尤其 Miles 的小号」✓✓；⚠️ <strong>但只有原版五曲，没有《Alison's Uncle》</strong> ✓✓。
+· ⭐ <strong>MFSL UD1S 2-022</strong>（<strong>One-Step 45 转 2LP</strong>，2023-11-20 ✓✓，<strong>编号 6000</strong> ✓✓，Krieg Wunderlich 主导、Shawn R. Britton 协助，Gain 2 系统 ✓✓）—— <strong>多一首《Alison's Uncle》</strong> ✓✓；⚠️ 评价两极：有人说「像坐在 Smalls 酒吧里」✓✓，也有人说「低频被抽掉、声场偏小、像蒙了块布」✓✓，另有 QC 争议（指纹、内套破损 ✓✓）。</p></div></li><li><span class="n">15</span><div><p class="nt">⭐ 数字版与 33 转：两个 SACD 都在</p><p class="nb">· ⭐ <strong>AP CBNJ 81595 SA 混合 SACD</strong>（2009 ✓✓ / 2021 再版 ✓✓，Sony DADC 制盘 ✓✓）与 <strong>MFSL UDSACD 2270 Ultradisc UHR 混合 SACD</strong>（2024 编号特别版 ✓✓，Sony DADC ✓✓）—— <strong>AP 与 MFSL 两家的高解析数字版都在</strong> ✓✓，这是这碟最省事的一条路 ✓✓。
+· ⭐ <strong>Classic Records Clarity SV-P II 45 转</strong>（<strong>Bernie Grundman 母带</strong> ✓✓，单面，<strong>立体声与单声道各有一版</strong> ✓✓）· <strong>Classic HDAD 24/192 DVD-Audio</strong>（2005 ✓✓）· <strong>Music Matters MMBST-81595 SRX</strong>（33 转，Cohearent Audio 母带 ✓✓）。
+· ⚠️ <strong>Craft 没有做过这张</strong> ✓✓（Discogs 版本表里查无此版 ✓✓）—— 想要 Craft 只能等 ✓✓。</p></div></li><li><span class="n">16</span><div><p class="nt">⭐ 系统建议：这张碟该怎么走你的链路</p><p class="nb">⚠️ <strong>《One for Daddy-O》的右声道有明显吊镲嘶声与轻微失真</strong> ✓✓ —— Van Gelder 当年的吊麦摆位所致 ✓✓（别的版本同样有，但这一版更明显 ✓✓）。⭐ 你的 MUB5 现在在 <strong>M2</strong>（抬 6–10k ✓✓），这张碟的镲片本来就躁，<strong>建议先切 M1 或 FINE 压一档</strong> ✓✓。
+⭐⭐ <strong>这碟与《Kind of Blue》共享同一套「Miles 的弱音器美学 + Van Gelder 的房间」</strong> ✓✓ —— 拿它当《Kind of Blue》的对照组最合适：<strong>同一副近场、同一条链路、同一颗 Dirac，两张碟的差别就是 Columbia 30 街与 Hackensack 两间棚</strong> ✓✓。
+⭐ 数码流媒体党：<strong>Qobuz 上的版本多半是 Blue Note 2000 年代后的数字母带</strong> ✓✓，若要听 Gray/Hoffman 或 Wunderlich 的路子就得买实体或买 SACD ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/somethin-else-r134300">《Somethin' Else》专辑页（Rovi Staff 评论；发行 August 1958、时长 43:43、录音日期 1958-03-09）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/118117">Master 118117（原版 BLP 1595 曲目与作曲署名、Rudy Van Gelder 录音、封套注记、全部版本谱系）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/29043274">MFSL UD1S 2-022 条目（One-Step 45 转、编号 6000、含《Alison's Uncle (AKA Bangoon)》、1983 日本单曲首发的说明、买家评价）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2513324">Analogue Productions AP-81595 条目（2008 初版 45 转，Gray + Hoffman @ AcousTech）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/10058132">Analogue Productions AP-81595 条目（2011 QRP 再压）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3249366">Analogue Productions CBNJ 81595 SA 混合 SACD 条目（2009，Sony DADC）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/32424204">MFSL UDSACD 2270 条目（2024 编号版，Ultradisc UHR，Sony DADC）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/15295035">Music Matters MMBST-81595 条目（SRX 系列，Cohearent Audio 母带，RTI 压片）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3132639">Classic Records Clarity SV-P II 45 转条目（Bernie Grundman 母带、单面、立体声版）</a></span></li><li><span class="k">The Jazz Tome</span><span><a href="https://thejazztome.info?p=676/">《Somethin' Else》(1958) 专页：收录 1958 年 Billboard / Cashbox / Audio / Down Beat / Metronome / Record Guide / Jet /《旧金山纪事报》/《多伦多星报》同期评论全文，以及 Leonard Feather 原版内页全文</a></span></li><li><span class="k">Jazz Journal</span><span><a href="https://jazzjournal.co.uk/?p=38617">评 Groove Replica 2LP+CD 版（附《Sophisticated Swing》、曲目与场次、Hank Jones 作曲说）</a></span></li><li><span class="k">Flophouse</span><span><a href="http://flophousemagazine.com/2021/05/23/cannonball-adderley-somethin-else-blue-note-1958/">《Somethin' Else》(Blue Note 1958) 评析：3 月 4 日《Milestones》→ 3 月 9 日的时间线、Adderley 选 Miles 而非 Dizzy、Miles 在场主导</a></span></li><li><span class="k">Blue Note</span><span><a href="https://www.bluenote.com/?p=3711">Blue Note 官方博客对这张碟的记述（清晰与克制、Adderley 的成长、与《Kind of Blue》的亲缘）</a></span></li><li><span class="k">American Hit Network</span><span><a href="https://americanhitnetwork.com/shows/the-alternative-top-40/cannon-ball-adderley-something-else/2023-11-08?page=2">专辑档案（1958 年 8 月发行、Miles 的选曲与主导、他在标题曲结尾的问话）</a></span></li><li><span class="k">Wikipedia 镜像</span><span><a href="https://wiki.smallrat.net/content/wikipedia_en_all_maxi/A/Dancing_in_the_Dark_(Howard_Dietz_and_Arthur_Schwartz_song)">《Dancing in the Dark》(Howard Dietz / Arthur Schwartz)——1931 年《The Band Wagon》首演、Bing Crosby 首录、Adderley 亦有录音</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文原为单一大段，为便于左右对照按句群切成五段。原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

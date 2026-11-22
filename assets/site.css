@@ -161,6 +161,22 @@ hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
 }
 .artist .a-go:hover{background:var(--accent);color:var(--bg)}
 
+/* ── others list (发行年份 领奏 专辑名) ── */
+.others-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.others-list li{
+  display:flex;gap:16px;align-items:baseline;
+  padding:16px 0;border-bottom:1px solid var(--line);
+}
+.others-list .y{
+  font-family:var(--font-en);font-size:13px;font-weight:600;color:var(--accent);flex:none;width:46px;
+}
+.others-list a{
+  font-family:var(--font-en);font-size:17px;color:var(--text);text-decoration:none;min-width:0;
+}
+.others-list a:hover{color:var(--accent)}
+.others-list .who{color:var(--muted);margin-right:6px}
+.artist .a-list .who{color:var(--muted);margin-right:6px}
+
 /* ── albums timeline ──────────────────── */
 .albums{list-style:none;margin:0;padding:0}
 .album{
