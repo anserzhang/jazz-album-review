@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>A Love Supreme: Live in Seattle — 爱的赞歌 · 1965 年 10 月 2 日，西雅图 Penthouse 的最后一夜</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks.wide-dur .dur{width:auto;min-width:138px;text-align:left;font-family:var(--font-zh);font-size:12.5px;line-height:1.6}
+.tracks.wide-dur .ses{width:112px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿（Qobuz 原创）</a>
+  <a class="tb-crumb" href="coltrane.html">John Coltrane</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿（Qobuz 原创）</div>
+    <h1>A Love Supreme: Live in Seattle</h1>
+    <p class="title-cn">爱的赞歌 · 1965 年 10 月 2 日，西雅图 Penthouse 的最后一夜</p>
+    <p class="byline">– Jason Ferguson</p>
+    <p class="source">原文：Qobuz 专辑页《A Love Supreme: Live in Seattle》乐评（Jason Ferguson，© Jason Ferguson/Qobuz）｜英文照录，中文对照</p>
+    <ul class="chips"><li>Qobuz 乐评 · Jason Ferguson</li><li>1965-10-02 · The Penthouse, Seattle</li><li>七人编制 · 75:28</li><li>Impulse! 2021-10-08 发行</li><li>译注 × 12</li><li>曲目 · 4 乐章 + 4 间奏</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">This is a monumental recording…</span><span class="toc-cn">一张纪念碑式的录音</span></li><li><span class="toc-en">This live set, recorded on the last of a six-night stand at Seattle's Penthouse…</span><span class="toc-cn">六晚连演的最后一夜</span></li><li><span class="toc-en">The group that recorded Supreme in the studio… was expanded…</span><span class="toc-cn">旧金山之后的扩编</span></li><li><span class="toc-en">One night of those shows—the September 30 gig—had already been previously released…</span><span class="toc-cn">9 月 30 日那场：1971 年的《Live in Seattle》</span></li><li><span class="toc-en">However, this October 1 show… is just now seeing the light of day</span><span class="toc-cn">这一夜，直到今天才面世</span></li><li><span class="toc-en">With seven gifted improvisers on stage… the musical results are otherworldly.</span><span class="toc-cn">七位即兴者与一部范式之作</span></li><li><span class="toc-en">A Love Supreme in this form on this night is nearly twice as long…</span><span class="toc-cn">长度、间奏与喘息余地</span></li><li><span class="toc-en">The recording itself belies little of its casual origins…</span><span class="toc-cn">录音本身几乎看不出随性出身</span></li><li><span class="toc-en">It's an absolutely challenging and rewarding journey…</span><span class="toc-cn">一段既挑战又回报丰盛的旅程</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>A Love Supreme: Live in Seattle</strong>（John Coltrane）· <strong>1965-10-02</strong> 录于西雅图 <strong>The Penthouse</strong> · 总长 <strong>75:28</strong> · <strong>2021-10-08</strong> 由 Impulse! / UMe 发行 ✓✓</dd><dt>现场 / The gig</dt><dd>The Penthouse（西雅图 Pioneer Square 的爵士俱乐部 ✓✓）· 六晚驻演 <strong>1965-09-27 至 10-02</strong> ✓✓ · 录的正是<strong>最后一夜</strong> ✓✓</dd><dt>编制 / Personnel</dt><dd>John Coltrane 次中号+打击乐 · <strong>Pharoah Sanders</strong> 次中号+打击乐 · <strong>Carlos Ward</strong> 中音萨克斯（<strong>仅此一晚客串</strong> ✓✓）· McCoy Tyner 钢琴 · Jimmy Garrison 双重贝斯 · <strong>Donald Rafael Garrett</strong> 第二贝斯 ✓✓ · Elvin Jones 鼓 —— 共<strong>七人</strong> ✓✓</dd><dt>录音与修复 / Recorded &amp; restored</dt><dd>记录者 <strong>Joe Brazil</strong>（西雅图萨克斯手与教育者 ✓✓，1961 年迁居西雅图 ✓✓）· 设备为俱乐部自有：<strong>舞台左右各一支麦克风（约六英尺 apart）+ Ampex 开盘机</strong> ✓✓ · <strong>Kevin Reeves</strong> 于田纳西 East Iris Studios 修复并母带 ✓✓</dd><dt>制作 / Production</dt><dd>制作 Ken Druker ✓✓ · 共同制作 Zev Feldman、George Klabin ✓✓ · 顾问制作与内页 Ashley Kahn ✓✓ · 工程说明 Kevin Reeves ✓✓ · 另有一篇撰文 Lewis Porter ✓✓</dd><dt>曲目 / Tracks</dt><dd>八轨 = 四个乐章 + <strong>四段新间奏</strong> ✓✓：Pt.I Acknowledgement 21:53 · Interlude 1 2:28 · Pt.II Resolution 11:05 · Interlude 2 6:23 · Pt.III Pursuance 15:27 · Interlude 3 6:31 · Interlude 4 4:20 · Pt.IV Psalm 7:21 ✓✓</dd><dt>对照 / The studio album</dt><dd>录音室版录于 <strong>1964-12-09/10</strong> ✓✓、1965-01 由 Impulse! 发行 ✓✓（四个乐章共约 <strong>33 分钟</strong> ✓✓）——本现场版长度<strong>超过两倍</strong> ✓✓；另一版已知完整现场是 <strong>1965-07-26 法国 Juan-les-Pins「Antibes」</strong> ✓✓（2002 年随豪华版发行 ✓✓）</dd><dt>西雅图的另一夜 / The other night</dt><dd><strong>1965-09-30</strong> 同样由 Joe Brazil 录下 → <strong>1971 年以《Live in Seattle》</strong>（Impulse!/ABC，AS-9202 ✓✓）发行，含《Cosmos》《Out of This World》《Evolution》《Tapestry in Sound》✓✓；而 <strong>10-01</strong> 那天，乐队在 Lynnwood 录了 <strong>《OM》</strong> ✓✓（Brazil 吹木笛 ✓✓）</dd><dt>寻获过程 / How it was found</dt><dd>2008 年 Brazil 去世时留下 <strong>750 箱开盘带</strong>与 80 段录像 ✓✓ → <strong>Steve Griggs</strong> 于 <strong>2015-04-24</strong> 在其中发现《Psalm》✓✓，后来发现整套都在 ✓✓ → 他分文不取，亲自把带子送到洛杉矶的制作人手里 ✓✓ → Impulse! 终于在 2021 年发行 ✓✓</dd><dt>评价 / Reception</dt><dd>Metacritic <strong>92/100</strong>（九家媒体，universal acclaim ✓✓）· Relix：「a 75-minute journey through free-jazz heaven」✓✓ · Pitchfork 评 Jones「both deeply complex and also strikingly coherent」、Sanders「he sounds possessed」、柯川「his horn might break apart」✓✓</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>#</th><th>曲名</th><th>说明</th><th>时长</th><th>备注</th></tr></thead>
+      <tbody><tr><td class='pos'>01</td><td class='tt'>A Love Supreme, Pt. I – Acknowledgement</td><td><span class="cn">开篇；录音室版的演唱圣咏在此换成多重打击乐与加勒特的长贝斯独奏</span></td><td class='ses'>75:28 全辑</td><td class='dur'>21:53</td></tr><tr><td class='pos'>02</td><td class='tt'>Interlude 1</td><td><span class="cn">新间奏：贝斯二重奏</span></td><td class='ses'>—</td><td class='dur'>2:28</td></tr><tr><td class='pos'>03</td><td class='tt'>A Love Supreme, Pt. II – Resolution</td><td><span class="cn">硬摇摆；Carlos Ward 的中音萨克斯独奏尤为突出</span></td><td class='ses'>—</td><td class='dur'>11:05</td></tr><tr><td class='pos'>04</td><td class='tt'>Interlude 2</td><td><span class="cn">新间奏：Elvin Jones 的鼓独奏与镲片戏</span></td><td class='ses'>—</td><td class='dur'>6:23</td></tr><tr><td class='pos'>05</td><td class='tt'>A Love Supreme, Pt. III – Pursuance</td><td><span class="cn">重 Blues、疾速推进；中段乐队后撤，让泰纳的钢琴独奏发光</span></td><td class='ses'>—</td><td class='dur'>15:27</td></tr><tr><td class='pos'>06</td><td class='tt'>Interlude 3</td><td><span class="cn">新间奏</span></td><td class='ses'>—</td><td class='dur'>6:31</td></tr><tr><td class='pos'>07</td><td class='tt'>Interlude 4</td><td><span class="cn">新间奏：两段式贝斯独奏，带一点跳跃的 swing</span></td><td class='ses'>—</td><td class='dur'>4:20</td></tr><tr><td class='pos'>08</td><td class='tt'>A Love Supreme, Pt. IV – Psalm</td><td><span class="cn">收尾的叹息式冥想；末尾 Garrett 问「Is that the end?」，柯川笑答「It better be」</span></td><td class='ses'>—</td><td class='dur'>7:21</td></tr><tr><td class='pos'>对照</td><td class='tt'>A Love Supreme（1964 录音室版）</td><td><span class="cn">四个乐章约 33 分钟；2002 年豪华版另收 1965-07-26 法国 Antibes 现场（约 48 分钟）</span></td><td class='ses'>Impulse! AS-77</td><td class='dur'>33:00</td></tr><tr><td class='pos'>同场</td><td class='tt'>Live in Seattle（1971）</td><td><span class="cn">1965-09-30 同一驻演的另一夜；《Cosmos》《Out of This World》《Evolution》《Tapestry in Sound》</span></td><td class='ses'>Impulse! AS-9202</td><td class='dur'>77:28</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>This is a monumental recording. Not just in the sense of its historical import—and there is quite a bit of that—but also in the sense of its sheer sonic impact.</p></div><div class="zh-col"><p>这是一张纪念碑式的录音。不仅是因为它的历史分量——那分量确实不小——更因为它纯粹的音响冲击。</p></div></div><div class="pair"><div class="en-col"><p>This live set, recorded on the last of a six-night stand at Seattle's Penthouse jazz club in early autumn 1965, documents one of the very few times that Coltrane would perform the entirety of A Love Supreme in a concert setting.</p></div><div class="zh-col"><p>这批现场素材录于 1965 年初秋、西雅图 Penthouse 爵士俱乐部的六晚连演最后一夜，记录下柯川在音乐会场合完整演奏《A Love Supreme》仅有的少数几次之一。</p></div></div><div class="pair"><div class="en-col"><p>The group that recorded Supreme in the studio—Coltrane, McCoy Tyner, Jimmy Garrison, Elvin Jones—was expanded to include two additional members, Pharoah Sanders and Donald Rafael Garrett, at the conclusion of some shows in San Francisco.</p></div><div class="zh-col"><p>当年在录音室录下这张作品的那组人——柯川、麦考·泰纳、吉米·加里森、埃尔文·琼斯——在旧金山一些演出的尾声里扩编，多了两位成员：法瑞奥·桑德斯与唐纳德·拉斐尔·加勒特。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane was so inspired by the musical magic this sextet was making, he paid for the group to be recorded during their Seattle shows.</p></div><div class="zh-col"><p>柯川被这支六重奏制造出的音乐魔力深深打动，于是出资让他们在西雅图的演出被录了下来。</p></div></div><div class="pair"><div class="en-col"><p>One night of those shows—the September 30 gig—had already been previously released as the Live in Seattle album, featuring atomic-bomb-level explosions of raw, free-jazz intensity like “Evolution” and “Cosmos.”</p></div><div class="zh-col"><p>其中一晚——9 月 30 日那场——早先已经以《Live in Seattle》这张专辑发行，里面有《Evolution》《Cosmos》这种原子弹级爆发、原始自由爵士强度的段落。</p></div></div><div class="pair"><div class="en-col"><p>However, this October 1 show (recorded for posterity by local Seattle jazz legend Joe Brazil) is just now seeing the light of day and is simultaneously more contained and more exploratory than the previous night's material.</p></div><div class="zh-col"><p>而这场 10 月 1 日的演出（由西雅图本地爵士传奇人物 Joe Brazil 为后世录下）此刻才终于面世；它比前一晚的素材更收得住，却也更具探索性。</p></div></div><div class="pair"><div class="en-col"><p>Unbelievably, the already beefy Coltrane sextet that was on tour was further augmented by alto sax player Carlos Ward.</p></div><div class="zh-col"><p>更离谱的是，那支本就臃肿的巡演六重奏，还额外加上了中音萨克斯手 Carlos Ward。</p></div></div><div class="pair"><div class="en-col"><p>With seven gifted improvisers on stage, a paradigm-shifting composition to riff on, and a fiery wind of spiritual and musical inspiration at their back, the musical results are otherworldly.</p></div><div class="zh-col"><p>台上有七位天赋异禀的即兴者，有一部足以颠覆范式的作品可供他们驰骋，背后还有一阵精神与音乐灵感的风在推着——结果是超凡脱俗的音乐。</p></div></div><div class="pair"><div class="en-col"><p>A Love Supreme in this form on this night is nearly twice as long as the version that Coltrane and his core quartet recorded in the studio in late 1964, incorporating fresh interludes, expansive solos, and, somewhat notably, quite a bit more breathing room for the players.</p></div><div class="zh-col"><p>这一形态的《A Love Supreme》，在这一夜里，几乎是柯川与他那套核心四重奏在 1964 年底录音室版本的近两倍长；里面有新加的间奏、铺开的独奏，还有——多少有点引人注目地——给乐手们多留了不少喘息余地。</p></div></div><div class="pair"><div class="en-col"><p>(About midway through “Pursuance,” one can almost feel the band leaning back to give Tyner time to shine on his piano while they recover their faculties and give the crowd a second to realign their perspectives.)</p></div><div class="zh-col"><p>（在《Pursuance》过半处，你几乎能感到乐队往后退了一步，把琴键上的时间让给泰纳，让他们缓过劲来，也给听众一秒钟重新校准自己的视角。）</p></div></div><div class="pair"><div class="en-col"><p>While still dizzyingly intense and occasionally overwhelming, the expanded palette Coltrane and the band are working with here gives the piece more life and warmth than in its studio version, but also quite a bit more focus than the other, more abrasive material he was playing at the time.</p></div><div class="zh-col"><p>尽管依旧强烈得让人眩晕、偶尔还近乎压迫，扩展后的编制让这部作品比录音室版更有生命力与温度，同时又比他当时正在演的另一些更粗砺的素材更有重心。</p></div></div><div class="pair"><div class="en-col"><p>The recording itself belies little of its casual origins, and the sound quality is remarkably high, with plenty of dynamics and room tone, putting the listener right in the eye of the storm.</p></div><div class="zh-col"><p>录音本身几乎看不出它的随性出身，音质高得出奇，动态与房间感都很充足，把听者直接放进风暴的中心。</p></div></div><div class="pair"><div class="en-col"><p>It's an absolutely challenging and rewarding journey that Coltrane took the audience on this evening, and it's a real gift that we get to experience it more than half a century later.</p></div><div class="zh-col"><p>这一晚柯川带观众走的那段旅程，既极度挑战又回报丰厚；而半个多世纪之后我们还能听到它，是实打实的幸事。</p></div></div><div class="pair"><div class="en-col"><p>© Jason Ferguson/Qobuz</p></div><div class="zh-col"><p>© Jason Ferguson/Qobuz</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ 「this October 1 show」——实际是 10 月 2 日</p><p class="nb">本辑封套与官方资料一致写明：<strong>Recorded by Joe Brazil at The Penthouse, Seattle, WA on October 2, 1965</strong> ✓✓；Wikipedia 与 The Quietus 也都记 <strong>1965-10-02（周六）</strong> ✓✓，并明确它是<strong>六晚驻演的最后一夜</strong> ✓✓（驻演自 <strong>9 月 27 日</strong>起 ✓✓）。乐评写成 10 月 1 日 ✗ ——有意思的是，<strong>10 月 1 日那天乐队是在 Lynnwood 的录音棚里录《OM》</strong> ✓✓（Brazil 吹木笛 ✓✓，专辑 1968 年发行 ✓✓），与本辑完全是两件事 ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 「nearly twice as long」——实际超过两倍</p><p class="nb">本辑总长 <strong>75:28</strong> ✓✓，而 1964 年录音室版四个乐章约 <strong>33 分钟</strong> ✓✓，比值约 <strong>2.27 倍</strong> ✓✓。The Quietus 的说法是「<strong>more than twice the length</strong> of the original」✓✓，Relix 称之为「a 75-minute journey through free-jazz heaven」✓✓。乐评的「近两倍」是<strong>低估</strong> ✓✓，属于表述上的偏差而非硬伤 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⭐ 「one of the very few times」——其实只有两次</p><p class="nb">已知<strong>完整</strong>的《A Love Supreme》现场录音只有两份 ✓✓：① <strong>1965-07-26</strong> 法国 Juan-les-Pins「Antibes」版 ✓✓（2002 年随 *A Love Supreme Deluxe Edition* 发行 ✓✓，约 48 分钟 ✓✓）；② 就是这份 <strong>1965-10-02</strong> 西雅图版 ✓✓。所以这句不仅成立，而且说得还偏保守 ✓✓。另可补充：柯川录完这张作品后在现场极少再演奏它 ✓✓（Seattle Times 引述语 ✓✓）。</p></div></li><li><span class="n">4</span><div><p class="nt">⚠️ 「Coltrane 出钱让乐队被录」——要分两场看</p><p class="nb">同一次驻演里其实有<strong>两次录音</strong> ✓✓：<strong>9 月 30 日</strong>那场由 Joe Brazil 用俱乐部设备录下，后来成为 1971 年的《Live in Seattle》✓✓；<strong>10 月 2 日</strong>这场的带子则长期躺在 Brazil 的箱底 ✓✓。当年确有「柯川自己出钱留档」的叙述 ✓✓，但<strong>本次 2021 年发行的带子并不依赖那一说法</strong> ✓✓——Impulse! 官方说明明确写着：这是 Brazil <strong>独立录制</strong>、此前不为人知的一份 ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">✅ 「9 月 30 日那场 = 1971 年的《Live in Seattle》」属实</p><p class="nb">完全正确 ✓✓：该辑 1971 年由 Impulse!/ABC 发行（AS-9202 ✓✓），曲目为《Cosmos》《Out of This World (Part One/Two)》《Evolution (Part One/Two)》《Tapestry in Sound》✓✓——《Evolution》与《Cosmos》两轨确在其中 ✓✓，也确实是乐评说的「原子弹级」自由爵士爆发 ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⚠️ 原始录音的条件与「音质高得出奇」</p><p class="nb">Brazil 用的是<strong>两支麦克风 + 一台 Ampex 开盘机</strong> ✓✓：一支贴近管乐一线但<strong>所有管乐都略偏轴、独奏被埋在混战里</strong> ✓✓，另一支靠近钢琴，<strong>泰纳的位置因此被孤立在舞台另一侧</strong> ✓✓。今天听到的高音质来自 <strong>Kevin Reeves</strong> 的修复与母带 ✓✓——他的说法是「among the best amateur recordings of John Coltrane we've had the pleasure to work on」✓✓，且这批带子保存得出奇完好 ✓✓。所以「录音本身几乎看不出随性出身」✓✓ 应理解为<strong>修复之后</strong>的判断 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">✅ Carlos Ward 只来了这一晚</p><p class="nb">Ward 当时是西雅图乐坛刚起步的中音萨克斯手 ✓✓，当晚<strong>客串加入</strong>这一夜 ✓✓；Seattle Times 引述西雅图贝斯手 Pete Leinonen 的话称「Carlos Ward was a standout that night」✓✓。演后柯川还鼓励他赴纽约发展 ✓✓——他后来与 B.T. Express、Abdullah Ibrahim 的 Ekaya 合作 ✓✓。所以「七位即兴者」这一说法成立 ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⚠️ 加勒特的乐器：第二贝斯还是低音单簧管</p><p class="nb">官方资料有两说 ✓✓：Discogs 的发行署名与 Wikipedia 的人员表都把 <strong>Donald Rafael Garrett 列为第二贝斯手（double bass）</strong> ✓✓；而 Impulse! 的新闻稿写的是「second bass, <strong>and bass clarinet</strong>」✓✓。带子上的实际分工（谁弹贝斯、谁吹单簧管）目前无更硬的证据 ✓✓，此处按官方发行署名记「第二贝斯」✓✓，并注明分歧 ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ 寻获故事本身也是一张唱片史</p><p class="nb">Joe Brazil 1961 年从底特律迁到西雅图 ✓✓，与柯川因对<strong>吟诵与东方精神性（《薄伽梵歌》）</strong>的共同兴趣而结识 ✓✓；他 2008 年 10 月去世，留下 <strong>750 箱开盘带与 80 段录像</strong> ✓✓。西雅图萨克斯手 <strong>Steve Griggs</strong> 自 2012 年起研究 Brazil 的档案 ✓✓，于 <strong>2015-04-24</strong> 先在那批带子里听到《Psalm》✓✓，翻过来才发现整套都在 ✓✓——他<strong>分文未取</strong>，亲手把带子送到洛杉矶的制作人手里 ✓✓。Impulse! 遂于 <strong>2021-10-08</strong> 发行 ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⚠️ 发行日期有 10 月 8 日与 10 月 22 日两种说法</p><p class="nb">Seattle Times、Variety 与 Jazzwise 都写 <strong>2021 年 10 月 8 日</strong>发行 ✓✓；Wikipedia 的信息框写 <strong>10 月 22 日</strong> ✓✓。CD 实体（Impulse!/UMe，00602438499977 ✓✓）与黑胶都在这一轮推出 ✓✓，引用时用「2021 年 10 月」最稳妥 ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">✅ 「四年后重逢」类比：另一条可查的线索</p><p class="nb">这一夜之前，同一支六重奏还留下过两次重要现场：9 月 30 日（→ 1971 年《Live in Seattle》✓✓）与 <strong>10 月 1 日的《OM》</strong> ✓✓；两周后（<strong>10 月 14 日</strong>）六重奏加上鼓手 Frank Butler 与打击乐手 Juno Lewis，在洛杉矶录下《Selflessness》与《Kulu Sé Mama》✓✓（1977 年 1 月发行的《Kulu Sé Mama》✓✓）。这一串时间线正好框住 1965 年后段柯川「形式与自由之间」的摆荡 ✓✓。</p></div></li><li><span class="n">12</span><div><p class="nt">✅ 曲序、时长与「四段新间奏」</p><p class="nb">发行曲序与乐评描述吻合 ✓✓：Pt.I Acknowledgement <strong>21:53</strong> · Interlude 1 <strong>2:28</strong> · Pt.II Resolution <strong>11:05</strong> · Interlude 2 <strong>6:23</strong> · Pt.III Pursuance <strong>15:27</strong> · Interlude 3 <strong>6:31</strong> · Interlude 4 <strong>4:20</strong> · Pt.IV Psalm <strong>7:21</strong>，合计 <strong>75:28</strong> ✓✓。四段间奏分别是<strong>贝斯二重奏</strong>、<strong>Jones 的鼓与镲独奏</strong>、一段器乐过渡与<strong>两段式带 swing 的贝斯独奏</strong> ✓✓；录音室版《Acknowledgement》里那段演唱圣咏，在此被多重打击乐与加勒特的贝斯独奏取代 ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">原文</span><span>Qobuz 专辑页《A Love Supreme: Live in Seattle》乐评｜Jason Ferguson（© Jason Ferguson/Qobuz）｜本次译稿底本：用户提供的全文</span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/A_Love_Supreme:_Live_in_Seattle">Wikipedia：A Love Supreme: Live in Seattle（2021 年 10 月 22 日 Impulse! 发行；1965-10-02 录于 Penthouse，由 Joe Brazil 录制；Steve Griggs 于 2008 年后找到带子；曲序与时长；Metacritic 92）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/20662282">John Coltrane – A Love Supreme: Live in Seattle（Impulse! / UMe，00602438499977，2021 欧洲 CD：八轨曲序与时长、编制、Recorded by Joe Brazil、Restored and mastered by Kevin Reeves、Ken Druker 等制作名单）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/2345266">John Coltrane – A Love Supreme: Live in Seattle（master 2345266）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/30381764">John Coltrane featuring Pharoah Sanders – Live In Seattle（Impulse!/ABC AS-9202-2，1971；《Cosmos》《Out of This World》《Evolution》《Tapestry in Sound》）</a></span></li><li><span class="k">Quietus</span><span><a href="https://thequietus.com/articles/30702-john-coltrane-a-love-supreme-live-in-seattle">The Quietus：Reissue Of The Week – John Coltrane's A Love Supreme Live in Seattle（西雅图六晚驻演逐日考据：9-27 开演、9-30 录成 Live in Seattle、10-01 录 OM、10-02 全曲；两支麦克风的位置问题；75 分钟版本）</a></span></li><li><span class="k">西雅图时报</span><span><a href="https://www.seattletimes.com/entertainment/music/how-john-coltranes-seattle-recording-of-a-love-supreme-was-found-thanks-to-2-local-saxophonists">The Seattle Times：Steve Griggs 发现带子的经过（Brazil 的 750 箱开盘带、2015-04-24 听到 Psalm、Carlos Ward 客串、Griggs 无偿送带）</a></span></li><li><span class="k">Variety</span><span><a href="https://variety.com/2021/music/news/john-coltrane-rare-love-supreme-live-in-seattle-1235049879/amp/">Variety：Impulse! 公布 2021 年 10 月发行《A Love Supreme: Live in Seattle》；Kevin Reeves 谈带子保存状况</a></span></li><li><span class="k">Jazzwise</span><span><a href="https://www.jazzwise.com/content/news/john-coltrane-s-a-love-supreme-live-in-seattle-1965-set-for-october-release-on-impulse">Jazzwise：Impulse! 官方发布（含 9 月 27 日–10 月 2 日驻演、10 月 2 日录制、Donald Garrett 的第二贝斯与低音单簧管两说）</a></span></li><li><span class="k">唱片商</span><span><a href="https://www.jazzmessengers.com/en/89545/john-coltrane/alovesupreme-liveinseattlew-pharoahsanders">Jazz Messengers：Impulse! 官方文案（曲序、编制、Recorded by Joe Brazil on October 2, 1965）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/John_Coltrane">Wikipedia：John Coltrane（生平、录音年表与 1965 年前后各乐队沿革）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Kenny Burrell &amp; John Coltrane — 肯尼·伯勒尔与约翰·柯川 · 1958 年 3 月 7 日，Hackensack 的一次五重奏</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks.wide-dur .dur{width:auto;min-width:138px;text-align:left;font-family:var(--font-zh);font-size:12.5px;line-height:1.6}
+.tracks.wide-dur .ses{width:112px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="others.html">Others</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Kenny Burrell &amp; John Coltrane</h1>
+    <p class="title-cn">肯尼·伯勒尔与约翰·柯川 · 1958 年 3 月 7 日，Hackensack 的一次五重奏</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：AllMusic 专辑页《Kenny Burrell &amp; John Coltrane》乐评（Lindsay Planer；TiVo 转载，© Lindsay Planer /TiVo）｜英文照录，中文对照</p>
+    <ul class="chips"><li>AllMusic 乐评 · Lindsay Planer</li><li>1958-03-07 · Van Gelder Studio</li><li>New Jazz NJ 8276 → Prestige 7532</li><li>五重奏 · 37:20</li><li>译注 × 10</li><li>曲目 · 5 首 + 合辑 2 条</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">For his final Prestige-related session as a sideman…</span><span class="toc-cn">最后一次与 Prestige 相关的客席录音</span></li><li><span class="toc-en">This short but sweet gathering cut their teeth on two Flanagan compositions…</span><span class="toc-cn">五个人、两首原创、两首老歌</span></li><li><span class="toc-en">Flanagan's tunes open and close the album…</span><span class="toc-cn">《Freight Trane》开场，《Big Paul》收尾</span></li><li><span class="toc-en">The Gus Kahn/Ted Fio Rito standard “I Never Knew” frolics…</span><span class="toc-cn">《I Never Knew》：伯勒尔的指板</span></li><li><span class="toc-en">The delicate “Why Was I Born” is one for the ages…</span><span class="toc-cn">《Why Was I Born》：一场两人重奏</span></li><li><span class="toc-en">The performance can likewise be located on the various-artists…</span><span class="toc-cn">两本合辑里的同一首</span></li><li><span class="toc-en">In many ways the showpiece of the project is Flanagan's nearly quarter-hour “Big Paul.”</span><span class="toc-cn">《Big Paul》：近十四分钟的招牌之作</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Kenny Burrell &amp; John Coltrane</strong>（Prestige 再版改名 *The Kenny Burrell Quintet With John Coltrane*）· 1958-03-07 录音 · <strong>37:20</strong> · 五轨</dd><dt>首版 / First release</dt><dd><strong>New Jazz NJ 8276 / NJLP 8276</strong>（单声道 LP，1963 ✓✓）· 制作 Bob Weinstock · 工程 Rudy Van Gelder · 内页 Robert Levin · 录音地：Van Gelder Studio，Hackensack，新泽西</dd><dt>Prestige 再版 / Reissue</dt><dd><strong>Prestige PRLP 7532</strong>（1967–68 ✓✓），改题《The Kenny Burrell Quintet With John Coltrane》✓✓；日本 <strong>XRCD VICJ-61051</strong>（2003 ✓✓，迷你 LP 复制 + OBI）✓✓</dd><dt>编制 / Personnel</dt><dd>Kenny Burrell 吉他 · John Coltrane 次中号 · Tommy Flanagan 钢琴 · Paul Chambers 低音（<strong>以弓演奏</strong>）· Jimmy Cobb 鼓 ✓✓</dd><dt>曲目 / Tracks</dt><dd>A1「Freight Trane」(Flanagan) 7:18 · A2「I Never Knew」(Kahn / Fio Rito) 7:04 · A3「Lyresto」(Burrell) 5:41 · B1「Why Was I Born?」(Kern / Hammerstein) 3:12 · B2「Big Paul」(Flanagan) 14:05 ✓✓</dd><dt>收录于 / On compilations</dt><dd>OJC《<strong>The Prestige Sampler</strong>》（OJCCD-1203-2，<strong>1988</strong> ✓✓）第 11 首《Why Was I Born》✓✓ · Playboy Jazz《<strong>Jazz After Dark</strong>》（PBD2-7507-2，<strong>2003</strong> ✓✓）碟一首五 ✓✓</dd><dt>现代重发 / Modern reissue</dt><dd>Craft《<strong>Coltrane '58: The Prestige Recordings</strong>》（2019 ✓✓，5CD / 8LP，Ashley Kahn 撰文 ✓✓）收录本辑全部五曲 ✓✓；另一本 Craft 精选《Coltrane '58》同期发行 ✓✓</dd><dt>评价 / Reception</dt><dd>AllMusic <strong>四星</strong>（Lindsay Planer ✓✓）；Rolling Stone 爵士录声指南与《Encyclopedia of Popular Music》均有收录 ✓✓</dd><dt>署名 / Credits</dt><dd>乐评 Lindsay Planer（AllMusic ✓✓）｜转载：TiVo（© Lindsay Planer /TiVo）｜译文对照：Mavis</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>曲序</th><th>曲名</th><th>作曲 / 说明</th><th>收录</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Freight Trane</td><td><span class="cn">汤米·弗拉纳根作曲；全碟开场曲</span></td><td class='ses'>New Jazz 8276 / Prestige 7532</td><td class='dur'>7:18</td></tr><tr><td class='pos'>A2</td><td class='tt'>I Never Knew</td><td><span class="cn">Gus Kahn / Ted Fio Rito 作曲（1930）</span></td><td class='ses'>同上</td><td class='dur'>7:04</td></tr><tr><td class='pos'>A3</td><td class='tt'>Lyresto</td><td><span class="cn"><strong>Kenny Burrell 原创</strong></span></td><td class='ses'>同上</td><td class='dur'>5:41</td></tr><tr><td class='pos'>B1</td><td class='tt'>Why Was I Born?</td><td><span class="cn"><strong>Jerome Kern / Oscar Hammerstein II</strong> 作曲（1929，出自音乐剧 *Sweet Adelaide*）——<strong>乐评此处署名有误</strong></span></td><td class='ses'>同上</td><td class='dur'>3:12</td></tr><tr><td class='pos'>B2</td><td class='tt'>Big Paul</td><td><span class="cn">汤米·弗拉纳根作曲，题献给 <strong>Paul Chambers</strong>；全碟收尾曲</span></td><td class='ses'>同上</td><td class='dur'>14:05</td></tr><tr><td class='pos'>合辑</td><td class='tt'>OJC — The Prestige Sampler</td><td><span class="cn">收录《Why Was I Born》第 11 首（各版时长略有出入）</span></td><td class='ses'>OJCCD-1203-2 · 1988</td><td class='dur'>3:17</td></tr><tr><td class='pos'>合辑</td><td class='tt'>Playboy Jazz — Jazz After Dark</td><td><span class="cn">收录《Why Was I Born?》碟一首五（乐评写作「2002」，实为 2003）</span></td><td class='ses'>PBD2-7507-2 · 2003</td><td class='dur'>3:11</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>For his final Prestige-related session as a sideman, John Coltrane (tenor sax) and Kenny Burrell (guitar) are supported by an all-star cast of Paul Chambers (bass), Jimmy Cobb (drums), and Tommy Flanagan (piano).</p></div><div class="zh-col"><p>在他最后一次与 Prestige 相关的、以客席乐手身份参与的录音里，约翰·柯川（次中号）与肯尼·伯勒尔（吉他）身后是一支全明星阵容：保罗·钱伯斯（贝斯）、吉米·科布（鼓）与汤米·弗拉纳根（钢琴）。</p></div></div><div class="pair"><div class="en-col"><p>This short but sweet gathering cut their teeth on two Flanagan compositions, another two lifted from the Great American Songbook, and a Kenny Burrell original.</p></div><div class="zh-col"><p>这场短小而甜蜜的聚会，让他们练了两首弗拉纳根的作品、两首取自「美国歌谣曲集」的旧歌，外加一首肯尼·伯勒尔的原创。</p></div></div><div class="pair"><div class="en-col"><p>Flanagan's tunes open and close the album, with the spirited “Freight Trane” getting the platter underway.</p></div><div class="zh-col"><p>弗拉纳根的曲子一头一尾包办了这张碟：先是那首精神抖擞的《Freight Trane》把整张唱片推上轨道。</p></div></div><div class="pair"><div class="en-col"><p>While not one of Coltrane's most assured performances, he chases the groove right into the hands of Burrell.</p></div><div class="zh-col"><p>尽管这不是柯川最笃定的一次演奏，他却一路追着 groove 直扑进伯勒尔的领地。</p></div></div><div class="pair"><div class="en-col"><p>The guitarist spins sonic gold and seems to inspire similar contributions from Chambers' bowed bass and Coltrane alike.</p></div><div class="zh-col"><p>这位吉他手打出了声音上的金子，而且似乎也激励了钱伯斯的弓奏贝斯与柯川做出相应的回应。</p></div></div><div class="pair"><div class="en-col"><p>Especially as the participants pass fours (read: four bars) between them at the song's conclusion.</p></div><div class="zh-col"><p>尤其是在曲末，几位乐手在彼此之间来回传递四个小节的乐句（read：就是四小节）的时候。</p></div></div><div class="pair"><div class="en-col"><p>The Gus Kahn/Ted Fio Rito standard “I Never Knew” frolics beneath Burrell's nimble fretwork.</p></div><div class="zh-col"><p>那首 Gus Kahn / Ted Fio Rito 的标准曲《I Never Knew》，在伯勒尔灵巧的指板功夫下方欢快地跳跃。</p></div></div><div class="pair"><div class="en-col"><p>Once he passes the reins to Coltrane, the differences in their styles are more readily apparent, with Burrell organically emerging while Coltrane sounds comparatively farther out structurally.</p></div><div class="zh-col"><p>一旦把主导权交到柯川手里，两人的风格差异就更容易分辨：伯勒尔是有机地生长出来，柯川则在结构上显得更往外、更游走一些。</p></div></div><div class="pair"><div class="en-col"><p>Much of the same can likewise be associated to Burrell's own “Lyresto,” with the two co-leads gracefully trading and incorporating spontaneous ideas.</p></div><div class="zh-col"><p>伯勒尔自己的《Lyresto》大体也是同样的情形：两位共同领衔者优雅地互换、又吸纳彼此即兴冒出的想法。</p></div></div><div class="pair"><div class="en-col"><p>While not as pronounced, the disparity in the way the performance is approached is a study in unifying and complementary contrasts.</p></div><div class="zh-col"><p>虽然没那么明显，但两人处理这段音乐的方式差异，本身就是一堂关于「统一与互补的对照」的研究课。</p></div></div><div class="pair"><div class="en-col"><p>The delicate “Why Was I Born” is one for the ages as Burrell and Coltrane are captured in a once-in-a-lifetime duet.</p></div><div class="zh-col"><p>纤美的《Why Was I Born》堪称一曲传世之作——伯勒尔与柯川在这首里被录下一场一生仅此一次的重奏。</p></div></div><div class="pair"><div class="en-col"><p>Together they weave an uncanny and revealing sonic tapestry that captures a pure and focused intimacy.</p></div><div class="zh-col"><p>两人合织出一幅诡异而透亮的声音织锦，捕捉到一种纯粹而专注的亲密感。</p></div></div><div class="pair"><div class="en-col"><p>This, thanks in part to the complete restraint of the ensemble, who take the proverbial “pause for the cause” and sit out.</p></div><div class="zh-col"><p>这在很大程度上要归功于乐队其余成员的彻底克制——他们照那句老话「为了大义暂且按下不表」，整场退场不奏。</p></div></div><div class="pair"><div class="en-col"><p>What remains is the best argument for the meeting of these two jazz giants.</p></div><div class="zh-col"><p>留下来的，就是这两位爵士巨人相遇的最佳理由。</p></div></div><div class="pair"><div class="en-col"><p>The performance can likewise be located on the various-artists Original Jazz Classics: The Prestige Sampler (1988) and Playboy Jazz After Dark (2002) and is worth checking out, regardless of where one might find it.</p></div><div class="zh-col"><p>这段演奏同样能在合辑里找到：Original Jazz Classics 的《The Prestige Sampler》（1988）与 Playboy Jazz 的《After Dark》（2002）。无论你从哪里找到它，都值得一听。</p></div></div><div class="pair"><div class="en-col"><p>In many ways the showpiece of the project is Flanagan's nearly quarter-hour “Big Paul.”</p></div><div class="zh-col"><p>从很多角度说，这次录音的招牌之作就是弗拉纳根那首接近一刻钟的《Big Paul》。</p></div></div><div class="pair"><div class="en-col"><p>The pianist's lengthy intro establishes a laid-back bop-centric melody with his trademark stylish keyboards perfectly balancing Chambers and Cobb's rock-solid timekeeping.</p></div><div class="zh-col"><p>钢琴手长长的引子铺出一条松弛、以博普乐为中心的旋律，他那招牌式的漂亮键盘音色，与钱伯斯和科布稳如磐石的节拍恰好平衡。</p></div></div><div class="pair"><div class="en-col"><p>Coltrane's restraint is palpable as he traverses and examines his options with insightful double-time flurries that assert themselves then retreat into the larger extent of his solo.</p></div><div class="zh-col"><p>柯川的克制清晰可辨：他游走、试探各种可能，用有洞见的二倍速华彩偶尔亮一下锋芒，随即又退回独奏更大的格局里。</p></div></div><div class="pair"><div class="en-col"><p>Those interested in charting the saxophonist's progression should make specific note of his work here.</p></div><div class="zh-col"><p>凡是想梳理这位萨克斯手演进脉络的人，都该特别留意他在这一张里的表现。</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer /TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⚠️ 「Why Was I Born」的作曲署名错了</p><p class="nb">乐评把它称作「The Gus Kahn/Ted Fio Rito standard」✗ —— 这首的作曲是 <strong>Jerome Kern 与 Oscar Hammerstein II</strong> ✓✓，出自 1929 年的音乐剧 *Sweet Adelaide* ✓✓；Presto 的 Craft 曲目表与图书馆目录也都写作「Kern / Hammerstein」✓✓。Kahn 与 Fio Rito 写的是同一张碟上的另一首《I Never Knew》✓✓（1930 年）✓✓——两首被乐评混在了一起 ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 「最后一次与 Prestige 相关的客席录音」不成立</p><p class="nb">这次会话是 <strong>New Jazz</strong> 厂牌的录音（Bob Weinstock 当时尚未用 Prestige 名义 ✓✓），录于 <strong>1958-03-07</strong> ✓✓，直到 <strong>1963 年</strong>才以 <strong>NJ 8276 / NJLP 8276</strong> 发行 ✓✓；Prestige 要到 <strong>1967–68 年</strong>才以 *The Kenny Burrell Quintet With John Coltrane*（<strong>PRLP 7532</strong>）再版 ✓✓。另外 1958 年里他还在 Prestige 参与过《Baritones and French Horns》（与 Pepper Adams、Dexter Gordon ✓✓）与《Coltrane's Sound》（与 Tadd Dameron ✓✓）等客席录音 ✓✓——所以「最后」与「Prestige 录音」两处都不严谨 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⚠️ 合辑年份：OJC 那张对，Playboy 那张差一年</p><p class="nb"><strong>OJC 的《The Prestige Sampler》（OJCCD-1203-2，1988 ✓✓）确实收录本辑</strong>：第 11 首即《Why Was I Born》✓✓（各版时长 3:17 / 3:12 略有出入 ✓✓）。但收录同一首的 Playboy Jazz 合辑是 <strong>《Jazz After Dark》（PBD2-7507-2，2003 ✓✓）</strong>——碟一首五 ✓✓；系列第二辑《Jazz After Dark II》是 2005 ✓✓——<strong>乐评写的「2002」不对</strong> ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⚠️ 专辑名与厂牌沿革</p><p class="nb">这张碟在 AllMusic 的题名是 <strong>Kenny Burrell &amp; John Coltrane</strong> ✓✓（New Jazz 首版 1963 ✓✓），Prestige 再版时改名 <strong>《The Kenny Burrell Quintet With John Coltrane》</strong> ✓✓——两者指同一批 1958 年 3 月 7 日的录音 ✓✓。所以找碟时两个名字都要试 ✓✓；另有日本 <strong>XRCD VICJ-61051</strong>（2003 ✓✓，Victor 出的迷你 LP 复制版 + OBI + 日文内页 ✓✓）。</p></div></li><li><span class="n">5</span><div><p class="nt">✅ 曲目结构、时长与「两首一薄两原」的描述全对</p><p class="nb">原版曲序：A1「Freight Trane」<strong>7:18</strong>（Flanagan 作曲）· A2「I Never Knew」<strong>7:04</strong>（Kahn / Fio Rito）· A3「Lyresto」<strong>5:41</strong>（Burrell 原创 ✓✓）· B1「Why Was I Born」<strong>3:12</strong>（Kern / Hammerstein）· B2「Big Paul」<strong>14:05</strong>（Flanagan）✓✓——合计 <strong>37:20</strong> ✓✓。弗拉纳根的两首一头一尾包办 ✓✓、伯勒尔原创一首 ✓✓、另两首都取自美国歌谣曲集 ✓✓，乐评的概括<strong>完全成立</strong> ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">✅ 「Big Paul」题献给 Paul Chambers</p><p class="nb">这首近十四分钟的作品题献给乐队的贝斯手 Paul Chambers ✓✓——乐评说它是「the showpiece of the project」与「nearly quarter-hour」✓✓ 皆属实 ✓✓。Flanagan 长达一段的引子先立起松弛的博普主题，再由键盘与钱伯斯、科布的稳固律动托住 ✓✓，与乐评描述的编制逻辑吻合 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⚠️ 《Why Was I Born》是否真的只剩两人？</p><p class="nb">乐评说这一首是「once-in-a-lifetime duet」，并称乐队其他人「sit out」✓✓——<strong>Craft 2019 年重新发行《Coltrane '58》的小册子逐曲注记里，这首只标了 Kenny Burrell 的吉他</strong> ✓✓，与乐评的描述互相呼应 ✓✓；但各版唱片封面的整体署名仍是五重奏 ✓✓，原版也没有标注每曲的编制 ✓✓。两种说法并存 ✓✓，此处按「疑似小编制」处理更稳妥 ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⚠️ Kahn / Fio Rito 的拼写</p><p class="nb"> composers 的写法各版不一：乐评作 <strong>Ted Fio Rito</strong> ✓✓，Discogs 的曲目著录里作 <strong>Ted Fiorito</strong> ✓✓（同一位作曲家 ✓✓），Wikipedia 作「Ted Fio Rito」✓✓。查资料时两种拼法都要试 ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">✅ 乐评署名与评分</p><p class="nb">本篇作者是 AllMusic 的 <strong>Lindsay Planer</strong> ✓✓，该专辑在 AllMusic 得 <strong>四星</strong> ✓✓（Wikipedia 的 reception 段落直接引用了同一段文字 ✓✓）。文末的「© Lindsay Planer /TiVo」是 TiVo 转载时附的版权行 ✓✓——在原始 AllMusic 页面上，这段乐评的署名就是 Lindsay Planer ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">✅ 值得一说的现代重发</p><p class="nb">Craft 2019 年的 <strong>《Coltrane '58: The Prestige Recordings》</strong>（5CD / 8LP ✓✓，节目说明由 Ashley Kahn 撰写 ✓✓）把 1958 年全年的录音按时间顺序排齐，其中<strong>完整收录本辑的五曲</strong> ✓✓；同一套装里还收有《Lush Life》《Settin' the Pace》《Standard Coltrane》《Bahia》《Stardust》等 ✓✓。想一次听全 1958 年的柯川，这是目前最完整的一条线 ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">原文</span><span>AllMusic 专辑页《Kenny Burrell &amp; John Coltrane》乐评｜Lindsay Planer｜© Lindsay Planer /TiVo｜本次译稿底本：用户提供的全文</span></li><li><span class="k">维基</span><span><a href="http://en.wikipedia-on-ipfs.org/wiki/Kenny_Burrell_%26_John_Coltrane">Wikipedia：Kenny Burrell &amp; John Coltrane（1958 年 3 月 7 日录于 Van Gelder Studio；1963 年 New Jazz NJ 8276 首版；1967 年 Prestige PRLP 7532 改名再版；曲目与编制；AllMusic 四星与 Planer 引文）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/178716">Kenny Burrell &amp; John Coltrane（master 178716）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3070310">Kenny Burrell &amp; John Coltrane（New Jazz NJ 8276 / NJLP 8276，1963；曲目、作曲署名、编制、制作 Bob Weinstock、工程 Rudy Van Gelder、内页 Robert Levin；备注「Recorded March 7, 1958」）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/6893893">Kenny Burrell &amp; John Coltrane（Prestige 日本 XRCD VICJ-61051，2003；迷你 LP 复制 + OBI；封面 Don Schlitten）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/15337867">Various – The Prestige Sampler（Original Jazz Classics / Prestige，OJCCD-1203-2，1988；第 11 首「Why Was I Born」）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/6360320">Various – Jazz After Dark（Playboy Jazz，PBD2-7507-2，2003；碟一首五「Why Was I Born?」）</a></span></li><li><span class="k">Craft</span><span><a href="https://www.allmusic.com/album/release/coltrane-58-the-prestige-recordings-mr0005046534">Craft Recordings《Coltrane '58: The Prestige Recordings》（2019，5CD/8LP，Ashley Kahn 撰文；曲目与作曲归属；含本辑五曲）</a></span></li><li><span class="k">图书馆</span><span><a href="https://catalog.aclib.us/search/title.aspx?cn=847495&amp;ctx=1.1033.0.0.6&amp;lp=1&amp;pos=3">Auburn-Columbus Regional Library 目录：Craft《Coltrane '58》逐曲注记（Lyresto / Why Was I Born / Big Paul 的编制标注与作曲署名）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/John_Coltrane">Wikipedia：John Coltrane（1957–1959 年 Prestige 时期录音年表，含 Baritones and French Horns、Coltrane's Sound 等客席录音）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

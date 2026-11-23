@@ -9,6 +9,7 @@ index.html                              专题首页：特别专题 + 艺人索�
 ├── coltrane.html                       艺人页 · John Coltrane
 │   ├── coltrane-centennial-bilingual.html   特别专题：百年纪念注解集（排在年表之前）
 │   ├── coltrane-eternal-bilingual.html      特别专题：Qobuz 编辑专题「The Eternal John Coltrane」
+│   ├── coltrane-als-seattle-full.html      2021（录音 1965-10-02，西雅图现场）
 │   ├── coltrane-olatunji-full.html          2001（录音 1967）
 │   ├── coltrane-africa-brass-full.html      1995（录音 1961）
 │   ├── coltrane-expression-full.html        1967
@@ -44,16 +45,18 @@ index.html                              专题首页：特别专题 + 艺人索�
 │   ├── monk-bc-full.html                   1957
 │   └── mulligan-meets-monk-full.html       1957（与 Gerry Mulligan 合录）
 ├── evans.html                          艺人页 · Bill Evans
+│   ├── evans-empathy-full.html            1962（录音 1962-08-14）
 │   ├── evans-vanguard-full.html           1961（录音 1961-06-25）
 │   └── evans-portrait-in-jazz-full.html    1960（录音 1959）
 └── others.html                         其他页 · 其他领奏者（不在四位主线）
+    ├── burrell-bjc-full.html              1963（Kenny Burrell）
     ├── brubeck-timeout-full.html          1959（Dave Brubeck）
     └── adderley-se-full.html              1958（Cannonball Adderley）
 assets/site.css                         站点共用样式（与专辑页同一套设计令牌）
 assets/site.js                          主题切换脚本
 ```
 
-共 4 位艺人（另有 1 页「其他领奏」专辑）、35 篇专辑评论、3 篇特别专题。直接双击 `index.html` 即可浏览，无需服务器。
+共 4 位艺人（另有 1 页「其他领奏」专辑）、38 篇专辑评论、3 篇特别专题。直接双击 `index.html` 即可浏览，无需服务器。
 
 ## 发布
 
