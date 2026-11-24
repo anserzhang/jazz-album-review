@@ -22,6 +22,7 @@ index.html                              专题首页：特别专题 + 艺人索�
 │   ├── coltrane-black-pearls-full.html      1964（录音 1958）
 │   ├── coltrane-ballads-full.html           1963
 │   ├── coltrane-hartman-full.html           1963
+│   ├── coltrane-dakar-full.html             1963（11 月发行，录音 1957-04）
 │   ├── coltrane-standard-full.html          1962
 │   ├── coltrane-lushlife-full.html          1961
 │   ├── coltrane-jazz-full.html              1961
@@ -40,23 +41,27 @@ index.html                              专题首页：特别专题 + 艺人索�
 ├── monk.html                           艺人页 · Thelonious Monk
 │   ├── monk-underground-full.html           1968
 │   ├── monk-snc-full.html                  1967
+│   ├── monk-dream-full.html                1963
 │   ├── monk-coltrane-full.html             1961（柯川客席）
 │   ├── monk-in-orbit-full.html             1958（Clark Terry 领衔，蒙克客串）
 │   ├── monk-bc-full.html                   1957
-│   └── mulligan-meets-monk-full.html       1957（与 Gerry Mulligan 合录）
+│   ├── monk-themselves-full.html           1957（末曲柯川与 Wilbur Ware 客串）
+│   ├── mulligan-meets-monk-full.html       1957（与 Gerry Mulligan 合录）
+│   └── monk-duke-ellington-full.html       1955（12 月发行）
 ├── evans.html                          艺人页 · Bill Evans
 │   ├── evans-empathy-full.html            1962（录音 1962-08-14）
 │   ├── evans-vanguard-full.html           1961（录音 1961-06-25）
 │   └── evans-portrait-in-jazz-full.html    1960（录音 1959）
 └── others.html                         其他页 · 其他领奏者（不在四位主线）
     ├── burrell-bjc-full.html              1963（Kenny Burrell）
+    ├── adderley-kwim-full.html            1962（Cannonball Adderley）
     ├── brubeck-timeout-full.html          1959（Dave Brubeck）
     └── adderley-se-full.html              1958（Cannonball Adderley）
 assets/site.css                         站点共用样式（与专辑页同一套设计令牌）
 assets/site.js                          主题切换脚本
 ```
 
-共 4 位艺人（另有 1 页「其他领奏」专辑）、38 篇专辑评论、3 篇特别专题。直接双击 `index.html` 即可浏览，无需服务器。
+共 4 位艺人（另有 1 页「其他领奏」专辑）、43 篇专辑评论、3 篇特别专题。直接双击 `index.html` 即可浏览，无需服务器。
 
 ## 发布
 
@@ -85,6 +90,6 @@ git add -A && git commit -m "..." && git push origin main
 
 1. 照 `coltrane-*-full.html` 做一份 `xxx-full.html`，保持六段骨架。
 2. 补好页头与顶栏：`<link rel="icon" href="favicon.svg" type="image/svg+xml">`、顶栏 `<a class="tb-mark" href="index.html">…</a>` 加 `<a class="tb-crumb" href="coltrane.html">John Coltrane</a>`，以及对应的 `.tb-mark` / `.tb-crumb` 样式。
-3. 在对应艺人页的 `<ol class="albums">` 里按年份插到正确位置。
+3. 在对应艺人页的 `<ol class="albums">` 里按年份插到正确位置；领奏者不在四位主线上的，进 `others.html` 的 `<ul class="others-list">`，条目写成「发行年份 领奏 专辑名」。
 4. 在 `index.html` 该艺人的 `<ul class="a-list">` 里加一行，并更新首页计数与免责声明里的作者名单。
 5. 换新艺人：复制 `miles-davis.html` 改名，再去 `index.html` 加一张艺人卡片。

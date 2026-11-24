@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Thelonious Himself — 《Thelonious Himself》· Monk 在美国的第一张钢琴独奏专辑，末曲请来了 Wilbur Ware 与 John Coltrane</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks.wide-dur .dur{width:auto;min-width:138px;text-align:left;font-family:var(--font-zh);font-size:12.5px;line-height:1.6}
+.tracks.wide-dur .ses{width:112px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="monk.html">Thelonious Monk</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Thelonious Himself</h1>
+    <p class="title-cn">《Thelonious Himself》· Monk 在美国的第一张钢琴独奏专辑，末曲请来了 Wilbur Ware 与 John Coltrane</p>
+    <p class="byline">– AllMusic（Rovi Staff；原 AMG 版署名 Scott Yanow）</p>
+    <p class="source">原文：AllMusic 专辑页《Thelonious Himself》乐评（AllMusic 现署 Rovi Staff；TiVo 转载，© TiVo）｜英文照录，中文对照</p>
+    <ul class="chips"><li>AllMusic 乐评 · Rovi Staff</li><li>Riverside 第四张 · 1957</li><li>1957 年 4 月两个场次</li><li>Reeves Sound 录音室 · 纽约</li><li>译注 × 12</li><li>曲目 · 8 首 + 5 条备选 take</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">On each of his first three recordings for Riverside, Thelonious Monk included a solo piano presentation…</span><span class="toc-cn">前三张各有一首独奏</span></li><li><span class="toc-en">And so it was decided that Monk's fourth Riverside recording, Thelonious Himself, would be composed entirely of solo interpretations; well, almost.</span><span class="toc-cn">第四张：几乎全是独奏</span></li><li><span class="toc-en">Like a great actor finding heretofore obscure layers of meaning in a familiar soliloquy…</span><span class="toc-cn">像演员重读独白</span></li><li><span class="toc-en">Where most pianists would simply expand upon the tune… Monk keeps everything focused on thematic materials.</span><span class="toc-cn">只抓主题，不炫技</span></li><li><span class="toc-en">For his final selection, “Monk's Mood,” the pianist insisted on adding bassist Wilbur Ware and an up-and-coming tenor saxophonist named John Coltrane.</span><span class="toc-cn">末曲请来 Ware 与 Coltrane</span></li><li><span class="toc-en">By allowing them to italicize and expand upon his basslines and lead melody…</span><span class="toc-cn">让他俩把骨架加粗</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Thelonious Himself</strong> · Riverside <strong>RLP 12-235</strong> ✓✓ · <strong>1957 年发行</strong> ✓✓ · 八曲 ✓✓ · 封面设计 Paul Bacon ✓✓、封面照片 Paul Weller ✓✓</dd><dt>历史坐标 / Landmark</dt><dd><strong>美国厂牌发行的第一张钢琴独奏爵士专辑</strong> ✓✓ —— Monk 的第一张钢琴独奏专辑是 <strong>1954 年 6 月在巴黎为电台广播录的《Piano Solo》</strong> ✓✓，由法国 <strong>Disques Vogue</strong> 发行 ✓✓（那是欧洲的第一张 ✓✓）✓✓；英文维基并称它是 Monk 在 Riverside 的<strong>第四张专辑</strong> ✓✓</dd><dt>录制 / Recorded</dt><dd><strong>1957 年 4 月 5 日与 16 日</strong>两个场次 ✓✓（首版内页记作 4 月 12 日与 16 日 ✓✓）· <strong>Reeves Sound Studios, New York</strong> ✓✓ · 录音 <strong>Jack Higgins</strong> ✓✓ · 制作 <strong>Orrin Keepnews</strong> ✓✓</dd><dt>编制 / Personnel</dt><dd>除末曲外<strong>全部是 Monk 钢琴独奏</strong> ✓✓；「Monk's Mood」加入 <strong>Wilbur Ware</strong> 贝斯与 <strong>John Coltrane</strong> 上低音萨克斯 ✓✓ —— <strong>全碟没有鼓手</strong> ✓✓ ✓✓</dd><dt>曲目 / Tracks</dt><dd>A1「April in Paris」(Duke/Harburg) · A2「(I Don't Stand) A Ghost of a Chance (With You)」 · A3「Functional」(Take 2，Monk 原创) · A4「I'm Getting Sentimental Over You」 · B1「I Should Care」 · B2「'Round Midnight」 · B3「All Alone」(Irving Berlin) · B4「Monk's Mood」✓✓</dd><dt>封面 / Cover</dt><dd>封面照片是 <strong>Paul Weller</strong> 拍的 ✓✓：<strong>坐在 Reeves 录音室调音台前的 Monk</strong> ✓✓ —— 不是演出照，是工作照 ✓✓，一眼就能看出这张碟是怎么做出来的 ✓✓</dd><dt>评分 / Ratings</dt><dd><strong>Robert Christgau</strong>：「probably [Monk's] best」独奏专辑 ✓✓ · <strong>DownBeat 五颗星</strong>、评语「highly recommended」✓✓ · <strong>AllMusic 四星</strong> ✓✓ · All About Jazz 的 Stuart Broomer 则称整张「gives some sense of Monk's unerring and genuinely weird sense of form」✓✓</dd><dt>再版 / Reissues</dt><dd><strong>OJC-254</strong>（1986 ✓✓）· <strong>OJCCD-254-2</strong>（CD，<strong>含 21:59 的「'Round Midnight (in progress)」</strong> ✓✓）· <strong>Milestone SMJ-6053M</strong>（日 1974 ✓✓）· <strong>2008 Keepnews Collection CD</strong> ✓✓（<strong>不含</strong>那段 22 分钟 ✓✓，改收 5 首备选 take ✓✓）· <strong>JVC K2 SuperCoding 20-bit 版</strong> ✓✓ · 收入《The Complete Riverside Recordings》12CD（<strong>RCD-018-2</strong> ✓✓）✓✓ · <strong>Craft CR00852</strong>（2025 重发 ✓✓）✓✓</dd><dt>Coltrane 的坐标</dt><dd>「Monk's Mood」是 <strong>Coltrane 1957 年为 Riverside 录的唯一一次</strong> ✓✓，也是他与 Monk 合作的<strong>第二次录音</strong> ✓✓（第一次是 1951 年 3–4 月那批，首版由 Riverside 副牌 <strong>Jazzland</strong> 发行 ✓✓）✓✓</dd><dt>乐评署名 / Credit</dt><dd>AllMusic 当前页面把这篇署为 <strong>Rovi Staff</strong> ✓✓，2001 年 All Music Guide 版署名 <strong>Scott Yanow</strong> ✓✓；本次转载标 <strong>© TiVo</strong> ✓✓，所以原文没有具体作者名 ✓✓｜译文对照：Mavis</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>曲序</th><th>曲名</th><th>作曲</th><th>说明</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>April in Paris</td><td><span class="cn">Vernon Duke / E.Y. Harburg</span></td><td class='ses'>独奏</td><td class='dur'>3:54</td></tr><tr><td class='pos'>A2</td><td class='tt'>(I Don't Stand) A Ghost of a Chance (With You)</td><td><span class="cn">Victor Young / Ned Washington</span></td><td class='ses'>独奏（CD 增补 Take 5、Take 7）</td><td class='dur'>4:24</td></tr><tr><td class='pos'>A3</td><td class='tt'>Functional</td><td><span class="cn"><strong>Thelonious Monk</strong></span></td><td class='ses'>独奏 · Take 2（CD 另收 Take 1）</td><td class='dur'>9:22</td></tr><tr><td class='pos'>A4</td><td class='tt'>I'm Getting Sentimental Over You</td><td><span class="cn">George Bassman / Ned Washington</span></td><td class='ses'>独奏</td><td class='dur'>4:08</td></tr><tr><td class='pos'>B1</td><td class='tt'>I Should Care</td><td><span class="cn">Axel Stordahl / Paul Weston / Sammy Cahn</span></td><td class='ses'>独奏 · Take 3（CD 另收 Take 1、Take 2）</td><td class='dur'>3:15</td></tr><tr><td class='pos'>B2</td><td class='tt'>'Round Midnight</td><td><span class="cn">Bernie Hanighen / Monk / Cootie Williams</span></td><td class='ses'>独奏 · Take 7</td><td class='dur'>6:44</td></tr><tr><td class='pos'>B3</td><td class='tt'>All Alone</td><td><span class="cn">Irving Berlin</span></td><td class='ses'>独奏</td><td class='dur'>4:53</td></tr><tr><td class='pos'>B4</td><td class='tt'>Monk's Mood</td><td><span class="cn"><strong>Thelonious Monk</strong></span></td><td class='ses'>**Wilbur Ware 贝斯 + John Coltrane 上低音萨克斯（无鼓）**</td><td class='dur'>7:53</td></tr><tr><td class='pos'>CD</td><td class='tt'>'Round Midnight (in progress)</td><td><span class="cn">录音室即兴摸索全长</span></td><td class='ses'>1987 年 OJC CD 独家</td><td class='dur'>21:59</td></tr><tr><td class='pos'>CD</td><td class='tt'>Monk's Mood (False Start)</td><td><span class="cn">Monk</span></td><td class='ses'>2008 Keepnews Collection CD 增补</td><td class='dur'>0:58</td></tr><tr><td class='pos'>CD</td><td class='tt'>Functional (Take 1)</td><td><span class="cn">Monk</span></td><td class='ses'>2008 CD 增补</td><td class='dur'>9:44</td></tr><tr><td class='pos'>CD</td><td class='tt'>I Should Care (Take 1 / Take 2)</td><td><span class="cn">Stordahl / Weston / Cahn</span></td><td class='ses'>2008 CD 增补</td><td class='dur'>3:29 / 3:18</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>On each of his first three recordings for Riverside, Thelonious Monk included a solo piano presentation, and for many listeners, these were the highlights of each recital.</p></div><div class="zh-col"><p>在 Monk 为 Riverside 录的前三张唱片里，每一张都放了一首钢琴独奏——对许多听众来说，这些就是每一场演出的高光时刻。</p></div></div><div class="pair"><div class="en-col"><p>And so it was decided that Monk's fourth Riverside recording, Thelonious Himself, would be composed entirely of solo interpretations; well, almost.</p></div><div class="zh-col"><p>于是便决定：Monk 在 Riverside 的第四张录音《Thelonious Himself》，全部由独奏诠释构成——好吧，差不多是。</p></div></div><div class="pair"><div class="en-col"><p>Like a great actor finding heretofore obscure layers of meaning in a familiar soliloquy, Monk takes familiar themes such as "April in Paris," "I Should Care," and "Almost Alone" and distills them down to a single essence.</p></div><div class="zh-col"><p>就像一位大演员在熟悉的独白里重新发现此前隐而不显的层次，Monk 把《April in Paris》《I Should Care》和《Almost Alone》这些熟悉的主题，蒸馏成了单一的 essence。</p></div></div><div class="pair"><div class="en-col"><p>Where most pianists would simply expand upon the tune (or employ the chord changes as a showcase for their own variations), Monk keeps everything focused on thematic materials.</p></div><div class="zh-col"><p>多数钢琴家面对这些曲子只会顺手铺陈展开（或者干脆拿和声进行当成展示自己变奏的舞台），而 Monk 把一切都牢牢收在主题材料上。</p></div></div><div class="pair"><div class="en-col"><p>For his final selection, "Monk's Mood," the pianist insisted on adding bassist Wilbur Ware and an up-and-coming tenor saxophonist named John Coltrane.</p></div><div class="zh-col"><p>说到最后一首《Monk's Mood》，这位钢琴家坚持要把贝斯手 Wilbur Ware 和一位冉冉上升的上低音萨克斯手 John Coltrane 请进来。</p></div></div><div class="pair"><div class="en-col"><p>By allowing them to italicize and expand upon his basslines and lead melody, Monk enabled listeners to zero in on the essence of his solo and ensemble styles.</p></div><div class="zh-col"><p>通过让他们把自己的贝斯线与主旋律加以强调、拉宽，Monk 让听者得以直抵他独奏与合奏两种风格的核心。</p></div></div><div class="pair"><div class="en-col"><p>© TiVo</p></div><div class="zh-col"><p>© TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⭐⭐⭐ 乐评写错的曲名：这张碟上根本没有《Almost Alone》</p><p class="nb">乐评说 Monk 演绎了《April in Paris》《I Should Care》与《Almost Alone》——<strong>前两首属实 ✓✓，第三首不存在 ✗ ✓✓</strong>：LP 的第七曲是 <strong>「All Alone」（Irving Berlin）</strong> ✓✓，AllMusic 自己的曲目表也写着 All Alone ✓✓。所以这是<strong>乐评正文与自家曲目表打架</strong> ✓✓ ✓✓。另外还漏掉了碟上分量最重的两首：<strong>《Functional》</strong>（9:22 ✓✓，Monk 自己的曲子 ✓✓，All About Jazz 说它让 Monk 想起 James P. Johnson ✓✓）与 <strong>《'Round Midnight》</strong>（6:44 ✓✓，他的名曲 ✓✓）✓✓ —— 这张碟真正的主题其实是<strong>把标准曲与自己的作品并置</strong> ✓✓ ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⭐⭐⭐ 录音地点不是 Van Gelder 棚，是 Reeves Sound Studios</p><p class="nb">这张碟录于<strong>纽约 Reeves Sound Studios</strong> ✓✓，工程师 <strong>Jack Higgins</strong> ✓✓（Riverside 在纽约常用的另一间棚 ✓✓）——日期是 <strong>1957 年 4 月 5 日与 16 日</strong>两个场次 ✓✓（AllMusic 与 2008 年重发内页都作此 ✓✓；而首版 LP 内页记作 4 月 12 日与 16 日 ✓✓，两说并存 ✓✓）。制作 <strong>Orrin Keepnews</strong> ✓✓ ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⭐⭐⭐ 这是美国厂牌发行的第一张钢琴独奏爵士专辑</p><p class="nb">Monk 的第一张钢琴独奏专辑是 <strong>1954 年 6 月在巴黎为电台广播录的《Piano Solo》</strong> ✓✓，由法国 <strong>Disques Vogue</strong> 发行 ✓✓ —— 那是<strong>欧洲</strong>的第一张 ✓✓；这一张才是<strong>美国厂牌发行的第一张钢琴独奏爵士专辑</strong> ✓✓ ✓✓。顺带一提，那批巴黎独奏是九首 ✓✓（All About Jazz 的 Broomer 提到「nine tracks for French Vogue in 1954」✓✓）✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⚠️ 「第四张 Riverside 专辑」属实，但「前三张各有一首独奏」站不住</p><p class="nb">「fourth」这条<strong>成立</strong> ✓✓——英文维基原话就是「It was Monk's <strong>fourth album</strong> for the label」 ✓✓。但乐评的前提「前三张各含一首独奏」<strong>不成立</strong> ✓✓：「Solitude」（*Plays Duke Ellington* ✓✓）与「I Surrender, Dear」（*The Unique Thelonious Monk* ✓✓）确实是独奏 ✓✓，可 <strong>Riverside 时期排在它前面的 *Thelonious Monk and Sonny Rollins</strong>*（<strong>1956 年 10 月 9 日</strong>录于 Reeves 录音棚 ✓✓）<strong>整张是四重奏、一首钢琴独奏都没有</strong> ✓✓ ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐⭐⭐ 「Monk's Mood」是钢琴 + 贝斯 + 萨克斯，全碟没有鼓</p><p class="nb">2008 年重发 CD 的人员著录里，<strong>Wilbur Ware（贝斯）与 John Coltrane（上低音萨克斯）只挂在 track 9</strong> ✓✓，<strong>整张碟没有鼓手</strong> ✓✓ —— 一个不设鼓的三重奏 ✓✓。All About Jazz 的 Broomer 称之为「a very odd trio recording」✓✓ ✓✓。乐评说 Monk 让这两人「italicize and expand」他的骨架，这个形容在<strong>没有鼓垫底</strong>的编制下更成立 ✓✓：你听到的全是呼吸与木头 ✓✓ ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐⭐ Coltrane 在这里的身份，以及「up-and-coming」的准确度</p><p class="nb">「Monk's Mood」是 <strong>Coltrane 1957 年为 Riverside 录的唯一一次</strong> ✓✓，也是他与 Monk 合作的<strong>第二次录音</strong> ✓✓——第一次是 <strong>1951 年 3–4 月</strong>那批，首版由 Riverside 的副牌 <strong>Jazzland</strong> 发行 ✓✓。此时他刚离开 <strong>Miles Davis</strong> 的班底不久 ✓✓，所以乐评那句「up-and-coming」并不夸张 ✓✓——同一年他还在 Monk 的《Thelonious Monk and Sonny Rollins》里担任主角 ✓✓ ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">✅ 「Monk insisted on adding them」有第三方佐证</p><p class="nb">All About Jazz 的 <strong>Stuart Broomer</strong> 在 2008 年重发评论里写的是：「for which Monk <strong>required</strong> the presence of Wilbur Ware on bass and John Coltrane on tenor」✓✓ —— 「required（坚持要）」与乐评的「insisted」是同一个意思 ✓✓ ✓✓。所以这句不是乐评人的想象 ✓✓ ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐⭐⭐ 两套增补 take 的取舍，是这张碟再版史上最值得玩味的一笔</p><p class="nb"><strong>1987 年的 OJC CD（OJCCD-254-2 ✓✓）</strong>收的是 <strong>21 分 59 秒的「'Round Midnight (in progress)」</strong> ✓✓ —— 那是录音室里一整段即兴摸索的实录 ✓✓。<strong>2008 年的 Keepnews Collection CD 反而把它拿掉</strong> ✓✓，换成 5 首备选 take：「A Ghost of a Chance」Take 5 ✓✓、「Functional」Take 1 ✓✓、「I Should Care」Take 1 与 Take 2 ✓✓、「Monk's Mood」的 false start（0:58 ✓✓）✓✓。Keepnews 在内页里解释得很坦白：要塞进那段 22 分钟，就得砍掉其他所有备选 take ——「<strong>five other examples of this pianist's improvisational genius</strong>」✓✓ ✓✓。<strong>两版都值得听，因为它们是两种相反的取舍哲学</strong> ✓✓：一版押注「即兴的原始现场」，一版押注「同一段音乐的多个版本」✓✓ ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐⭐ 封面照片：坐在调音台前的 Monk</p><p class="nb">封面照片由 <strong>Paul Weller</strong> 拍摄 ✓✓，画面是 <strong>Monk 坐在 Reeves 录音室的调音台前</strong> ✓✓ —— 不是演出照，是工作照 ✓✓。这幅照片本身就说明了这张碟的诞生方式：<strong>一个人、一间棚、一台钢琴，录完再挑</strong> ✓✓ ✓✓。封面设计 Paul Bacon ✓✓ ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ 评价：Christgau 与 DownBeat 站在最高处</p><p class="nb"><strong>Robert Christgau</strong> 说这大概是 Monk <strong>最好的一张独奏专辑</strong> ✓✓；<strong>DownBeat 给五颗星</strong>、评语「highly recommended」✓✓；AllMusic 四星 ✓✓。Broomer 则盛赞《Functional》是「nine minutes of blues」✓✓、说 Monk 自己都觉得它像 James P. Johnson ✓✓，并称这张碟「gives some sense of Monk's unerring and genuinely weird sense of form」✓✓ —— 还顺手把 Columbia 时期比下去：那些录音「tended to mellow and round off the eccentric corners of his music」✓✓，而 Riverside 的 1955–60「continuously embody his greatest performances」✓✓ ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 这篇乐评没有署名</p><p class="nb">你给的原文末尾只有 <strong>© TiVo</strong> ✓✓——AllMusic 当前页面把这篇署为 <strong>Rovi Staff</strong> ✓✓，而 2001 年 All Music Guide 版署名 <strong>Scott Yanow</strong> ✓✓（AllMusic 把旧 AMG 乐评统一改署 Rovi Staff 是惯例 ✓✓）。英文维基提到 Yanow 那篇给的是<strong>四星</strong> ✓✓，并引用了他那句「Monk's hesitant stride and thoughtful yet unpredictable flights are always a joy to hear」✓✓ ✓✓。</p></div></li><li><span class="n">12</span><div><p class="nt">⭐ 乐评里那些形容词，其实是可以验证的</p><p class="nb">「distills them down to a single essence」「keeps everything focused on thematic materials」这类说法，放在这张碟上是站得住的 ✓✓：<strong>《Functional》9 分 22 秒一轨，是全碟最长的一曲</strong> ✓✓；《'Round Midnight》6:44 ✓✓；《Monk's Mood》7:53 ✓✓ —— 三首重曲撑起了整张碟的骨架 ✓✓，其余五首标准曲都是三分半到四分半的小品 ✓✓。这种「重曲 + 小品」的排布，确实是<strong>主题优先</strong>的编排思路 ✓✓ ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">原文</span><span>AllMusic 专辑页《Thelonious Himself》乐评（AllMusic 现署 Rovi Staff；原 AMG 版署名 Scott Yanow；TiVo 转载，© TiVo）｜本次译稿底本：用户提供的全文</span></li><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/thelonious-himself-mw0000649657">AllMusic 专辑页《Thelonious Himself》（发行年 1957、录音日期 April 5 &amp; 16, 1957、录音地点 Reeves Sound Studio, New York、13 首曲目与时长、用户评分 130 人次）</a></span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Thelonious_Himself">英文维基：Thelonious Himself（1957 年发行、Monk 的第四张 Riverside 专辑、美国厂牌第一张钢琴独奏专辑、原始与两套 CD 再版曲目差异、Keepnews 关于 'Round Midnight 录音室片段与备选 take 取舍的内页说明、封面照片为 Paul Weller 所拍的控制室画面、Christgau 与 DownBeat 的评价、Scott Yanow 的四星评语）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/233663">Thelonious Monk - Thelonious Himself（master 233663；首版 release 8830676：Riverside RLP 12-235、封面设计 Paul Bacon、封面摄影 Paul Weller、录音 Jack Higgins、制作与内页 Orrin Keepnews、1957 年 4 月于纽约录音）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/5550374">Thelonious Monk – Thelonious Himself（2008 Keepnews Collection CD，欧洲版 0888072305106：13 首曲目、备选 take 编号与时长、Wilbur Ware 与 John Coltrane 只挂 track 9、录音日期 April 5 &amp; 16, 1957、Joe Tarantino 24-bit 重制）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/923412">Thelonious Monk - Thelonious Himself（OJC-254 陆版 1986、OJCCD-254-2 CD、Milestone SMJ-6053M 日版 1974、Craft CR00852 2025 重发）</a></span></li><li><span class="k">All About Jazz</span><span><a href="https://www.allaboutjazz.com/thelonious-himself-thelonious-monk-concord-music-group-review-by-stuart-broomer.php">Stuart Broomer 评 Thelonious Monk: Thelonious Himself（2008 重发评论：1954 年为法国 Vogue 录的九首巴黎独奏、Functional 让他想起 James P. Johnson、Monk required Ware 与 Coltrane 的说法、21 分钟 'Round Midnight 片段只存在于早期单碟再版与 The Complete Riverside Recordings、20bit K2 版缺备选 take、Columbia 时期趋于圆熟的对比）</a></span></li><li><span class="k">RadioVideo.Music</span><span><a href="http://rvm.pm/thelonious-monk-thelonious-himself/">RadioVideo.Music：Thelonious Monk finishes the recording of 'Thelonious Himself' for Riverside (1957)（曲目与时长、April 12 &amp; 16, 1957 的另一种记载、AllMusic 乐评原文摘录）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

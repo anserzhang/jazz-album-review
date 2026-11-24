@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Monk's Dream —  Monk's Dream · Monk 拿下大厂 Columbia 的第一张，也是 Rouse / Ore / Dunlop 四重奏的唯一一次留影</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks.wide-dur .dur{width:auto;min-width:138px;text-align:left;font-family:var(--font-zh);font-size:12.5px;line-height:1.6}
+.tracks.wide-dur .ses{width:112px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="monk.html">Thelonious Monk</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Monk's Dream</h1>
+    <p class="title-cn"> Monk's Dream · Monk 拿下大厂 Columbia 的第一张，也是 Rouse / Ore / Dunlop 四重奏的唯一一次留影</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：AllMusic 专辑页《Monk's Dream》乐评（Lindsay Planer；TiVo 转载，© Lindsay Planer /TiVo）｜英文照录，中文对照</p>
+    <ul class="chips"><li>AllMusic 乐评 · Lindsay Planer</li><li>Columbia 首张 · 1963 年 1 月</li><li>1962 年 10/11 月四个场次</li><li>Columbia 30th Street 录音室 · 纽约</li><li>译注 × 11</li><li>曲目 · 8 首 + 4 条备选 take</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Monk's Dream is the Columbia Records debut release featuring the Thelonious Monk Quartet…</span><span class="toc-cn">《Monk's Dream》：Columbia 的首张</span></li><li><span class="toc-en">Jazz scholars and enthusiasts alike also heralded this combo as the best Monk had been involved with…</span><span class="toc-cn">「近几年最好的一支班底」</span></li><li><span class="toc-en">By the early '60s, bop had become considered passé…</span><span class="toc-cn">bop 过时了</span></li><li><span class="toc-en">Not to belabor the point… but precious few musicians understood the layer upon layer of complexities…</span><span class="toc-cn">Monk 音乐的复杂度</span></li><li><span class="toc-en">On tracks such as “Five Spot Blues” and “Bolivar Blues,” Rouse and Dunlop demonstrate their uncanny abilities…</span><span class="toc-cn">Rouse 与 Dunlop 的反应速度</span></li><li><span class="toc-en">Augmenting the six quartet recordings are two solo sides: “Just a Gigolo” and “Body and Soul.”</span><span class="toc-cn">外加两首钢琴独奏</span></li><li><span class="toc-en">Most notable about Monk's solo work is how much he retained the same extreme level of intuition…</span><span class="toc-cn">独奏里的直觉没退</span></li><li><span class="toc-en">Monk's Dream is recommended, with something for every degree of Monk enthusiast.</span><span class="toc-cn">推荐给各层次的 Monk 迷</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>The Thelonious Monk Quartet – Monk's Dream</strong> · Columbia <strong>CL 1965</strong>（单声道）/ <strong>CS 8765</strong>（立体声）✓✓ · <strong>1963 年 1 月发行</strong> ✓✓ · 八曲 · 47:02 ✓✓</dd><dt>录制 / Recorded</dt><dd><strong>四个场次</strong>：<strong>1962-10-31</strong>（「Bye-Ya」「Blue Bolivar Blues」）· <strong>11-01</strong>（「Body and Soul」「Bright Mississippi」）· <strong>11-02</strong>（「Sweet and Lovely」「Just a Gigolo」「Monk's Dream」）· <strong>11-06</strong>（「Blues Five Spot」）✓✓ · 全部录于<strong>纽约 Columbia 30th Street Studio</strong> ✓✓ · 制作 <strong>Teo Macero</strong> ✓✓</dd><dt>编制 / Personnel</dt><dd>Thelonious Monk 钢琴（领衔）· <strong>Charlie Rouse</strong> 上低音萨克斯 · <strong>John Ore</strong> 贝斯 · <strong>Frankie Dunlop</strong> 鼓 ✓✓ —— 这支四人组此后没有再合作过 ✓✓</dd><dt>曲目 / Tracks</dt><dd>A1「Monk's Dream」(Take 8) · A2「Body and Soul」(Re-take 2) · A3「Bright Mississippi」(Take 1) · A4「Blues Five Spot」· B1「Blue Bolivar Blues」(Take 2) · B2「Just a Gigolo」· B3「Bye-Ya」· B4「Sweet and Lovely」✓✓</dd><dt>两首独奏 / The two solos</dt><dd><strong>「Body and Soul」与「Just a Gigolo」是纯钢琴独奏</strong> ✓✓，且各放在每面的<strong>第二首</strong>（A2、B2）✓✓，而不是排在曲末 ✓✓ —— 于是每面都是「四重奏→独奏→四重奏→独奏」的交替推进 ✓✓</dd><dt>曲目全是旧作 / Repertoire</dt><dd><strong>只有「Bright Mississippi」是 Monk 从未录过的新曲</strong> ✓✓（和声基于「Sweet Georgia Brown」✓✓，8:36，备选 take 10:20，是全碟最长的一首 ✓✓）；「Blue Bolivar Blues」原名 <strong>「Ba-lue Bolivar Ba-lues-are」</strong> ✓✓，出自 1957 年《Brilliant Corners》✓✓；「Monk's Dream」「Bye-Ya」「Sweet and Lovely」<strong>十年前已为 Prestige 录过</strong> ✓✓</dd><dt>文案 / Credits</dt><dd>内页由 <strong>Martin Williams、Nat Hentoff、Ralph J. Gleason、Teo Macero、Willis Conover</strong> 五人合写 ✓✓，摄影 <strong>Don Hunstein</strong> ✓✓（Columbia 的照片大师 ✓✓）</dd><dt>评分 / Ratings</dt><dd><strong>AllMusic 5 星</strong>（Lindsay Planer ✓✓）· <strong>DownBeat 5 星</strong>（Pete Welding：「a stunning reaffirmation of his powers as a performer and composer」✓✓）· <strong>《企鹅爵士录音指南》3 星</strong>（Cook &amp; Morton ✓✓）✓✓</dd><dt>再版 / Reissues</dt><dd>1973 年 CBS Collectors 系列 <strong>JCS 8765</strong> ✓✓ → 1992 年 Columbia Jazz Masterpieces CD <strong>CK 40786</strong> ✓✓ → <strong>2002 年 Legacy 重制 CK 63536</strong> ✓✓（<strong>加 4 首备选 take</strong> ✓✓、内页 <strong>Peter Keepnews</strong> 撰文 ✓✓、<strong>Orrin Keepnews</strong> 担任再版制作 ✓✓）→ 2001 年《The Columbia Years '62–'68》✓✓ / 2012 年《The Complete Columbia Studio Albums Collection》✓✓</dd><dt>乐评署名 / Credit</dt><dd>AllMusic 乐评 <strong>Lindsay Planer</strong>（© Lindsay Planer /TiVo，TiVo 转载 ✓✓）｜译文对照：Mavis</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>曲序</th><th>曲名</th><th>作曲</th><th>场次 / take</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Monk's Dream</td><td><span class="cn"><strong>Thelonious Monk</strong></span></td><td class='ses'>1962-11-02 · Take 8</td><td class='dur'>6:26</td></tr><tr><td class='pos'>A2</td><td class='tt'>Body and Soul</td><td><span class="cn">Heyman / Sour / Eyton / Green</span></td><td class='ses'>1962-11-01 · Re-take 2 · **钢琴独奏**</td><td class='dur'>4:29</td></tr><tr><td class='pos'>A3</td><td class='tt'>Bright Mississippi</td><td><span class="cn"><strong>Thelonious Monk</strong>（和声取自 Sweet Georgia Brown）</span></td><td class='ses'>1962-11-01 · Take 1 · **全碟唯一新曲**</td><td class='dur'>8:34</td></tr><tr><td class='pos'>A4</td><td class='tt'>Blues Five Spot</td><td><span class="cn">Thelonious Monk</span></td><td class='ses'>1962-11-06 · 原名 Blues Five Spot（通行写法作 Five Spot Blues）</td><td class='dur'>3:15</td></tr><tr><td class='pos'>B1</td><td class='tt'>Blue Bolivar Blues</td><td><span class="cn">Thelonious Monk（原名 Ba-lue Bolivar Ba-lues-are）</span></td><td class='ses'>1962-10-31 · Take 2</td><td class='dur'>7:30</td></tr><tr><td class='pos'>B2</td><td class='tt'>Just a Gigolo</td><td><span class="cn">Julius Brammer / Irving Caesar / Leonello Casucci</span></td><td class='ses'>1962-11-02 · **钢琴独奏**</td><td class='dur'>2:29</td></tr><tr><td class='pos'>B3</td><td class='tt'>Bye-Ya</td><td><span class="cn">Thelonious Monk</span></td><td class='ses'>1962-10-31</td><td class='dur'>6:01</td></tr><tr><td class='pos'>B4</td><td class='tt'>Sweet and Lovely</td><td><span class="cn">Gus Arnheim / Harry Tobias / Jules LeMare</span></td><td class='ses'>1962-11-02</td><td class='dur'>7:48</td></tr><tr><td class='pos'>CD</td><td class='tt'>Monk's Dream (Take 3)</td><td><span class="cn">Thelonious Monk；2002 年 Legacy 版增补</span></td><td class='ses'>CD 增补</td><td class='dur'>5:14</td></tr><tr><td class='pos'>CD</td><td class='tt'>Body and Soul (Take 1)</td><td><span class="cn">Heyman / Sour / Eyton / Green；增补</span></td><td class='ses'>CD 增补</td><td class='dur'>5:05</td></tr><tr><td class='pos'>CD</td><td class='tt'>Bright Mississippi (Take 3)</td><td><span class="cn">Thelonious Monk；增补</span></td><td class='ses'>CD 增补</td><td class='dur'>10:20</td></tr><tr><td class='pos'>CD</td><td class='tt'>Blue Bolivar Blues (Take 1)</td><td><span class="cn">Thelonious Monk；增补</span></td><td class='ses'>CD 增补</td><td class='dur'>6:12</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Monk's Dream is the Columbia Records debut release featuring the Thelonious Monk Quartet: Monk (piano), Charlie Rouse (tenor sax), John Ore (bass), and Frankie Dunlop (drums).</p></div><div class="zh-col"><p>《Monk's Dream》是 Columbia 唱片公司推出的首张、也是唯一一张以 Thelonious Monk 四重奏名义发行的唱片：Monk（钢琴）、Charlie Rouse（上低音萨克斯）、John Ore（贝斯）、Frankie Dunlop（鼓）。</p></div></div><div class="pair"><div class="en-col"><p>Jazz scholars and enthusiasts alike also heralded this combo as the best Monk had been involved with for several years.</p></div><div class="zh-col"><p>无论爵士研究者还是发烧友，都把这支组合赞为 Monk 这些年参与过的最棒的一支班底。</p></div></div><div class="pair"><div class="en-col"><p>Although he would perform and record supported by various other musicians, the tight -- almost telepathic -- dimensions that these four shared has rarely been equalled in any genre.</p></div><div class="zh-col"><p>虽然后来他还跟各种不同的乐手一起演奏、录音，但这四人共享的那种紧密——几乎心灵相通——的维度，在任何一种音乐类型里都很少被复制。</p></div></div><div class="pair"><div class="en-col"><p>By the early '60s, bop had become considered passé by artists as well as fans looking for the next musical trend.</p></div><div class="zh-col"><p>到了 60 年代初，无论是艺人还是追逐下一个音乐潮流的乐迷，都已经觉得 bop 过时了。</p></div></div><div class="pair"><div class="en-col"><p>This is coupled with the fact that discerning Monk fans would have undoubtedly recognized many of these titles from several live recordings issued at the end of his tenure on Riverside.</p></div><div class="zh-col"><p>再加上一点：那些有鉴别力的 Monk 迷 undoubtedly 会发现，这里相当一部分曲名他们早就从 Monk 在 Riverside 末期发行的几张现场录音里认出来了。</p></div></div><div class="pair"><div class="en-col"><p>Not to belabor the point, however, but precious few musicians understood the layer upon layer of complexities and challenges that Monk's music created.</p></div><div class="zh-col"><p>不过也不必把这一点说得太重：能真正读懂 Monk 的音乐一层叠着一层制造出来的复杂度与难度的 musician，其实是寥寥无几。</p></div></div><div class="pair"><div class="en-col"><p>On tracks such as “Five Spot Blues” and “Bolivar Blues,” Rouse and Dunlop demonstrate their uncanny abilities by squeezing in well-placed instrumental fills, while never getting hit by the unpredictable rhythmic frisbees being tossed about by Monk.</p></div><div class="zh-col"><p>在《Five Spot Blues》和《Bolivar Blues》这样的曲子上，Rouse 与 Dunlop 展示出他们 uncanny 的本事：见缝插针地塞进恰到好处的乐器填充，同时又绝不会被 Monk 抛来抛去的那记拍不可测的节奏飞盘砸中。</p></div></div><div class="pair"><div class="en-col"><p>Augmenting the six quartet recordings are two solo sides: “Just a Gigolo” and “Body and Soul.”</p></div><div class="zh-col"><p>在六首四重奏录音之外，还加上了两首钢琴独奏：《Just a Gigolo》和《Body and Soul》。</p></div></div><div class="pair"><div class="en-col"><p>Most notable about Monk's solo work is how much he retained the same extreme level of intuition throughout the nearly two decades that separate these recordings from his initial renderings in the late '40s.</p></div><div class="zh-col"><p>关于 Monk 的独奏，最值得注意的一点是：把这些录音与他 40 年代末的最初演绎拉开的那将近二十年里，他始终保持着<strong>同样极端的直觉水平</strong>。</p></div></div><div class="pair"><div class="en-col"><p>Monk's Dream is recommended, with something for every degree of Monk enthusiast.</p></div><div class="zh-col"><p>推荐这张《Monk's Dream》：无论你有多深的 Monk 迷程度，这里都有东西给你。</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer /TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⭐ 专辑真身与首发</p><p class="nb">这张碟在唱片上的正式名号是 <strong>The Thelonious Monk Quartet – Monk's Dream</strong> ✓✓，Columbia 编号 <strong>CL 1965</strong>（单声道）/ <strong>CS 8765</strong>（立体声）✓✓，<strong>1963 年 1 月发行</strong> ✓✓（另有资料作 3 月 ✓✓，两说并存 ✓✓）。录音是 <strong>1962 年 10 月 31 日与 11 月 1、2、6 日</strong>四个场次 ✓✓，全部在<strong>纽约 Columbia 30th Street Studio</strong> ✓✓——那是 Columbia 当时的录音重镇 ✓✓（也是 1961 年那张《Thelonious Monk with John Coltrane》的地方 ✓✓）。制作 <strong>Teo Macero</strong> ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 「Columbia 首发」这个说法要打折扣</p><p class="nb">说它「是 Monk 的首张 Columbia 专辑」✓✓成立 ✓✓；但说成「debut <strong>release</strong>」就不那么严谨了 ✓✓ —— <strong>1961 年的《Thelonious Monk with John Coltrane》</strong>（同样录于 Columbia 30th Street ✓✓）首版是由 Riverside 的副牌 <strong>Jazzland</strong> 发行的 ✓✓（<strong>JLP 46</strong> 单声道、<strong>JLP 946S</strong> 立体声 ✓✓），Columbia 要到后来才接手这张的发行 ✓✓。另外乐评的原始出处 AllMusic 有一篇 <strong>Dryden K. Allmusic</strong> 的乐评 ✓✓（2011 年 Columbia 再版内页引用 ✓✓），Planer 这篇是另一篇 ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">⭐ 乐评里的两个曲名，与唱片上印的不一样</p><p class="nb">乐评写的「Five Spot Blues」和「Bolivar Blues」是 Discogs 与维基的通行写法 ✓✓；但 <strong>LP 标签与 2002 年 Legacy CD 的节目单实际印的是「Blues Five Spot」与「Blue Bolivar Blues」</strong> ✓✓（2002 CD 的曲目单即如此 ✓✓）。所以这不是乐评写错，而是<strong>通行写法和唱片标签写法不一致</strong> ✓✓——自己查谱面时要留意 ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">✅ 「六首四重奏 + 两首独奏」完全属实</p><p class="nb"><strong>「Body and Soul」（A2）与「Just a Gigolo」（B2）是纯钢琴独奏</strong> ✓✓，其余六曲是四重奏 ✓✓。乐评没有说的是：这两首独奏<strong>都被放在每一面的第二首</strong> ✓✓，于是每面都变成「四重奏→独奏→四重奏→独奏」的交替结构 ✓✓（All About Jazz 那篇正是抓住这一点在写 ✓✓）✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐ 除了《Bright Mississippi》，全是旧作</p><p class="nb"><strong>只有「Bright Mississippi」是 Monk 从未录过的新曲</strong> ✓✓（和声基于「Sweet Georgia Brown」✓✓；8:36，备选 take 长到 10:20 ✓✓，是全碟最长的一首 ✓✓）。「Blue Bolivar Blues」原名 <strong>「Ba-lue Bolivar Ba-lues-are」</strong> ✓✓，出自 1957 年的《Brilliant Corners》✓✓；「Monk's Dream」「Bye-Ya」「Sweet and Lovely」<strong>十年前（1952 年）已经为 Prestige 录过</strong> ✓✓。乐评说「许多曲子乐迷从 Riverside 末期的几张现场录音里认得出来」✓✓ 也基本属实 ✓✓——「Blues Five Spot」出自 <strong>《Thelonious in Action》</strong>（1958 年 Five Spot 现场 ✓✓），「Sweet and Lovely」出自 <strong>《Misterioso》</strong>（1958 年 Blackhawk 现场 ✓✓）✓✓。⚠️ 顺带纠一处常见的资料错误：<strong>英文维基把「Blues Five Spot」写成出自《Misterioso》</strong> ✗ ✓✓，那是把两张现场碟记混了 ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⚠️ 「将近二十年」是夸大，而且乐评自己前后矛盾</p><p class="nb">若以 Monk <strong>1948 年</strong>为 Prestige 录下的最初领衔录音起算，到 1962 年只有 <strong>14 年</strong> ✓✓；若以乐评自己提到的那批 1952 年 Prestige 录音（《Monk's Dream》《Bye-Ya》《Sweet and Lovely》）起算，则<strong>恰好是十年</strong> ✓✓。乐评写「late '40s」又要写「nearly two decades」，两句本身打架 ✓✓——比较站得住的说法是「<strong>十余年</strong>」或「<strong>十年</strong>」✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐⭐ Columbia 时期的「拼板」生产方式</p><p class="nb">这条能解释整张碟的曲目为什么长这样 ✓✓：据德国音乐学者 <strong>Thomas Fitterling</strong> 的说法，Columbia 的单张专辑<strong>不是预先规划的封闭制作</strong>，而是让 Monk 自由演奏、事后从素材里拼板 ✓✓。结果就是：第一次 Columbia 场次录下的 <strong>「Hackensack」与「Rhythm-a-Ning」</strong>被放到了下一张 <strong>《Criss-Cross》</strong>（1963 ✓✓）✓✓；而 1962 年 10 月 31 日 / 11 月 1 日两个场次的零散素材，后来落进了合辑 <strong>《Always Know》</strong>（1979 ✓✓）✓✓。<strong>《Monk's Dream》本身是 Columbia 三张专辑（《Monk's Dream》→《Criss-Cross》→《Thelonious Monk in Italy》，均为 1963 ✓✓）的第一张</strong> ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 同期评价其实分歧很大</p><p class="nb">Planer 给的是 <strong>AllMusic 最高档 5 星</strong> ✓✓；<strong>DownBeat 的 Pete Welding 也给 5 星</strong>，称它是「a stunning reaffirmation of his powers as a performer and composer」✓✓。但 <strong>《企鹅爵士录音指南》（Cook &amp; Morton）只给 3 星</strong> ✓✓，理由是「Monk's Dream」与「Bye-Ya」偏保守、Monk 在不自觉中转向主流 ✓✓。BBC 的 <strong>Glenn Rice</strong>（2002 年再版评论 ✓✓）则更狠：1962 年 Monk 的「黄金岁月」已过，他开始向 James P. Johnson 那种刻意质朴的弹法靠拢 ✓✓。<strong>All About Jazz 2010 年那篇则直接把它称作「史上最好的爵士专辑」</strong> ✓✓。同一张碟、同一批乐手，评价从「神作」到「保守」全都有 ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">✅ 再版谱系与 2002 年的增补</p><p class="nb">1973 年 CBS Collectors 系列 <strong>JCS 8765</strong> ✓✓ → 1992 年 Columbia Jazz Masterpieces <strong>CK 40786</strong> ✓✓ → <strong>2002 年 Legacy 重制 CK 63536</strong> ✓✓：<strong>加了 4 首备选 take</strong> ✓✓（Monk's Dream Take 3 / Body and Soul Take 1 / Bright Mississippi Take 3 / Blue Bolivar Blues Take 1 ✓✓），内页由 <strong>Peter Keepnews</strong> 撰文 ✓✓，<strong>Orrin Keepnews</strong> 担任再版制作 ✓✓。之后再进 <strong>《The Columbia Years '62–'68》</strong>（2001 ✓✓）与 <strong>《The Complete Columbia Studio Albums Collection》</strong>（2012 ✓✓）✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ 1992 版与 2002 版的「Bye-Ya」不是同一版</p><p class="nb">1992 年那张 Columbia Jazz Masterpieces CD 里，「Bye-Ya」长 <strong>6:03</strong> ✓✓；2002 年 Legacy 版只有 <strong>5:25</strong> ✓✓，差别主要在钢琴独奏之前那段过门（原版约 2:46，Legacy 版约 2:07 ✓✓）✓✓——究竟是剪辑掉了还是<strong>另一个 take</strong>，很难断定 ✓✓。想比较 Columbia 两个年代重制的差异，这首是最容易听出差别的地方 ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 内页由五位爵士评论家合写</p><p class="nb">这张 Columbia 专辑的内页由 <strong>Martin Williams、Nat Hentoff、Ralph J. Gleason、Teo Macero、Willis Conover</strong> 五人合写 ✓✓，摄影是 <strong>Don Hunstein</strong> ✓✓（Columbia 的御用摄影师 ✓✓）。所以这张碟从音乐到文案都带着「厂商大片」的味道 ✓✓——和 Riverside 时期 Orrin Keepnews 那种一个乐评人写完全篇的做法完全两派 ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">原文</span><span>AllMusic 专辑页《Monk's Dream》乐评｜Lindsay Planer｜© Lindsay Planer /TiVo｜本次译稿底本：用户提供的全文</span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Monk%27s_Dream_(composition)">英文维基：Monk's Dream (Thelonious Monk album)（发行时间、四个录音场次、曲目与时长、编制、2002 年增补曲目、Pete Welding 与企鹅指南评分）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/147910">The Thelonious Monk Quartet – Monk's Dream（master 147910；1963，Columbia CL 1965 / CS 8765；曲目、编制、制作 Teo Macero、五位内页作者、Don Hunstein 摄影）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/735430">Monk's Dream（首版 release 735430：Columbia CL 1965，1963，曲目与全部人员著录）</a></span></li><li><span class="k">图书馆编目</span><span><a href="https://csul.iii.com/search?/z9marn+b2609251/z9marn+b2609251/1%2C1%2C1%2CB/marc&amp;FF=z9marn+b2609251">MARC 著录：The Thelonious Monk Quartet – Monk's Dream（Columbia/Legacy CK 63536，2002）：八曲原版出自 1963 年 CS 8765 / CL 1965，1973 年 CBS Collectors JCS 8765 再版，四首增补 take 曲目单，再版制作 Orrin Keepnews，内页 Peter Keepnews）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2062892">Thelonious Monk With John Coltrane（1961 年首版 Jazzland JLP 46 / JLP 946S；后由 OJC 再版）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/721170">Thelonious Monk – The Columbia Years '62-'68（2001 套装）与 The Complete Columbia Studio Albums Collection（2012 套装）</a></span></li><li><span class="k">zxc.wiki</span><span><a href="http://de.zxc.wiki/wiki/Monk%E2%80%99s_Dream">zxc.wiki：Monk's Dream（Fitterling 关于 Columbia 拼板生产方式的说法、曲目 take 版本、Cook &amp; Morton 的保留意见、Glenn Rice 的 BBC 评论、All About Jazz 的评价）</a></span></li><li><span class="k">Jazz Wiki</span><span><a href="https://jaz.fandom.com/wiki/Monk%E2%80%99s_Dream_(album)">Jazz Wiki：Monk's Dream（曲目与时长、2002 CD 增补四曲、1992 与 2002 两版 Bye-Ya 的差别、AllMusic 乐评署名 Dryden K. Allmusic）</a></span></li><li><span class="k">Jazz Music Archives</span><span><a href="https://www.jazzmusicarchives.com/album/thelonious-monk/monks-dream">Jazz Music Archives：THELONIOUS MONK – Monk's Dream（曲目、编制、Columbia CL 1965、四个录音日期与 30th Street 录音室）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

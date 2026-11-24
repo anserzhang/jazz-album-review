@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Plays Duke Ellington — 《Plays Duke Ellington》· Monk 与 Riverside 的第一张，也是 Riverside 的第一张 12 寸</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks.wide-dur .dur{width:auto;min-width:138px;text-align:left;font-family:var(--font-zh);font-size:12.5px;line-height:1.6}
+.tracks.wide-dur .ses{width:112px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="monk.html">Thelonious Monk</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Plays Duke Ellington</h1>
+    <p class="title-cn">《Plays Duke Ellington》· Monk 与 Riverside 的第一张，也是 Riverside 的第一张 12 寸</p>
+    <p class="byline">– Lindsay Planer</p>
+    <p class="source">原文：AllMusic 专辑页《Plays Duke Ellington》乐评（Lindsay Planer；TiVo 转载，© Lindsay Planer /TiVo）｜英文照录，中文对照</p>
+    <ul class="chips"><li>AllMusic 乐评 · Lindsay Planer</li><li>Riverside 首张 12 寸 LP</li><li>1955 年 7 月两个场次</li><li>Pettiford / Clarke 三重奏</li><li>译注 × 11</li><li>曲目 · 8 首（1 首钢琴独奏）</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">Thelonious Monk (piano/arranger) began his illustrious relationship with Riverside Records…</span><span class="toc-cn">Monk 与 Riverside 的开始</span></li><li><span class="toc-en">Monk commands a trio that also presents the talents of Oscar Pettiford… and Kenny Clarke…</span><span class="toc-cn">Pettiford 与 Clarke</span></li><li><span class="toc-en">The delicacy and inherently intricate melodies that Duke Ellington is best known for…</span><span class="toc-cn">艾灵顿的精巧配 Monk 的锋利</span></li><li><span class="toc-en">The combo are comfortable behind the pianist who remains somewhat subdued…</span><span class="toc-cn">开场时 Monk 的收敛</span></li><li><span class="toc-en">Monk takes the refined grace of “Sophisticated Lady” into a virtually unsurpassed strata…</span><span class="toc-cn">《Sophisticated Lady》</span></li><li><span class="toc-en">The dark optimism of “Black and Tan Fantasy” stands out…</span><span class="toc-cn">《Black and Tan Fantasy》</span></li><li><span class="toc-en">“Caravan” is a gem as Clarke's sinuous trapwork…</span><span class="toc-cn">《Caravan》</span></li><li><span class="toc-en">Plays Duke Ellington is a recommended title for all dimension of jazz enthusiast.</span><span class="toc-cn">推荐给各层次的爵士乐迷</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Thelonious Monk Plays Duke Ellington</strong>（又名 *Thelonious Monk Plays the Music of Duke Ellington* ✓✓）· Riverside <strong>RLP 12-201</strong> ✓✓ · <strong>1955 年 12 月发行</strong> ✓✓ · 八曲 · 36:55 ✓✓</dd><dt>历史地位 / Landmark</dt><dd><strong>Riverside 发行的第一张 12 寸爵士 LP</strong> ✓✓——这一点连乐评都没提 ✓✓，而 Keepnews 自己的再版内页把它列为「at the time, a first in several ways」✓✓ ✓✓</dd><dt>录制 / Recorded</dt><dd><strong>1955 年 7 月 21 日与 27 日</strong>两个场次 ✓✓ · <strong>Van Gelder Studio, Hackensack, New Jersey</strong> ✓✓ · 录音 <strong>Rudy Van Gelder</strong> ✓✓ · 制作 <strong>Bill Grauer &amp; Orrin Keepnews</strong> ✓✓</dd><dt>编制 / Personnel</dt><dd>Thelonious Monk 钢琴（兼编曲）· <strong>Oscar Pettiford</strong> 贝斯 · <strong>Kenny Clarke</strong> 鼓 ✓✓ —— 三人早在 40 年代初 bop 成形期的 Minton's 就是同屋乐队 ✓✓，所以配合几乎靠本能 ✓✓</dd><dt>曲目 / Tracks</dt><dd>A1「It Don't Mean a Thing (If It Ain't Got That Swing)」 · A2「Sophisticated Lady」 · A3「I Got It Bad and That Ain't Good」 · A4「Black and Tan Fantasy」 · B1「Mood Indigo」 · B2「I Let a Song Go Out of My Heart」 · B3「Solitude」 · B4「Caravan」✓✓ —— 八首全部是艾灵顿（或与他合署）的作品 ✓✓，<strong>Monk 一首自己的原创都没放</strong> ✓✓</dd><dt>「Solitude」/ 独奏曲</dt><dd><strong>纯钢琴独奏</strong> ✓✓——2007 年重发 CD 的人员著录里，Pettiford 与 Clarke 只挂在 tracks 1–6 与 8 ✓✓，第 7 曲只有 Monk ✓✓ ✓✓</dd><dt>封面 / Cover</dt><dd>封面设计 <strong>Paul Bacon</strong> ✓✓、摄影 <strong>Carole Reiff Galletly</strong> ✓✓；<strong>1958 年起改用法国原始派画家 Henri Rousseau 的《The Repast of the Lion》（狮子的野宴）作封面</strong> ✓✓ ✓✓</dd><dt>评分 / Ratings</dt><dd><strong>AllMusic 4 星</strong>（Lindsay Planer ✓✓）· <strong>《企鹅爵士录音指南》3 星</strong> ✓✓ · PopMatters 的 Sean Murphy（2007）称其「an outstanding album」「an overlooked gem」✓✓ · All About Jazz 的 David Rickert（2004）则批评它「fairly tame」「an ambling pace」✓✓</dd><dt>再版 / Reissues</dt><dd>1958 年起换封面再版 ✓✓（<strong>R-3015 / RS-3015</strong> ✓✓）→ <strong>Milestone SMJ-6039M</strong>（日版 1974 ✓✓）· <strong>M-47052《The Riverside Trios》</strong> 2LP 套装（1979 ✓✓，与《The Unique Thelonious Monk》合辑 ✓✓）→ <strong>OJC-024</strong>（1982 ✓✓，CD 版 OJCCD-024-2 ✓✓）→ <strong>RCD-30128-2</strong>（2007 Keepnews Collection ✓✓，Joe Tarantino 24-bit 重制 ✓✓）</dd><dt>乐评署名 / Credit</dt><dd>AllMusic 乐评 <strong>Lindsay Planer</strong>（© Lindsay Planer /TiVo，TiVo 转载 ✓✓）｜译文对照：Mavis</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>曲序</th><th>曲名</th><th>作曲</th><th>说明</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>It Don't Mean a Thing (If It Ain't Got That Swing)</td><td><span class="cn">Ellington / Mills</span></td><td class='ses'>1955-07-21 &amp; 07-27 · 三重奏</td><td class='dur'>4:38</td></tr><tr><td class='pos'>A2</td><td class='tt'>Sophisticated Lady</td><td><span class="cn">Ellington / Parish / Mills</span></td><td class='ses'>1955-07-21 &amp; 07-27 · 三重奏</td><td class='dur'>4:27</td></tr><tr><td class='pos'>A3</td><td class='tt'>I Got It Bad and That Ain't Good</td><td><span class="cn">Ellington / Webster</span></td><td class='ses'>1955-07-21 &amp; 07-27 · 三重奏</td><td class='dur'>5:52</td></tr><tr><td class='pos'>A4</td><td class='tt'>Black and Tan Fantasy</td><td><span class="cn">Miley / Ellington</span></td><td class='ses'>1955-07-21 &amp; 07-27 · 三重奏</td><td class='dur'>3:24</td></tr><tr><td class='pos'>B1</td><td class='tt'>Mood Indigo</td><td><span class="cn">Ellington / Bigard</span></td><td class='ses'>1955-07-21 &amp; 07-27 · 三重奏</td><td class='dur'>3:13</td></tr><tr><td class='pos'>B2</td><td class='tt'>I Let a Song Go Out of My Heart</td><td><span class="cn">Ellington / Nemo / Redmond / Mills</span></td><td class='ses'>1955-07-21 &amp; 07-27 · 三重奏</td><td class='dur'>5:40</td></tr><tr><td class='pos'>B3</td><td class='tt'>Solitude</td><td><span class="cn">Ellington / DeLange / Mills</span></td><td class='ses'>1955-07-21 &amp; 07-27 · **钢琴独奏**</td><td class='dur'>3:42</td></tr><tr><td class='pos'>B4</td><td class='tt'>Caravan</td><td><span class="cn">Ellington / Tizol</span></td><td class='ses'>1955-07-21 &amp; 07-27 · 三重奏</td><td class='dur'>5:55</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>Thelonious Monk (piano/arranger) began his illustrious relationship with Riverside Records on the pair of July 21 and 27, 1955, dates needed to complete the eight sides for Plays Duke Ellington (1955).</p></div><div class="zh-col"><p>Thelonious Monk（钢琴/编曲）与 Riverside Records 那段卓著的合作关系，正起于 1955 年 7 月 21 日与 27 日这两天——为了凑齐《Plays Duke Ellington》（1955）所需的八面。</p></div></div><div class="pair"><div class="en-col"><p>Monk commands a trio that also presents the talents of Oscar Pettiford (bass) and Kenny Clarke (drums) on all the tracks sans "Solitude," which appropriately enough features an unaccompanied piano.</p></div><div class="zh-col"><p>Monk 领衔的是一个三重奏，同时也让我们见识到 Oscar Pettiford（贝斯）与 Kenny Clarke（鼓）的本事——除《Solitude》外所有曲目都由他们伴奏；而《Solitude》理所当然地是一首无伴奏钢琴。</p></div></div><div class="pair"><div class="en-col"><p>The delicacy and inherently intricate melodies that Duke Ellington is best known for are perfectly matched to Monk's angular and progressive interpretations.</p></div><div class="zh-col"><p>艾灵顿最为人知的那些精巧而天生繁复的旋律，与 Monk 棱角分明、往前推进的诠释方式，匹配得严丝合缝。</p></div></div><div class="pair"><div class="en-col"><p>The combo are comfortable behind the pianist who remains somewhat subdued, if not arguably tentative, during the opening of "It Don't Mean a Thing (If It Ain't Got That Swing)," although by his solo, Monk eases into some nice give and take with a playful Pettiford, whose steady bounce undeniably congeals the unit's sound.</p></div><div class="zh-col"><p>三重奏在钢琴家身后托得很稳；在《It Don't Mean a Thing (If It Ain't Got That Swing)》开场处，Monk 显得有些收敛——甚至可以说有点试探——不过到了他的独奏段落，他便放松下来，与顽皮的 Pettiford 有来有往地聊了起来；Pettiford 那稳定的弹跳，无可置疑地把整个组合的声音凝成了一体。</p></div></div><div class="pair"><div class="en-col"><p>Monk takes the refined grace of "Sophisticated Lady" into a virtually unsurpassed strata as his seemingly disjointed notes organically coalesce into a simply stunning, yet stark introduction, with Clarke's understated backbeat allowing room for Monk to embellish and thoroughly adorn.</p></div><div class="zh-col"><p>在《Sophisticated Lady》里，Monk 把艾灵顿那种精致的优雅推到了几乎无人能及的地带：他那些看似互不相连的音符 organically 地汇聚成一段惊艳而又冷峻的开场，而 Clarke 克制的基本拍又留足了空间，让 Monk 得以加花、充分装点。</p></div></div><div class="pair"><div class="en-col"><p>The dark optimism of "Black and Tan Fantasy" stands out as another perfect combination of music and musician.</p></div><div class="zh-col"><p>《Black and Tan Fantasy》那种暗色的乐观，则是与音乐家本人的又一次完美结合。</p></div></div><div class="pair"><div class="en-col"><p>"I Let a Song Go Out of My Heart" is a fun little romp with Monk taking some tricky and rhythmically unanticipated side trips throughout his nimble and rollicking leads.</p></div><div class="zh-col"><p>《I Let a Song Go Out of My Heart》是一段好玩的即兴小品，Monk 在他轻快而嬉闹的乐句里，屡次拐进既棘手、又在节奏上出人意料的岔路。</p></div></div><div class="pair"><div class="en-col"><p>"Caravan" is a gem as Clarke's sinuous trapwork becomes a perfect foil for Pettiford's buoyant basslines. It also reels in Monk's animated keyboard antics.</p></div><div class="zh-col"><p>《Caravan》是一颗宝石：Clarke 那蜿蜒的军鼓花样，正好成为 Pettiford 弹性十足的贝斯线的绝妙陪衬；而它也把 Monk 那手活蹦乱跳的键盘把戏全都收了进来。</p></div></div><div class="pair"><div class="en-col"><p>Plays Duke Ellington is a recommended title for all dimension of jazz enthusiast.</p></div><div class="zh-col"><p>《Plays Duke Ellington》推荐给各个层次的爵士乐迷。</p></div></div><div class="pair"><div class="en-col"><p>However, Monk and Ellington aficionados may rate it slightly higher.</p></div><div class="zh-col"><p>不过，同时是 Monk 迷和艾灵顿迷的人，可能会给它更高的评价。</p></div></div><div class="pair"><div class="en-col"><p>© Lindsay Planer /TiVo</p></div><div class="zh-col"><p>© Lindsay Planer /TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⭐⭐⭐ 这是 Riverside 的第一张 12 寸 LP</p><p class="nb">这一点乐评完全没提 ✓✓，但它是这张碟真正的历史坐标 ✓✓：<strong>Riverside 发行过的第一张 12 寸爵士 LP 就是它</strong> ✓✓——Keepnews 自己的再版内页开门见山：「This unusual and remarkable album, recorded in 1955, was, at the time, <strong>a first in several ways</strong>. It was <strong>the first twelve-inch contemporary jazz LP issued by Riverside</strong>」 ✓✓。它的正式名号有两个：<strong>《Thelonious Monk Plays Duke Ellington》</strong>，以及首版封面上的 <strong>《Thelonious Monk Plays the Music of Duke Ellington》</strong> ✓✓；编号 <strong>RLP 12-201</strong> ✓✓，<strong>1955 年 12 月发行</strong> ✓✓，八曲 36:55 ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 「the eight sides」说错了</p><p class="nb">这张碟是<strong>八首曲子</strong> ✓✓，不是「八面」——它是 12 寸 LP，每面四首 ✓✓；在黑胶语境里 side 指的是唱片的一面 ✓✓。这句更像是沿用了 10 寸唱片的记法 ✓✓（4 曲一面 × 2 面 = 8 曲 ✓✓）。顺带一提：乐评提到的那几首——《It Don't Mean a Thing》《Sophisticated Lady》《Black and Tan Fantasy》《I Let a Song Go Out of My Heart》《Caravan》《Solitude》——<strong>漏掉了《I Got It Bad and That Ain't Good》与《Mood Indigo》</strong> ✓✓ ✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">✅ 编制与「Solitude 是独奏」完全属实</p><p class="nb"><strong>Pettiford（贝斯）+ Clarke（鼓）+ Monk（钢琴）</strong> ✓✓ ✓✓；而<strong>《Solitude》是纯钢琴独奏</strong> ✓✓——2007 年重发 CD 的人员著录写得明明白白：Pettiford 与 Clarke 只挂在 <strong>tracks 1–6 与 8</strong> ✓✓，第 7 曲只剩 Monk 一人 ✓✓。Keepnews 当年的内页也把这一首称作「a mood-piece of almost painful poignancy」✓✓ ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐⭐⭐ 乐评完全没提的背景：这是一场市场战略</p><p class="nb">Riverside 在 <strong>1954 年以略高于 100 美元买断了 Monk 与 Prestige 的合约</strong> ✓✓，但乐评界普遍认为 Monk「太难、太出格」✓✓，他 1953–54 年在 Prestige 录的那批原创销量不佳 ✓✓。于是 Keepnews 提议：<strong>先做一整张艾灵顿作品集</strong>来破冰 ✓✓，接一张标准曲专辑 <strong>《The Unique Thelonious Monk》</strong>（1956 年 3 月 17 日与 4 月 3 日录，鼓手换成 <strong>Art Blakey</strong> ✓✓）✓✓ —— 结果是 Riverside <strong>整整一年没再录 Monk 的原创</strong> ✓✓，直到 1956 年 10 月的《Brilliant Corners》✓✓。所以这张碟的来路，是「先把人请进门，再请他上主菜」✓✓ ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">⭐⭐ Keepnews 内页的三句定调很值得读</p><p class="nb">同一批录音，Keepnews 在再版内页里的说法很形象 ✓✓：「<strong>Black and Tan Fantasy</strong> 被处理成一段 funky blues」✓✓；「<strong>Caravan</strong> 变成一场奇怪的幻想（a weird flight of fancy）」✓✓；「<strong>Solitude</strong>——作为无伴奏钢琴独奏——是一件几乎令人心痛的作品」✓✓。他还点出这套人马的底子：Pettiford 自 Jimmy Blanton 之后对现代贝斯语言的塑造几乎无人能及 ✓✓；Clarke 在 40 年代初 Minton's 的 house band 里与 Monk、Bird、Dizzy 并肩 ✓✓ —— 三人「几乎靠本能就合上了」✓✓ ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">⭐⭐ 封面换过一次，而且换出了标志</p><p class="nb"><strong>初版封面用的是乐队成员的照片</strong> ✓✓（封面设计 Paul Bacon ✓✓、摄影 Carole Reiff Galletly ✓✓）；<strong>从 1958 年起改用法国原始派画家 Henri Rousseau 的《The Repast of the Lion》（狮子的野宴）</strong> ✓✓——这幅画后来几乎成了 Riverside 时代 Monk 的标准形象 ✓✓ ✓✓，也成了这张碟最被认得出来的视觉符号 ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 这八曲在 Riverside 的其他归宿</p><p class="nb">同批曲目还被收进合辑系列：《The Compositions of Duke Ellington, Vol. 1 / Vol. 2》（<strong>RLP-3507 / RLP-3510</strong> ✓✓），以及 45 转单曲 <strong>RM 483/484</strong> ✓✓、<strong>REP-111</strong> ✓✓；<strong>Milestone 的 M-47052《The Riverside Trios》</strong>（1979 ✓✓）把这张与《The Unique Thelonious Monk》并成一张 2LP ✓✓——正好把「艾灵顿曲集 + 标准曲集」这条破冰路线一次看全 ✓✓ ✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⚠️ 原文的语法错：all dimension</p><p class="nb">结尾那句「recommended title for <strong>all dimension</strong> of jazz enthusiast」是原文的语法错误 ✓✓（应为 dimensions ✓✓，英文维基也照抄了这个错字 ✓✓）。译文按语义处理成「各个层次的爵士乐迷」✓✓，英文栏保留原样 ✓✓ ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">⭐ AllMusic 给的是 4 星，不是 5 星</p><p class="nb">这篇 Planer 的乐评对应 AllMusic <strong>4 星</strong> ✓✓（英文维基明确写「gave the album four out of five stars」✓✓）——注意这与他给《Monk's Dream》的 <strong>5 星</strong> ✓✓ 是两种态度 ✓✓。乐评本身最后那句「Monk 和艾灵顿的拥趸可能会给得更高」✓✓，其实也是在暗示这个 4 星是留给一般听众的分寸 ✓✓ ✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐⭐ 评价的两极：亲切感正是争议所在</p><p class="nb"><strong>PopMatters 的 Sean Murphy（2007）</strong>称它「an outstanding album」✓✓，并说它是「an overlooked gem in the Monk discography」✓✓——被夹在他所说的「早期的天才阶段」与「50 年代中到 60 年代中最耐听的时期」之间 ✓✓。但 <strong>All About Jazz 的 David Rickert（2004）</strong>直说它「fairly tame」、步调「an ambling pace」✓✓，认为它缺少 Monk 更「abrasive」的那一面、反而「obscures what makes Monk so captivating in the first place」✓✓。换句话说：<strong>赞的人爱的是它把 Monk 变得可亲，反对的人怀念的恰恰是那份可亲里丢掉的东西</strong> ✓✓ ✓✓。另外，<strong>Marcus Roberts</strong> 称它是「a masterpiece in jazz」✓✓，并说正是这张唱片让他知道自己 1990 年的《Alone with Three Giants》该往哪里走 ✓✓ ✓✓。</p></div></li><li><span class="n">11</span><div><p class="nt">⭐ 顺带一提两位乐手的位置</p><p class="nb"><strong>Oscar Pettiford（1925–1960）</strong>是现代贝斯语言的关键塑造者 ✓✓，Keepnews 甚至说「probably done more than anyone since Jimmy Blanton」✓✓；<strong>Kenny Clarke（1914–1985）</strong>则与 Monk、Bird、Dizzy 并列为现代爵士的基本定型者 ✓✓。这张碟之所以听感如此「三人成一体」，一部分原因正是他们早就是同一屋的旧识 ✓✓ —— 这一点比任何「技艺」都更管用 ✓✓ ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">原文</span><span>AllMusic 专辑页《Plays Duke Ellington》乐评｜Lindsay Planer｜© Lindsay Planer /TiVo｜本次译稿底本：用户提供的全文</span></li><li><span class="k">维基</span><span><a href="https://en.wikipedia.org/wiki/Thelonious_Monk_Plays_Duke_Ellington">英文维基：Thelonious Monk Plays Duke Ellington（发行 1955 年 12 月、Riverside RLP 12-201、时长 36:55、录音日期与地点、曲目与时长、Keepnews 买断合约与市场背景、AllMusic 4 星、Rickert 与 Murphy 的评论、Marcus Roberts 的引用）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/120749">Thelonious Monk - Thelonious Monk Plays The Music Of Duke Ellington（master 120749；首版 release 14085549：Riverside RLP 12-201、编制、封面设计 Paul Bacon、摄影 Carole Reiff Galletly、录音 Rudy van Gelder、制作 Bill Grauer 与 Orrin Keepnews、1955 年 7 月 21 与 27 日于新泽西 Hackensack 录制）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/5802378">Thelonious Monk – Thelonious Monk Plays Duke Ellington（2007 Keepnews Collection CD RCD-30128-2：曲目时长、Solitude 为无伴奏钢琴独奏的著录、Joe Tarantino 24-bit 重制、 Henri Rousseau 封面画）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/2645924">Thelonious Monk – Plays Duke Ellington（欧洲版 CD，0888072301283：Riverside 2007 重发，附 20 页内页 booklet，注明 Solitude 为无伴奏钢琴独奏）</a></span></li><li><span class="k">Keepnews 内页</span><span><a href="http://theloniousrecords.com/linotes/Monk%20Plays%20Ellington%20(Keepnews).htm">Orrin Keepnews 撰写的 LP 再版内页全文（Riverside 第一张 12 寸爵士 LP 的定位、市场战略说明、Pettiford 与 Clarke 的评价、Black and Tan Fantasy / Caravan / Solitude 三曲的形容、Henri Rousseau 换封面的说明）</a></span></li><li><span class="k">Jazz Discography</span><span><a href="https://www.jazzdisco.org/riverside-records/discography-1955">Jazz Discography Project：Riverside Records Discography 1955（Monk Trio 1955 年 7 月 21 与 27 日场次、RLP 12-201 及 RLP-3510 / RM 483-484 / REP-111 等衍生发行；《The Unique Thelonious Monk》RLP 12-209 与鼓手 Art Blakey）</a></span></li><li><span class="k">Riverside 目录</span><span><a href="https://www.riversidefurusho.com/box">Riverside 官方目录页：THELONIOUS MONK TRIO（曲目、时长、各版本号 RLP12-201 / SMJ-6039M / OJC-024 / M-47052 等，以及《The Riverside Trios》双碟套装）</a></span></li><li><span class="k">All About Jazz</span><span><a href="https://www.allaboutjazz.com/music/thelonious-monk-thelonious-monk-plays-duke-ellington">David Rickert 评 Thelonious Monk Plays Duke Ellington（2004-04-02，评「fairly tame」「an ambling pace」、缺少 abrasive 的质感）</a></span></li><li><span class="k">The Skeptical Audiophile</span><span><a href="https://ontherecord.co/2021/07/17/thelonious-monk-the-riverside-trios/">The Skeptical Audiophile：Thelonious Monk – The Riverside Trios（Milestone 双碟套装试听评述，含 AMG 评语：这套组合让 Monk 的演奏更易被一般爵士乐迷接受而未稀释风格）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

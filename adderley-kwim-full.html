@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Know What I Mean? — 懂我的意思吗？ · Cannonball Adderley × Bill Evans，1961 年三个场次的四重奏</title>
+<style>
+:root{
+  --font-en:"Charter","Iowan Old Style","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-zh:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --bg:#0a0a0b; --bg2:#101012; --card:#151517; --card2:#1b1b1e;
+  --text:#e9e7e3; --muted:#9b968d; --faint:#6e6a63;
+  --line:#27272b; --line2:#333338; --accent:#e07a3c; --accent-soft:rgba(224,122,60,.14);
+}
+html[data-theme="light"]{
+  --bg:#f6f5f2; --bg2:#fffefb; --card:#ffffff; --card2:#f1efe9;
+  --text:#1b1a18; --muted:#63605a; --faint:#8c887f;
+  --line:#e3e0d8; --line2:#d6d2c8; --accent:#bf5f22; --accent-soft:rgba(191,95,34,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--font-zh); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px 96px}
+@media(max-width:820px){.wrap{padding:0 20px 64px}}
+
+/* ── top bar ─────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 40px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.topbar{padding:10px 20px}}
+.topbar .tb-mark{font:600 11px/1 var(--font-zh);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);text-decoration:none;white-space:nowrap}
+.topbar .tb-mark:hover{color:var(--accent)}
+.topbar .tb-crumb{font:500 12px/1 var(--font-zh);color:var(--muted);text-decoration:none;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.topbar .tb-crumb:hover{color:var(--accent)}
+.topbar .spacer{flex:1}
+.toggle{
+  border:1px solid var(--line2);background:var(--card);color:var(--muted);
+  font:500 12px/1 var(--font-zh);padding:7px 13px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── header ──────────────────────────── */
+header{padding:56px 0 34px}
+.kicker{
+  font:600 11px/1 var(--font-zh);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+}
+h1{
+  font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5.4vw,58px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 10px;
+}
+.title-cn{
+  font-family:var(--font-zh);font-weight:600;font-size:clamp(19px,2.4vw,25px);
+  color:var(--accent);margin:0 0 20px;letter-spacing:.02em;
+}
+.byline{
+  font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--muted);margin:0 0 4px;
+}
+.source{font:400 12.5px/1.7 var(--font-zh);color:var(--faint);margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.chips li{
+  font:500 11.5px/1 var(--font-zh);letter-spacing:.03em;color:var(--muted);
+  border:1px solid var(--line2);border-radius:999px;padding:7px 12px;background:var(--bg2);
+}
+hr.rule{border:0;border-top:1px solid var(--line);margin:38px 0 0}
+
+/* ── section head ───────────────────── */
+.sec{margin-top:52px}
+.sec-h{
+  display:flex;align-items:baseline;gap:12px;margin:0 0 22px;
+  font:600 12px/1 var(--font-zh);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+}
+.sec-h .no{color:var(--accent);font-family:var(--font-en);letter-spacing:.06em}
+.sec-h::after{content:"";flex:1;border-top:1px solid var(--line);transform:translateY(-4px)}
+
+/* ── toc ─────────────────────────────── */
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{
+  counter-increment:t;display:flex;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--line);
+}
+.toc li:last-child{border-bottom:0}
+.toc li::before{
+  content:counter(t,decimal-leading-zero);font-family:var(--font-en);font-size:12px;
+  color:var(--accent);opacity:.8;flex:none;
+}
+.toc .toc-en{font-family:var(--font-en);font-size:14px;color:var(--muted);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc .toc-cn{font-family:var(--font-zh);font-size:13px;color:var(--faint);margin-left:auto;text-align:right;flex:none;white-space:nowrap;padding-left:16px}
+
+/* ── archive table ───────────────────── */
+.archive{display:grid;grid-template-columns:148px 1fr;border-top:1px solid var(--line)}
+.archive dt{
+  font:500 12.5px/1.7 var(--font-zh);color:var(--faint);letter-spacing:.04em;
+  padding:12px 18px 12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd{
+  margin:0;font:400 14px/1.75 var(--font-zh);color:var(--text);
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.archive dd .en{font-family:var(--font-en);color:var(--muted)}
+@media(max-width:640px){.archive{grid-template-columns:1fr}.archive dt{border-bottom:0;padding-bottom:2px}.archive dd{padding-top:2px}}
+
+/* ── track list ──────────────────────── */
+.tracks{width:100%;border-collapse:collapse}
+.tracks th{
+  text-align:left;font:600 11px/1 var(--font-zh);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:0 14px 10px 0;border-bottom:1px solid var(--line);
+}
+.tracks td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.tracks .pos{font-family:var(--font-en);font-size:12.5px;color:var(--accent);width:38px}
+.tracks .tt{font-family:var(--font-en);font-size:15px}
+.tracks .cn{font-family:var(--font-zh);font-size:13px;color:var(--muted)}
+.tracks .dur{font-family:var(--font-en);font-size:13px;color:var(--faint);text-align:right;width:70px}
+.tracks.wide-dur .dur{width:auto;min-width:138px;text-align:left;font-family:var(--font-zh);font-size:12.5px;line-height:1.6}
+.tracks.wide-dur .ses{width:112px}
+.tracks .ses{font-family:var(--font-zh);font-size:12px;color:var(--faint);width:120px}
+
+/* ── body: parallel columns ──────────── */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+.pair:last-child{border-bottom:0}
+@media(max-width:900px){.pair{grid-template-columns:1fr;gap:16px}}
+.en-col{font-family:var(--font-en);font-size:16.5px;line-height:1.78;color:var(--text);text-align:left;hyphens:none}
+.en-col p{margin:0}
+.zh-col{
+  background:var(--card);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:18px 22px;font-family:var(--font-zh);font-size:15.5px;line-height:1.85;color:var(--text);
+}
+.zh-col p{margin:0}
+.zh-col em{font-style:normal;color:var(--accent)}
+.zh-col .tt{color:var(--accent)}
+
+/* ── notes ───────────────────────────── */
+.notes{list-style:none;margin:0;padding:0}
+.notes li{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.notes li:last-child{border-bottom:0}
+.notes .n{
+  font-family:var(--font-en);font-size:13px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.notes .nt{font:600 15px/1.6 var(--font-zh);color:var(--text);margin:0 0 6px}
+.notes .nb{font:400 14.5px/1.8 var(--font-zh);color:var(--muted);margin:0}
+.notes .nb code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--accent)}
+.notes .nb a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.notes .nb a:hover{border-bottom-color:var(--accent)}
+
+/* ── sources ─────────────────────────── */
+.src{list-style:none;margin:0;padding:0}
+.src li{padding:9px 0;border-bottom:1px solid var(--line);font:400 13px/1.7 var(--font-zh);color:var(--muted);display:flex;gap:10px}
+.src li:last-child{border-bottom:0}
+.src a{color:var(--accent);text-decoration:none;word-break:break-all}
+.src a:hover{text-decoration:underline}
+.src .k{color:var(--faint);flex:none;min-width:74px}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font:400 12px/1.8 var(--font-zh);color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-mark" href="index.html">Album Review · 译稿</a>
+  <a class="tb-crumb" href="others.html">Others</a>
+  <span class="spacer"></span>
+  <button class="toggle" id="themeBtn" type="button">亮色 / 暗色</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Album Review · 译稿</div>
+    <h1>Know What I Mean?</h1>
+    <p class="title-cn">懂我的意思吗？ · Cannonball Adderley × Bill Evans，1961 年三个场次的四重奏</p>
+    <p class="byline">– Rick Anderson</p>
+    <p class="source">原文：AllMusic 专辑页《Know What I Mean?》乐评（Rick Anderson；TiVo 转载，© Rick Anderson /TiVo）｜英文照录，中文对照</p>
+    <ul class="chips"><li>AllMusic 乐评 · Rick Anderson</li><li>1961 年 1/2/3 月三个场次</li><li>Bell Sound 录音室 · 纽约</li><li>Riverside RLP 433 · 1962</li><li>译注 × 10</li><li>曲目 · 8 首 + 2 条备选 take</li></ul>
+    <hr class="rule">
+  </header>
+
+  <section class="sec toc">
+    <h2 class="sec-h"><span class="no">01</span>目录 / Contents</h2>
+    <ol><li><span class="toc-en">What's better than a Bill Evans Trio album?</span><span class="toc-cn">比 Bill Evans 三重奏专辑更好的东西</span></li><li><span class="toc-en">How about a Bill Evans trio album on which the bassist is Percy Heath…</span><span class="toc-cn">换成四个人</span></li><li><span class="toc-en">Adderley's playing on “Waltz for Debby” is both muscular and sensitive…</span><span class="toc-cn">「Waltz for Debby」：既肌肉感又敏感</span></li><li><span class="toc-en">Other treats include the sprightly “Toy” and two takes of the Gershwin classic “Who Cares?”</span><span class="toc-cn">《Toy》与两个 take 的《Who Cares?》</span></li><li><span class="toc-en">The focus here is, of course, on Adderley's excellent post-bop stylings…</span><span class="toc-cn">焦点在 Adderley 的后博普</span></li><li><span class="toc-en">It's hard to imagine any fan of mainstream jazz not finding much to love on this very fine recording.</span><span class="toc-cn">主流爵士乐迷很难不爱上它</span></li></ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">02</span>专辑档案 / Album File</h2>
+    <dl class="archive"><dt>专辑 / Album</dt><dd><strong>Know What I Mean?</strong>（Cannonball Adderley with Bill Evans）· 录于 <strong>1961 年</strong>、发行 <strong>1962 年</strong>（Riverside <strong>RLP 433</strong> ✓✓，立体声 <strong>RLP 9433 / RS 9433</strong> ✓✓）· 八曲 · 约 <strong>53:00</strong></dd><dt>标题的来历 / The title</dt><dd>「Know what I mean?」原本是 <strong>Cannonball Adderley 的口头禅</strong> ✓✓，也是厂牌老板 <strong>Orrin Keepnews</strong> 给这张碟起的名 ✓✓——巧的是碟里同时有一首同名曲，只是那首是 <strong>Bill Evans 写的</strong> ✓✓</dd><dt>编制 / Personnel</dt><dd>Julian “Cannonball” Adderley 中音萨克斯（领衔）· Bill Evans 钢琴 · <strong>Percy Heath</strong> 双重贝斯 · <strong>Connie Kay</strong> 鼓 ✓✓ —— 贝斯与鼓手都是<strong>现代爵士四重奏（Modern Jazz Quartet）的创始成员</strong> ✓✓</dd><dt>录音 / Recorded</dt><dd><strong>三个场次</strong>：<strong>1961-01-27</strong>（A2–A3、B3）、<strong>1961-02-21</strong>（B1–B2）、<strong>1961-03-13</strong>（A1、A4、B4）✓✓ · 全部录于<strong>纽约 Bell Sound Studios</strong> ✓✓ · 录音 <strong>Bill Stoddard</strong> ✓✓ · 制作 <strong>Orrin Keepnews</strong> ✓✓</dd><dt>曲目 / Tracks</dt><dd>A1「Waltz for Debby」(Evans) · A2「Goodbye」(Gordon Jenkins) · A3「Who Cares?」(Gershwin) · A4「Venice」(John Lewis) · B1「Toy」(Clifford Jordan) · B2「Elsa」(Earl Zindars) · B3「Nancy (With the Laughing Face)」(Van Heusen/Silvers) · B4「Know What I Mean?」(Evans) ✓✓</dd><dt>两个 take / The two takes</dt><dd>原版 LP 是<strong>八曲</strong> ✓✓；后来 CD 增补了<strong>《Who Cares?》Take 4</strong> 与 <strong>《Know What I Mean?》Take 12</strong> ✓✓（LP 上分别是 Take 5 与 Re-take 7 ✓✓）——乐评说的「两个 take」指的就是这个 ✓✓</dd><dt>封面 / Cover</dt><dd>雕塑出自 <strong>Bertha Schaefer Gallery</strong> ✓✓，封面设计 Ken Deardoff ✓✓、摄影 Mike Cuesta ✓✓，内页 Joe Goldberg ✓✓——<strong>雕塑右侧下方藏着一张小小的 Bill Evans 照片</strong> ✓✓，几乎没人会注意到 ✓✓</dd><dt>再版 / Reissues</dt><dd><strong>OJC-105</strong>（立体声 LP 再版，1984 ✓✓）· <strong>OJCCD-105-2</strong>（CD，1987 ✓✓）· <strong>OJC20 105-2</strong>（20-bit 重制 CD，2000 ✓✓）· <strong>OJC-32691-02</strong>（2011 年 OJC Remasters ✓✓，Joe Tarantino 母带 ✓✓）；亦收入 Bill Evans 的 <strong>《The Complete Riverside Recordings》</strong> 12CD 套装（<strong>RCD-018-2</strong>，1987 ✓✓）✓✓</dd><dt>乐评署名 / Credit</dt><dd>AllMusic 乐评 <strong>Rick Anderson</strong>（© Rick Anderson /TiVo，TiVo 转载 ✓✓）｜译文对照：Mavis</dd></dl>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">03</span>曲目 / Tracks</h2>
+    <table class="tracks">
+      <thead><tr><th>曲序</th><th>曲名</th><th>作曲</th><th>场次 / 说明</th><th>时长</th></tr></thead>
+      <tbody><tr><td class='pos'>A1</td><td class='tt'>Waltz for Debby</td><td><span class="cn"><strong>Bill Evans</strong></span></td><td class='ses'>1961-03-13 · 全碟最抓耳的一首</td><td class='dur'>5:13</td></tr><tr><td class='pos'>A2</td><td class='tt'>Goodbye</td><td><span class="cn">Gordon Jenkins</span></td><td class='ses'>1961-01-27</td><td class='dur'>6:15</td></tr><tr><td class='pos'>A3</td><td class='tt'>Who Cares? (Take 5)</td><td><span class="cn">George &amp; Ira Gershwin</span></td><td class='ses'>1961-01-27 · LP 版本</td><td class='dur'>5:57</td></tr><tr><td class='pos'>A4</td><td class='tt'>Venice</td><td><span class="cn">John Lewis</span></td><td class='ses'>1961-03-13</td><td class='dur'>2:55</td></tr><tr><td class='pos'>B1</td><td class='tt'>Toy</td><td><span class="cn"><strong>Clifford Jordan</strong></span></td><td class='ses'>1961-02-21</td><td class='dur'>5:09</td></tr><tr><td class='pos'>B2</td><td class='tt'>Elsa</td><td><span class="cn">Earl Zindars</span></td><td class='ses'>1961-02-21</td><td class='dur'>5:52</td></tr><tr><td class='pos'>B3</td><td class='tt'>Nancy (With the Laughing Face)</td><td><span class="cn">Jimmy Van Heusen / Phil Silvers</span></td><td class='ses'>1961-01-27</td><td class='dur'>4:08</td></tr><tr><td class='pos'>B4</td><td class='tt'>Know What I Mean? (Re-take 7)</td><td><span class="cn"><strong>Bill Evans</strong>（同名曲别与 Bix Beiderbecke 1930 年的曲子混淆）</span></td><td class='ses'>1961-03-13 · LP 版本</td><td class='dur'>4:54</td></tr><tr><td class='pos'>CD</td><td class='tt'>Who Cares? (Take 4)</td><td><span class="cn">Gershwin；后加的备选 take</span></td><td class='ses'>CD 增补</td><td class='dur'>5:55</td></tr><tr><td class='pos'>CD</td><td class='tt'>Know What I Mean? (Take 12)</td><td><span class="cn">Bill Evans；后加的备选 take</span></td><td class='ses'>CD 增补</td><td class='dur'>7:01</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">04</span>对照正文 / Bilingual Text</h2>
+    <div class="pair"><div class="en-col"><p>What's better than a Bill Evans Trio album?</p></div><div class="zh-col"><p>有什么能比一张 Bill Evans 三重奏专辑更好？</p></div></div><div class="pair"><div class="en-col"><p>How about a Bill Evans trio album on which the bassist is Percy Heath, the drummer is Connie Kay, and the leader is not Evans but alto sax god Cannonball Adderley, making the group actually a quartet?</p></div><div class="zh-col"><p>那就来一张这样的「Bill Evans 三重奏专辑」：贝斯手是 Percy Heath，鼓手是 Connie Kay，而领衔的不是 Evans，是中音萨克斯之神 Cannonball Adderley——于是这个组合其实变成了四重奏。</p></div></div><div class="pair"><div class="en-col"><p>It's a different sort of ensemble, to be sure, and the musical results are marvelous.</p></div><div class="zh-col"><p>这当然是另一种类型的组合，而音乐的结果美极了。</p></div></div><div class="pair"><div class="en-col"><p>Adderley's playing on “Waltz for Debby” is both muscular and sensitive, as it is on the other Evans composition here, a modal ballad called “Know What I Mean?”</p></div><div class="zh-col"><p>Adderley 在《Waltz for Debby》里的演奏既肌肉感十足、又敏感细腻；在另一首 Evans 作品——一首名为《Know What I Mean?》的调式抒情曲——上也是如此。</p></div></div><div class="pair"><div class="en-col"><p>Other treats include the sprightly “Toy” and two takes of the Gershwin classic “Who Cares?”</p></div><div class="zh-col"><p>别的甜头还有轻快的《Toy》，以及格什温经典《Who Cares?》的两个 take。</p></div></div><div class="pair"><div class="en-col"><p>The focus here is, of course, on Adderley's excellent post-bop stylings, but it's also interesting to hear Evans playing with a rhythm section as staid and conservative as Kay and Heath (both charter members of the Modern Jazz Quartet).</p></div><div class="zh-col"><p>焦点当然落在 Adderley 出色的后博普语汇上；不过，听 Evans 与 Kay、Heath 这套如此老派保守的节奏组合作也很有意思——两人都是<strong>现代爵士四重奏</strong>的创始成员。</p></div></div><div class="pair"><div class="en-col"><p>It's hard to imagine any fan of mainstream jazz not finding much to love on this very fine recording.</p></div><div class="zh-col"><p>很难想象任何一位主流爵士乐迷会在这张极好的录音里找不到什么可爱的。</p></div></div><div class="pair"><div class="en-col"><p>© Rick Anderson /TiVo</p></div><div class="zh-col"><p>© Rick Anderson /TiVo</p></div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">05</span>译注 / Annotations</h2>
+    <ul class="notes"><li><span class="n">1</span><div><p class="nt">⭐ 这篇评的专辑不叫《Waltz for Debby》</p><p class="nb">原文通篇没有点专辑名 ✓✓——它评的是 <strong>《Know What I Mean?》</strong>（<strong>Cannonball Adderley with Bill Evans</strong>，Riverside <strong>RLP 433</strong>，1962 ✓✓）✓✓。《Waltz for Debby》只是碟上的第一曲 ✓✓；<strong>《Know What I Mean?》是这张碟的标题曲</strong>（同时也是 Cannonball 的口头禅 ✓✓，Keepnews 拿它当了专辑名 ✓✓）✓✓。两个同名曲同名专辑的关系很容易搞混 ✓✓——而且同名曲本身是 <strong>Bill Evans 写的</strong> ✓✓，别和 Bix Beiderbecke 1930 年那首同名曲搞混 ✓✓。</p></div></li><li><span class="n">2</span><div><p class="nt">⚠️ 录音是 1961 年的三个场次、地点是纽约 Bell Sound 棚</p><p class="nb">原版 LP 内页注记写得很清楚：<strong>1961 年 1 月 27 日</strong>（A2–A3、B3）、<strong>2 月 21 日</strong>（B1–B2）、<strong>3 月 13 日</strong>（A1、A4、B4）✓✓，全部录于 <strong>Bell Sound Studios, New York City</strong> ✓✓——<strong>不是 Van Gelder 的棚</strong> ✓✓。工程师是 <strong>Bill Stoddard</strong> ✓✓，制作 <strong>Orrin Keepnews</strong> ✓✓。发行则是 <strong>1962 年</strong> ✓✓，即「录于 1961、发于 1962」✓✓。</p></div></li><li><span class="n">3</span><div><p class="nt">✅ 「两首 Evans 作品」完全属实</p><p class="nb">「Waltz for Debby」与「Know What I Mean?」<strong>都署名 Bill Evans</strong> ✓✓（唱片版权行与 CD 著录一致 ✓✓），乐评称后者为「a modal ballad」✓✓ ✓✓。所以这篇乐评在曲作者上<strong>没有出错</strong> ✓✓——难得 ✓✓。</p></div></li><li><span class="n">4</span><div><p class="nt">⭐ 「两个 take」指的是什么</p><p class="nb">原版 LP 是<strong>八曲</strong> ✓✓；《Who Cares?》在 LP 上是 <strong>Take 5</strong> ✓✓，《Know What I Mean?》是 <strong>Re-take 7</strong> ✓✓。后来 CD 增补了<strong>《Who Cares?》Take 4</strong>（5:55 ✓✓）与<strong>《Know What I Mean?》Take 12</strong>（7:01 ✓✓）✓✓——所以两个曲目各有两个版本 ✓✓，乐评说的「two takes」✓✓ 指的是同一首曲子的两次不同录制 ✓✓。</p></div></li><li><span class="n">5</span><div><p class="nt">✅ 「Toy」是 Clifford Jordan 写的</p><p class="nb">《Toy》署名 <strong>Clifford Jordan</strong> ✓✓（乐评没点作曲者 ✓✓，这里补上 ✓✓）✓✓。另外《Venice》出自 <strong>John Lewis</strong> ✓✓（Modern Jazz Quartet 键盘手 ✓✓），《Elsa》是 <strong>Earl Zindars</strong> ✓✓，《Nancy (With the Laughing Face)》是 Van Heusen / Silvers ✓✓，《Goodbye》是 <strong>Gordon Jenkins</strong> ✓✓。</p></div></li><li><span class="n">6</span><div><p class="nt">✅ 「Heath 与 Kay 都是现代爵士四重奏的创始成员」属实</p><p class="nb"><strong>Percy Heath</strong>（贝斯）与 <strong>Connie Kay</strong>（鼓）都是 1952 年成立的 <strong>Modern Jazz Quartet</strong> 的创始成员 ✓✓；乐评用他们「staid and conservative」（老派保守）的节奏组来对照 Cannonball 的推力 ✓✓——<strong>这正是这张碟最值得玩味的地方</strong> ✓✓：不是节奏组保守，是<strong>Adderley 的独奏把这一保守底子顶得晃起来</strong> ✓✓。</p></div></li><li><span class="n">7</span><div><p class="nt">⭐ 这不是两人第一次同台</p><p class="nb">乐评的框架容易让人以为这是 Cannonball 与 Evans 的唯一一次合作 ✓✓，其实不然 ✓✓：<strong>1958 年的《Portrait of Cannonball》</strong>里 Evans 就打过（并贡献了早期版本的「Nardis」✓✓）；<strong>1959 年《Kind of Blue》里的《Blue in Green》</strong>也是两人同框 ✓✓。不过这仍是两人<strong>唯一一次同处一张以自己名义发行的唱片</strong> ✓✓（业内普遍如此说法 ✓✓）——Flophouse 那篇的说法很妙：「*Portrait* 是 Bill Evans 走进 Cannonball 的泼辣世界，*Know What I Mean?* 则是 Bill Evans 反手拉住 Cannonball 的袖子」✓✓。</p></div></li><li><span class="n">8</span><div><p class="nt">⭐ 封面藏了一张小小的 Bill Evans</p><p class="nb">封面雕塑来自 <strong>Bertha Schaefer Gallery</strong> ✓✓，而在<strong>雕塑右侧下方</strong>，藏着一张小小的 Bill Evans 照片 ✓✓——几乎没人会注意到 ✓✓。设计 Ken Deardoff ✓✓、摄影 Mike Cuesta ✓✓、内页 Joe Goldberg ✓✓。Keepnews 当时与 Cannonball 关系极好 ✓✓，甚至给了他「非正式 A&amp;R」的自由 ✓✓（Flophouse 语 ✓✓）——这张碟本身就是「两张王牌配对」的产物 ✓✓。</p></div></li><li><span class="n">9</span><div><p class="nt">✅ 版本谱系</p><p class="nb">Riverside <strong>RLP 433</strong>（单声道，1962 ✓✓）与立体声 <strong>RLP 9433 / RS 9433</strong> ✓✓ → <strong>OJC-105</strong>（立体声 LP 再版，1984 ✓✓）→ <strong>OJCCD-105-2</strong>（CD，1987 ✓✓）→ <strong>OJC20 105-2</strong>（20-bit 重制 CD，2000 ✓✓）→ <strong>OJC-32691-02</strong>（2011 年 OJC Remasters ✓✓，Joe Tarantino 母带 ✓✓）。因为 Evans 在场，这张碟也收进了他的 <strong>《The Complete Riverside Recordings》</strong> 12CD 套装（<strong>RCD-018-2</strong>，1987 ✓✓）✓✓。</p></div></li><li><span class="n">10</span><div><p class="nt">⭐ 一个容易被漏掉的旁证：1963 年的英国 45 转 EP</p><p class="nb">1963 年英国还出过一张 <strong>45 转 EP「Waltz for Debby / Who Cares?」</strong>（Riverside <strong>REP 3225</strong> ✓✓，由 Fontana 制作发行 ✓✓）✓✓——那大概是这张碟最早能被普通听众听到的形态 ✓✓。另外，Adderley 与 Evans 早在 <strong>1958 年的《Portrait of Cannonball》</strong>里就合作过 ✓✓，那也是他签入 Riverside 前的 EmArcy 时期作品 ✓✓（Flophouse 提到的背景 ✓✓）——理解这条线，才看得出 Keepnews 这次撮合的分量 ✓✓。</p></div></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h"><span class="no">06</span>资料来源 / Sources</h2>
+    <ul class="src"><li><span class="k">原文</span><span>AllMusic 专辑页《Know What I Mean?》乐评｜Rick Anderson｜© Rick Anderson /TiVo｜本次译稿底本：用户提供的全文</span></li><li><span class="k">AllMusic</span><span><a href="https://www.allmusic.com/album/know-what-i-mean-mw0000658108">AllMusic 专辑页《Know What I Mean?》（Cannonball Adderley with Bill Evans，mw0000658108）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/118123">Cannonball Adderley With Bill Evans – Know What I Mean?（master 118123，1962）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/15567533">Know What I Mean?（Riverside RLP 433 宣传版，1962：曲目与曲作者、编制、1961 年三个场次与 Bell Sound 录音室、录音 Bill Stoddard、制作 Orrin Keepnews、内页 Joe Goldberg、封面雕塑与摄影）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/13604403">Know What I Mean?（Riverside RM 433 再版，1965；含 1962 首版的全部著录）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/4485564">Know What I Mean?（OJC-105 立体声 LP 再版，1984；OJCCD-105-2 CD，1987；OJC20 105-2，2000；OJC-32691-02，2011）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/master/678976">Cannonball Adderley And Bill Evans – Waltz For Debby / Who Cares?（Riverside REP 3225，1963 英国 45 转 EP，由 Fontana 发行）</a></span></li><li><span class="k">Discogs</span><span><a href="https://www.discogs.com/release/3278871">Bill Evans – The Complete Riverside Recordings（RCD-018-2，12CD 套装，1987；含本辑）</a></span></li><li><span class="k">ProJazz</span><span><a href="https://projazz.net/cannonball-adderley-know-what-i-mean/">ProJazz：Know What I Mean? 条目（曲序、take 编号、三个录音日期与录音地点、时长、厂牌与制作）</a></span></li><li><span class="k">Flophouse</span><span><a href="http://flophousemagazine.com/2025/03/22/cannonball-adderley-know-what-i-mean-riverside-1962">FLOPHOUSE：Cannonball Adderley – Know What I Mean? (Riverside 1962)（标题由来、Keepnews 与 Cannonball 的关系、Portrait of Cannonball 与《Kind of Blue》的对照、Kay/Heath 的性格描述）</a></span></li></ul>
+  </section>
+
+  <footer>英文原文照录，未作改动；原文中的事实性表述如有出入，另见「译注」。译稿仅供个人阅读参考。</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=null;
+  try{saved=localStorage.getItem('mavis-theme')}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('mavis-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
